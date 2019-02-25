@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第二十二课：基于SMB发现内网存活主机 · GitBook</title>
+        <title>第二十二课：基于SMB发现内网存活主机 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="21_基于ICMP发现内网存活主机.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1826,118 +1868,120 @@
                                 <h3 id="&#x57FA;&#x4E8E;msf">&#x57FA;&#x4E8E;msf</h3>
 <p>&#x6A21;&#x5757;&#xFF1A;
 <code>scanner/smb/smb_version</code></p>
-<pre><code class="lang-bash">msf auxiliary(scanner/smb/smb_version) &gt; show options
+<pre class="language-"><code class="lang-bash">msf auxiliary<span class="token punctuation">(</span>scanner/smb/smb_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options
 
-Module options (auxiliary/scanner/smb/smb_version): 
+Module options <span class="token punctuation">(</span>auxiliary/scanner/smb/smb_version<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
-RHOSTS 192.168.1.0/24 yes The target address range or CIDR identifier
-SMBDomain . no The Windows domain to use <span class="hljs-keyword">for</span> authentication
-SMBPass no The password <span class="hljs-keyword">for</span> the specified username
+RHOSTS 192.168.1.0/24 <span class="token function">yes</span> The target address range or CIDR identifier
+SMBDomain <span class="token keyword">.</span> no The Windows domain to use <span class="token keyword">for</span> authentication
+SMBPass no The password <span class="token keyword">for</span> the specified username
 SMBUser no The username to authenticate as
-THREADS 1 yes The number of concurrent threads 
+THREADS 1 <span class="token function">yes</span> The number of concurrent threads 
 
-msf auxiliary(scanner/smb/smb_version) &gt; <span class="hljs-built_in">set</span> threads 20
-threads =&gt; 20
-msf auxiliary(scanner/smb/smb_version) &gt; exploit 
+msf auxiliary<span class="token punctuation">(</span>scanner/smb/smb_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> threads 20
+threads <span class="token operator">=</span><span class="token operator">&gt;</span> 20
+msf auxiliary<span class="token punctuation">(</span>scanner/smb/smb_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
 
-[+] 192.168.1.4:445 &#x2010; Host is running Windows 7 Ultimate SP1 (build:7601) (name:XXXXXX) (workgroup:WORKGROUP )
-[*] Scanned 39 of 256 hosts (15% complete)
-[*] Scanned 61 of 256 hosts (23% complete)
-[*] Scanned 81 of 256 hosts (31% complete)
-[+] 192.168.1.99:445 &#x2010; Host is running Windows 7 Ultimate SP1 (build:7601) (name:XXXXXX) (workgroup:WORKGROUP )
-[+] 192.168.1.119:445 &#x2010; Host is running Windows 2003 R2 SP2 (build:3790) (name:XXXXXX)
-[*] Scanned 103 of 256 hosts (40% complete)
-[*] Scanned 130 of 256 hosts (50% complete)
-[*] Scanned 154 of 256 hosts (60% complete)
-[*] Scanned 181 of 256 hosts (70% complete)
-[*] Scanned 205 of 256 hosts (80% complete)
-[*] Scanned 232 of 256 hosts (90% complete)
-[*] Scanned 256 of 256 hosts (100% complete)
-[*] Auxiliary module execution completed
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.4:445 &#x2010; Host is running Windows 7 Ultimate SP1 <span class="token punctuation">(</span>build:7601<span class="token punctuation">)</span> <span class="token punctuation">(</span>name:XXXXXX<span class="token punctuation">)</span> <span class="token punctuation">(</span>workgroup:WORKGROUP <span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 39 of 256 hosts <span class="token punctuation">(</span>15% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 61 of 256 hosts <span class="token punctuation">(</span>23% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 81 of 256 hosts <span class="token punctuation">(</span>31% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.99:445 &#x2010; Host is running Windows 7 Ultimate SP1 <span class="token punctuation">(</span>build:7601<span class="token punctuation">)</span> <span class="token punctuation">(</span>name:XXXXXX<span class="token punctuation">)</span> <span class="token punctuation">(</span>workgroup:WORKGROUP <span class="token punctuation">)</span>
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.119:445 &#x2010; Host is running Windows 2003 R2 SP2 <span class="token punctuation">(</span>build:3790<span class="token punctuation">)</span> <span class="token punctuation">(</span>name:XXXXXX<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 103 of 256 hosts <span class="token punctuation">(</span>40% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 130 of 256 hosts <span class="token punctuation">(</span>50% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 154 of 256 hosts <span class="token punctuation">(</span>60% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 181 of 256 hosts <span class="token punctuation">(</span>70% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 205 of 256 hosts <span class="token punctuation">(</span>80% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 232 of 256 hosts <span class="token punctuation">(</span>90% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 256 of 256 hosts <span class="token punctuation">(</span>100% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Auxiliary module execution completed
 </code></pre>
 <p><img src="media/c4d807b384fa3fbd0de85b80b2a38e59.jpg" alt=""></p>
 <h3 id="&#x57FA;&#x4E8E;cme&#xFF08;&#x53C2;&#x8003;&#x7B2C;&#x4E5D;&#x5341;&#x4E09;&#x8BFE;&#xFF09;">&#x57FA;&#x4E8E;cme&#xFF08;&#x53C2;&#x8003;&#x7B2C;&#x4E5D;&#x5341;&#x4E09;&#x8BFE;&#xFF09;</h3>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># cme smb 192.168.1.0/24</span>
-SMB 192.168.1.4 445 JOHN&#x2010;PC [*] Windows 7 Ultimate 7601 Service Pack 1
-x64 (name:JOHN&#x2010;PC) (domain:JOHN&#x2010;PC) (signing:False) (SMBv1:True)
-SMB 192.168.1.99 445 JOHN&#x2010;PC [*] Windows 7 Ultimate 7601 Service Pack
-x64 (name:JOHN&#x2010;PC) (domain:JOHN&#x2010;PC) (signing:False) (SMBv1:True)
-SMB 192.168.1.119 445 WIN03X64 [*] Windows Server 2003 R2 3790 Service
-Pack 2 x32 (name:WIN03X64) (domain:WIN03X64) (signing:False) (SMBv1:True
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># cme smb 192.168.1.0/24</span>
+SMB 192.168.1.4 445 JOHN&#x2010;PC <span class="token punctuation">[</span>*<span class="token punctuation">]</span> Windows 7 Ultimate 7601 Service Pack 1
+x64 <span class="token punctuation">(</span>name:JOHN&#x2010;PC<span class="token punctuation">)</span> <span class="token punctuation">(</span>domain:JOHN&#x2010;PC<span class="token punctuation">)</span> <span class="token punctuation">(</span>signing:False<span class="token punctuation">)</span> <span class="token punctuation">(</span>SMBv1:True<span class="token punctuation">)</span>
+SMB 192.168.1.99 445 JOHN&#x2010;PC <span class="token punctuation">[</span>*<span class="token punctuation">]</span> Windows 7 Ultimate 7601 Service Pack
+x64 <span class="token punctuation">(</span>name:JOHN&#x2010;PC<span class="token punctuation">)</span> <span class="token punctuation">(</span>domain:JOHN&#x2010;PC<span class="token punctuation">)</span> <span class="token punctuation">(</span>signing:False<span class="token punctuation">)</span> <span class="token punctuation">(</span>SMBv1:True<span class="token punctuation">)</span>
+SMB 192.168.1.119 445 WIN03X64 <span class="token punctuation">[</span>*<span class="token punctuation">]</span> Windows Server 2003 R2 3790 Service
+Pack 2 x32 <span class="token punctuation">(</span>name:WIN03X64<span class="token punctuation">)</span> <span class="token punctuation">(</span>domain:WIN03X64<span class="token punctuation">)</span> <span class="token punctuation">(</span>signing:False<span class="token punctuation">)</span> <span class="token punctuation">(</span>SMBv1:True
 </code></pre>
 <p><img src="media/5206dc9e56a970261d19557e81a2dd73.jpg" alt=""></p>
 <h3 id="&#x57FA;&#x4E8E;nmap">&#x57FA;&#x4E8E;nmap</h3>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># nmap &#x2010;sU &#x2010;sS &#x2010;&#x2010;script smb&#x2010;enum&#x2010;shares.nse &#x2010;p 445 192.168.1.119</span>
-Starting Nmap 7.70 ( https://nmap.org ) at 2019&#x2010;01&#x2010;29 08:45 EST
-Nmap scan report <span class="hljs-keyword">for</span> 192.168.1.119
-Host is up (0.0029s latency). 
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># nmap &#x2010;sU &#x2010;sS &#x2010;&#x2010;script smb&#x2010;enum&#x2010;shares.nse &#x2010;p 445 192.168.1.119</span>
+Starting Nmap 7.70 <span class="token punctuation">(</span> https://nmap.org <span class="token punctuation">)</span> at 2019&#x2010;01&#x2010;29 08:45 EST
+Nmap scan report <span class="token keyword">for</span> 192.168.1.119
+Host is up <span class="token punctuation">(</span>0.0029s latency<span class="token punctuation">)</span>. 
 
 PORT STATE SERVICE
-445/tcp open microsoft&#x2010;ds
-445/udp open|filtered microsoft&#x2010;ds
-MAC Address: 00:0C:29:85:D6:7D (VMware) 
+445/tcp <span class="token function">open</span> microsoft&#x2010;ds
+445/udp <span class="token function">open</span><span class="token operator">|</span>filtered microsoft&#x2010;ds
+MAC Address: 00:0C:29:85:D6:7D <span class="token punctuation">(</span>VMware<span class="token punctuation">)</span> 
 
 Host script results:
-| smb&#x2010;enum&#x2010;shares:
-| account_used: guest
-| \\192.168.1.119\ADMIN$:
-| Type: STYPE_DISKTREE_HIDDEN
-| Comment: \xE8\xBF\x9C\xE7\xA8\x8B\xE7\xAE\xA1\xE7\x90\x86
-| Anonymous access: &lt;none&gt;
-| Current user access: &lt;none&gt;
-| \\192.168.1.119\C$:
-| Type: STYPE_DISKTREE_HIDDEN
-| Comment: \xE9\xBB\x98\xE8\xAE\xA4\xE5\x85\xB1\xE4\xBA\xAB
-| Anonymous access: &lt;none&gt;
-| Current user access: &lt;none&gt;
-| \\192.168.1.119\E$:
-| Type: STYPE_DISKTREE_HIDDEN
-| Comment: \xE9\xBB\x98\xE8\xAE\xA4\xE5\x85\xB1\xE4\xBA\xAB
-| Anonymous access: &lt;none&gt;
-| Current user access: &lt;none&gt;
-| \\192.168.1.119\IPC$:
-| Type: STYPE_IPC_HIDDEN
-| Comment: \xE8\xBF\x9C\xE7\xA8\x8B IPC
-| Anonymous access: READ
-| Current user access: READ/WRITE
-| \\192.168.1.119\share:
-| Type: STYPE_DISKTREE
-| Comment:
-| Anonymous access: &lt;none&gt;
-|_ Current user access: READ/WRITE 
+<span class="token operator">|</span> smb&#x2010;enum&#x2010;shares:
+<span class="token operator">|</span> account_used: guest
+<span class="token operator">|</span> \\192.168.1.119\ADMIN$:
+<span class="token operator">|</span> Type: STYPE_DISKTREE_HIDDEN
+<span class="token operator">|</span> Comment: \xE8\xBF\x9C\xE7\xA8\x8B\xE7\xAE\xA1\xE7\x90\x86
+<span class="token operator">|</span> Anonymous access: <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+<span class="token operator">|</span> Current user access: <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+<span class="token operator">|</span> \\192.168.1.119\C$:
+<span class="token operator">|</span> Type: STYPE_DISKTREE_HIDDEN
+<span class="token operator">|</span> Comment: \xE9\xBB\x98\xE8\xAE\xA4\xE5\x85\xB1\xE4\xBA\xAB
+<span class="token operator">|</span> Anonymous access: <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+<span class="token operator">|</span> Current user access: <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+<span class="token operator">|</span> \\192.168.1.119\E$:
+<span class="token operator">|</span> Type: STYPE_DISKTREE_HIDDEN
+<span class="token operator">|</span> Comment: \xE9\xBB\x98\xE8\xAE\xA4\xE5\x85\xB1\xE4\xBA\xAB
+<span class="token operator">|</span> Anonymous access: <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+<span class="token operator">|</span> Current user access: <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+<span class="token operator">|</span> \\192.168.1.119\IPC$:
+<span class="token operator">|</span> Type: STYPE_IPC_HIDDEN
+<span class="token operator">|</span> Comment: \xE8\xBF\x9C\xE7\xA8\x8B IPC
+<span class="token operator">|</span> Anonymous access: READ
+<span class="token operator">|</span> Current user access: READ/WRITE
+<span class="token operator">|</span> \\192.168.1.119\share:
+<span class="token operator">|</span> Type: STYPE_DISKTREE
+<span class="token operator">|</span> Comment:
+<span class="token operator">|</span> Anonymous access: <span class="token operator">&lt;</span>none<span class="token operator">&gt;</span>
+<span class="token operator">|</span>_ Current user access: READ/WRITE 
 
-Nmap <span class="hljs-keyword">done</span>: 1 IP address (1 host up) scanned <span class="hljs-keyword">in</span> 1.24 seconds
+Nmap done: 1 IP address <span class="token punctuation">(</span>1 host up<span class="token punctuation">)</span> scanned <span class="token keyword">in</span> 1.24 seconds
 </code></pre>
 <p><img src="media/3fd308a951925bf5a20f8f6568f1c84a.jpg" alt=""></p>
 <h3 id="&#x57FA;&#x4E8E;cmd&#xFF1A;">&#x57FA;&#x4E8E;CMD&#xFF1A;</h3>
-<pre><code class="lang-bash"><span class="hljs-keyword">for</span> /l %a <span class="hljs-keyword">in</span> (1,1,254) <span class="hljs-keyword">do</span> start /min /low telnet 192.168.1.%a 445
+<pre class="language-"><code class="lang-bash"><span class="token keyword">for</span> /l %a <span class="token keyword">in</span> <span class="token punctuation">(</span>1,1,254<span class="token punctuation">)</span> <span class="token keyword">do</span> start /min /low telnet 192.168.1.%a 445
 </code></pre>
 <p><img src="media/eab2b645fe2065a540c49a842dfd2ecf.jpg" alt=""></p>
 <h3 id="&#x57FA;&#x4E8E;powershell&#xFF1A;">&#x57FA;&#x4E8E;powershell&#xFF1A;</h3>
 <p>&#x4E00;&#x53E5;&#x8BDD;&#x626B;&#x63CF;&#xFF1A;
 &#x5355;IP&#xFF1A;</p>
-<pre><code class="lang-bash">445 | %{ <span class="hljs-built_in">echo</span> ((new&#x2010;object Net.Sockets.TcpClient).Connect(<span class="hljs-string">&quot;192.168.1.1
-19&quot;</span>,<span class="hljs-variable">$_</span>)) <span class="hljs-string">&quot;<span class="hljs-variable">$_</span> is open&quot;</span>} 2&gt;<span class="hljs-variable">$null</span>
+<pre class="language-"><code class="lang-bash">445 <span class="token operator">|</span> %<span class="token punctuation">{</span> <span class="token keyword">echo</span> <span class="token punctuation">((</span>new&#x2010;object Net.Sockets.TcpClient<span class="token punctuation">)</span>.Connect<span class="token punctuation">(</span><span class="token string">&quot;192.168.1.1
+19&quot;</span>,<span class="token variable">$_</span><span class="token punctuation">))</span> <span class="token string">&quot;<span class="token variable">$_</span> is open&quot;</span><span class="token punctuation">}</span> 2<span class="token operator">&gt;</span><span class="token variable">$null</span>
 </code></pre>
 <p><img src="media/7c6b67ffd6f089b88778bb732f0bf949.jpg" alt=""></p>
 <p>&#x591A;ip&#xFF1A;</p>
-<pre><code class="lang-bash">1..5 | % { <span class="hljs-variable">$a</span> = <span class="hljs-variable">$_</span>; 445 | % {<span class="hljs-built_in">echo</span> ((new&#x2010;object
-Net.Sockets.TcpClient).Connect(<span class="hljs-string">&quot;192.168.1.<span class="hljs-variable">$a</span>&quot;</span>,<span class="hljs-variable">$_</span>)) <span class="hljs-string">&quot;Port <span class="hljs-variable">$_</span> is open&quot;</span>}
-2&gt;<span class="hljs-variable">$null</span>}
+<pre class="language-"><code class="lang-bash">1<span class="token punctuation">..</span>5 <span class="token operator">|</span> % <span class="token punctuation">{</span> <span class="token variable">$a</span> <span class="token operator">=</span> <span class="token variable">$_</span><span class="token punctuation">;</span> 445 <span class="token operator">|</span> % <span class="token punctuation">{</span>echo <span class="token punctuation">((</span>new&#x2010;object
+Net.Sockets.TcpClient<span class="token punctuation">)</span>.Connect<span class="token punctuation">(</span><span class="token string">&quot;192.168.1.<span class="token variable">$a</span>&quot;</span>,<span class="token variable">$_</span><span class="token punctuation">))</span> <span class="token string">&quot;Port <span class="token variable">$_</span> is open&quot;</span><span class="token punctuation">}</span>
+2<span class="token operator">&gt;</span><span class="token variable">$null</span><span class="token punctuation">}</span>
 </code></pre>
 <p><img src="media/9d87d933207df8058f867f3d208a30a1.jpg" alt=""></p>
 <p>&#x591A;port&#xFF0C;&#x591A;IP&#xFF1A;</p>
-<pre><code class="lang-bash">118..119 | % { <span class="hljs-variable">$a</span> = <span class="hljs-variable">$_</span>; write&#x2010;host <span class="hljs-string">&quot;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&quot;</span>; write&#x2010;host
-<span class="hljs-string">&quot;192.168.1.<span class="hljs-variable">$a</span>&quot;</span>; 80,445 | % {<span class="hljs-built_in">echo</span> ((new&#x2010;object Net.Sockets.TcpClient).Conn
-ect(<span class="hljs-string">&quot;192.168.1.<span class="hljs-variable">$a</span>&quot;</span>,<span class="hljs-variable">$_</span>)) <span class="hljs-string">&quot;Port <span class="hljs-variable">$_</span> is open&quot;</span>} 2&gt;<span class="hljs-variable">$null</span>}
+<pre class="language-"><code class="lang-bash">118<span class="token punctuation">..</span>119 <span class="token operator">|</span> % <span class="token punctuation">{</span> <span class="token variable">$a</span> <span class="token operator">=</span> <span class="token variable">$_</span><span class="token punctuation">;</span> write&#x2010;host <span class="token string">&quot;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&quot;</span><span class="token punctuation">;</span> write&#x2010;host
+<span class="token string">&quot;192.168.1.<span class="token variable">$a</span>&quot;</span><span class="token punctuation">;</span> 80,445 <span class="token operator">|</span> % <span class="token punctuation">{</span>echo <span class="token punctuation">((</span>new&#x2010;object Net.Sockets.TcpClient<span class="token punctuation">)</span>.Conn
+ect<span class="token punctuation">(</span><span class="token string">&quot;192.168.1.<span class="token variable">$a</span>&quot;</span>,<span class="token variable">$_</span><span class="token punctuation">))</span> <span class="token string">&quot;Port <span class="token variable">$_</span> is open&quot;</span><span class="token punctuation">}</span> 2<span class="token operator">&gt;</span><span class="token variable">$null</span><span class="token punctuation">}</span>
 </code></pre>
 <p><img src="media/fd7db2c22f6d1deac9303d3bdbabcd4f.jpg" alt="">  </p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 16:26
+</span></footer>
                                 
                                 </section>
                             
@@ -1980,7 +2024,7 @@ ect(<span class="hljs-string">&quot;192.168.1.<span class="hljs-variable">$a</sp
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二十二课：基于SMB发现内网存活主机","level":"1.4.22","depth":2,"next":{"title":"第二十三课：基于MSF发现内网存活主机第一季","level":"1.4.23","depth":2,"path":"Chapter1/21-30/23_基于MSF发现内网存活主机第一季.md","ref":"Chapter1/21-30/23_基于MSF发现内网存活主机第一季.md","articles":[]},"previous":{"title":"第二十一课：基于ICMP发现内网存活主机","level":"1.4.21","depth":2,"path":"Chapter1/21-30/21_基于ICMP发现内网存活主机.md","ref":"Chapter1/21-30/21_基于ICMP发现内网存活主机.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/21-30/22_基于SMB发现内网存活主机.md","mtime":"2019-02-23T08:26:35.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二十二课：基于SMB发现内网存活主机","level":"1.4.22","depth":2,"next":{"title":"第二十三课：基于MSF发现内网存活主机第一季","level":"1.4.23","depth":2,"path":"Chapter1/21-30/23_基于MSF发现内网存活主机第一季.md","ref":"Chapter1/21-30/23_基于MSF发现内网存活主机第一季.md","articles":[]},"previous":{"title":"第二十一课：基于ICMP发现内网存活主机","level":"1.4.21","depth":2,"path":"Chapter1/21-30/21_基于ICMP发现内网存活主机.md","ref":"Chapter1/21-30/21_基于ICMP发现内网存活主机.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/21-30/22_基于SMB发现内网存活主机.md","mtime":"2019-02-23T08:26:35.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1990,27 +2034,43 @@ ect(<span class="hljs-string">&quot;192.168.1.<span class="hljs-variable">$a</sp
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

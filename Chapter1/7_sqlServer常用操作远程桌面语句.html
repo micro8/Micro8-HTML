@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第七课：sql server 常用操作远程桌面语句 · GitBook</title>
+        <title>第七课：sql server 常用操作远程桌面语句 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="6_反攻的一次溯源--项目实战3.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1826,43 +1868,45 @@
                                 <h3 id="1&#x3001;&#x662F;&#x5426;&#x5F00;&#x542F;&#x8FDC;&#x7A0B;&#x684C;&#x9762;">1&#x3001;&#x662F;&#x5426;&#x5F00;&#x542F;&#x8FDC;&#x7A0B;&#x684C;&#x9762;</h3>
 <ul>
 <li>1&#xFF1A;&#x8868;&#x793A;&#x5173;&#x95ED;</li>
-<li>0&#xFF1A;&#x8868;&#x793A;&#x5F00;&#x542F;<pre><code class="lang-sql">EXEC master..xp_regread &apos;HKEY_LOCAL_MACHINE&apos;,
-&apos;SYSTEM\CurrentControlSet\Control\Terminal Server&apos;,
-&apos;fDenyTSConnections&apos;
+<li>0&#xFF1A;&#x8868;&#x793A;&#x5F00;&#x542F;<pre class="language-"><code class="lang-sql"><span class="token keyword">EXEC</span> master<span class="token punctuation">.</span><span class="token punctuation">.</span>xp_regread <span class="token string">&apos;HKEY_LOCAL_MACHINE&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;SYSTEM\CurrentControlSet\Control\Terminal Server&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;fDenyTSConnections&apos;</span>
 </code></pre>
 <img src="media/f01ea9712b6f116b14c9b9e75b7d49cd.jpg" alt=""></li>
 </ul>
 <h3 id="2&#x3001;&#x8BFB;&#x53D6;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x7AEF;&#x53E3;">2&#x3001;&#x8BFB;&#x53D6;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x7AEF;&#x53E3;</h3>
-<pre><code class="lang-sql">EXEC master..xp_regread &apos;HKEY_LOCAL_MACHINE&apos;,
-&apos;SYSTEM\CurrentControlSet\Control\TerminalServer\WinStations\RDP-Tcp&apos;,
-&apos;PortNumber&apos;
+<pre class="language-"><code class="lang-sql"><span class="token keyword">EXEC</span> master<span class="token punctuation">.</span><span class="token punctuation">.</span>xp_regread <span class="token string">&apos;HKEY_LOCAL_MACHINE&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;SYSTEM\CurrentControlSet\Control\TerminalServer\WinStations\RDP-Tcp&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;PortNumber&apos;</span>
 </code></pre>
 <p><img src="media/061010d0371ed380f50bbb96911c6d80.jpg" alt=""></p>
 <h3 id="3&#x3001;&#x5F00;&#x542F;&#x8FDC;&#x7A0B;&#x684C;&#x9762;">3&#x3001;&#x5F00;&#x542F;&#x8FDC;&#x7A0B;&#x684C;&#x9762;</h3>
-<pre><code class="lang-sql">EXEC master.dbo.xp_regwrite&apos;HKEY_LOCAL_MACHINE&apos;,
-&apos;SYSTEM\CurrentControlSet\Control\TerminalServer&apos;,
-&apos;fDenyTSConnections&apos;,&apos;REG_DWORD&apos;,0;
+<pre class="language-"><code class="lang-sql"><span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_regwrite<span class="token string">&apos;HKEY_LOCAL_MACHINE&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;SYSTEM\CurrentControlSet\Control\TerminalServer&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;fDenyTSConnections&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;REG_DWORD&apos;</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">;</span>
 </code></pre>
 <p><strong>reg &#x6587;&#x4EF6;&#x5F00;&#x542F;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#xFF1A;</strong></p>
-<pre><code class="lang-reg">Windows Registry Editor Version 5.00HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TerminalServer]
-&quot;fDenyTSConnections&quot;=dword:00000000[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TerminalServer\WinStations\RDP-Tcp]
-&quot;PortNumber&quot;=dword:00000d3d
+<pre class="language-"><code class="lang-ini">Windows Registry Editor Version 5.00HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TerminalServer]
+<span class="token constant">&quot;fDenyTSConnections&quot;</span><span class="token attr-value"><span class="token punctuation">=</span>dword:00000000[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TerminalServer\WinStations\RDP-Tcp]</span>
+<span class="token constant">&quot;PortNumber&quot;</span><span class="token attr-value"><span class="token punctuation">=</span>dword:00000d3d</span>
 </code></pre>
 <p>////
 &#x4FDD;&#x5B58; micropoor.reg&#xFF0C;&#x5E76;&#x6267;&#x884C; regedit /s micropoor.reg</p>
 <p><strong>&#x6CE8;&#xFF1A;&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x6B21;&#x5F00;&#x542F;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#xFF0C;&#x90E8;&#x5206;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x9632;&#x706B;&#x5899;&#x89C4;&#x5219;&#x5141;&#x8BB8;&#x8FDC;&#x7A0B;&#x7AEF;&#x53E3;&#x3002;</strong></p>
-<pre><code class="lang-bash">netsh advfirewall firewall add rule name=<span class="hljs-string">&quot;Remote Desktop&quot;</span> protocol=TCP
-dir=<span class="hljs-keyword">in</span> localport=3389 action=allow
+<pre class="language-"><code class="lang-bash">netsh advfirewall firewall add rule name<span class="token operator">=</span><span class="token string">&quot;Remote Desktop&quot;</span> protocol<span class="token operator">=</span>TCP
+dir<span class="token operator">=</span>in localport<span class="token operator">=</span>3389 action<span class="token operator">=</span>allow
 </code></pre>
 <h3 id="4&#x3001;&#x5173;&#x95ED;&#x8FDC;&#x7A0B;&#x684C;&#x9762;">4&#x3001;&#x5173;&#x95ED;&#x8FDC;&#x7A0B;&#x684C;&#x9762;</h3>
-<pre><code class="lang-sql">EXEC master.dbo.xp_regwrite&apos;HKEY_LOCAL_MACHINE&apos;,
-&apos;SYSTEM\CurrentControlSet\Control\TerminalServer&apos;,
-&apos;fDenyTSConnections&apos;,&apos;REG_DWORD&apos;,1;
+<pre class="language-"><code class="lang-sql"><span class="token keyword">EXEC</span> master<span class="token punctuation">.</span>dbo<span class="token punctuation">.</span>xp_regwrite<span class="token string">&apos;HKEY_LOCAL_MACHINE&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;SYSTEM\CurrentControlSet\Control\TerminalServer&apos;</span><span class="token punctuation">,</span>
+<span class="token string">&apos;fDenyTSConnections&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;REG_DWORD&apos;</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">;</span>
 </code></pre>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-25 20:34
+</span></footer>
                                 
                                 </section>
                             
@@ -1905,7 +1949,7 @@ dir=<span class="hljs-keyword">in</span> localport=3389 action=allow
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第七课：sql server 常用操作远程桌面语句","level":"1.4.7","depth":2,"next":{"title":"第八课：模拟诉求任务攻击","level":"1.4.8","depth":2,"path":"Chapter1/8_模拟诉求任务攻击.md","ref":"Chapter1/8_模拟诉求任务攻击.md","articles":[]},"previous":{"title":"第六课：反攻的一次溯源--项目实战3","level":"1.4.6","depth":2,"path":"Chapter1/6_反攻的一次溯源--项目实战3.md","ref":"Chapter1/6_反攻的一次溯源--项目实战3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/7_sqlServer常用操作远程桌面语句.md","mtime":"2019-02-23T03:54:46.623Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第七课：sql server 常用操作远程桌面语句","level":"1.4.7","depth":2,"next":{"title":"第八课：模拟诉求任务攻击","level":"1.4.8","depth":2,"path":"Chapter1/8_模拟诉求任务攻击.md","ref":"Chapter1/8_模拟诉求任务攻击.md","articles":[]},"previous":{"title":"第六课：反攻的一次溯源--项目实战3","level":"1.4.6","depth":2,"path":"Chapter1/6_反攻的一次溯源--项目实战3.md","ref":"Chapter1/6_反攻的一次溯源--项目实战3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/7_sqlServer常用操作远程桌面语句.md","mtime":"2019-02-25T12:34:47.998Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1915,27 +1959,43 @@ dir=<span class="hljs-keyword">in</span> localport=3389 action=allow
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

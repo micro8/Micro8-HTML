@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第五课：工具介绍-Sqlmap · GitBook</title>
+        <title>第五课：工具介绍-Sqlmap · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="4_Asp代码审计--项目实战2.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,126 +1860,126 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
                                 <p>&#x7531;&#x4E8E;Sqlmap &#x662F;&#x5E38;&#x7528;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x7BC7;&#x7684;&#x7BC7;&#x5E45;&#x8F83;&#x957F;&#xFF0C;&#x8BE6;&#x89E3;&#x4E00;&#x6B21;&#x6240;&#x6709;&#x53C2;&#x6570;&#x3002;</p>
 <h3 id="sqlmap&#x53C2;&#x6570;&#x8BE6;&#x89E3;&#xFF1A;">sqlmap&#x53C2;&#x6570;&#x8BE6;&#x89E3;&#xFF1A;</h3>
-<pre><code class="lang-bash">Usage: python sqlmap.py [options]
+<pre class="language-"><code class="lang-bash">Usage: python sqlmap.py <span class="token punctuation">[</span>options<span class="token punctuation">]</span>
 
 Options&#xFF08;&#x9009;&#x9879;&#xFF09;:
 
--h, --help Show basic <span class="hljs-built_in">help</span> message and <span class="hljs-built_in">exit</span> &#x5C55;&#x793A;&#x5E2E;&#x52A9;&#x6587;&#x6863; &#x53C2;&#x6570;
+-h, --help Show basic <span class="token function">help</span> message and <span class="token keyword">exit</span> &#x5C55;&#x793A;&#x5E2E;&#x52A9;&#x6587;&#x6863; &#x53C2;&#x6570;
 
--hh Show advanced <span class="hljs-built_in">help</span> message and <span class="hljs-built_in">exit</span> &#x5C55;&#x793A;&#x8BE6;&#x7EC6;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x53C2;&#x6570;
+-hh Show advanced <span class="token function">help</span> message and <span class="token keyword">exit</span> &#x5C55;&#x793A;&#x8BE6;&#x7EC6;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x53C2;&#x6570;
 
---version Show program<span class="hljs-string">&apos;s version number and exit &#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x7684;&#x7248;&#x672C;&#x53F7;
+--version Show program&apos;s version number and <span class="token keyword">exit</span> &#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x7684;&#x7248;&#x672C;&#x53F7;
 
--v VERBOSE Verbosity level: 0-6 (default 1) &#x8BE6;&#x7EC6;&#x7EA7;&#x522B;&#xFF1A;0-6&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+-v VERBOSE Verbosity level: 0-6 <span class="token punctuation">(</span>default 1<span class="token punctuation">)</span> &#x8BE6;&#x7EC6;&#x7EA7;&#x522B;&#xFF1A;0-6&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
 
 Target&#xFF08;&#x76EE;&#x6807;&#xFF09;:
 
-At least one of these options has to be provided to define the target(s)
+At least one of these options has to be provided to define the target<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 
--d DIRECT Connection string for direct database connection &#x6307;&#x5B9A;&#x5177;&#x4F53;&#x6570;&#x636E;&#x5E93;
+-d DIRECT Connection string <span class="token keyword">for</span> direct database connection &#x6307;&#x5B9A;&#x5177;&#x4F53;&#x6570;&#x636E;&#x5E93;
 
--u URL, --url=URL Target URL (e.g. &quot;http://www.site.com/vuln.php?id=1&quot;)&#x76EE;&#x6807;URL
+-u URL, --url<span class="token operator">=</span>URL Target URL <span class="token punctuation">(</span>e.g. <span class="token string">&quot;http://www.site.com/vuln.php?id=1&quot;</span><span class="token punctuation">)</span>&#x76EE;&#x6807;URL
 
--l LOGFILE Parse target(s) from Burp or WebScarab proxy log file &#x89E3;&#x6790;&#x76EE;&#x6807;(s)&#x4ECE;Burp&#x6216;WebScarab&#x4EE3;&#x7406;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;
+-l LOGFILE Parse target<span class="token punctuation">(</span>s<span class="token punctuation">)</span> from Burp or WebScarab proxy log <span class="token function">file</span> &#x89E3;&#x6790;&#x76EE;&#x6807;<span class="token punctuation">(</span>s<span class="token punctuation">)</span>&#x4ECE;Burp&#x6216;WebScarab&#x4EE3;&#x7406;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;
 
--x SITEMAPURL Parse target(s) from remote sitemap(.xml) file &#x89E3;&#x6790;&#x76EE;&#x6807;(s)&#x4ECE;&#x8FDC;&#x7A0B;&#x7AD9;&#x70B9;&#x5730;&#x56FE;&#x6587;&#x4EF6;(.xml)
+-x SITEMAPURL Parse target<span class="token punctuation">(</span>s<span class="token punctuation">)</span> from remote sitemap<span class="token punctuation">(</span>.xml<span class="token punctuation">)</span> <span class="token function">file</span> &#x89E3;&#x6790;&#x76EE;&#x6807;<span class="token punctuation">(</span>s<span class="token punctuation">)</span>&#x4ECE;&#x8FDC;&#x7A0B;&#x7AD9;&#x70B9;&#x5730;&#x56FE;&#x6587;&#x4EF6;<span class="token punctuation">(</span>.xml<span class="token punctuation">)</span>
 
--m BULKFILE Scan multiple targets given in a textual file &#x626B;&#x63CF;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x7ED9;&#x51FA;&#x7684;&#x591A;&#x4E2A;&#x76EE;&#x6807;
+-m BULKFILE Scan multiple targets given <span class="token keyword">in</span> a textual <span class="token function">file</span> &#x626B;&#x63CF;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x7ED9;&#x51FA;&#x7684;&#x591A;&#x4E2A;&#x76EE;&#x6807;
 
--r REQUESTFILE Load HTTP request from a file &#x4ECE;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;HTTP&#x8BF7;&#x6C42; &#xFF0C;&#x591A;&#x7528;&#x4E8E;post&#x6CE8;&#x5165;&#x3002;
+-r REQUESTFILE Load HTTP request from a <span class="token function">file</span> &#x4ECE;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;HTTP&#x8BF7;&#x6C42; &#xFF0C;&#x591A;&#x7528;&#x4E8E;post&#x6CE8;&#x5165;&#x3002;
 
 -g GOOGLEDORK Process Google dork results as target URLs &#x5904;&#x7406;Google&#x7684;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x76EE;&#x6807;URL&#x3002;
 
--c CONFIGFILE Load options from a configuration INI file &#x4ECE;INI&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x9009;&#x9879;&#x3002;
+-c CONFIGFILE Load options from a configuration INI <span class="token function">file</span> &#x4ECE;INI&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x9009;&#x9879;&#x3002;
 
 Request&#xFF08;&#x8BF7;&#x6C42;&#xFF09;:
 
 These options can be used to specify how to connect to the target URL &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x8FDE;&#x63A5;&#x5230;&#x76EE;&#x6807;URL&#x3002;
 
---method=METHOD Force usage of given HTTP method (e.g. PUT) &#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;HTTP&#x65B9;&#x6CD5;&#xFF08;e.g. PUT&#xFF09;
+--method<span class="token operator">=</span>METHOD Force usage of given HTTP method <span class="token punctuation">(</span>e.g. PUT<span class="token punctuation">)</span> &#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;HTTP&#x65B9;&#x6CD5;&#xFF08;e.g. PUT&#xFF09;
 
---data=DATA Data string to be sent through POST &#x901A;&#x8FC7;POST&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5B57;&#x7B26;&#x4E32;
+--data<span class="token operator">=</span>DATA Data string to be sent through POST &#x901A;&#x8FC7;POST&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5B57;&#x7B26;&#x4E32;
 
---param-del=PARA.. Character used for splitting parameter values &#x7528;&#x4E8E;&#x62C6;&#x5206;&#x53C2;&#x6570;&#x503C;&#x7684;&#x5B57;&#x7B26;
+--param-del<span class="token operator">=</span>PARA<span class="token punctuation">..</span> Character used <span class="token keyword">for</span> splitting parameter values &#x7528;&#x4E8E;&#x62C6;&#x5206;&#x53C2;&#x6570;&#x503C;&#x7684;&#x5B57;&#x7B26;
 
---cookie=COOKIE HTTP Cookie header value HTTP Cookie&#x5934;&#x7684;&#x503C;
+--cookie<span class="token operator">=</span>COOKIE HTTP Cookie header value HTTP Cookie&#x5934;&#x7684;&#x503C;
 
---cookie-del=COO.. Character used for splitting cookie values &#x7528;&#x4E8E;&#x5206;&#x5272;Cookie&#x503C;&#x7684;&#x5B57;&#x7B26;
+--cookie-del<span class="token operator">=</span>COO<span class="token punctuation">..</span> Character used <span class="token keyword">for</span> splitting cookie values &#x7528;&#x4E8E;&#x5206;&#x5272;Cookie&#x503C;&#x7684;&#x5B57;&#x7B26;
 
---load-cookies=L.. File containing cookies in Netscape/wget format&#x5305;&#x542B;Netscape / wget&#x683C;&#x5F0F;&#x7684;cookie&#x7684;&#x6587;&#x4EF6;
+--load-cookies<span class="token operator">=</span>L<span class="token punctuation">..</span> File containing cookies <span class="token keyword">in</span> Netscape/wget format&#x5305;&#x542B;Netscape / wget&#x683C;&#x5F0F;&#x7684;cookie&#x7684;&#x6587;&#x4EF6;
 
 --drop-set-cookie Ignore Set-Cookie header from response&#x4ECE;&#x54CD;&#x5E94;&#x4E2D;&#x5FFD;&#x7565;Set-Cookie&#x5934;
 
---user-agent=AGENT HTTP User-Agent header value&#x6307;&#x5B9A; HTTP User - Agent&#x5934;
+--user-agent<span class="token operator">=</span>AGENT HTTP User-Agent header value&#x6307;&#x5B9A; HTTP User - Agent&#x5934;
 
 --random-agent Use randomly selected HTTP User-Agent header value &#x4F7F;&#x7528;&#x968F;&#x673A;&#x9009;&#x5B9A;&#x7684;HTTP User - Agent&#x5934;
 
---host=HOST HTTP Host header value HTTP&#x4E3B;&#x673A;&#x5934;&#x503C;
+--host<span class="token operator">=</span>HOST HTTP Host header value HTTP&#x4E3B;&#x673A;&#x5934;&#x503C;
 
---referer=REFERER HTTP Referer header value &#x6307;&#x5B9A; HTTP Referer&#x5934;
+--referer<span class="token operator">=</span>REFERER HTTP Referer header value &#x6307;&#x5B9A; HTTP Referer&#x5934;
 
--H HEADER, --hea.. Extra header (e.g. &quot;X-Forwarded-For: 127.0.0.1&quot;)&#x989D;&#x5916;header
+-H HEADER, --hea<span class="token punctuation">..</span> Extra header <span class="token punctuation">(</span>e.g. <span class="token string">&quot;X-Forwarded-For: 127.0.0.1&quot;</span><span class="token punctuation">)</span>&#x989D;&#x5916;header
 
---headers=HEADERS Extra headers (e.g. &quot;Accept-Language: fr\\nETag: 123&quot;)&#x989D;&#x5916;header
+--headers<span class="token operator">=</span>HEADERS Extra headers <span class="token punctuation">(</span>e.g. <span class="token string">&quot;Accept-Language: fr\\nETag: 123&quot;</span><span class="token punctuation">)</span>&#x989D;&#x5916;header
 
---auth-type=AUTH.. HTTP authentication type (Basic, Digest, NTLM or PKI)HTTP &#x8BA4;&#x8BC1;&#x7C7B;&#x578B;(Basic, Digest, NTLM or PKI)
+--auth-type<span class="token operator">=</span>AUTH<span class="token punctuation">..</span> HTTP authentication <span class="token function">type</span> <span class="token punctuation">(</span>Basic, Digest, NTLM or PKI<span class="token punctuation">)</span>HTTP &#x8BA4;&#x8BC1;&#x7C7B;&#x578B;<span class="token punctuation">(</span>Basic, Digest, NTLM or PKI<span class="token punctuation">)</span>
 
---auth-cred=AUTH.. HTTP authentication credentials (name:password) HTTP&#x8BA4;&#x8BC1;&#x51ED;&#x8BC1;(name:password)
+--auth-cred<span class="token operator">=</span>AUTH<span class="token punctuation">..</span> HTTP authentication credentials <span class="token punctuation">(</span>name:password<span class="token punctuation">)</span> HTTP&#x8BA4;&#x8BC1;&#x51ED;&#x8BC1;<span class="token punctuation">(</span>name:password<span class="token punctuation">)</span>
 
---auth-file=AUTH.. HTTP authentication PEM cert/private key file HTTP&#x8BA4;&#x8BC1; PEM&#x8BA4;&#x8BC1;/&#x79C1;&#x94A5;&#x6587;&#x4EF6;
+--auth-file<span class="token operator">=</span>AUTH<span class="token punctuation">..</span> HTTP authentication PEM cert/private key <span class="token function">file</span> HTTP&#x8BA4;&#x8BC1; PEM&#x8BA4;&#x8BC1;/&#x79C1;&#x94A5;&#x6587;&#x4EF6;
 
---ignore-401 Ignore HTTP Error 401 (Unauthorized)&#x5FFD;&#x7565;HTTP&#x9519;&#x8BEF;401
+--ignore-401 Ignore HTTP Error 401 <span class="token punctuation">(</span>Unauthorized<span class="token punctuation">)</span>&#x5FFD;&#x7565;HTTP&#x9519;&#x8BEF;401
 
---proxy=PROXY Use a proxy to connect to the target URL &#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x8FDE;&#x63A5;&#x5230;&#x76EE;&#x6807;&#x7F51;&#x5740;
+--proxy<span class="token operator">=</span>PROXY Use a proxy to connect to the target URL &#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x8FDE;&#x63A5;&#x5230;&#x76EE;&#x6807;&#x7F51;&#x5740;
 
---proxy-cred=PRO.. Proxy authentication credentials (name:password)&#x4EE3;&#x7406;&#x8BA4;&#x8BC1;&#x8BC1;&#x4E66;(name:password)
+--proxy-cred<span class="token operator">=</span>PRO<span class="token punctuation">..</span> Proxy authentication credentials <span class="token punctuation">(</span>name:password<span class="token punctuation">)</span>&#x4EE3;&#x7406;&#x8BA4;&#x8BC1;&#x8BC1;&#x4E66;<span class="token punctuation">(</span>name:password<span class="token punctuation">)</span>
 
---proxy-file=PRO.. Load proxy list from a file &#x4ECE;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x4EE3;&#x7406;&#x5217;&#x8868;
+--proxy-file<span class="token operator">=</span>PRO<span class="token punctuation">..</span> Load proxy list from a <span class="token function">file</span> &#x4ECE;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x4EE3;&#x7406;&#x5217;&#x8868;
 
 --ignore-proxy Ignore system default proxy settings &#x5FFD;&#x7565;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x4EE3;&#x7406;&#x8BBE;&#x7F6E;
 
 --tor Use Tor anonymity network &#x4F7F;&#x7528;Tor&#x533F;&#x540D;&#x7F51;&#x7EDC;
 
---tor-port=TORPORT Set Tor proxy port other than default &#x8BBE;&#x7F6E;Tor&#x4EE3;&#x7406;&#x7AEF;&#x53E3;&#x800C;&#x4E0D;&#x662F;&#x9ED8;&#x8BA4;&#x503C;
+--tor-port<span class="token operator">=</span>TORPORT Set Tor proxy port other than default &#x8BBE;&#x7F6E;Tor&#x4EE3;&#x7406;&#x7AEF;&#x53E3;&#x800C;&#x4E0D;&#x662F;&#x9ED8;&#x8BA4;&#x503C;
 
---tor-type=TORTYPE Set Tor proxy type (HTTP (default), SOCKS4 or SOCKS5)&#x8BBE;&#x7F6E;Tor&#x4EE3;&#x7406;&#x7C7B;&#x578B;
+--tor-type<span class="token operator">=</span>TORTYPE Set Tor proxy <span class="token function">type</span> <span class="token punctuation">(</span>HTTP <span class="token punctuation">(</span>default<span class="token punctuation">)</span>, SOCKS4 or SOCKS5<span class="token punctuation">)</span>&#x8BBE;&#x7F6E;Tor&#x4EE3;&#x7406;&#x7C7B;&#x578B;
 
---check-tor Check to see if Tor is used properly &#x68C0;&#x67E5;Tor&#x662F;&#x5426;&#x6B63;&#x786E;&#x4F7F;&#x7528;
+--check-tor Check to see <span class="token keyword">if</span> Tor is used properly &#x68C0;&#x67E5;Tor&#x662F;&#x5426;&#x6B63;&#x786E;&#x4F7F;&#x7528;
 
---delay=DELAY Delay in seconds between each HTTP request&#x6BCF;&#x4E2A;HTTP&#x8BF7;&#x6C42;&#x4E4B;&#x95F4;&#x7684;&#x5EF6;&#x8FDF;&#xFF08;&#x79D2;&#xFF09;
+--delay<span class="token operator">=</span>DELAY Delay <span class="token keyword">in</span> seconds between each HTTP request&#x6BCF;&#x4E2A;HTTP&#x8BF7;&#x6C42;&#x4E4B;&#x95F4;&#x7684;&#x5EF6;&#x8FDF;&#xFF08;&#x79D2;&#xFF09;
 
---timeout=TIMEOUT Seconds to wait before timeout connection (default 30) &#x79D2;&#x8D85;&#x65F6;&#x8FDE;&#x63A5;&#x524D;&#x7B49;&#x5F85;&#xFF08;&#x9ED8;&#x8BA4;30&#xFF09;
+--timeout<span class="token operator">=</span>TIMEOUT Seconds to <span class="token function">wait</span> before <span class="token function">timeout</span> connection <span class="token punctuation">(</span>default 30<span class="token punctuation">)</span> &#x79D2;&#x8D85;&#x65F6;&#x8FDE;&#x63A5;&#x524D;&#x7B49;&#x5F85;&#xFF08;&#x9ED8;&#x8BA4;30&#xFF09;
 
---retries=RETRIES Retries when the connection timeouts (default 3) &#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x65F6;&#x91CD;&#x8BD5;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;3&#xFF09;
+--retries<span class="token operator">=</span>RETRIES Retries when the connection timeouts <span class="token punctuation">(</span>default 3<span class="token punctuation">)</span> &#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x65F6;&#x91CD;&#x8BD5;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;3&#xFF09;
 
---randomize=RPARAM Randomly change value for given parameter(s)&#x968F;&#x673A;&#x66F4;&#x6539;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x503C;(s)
+--randomize<span class="token operator">=</span>RPARAM Randomly change value <span class="token keyword">for</span> given parameter<span class="token punctuation">(</span>s<span class="token punctuation">)</span>&#x968F;&#x673A;&#x66F4;&#x6539;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x503C;<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 
---safe-url=SAFEURL URL address to visit frequently during testing&#x5728;&#x6D4B;&#x8BD5;&#x671F;&#x95F4;&#x9891;&#x7E41;&#x8BBF;&#x95EE;&#x7684;URL&#x5730;&#x5740;
+--safe-url<span class="token operator">=</span>SAFEURL URL address to visit frequently during testing&#x5728;&#x6D4B;&#x8BD5;&#x671F;&#x95F4;&#x9891;&#x7E41;&#x8BBF;&#x95EE;&#x7684;URL&#x5730;&#x5740;
 
---safe-post=SAFE.. POST data to send to a safe URLPOST&#x6570;&#x636E;&#x53D1;&#x9001;&#x5230;&#x5B89;&#x5168;URL
+--safe-post<span class="token operator">=</span>SAFE<span class="token punctuation">..</span> POST data to send to a safe URLPOST&#x6570;&#x636E;&#x53D1;&#x9001;&#x5230;&#x5B89;&#x5168;URL
 
---safe-req=SAFER.. Load safe HTTP request from a file&#x4ECE;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x5B89;&#x5168;HTTP&#x8BF7;&#x6C42;
+--safe-req<span class="token operator">=</span>SAFER<span class="token punctuation">..</span> Load safe HTTP request from a file&#x4ECE;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x5B89;&#x5168;HTTP&#x8BF7;&#x6C42;
 
---safe-freq=SAFE.. Test requests between two visits to a given safe URL&#x5728;&#x4E24;&#x6B21;&#x8BBF;&#x95EE;&#x7ED9;&#x5B9A;&#x5B89;&#x5168;&#x7F51;&#x5740;&#x4E4B;&#x95F4;&#x6D4B;&#x8BD5;&#x8BF7;&#x6C42;
+--safe-freq<span class="token operator">=</span>SAFE<span class="token punctuation">..</span> Test requests between two visits to a given safe URL&#x5728;&#x4E24;&#x6B21;&#x8BBF;&#x95EE;&#x7ED9;&#x5B9A;&#x5B89;&#x5168;&#x7F51;&#x5740;&#x4E4B;&#x95F4;&#x6D4B;&#x8BD5;&#x8BF7;&#x6C42;
 
 --skip-urlencode Skip URL encoding of payload data &#x8DF3;&#x8FC7;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x6570;&#x636E;&#x7684;URL&#x7F16;&#x7801;
 
---csrf-token=CSR.. Parameter used to hold anti-CSRF token&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;anti-CSRF&#x4EE4;&#x724C;
+--csrf-token<span class="token operator">=</span>CSR<span class="token punctuation">..</span> Parameter used to hold anti-CSRF token&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;anti-CSRF&#x4EE4;&#x724C;
 
---csrf-url=CSRFURL URL address to visit to extract anti-CSRF token&#x63D0;&#x53D6;anti-CSRF URL&#x5730;&#x5740;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;
+--csrf-url<span class="token operator">=</span>CSRFURL URL address to visit to extract anti-CSRF token&#x63D0;&#x53D6;anti-CSRF URL&#x5730;&#x5740;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;
 
 --force-ssl Force usage of SSL/HTTPS &#x5F3A;&#x5236;&#x4F7F;&#x7528;SSL /HTTPS
 
 --hpp Use HTTP parameter pollution method&#x4F7F;&#x7528;HTTP&#x53C2;&#x6570;pollution&#x7684;&#x65B9;&#x6CD5;
 
---eval=EVALCODE Evaluate provided Python code before the request (e.g. &#x8BC4;&#x4F30;&#x8BF7;&#x6C42;&#x4E4B;&#x524D;&#x63D0;&#x4F9B;Python&#x4EE3;&#x7801;&quot;import hashlib;id2=hashlib.md5(id).hexdigest()&quot;)
+--eval<span class="token operator">=</span>EVALCODE Evaluate provided Python code before the request <span class="token punctuation">(</span>e.g. &#x8BC4;&#x4F30;&#x8BF7;&#x6C42;&#x4E4B;&#x524D;&#x63D0;&#x4F9B;Python&#x4EE3;&#x7801;<span class="token string">&quot;import hashlib;id2=hashlib.md5(id).hexdigest()&quot;</span><span class="token punctuation">)</span>
 
 Optimization&#xFF08;&#x4F18;&#x5316;&#xFF09;:
 
@@ -1947,61 +1989,61 @@ These options can be used to optimize the performance of sqlmap &#x8FD9;&#x4E9B;
 
 --predict-output Predict common queries output &#x9884;&#x6D4B;&#x5E38;&#x89C1;&#x7684;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;
 
---keep-alive Use persistent HTTP(s) connections&#x4F7F;&#x7528;&#x6301;&#x4E45;&#x7684;HTTP&#xFF08;S&#xFF09;&#x8FDE;&#x63A5;
+--keep-alive Use persistent HTTP<span class="token punctuation">(</span>s<span class="token punctuation">)</span> connections&#x4F7F;&#x7528;&#x6301;&#x4E45;&#x7684;HTTP&#xFF08;S&#xFF09;&#x8FDE;&#x63A5;
 
 --null-connection Retrieve page length without actual HTTP response body &#x4ECE;&#x6CA1;&#x6709;&#x5B9E;&#x9645;&#x7684;HTTP&#x54CD;&#x5E94;&#x4F53;&#x4E2D;&#x68C0;&#x7D22;&#x9875;&#x9762;&#x957F;&#x5EA6;
 
---threads=THREADS Max number of concurrent HTTP(s) requests (default 1)&#x6700;&#x5927;&#x7684;HTTP&#xFF08;S&#xFF09;&#x8BF7;&#x6C42;&#x5E76;&#x53D1;&#x91CF;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+--threads<span class="token operator">=</span>THREADS Max number of concurrent HTTP<span class="token punctuation">(</span>s<span class="token punctuation">)</span> requests <span class="token punctuation">(</span>default 1<span class="token punctuation">)</span>&#x6700;&#x5927;&#x7684;HTTP&#xFF08;S&#xFF09;&#x8BF7;&#x6C42;&#x5E76;&#x53D1;&#x91CF;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
 
 Injection&#xFF08;&#x6CE8;&#x5165;&#xFF09;:
 
-These options can be used to specify which parameters to test for, provide custom injection payloads and optional tampering scripts &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6D4B;&#x8BD5;&#x54EA;&#x4E9B;&#x53C2;&#x6570;&#xFF0C; &#x63D0;&#x4F9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6CE8;&#x5165;payloads&#x548C;&#x53EF;&#x9009;&#x7BE1;&#x6539;&#x811A;&#x672C;&#x3002;
+These options can be used to specify <span class="token function">which</span> parameters to <span class="token function">test</span> for, provide custom injection payloads and optional tampering scripts &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6D4B;&#x8BD5;&#x54EA;&#x4E9B;&#x53C2;&#x6570;&#xFF0C; &#x63D0;&#x4F9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6CE8;&#x5165;payloads&#x548C;&#x53EF;&#x9009;&#x7BE1;&#x6539;&#x811A;&#x672C;&#x3002;
 
--p TESTPARAMETER Testable parameter(s) &#x53EF;&#x6D4B;&#x8BD5;&#x7684;&#x53C2;&#x6570;&#xFF08;S&#xFF09;
+-p TESTPARAMETER Testable parameter<span class="token punctuation">(</span>s<span class="token punctuation">)</span> &#x53EF;&#x6D4B;&#x8BD5;&#x7684;&#x53C2;&#x6570;&#xFF08;S&#xFF09;
 
---skip=SKIP Skip testing for given parameter(s)&#x8DF3;&#x8FC7;&#x5BF9;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x6D4B;&#x8BD5;
+--skip<span class="token operator">=</span>SKIP Skip testing <span class="token keyword">for</span> given parameter<span class="token punctuation">(</span>s<span class="token punctuation">)</span>&#x8DF3;&#x8FC7;&#x5BF9;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x6D4B;&#x8BD5;
 
 --skip-static Skip testing parameters that not appear to be dynamic &#x8DF3;&#x8FC7;&#x6D4B;&#x8BD5;&#x4E0D;&#x663E;&#x793A;&#x4E3A;&#x52A8;&#x6001;&#x7684;&#x53C2;&#x6570;
 
---param-exclude=.. Regexp to exclude parameters from testing (e.g. &quot;ses&quot;)
-&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6392;&#x9664;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF08;e.g. &quot;ses&quot;&#xFF09;
+--param-exclude<span class="token operator">=</span><span class="token punctuation">..</span> Regexp to exclude parameters from testing <span class="token punctuation">(</span>e.g. <span class="token string">&quot;ses&quot;</span><span class="token punctuation">)</span>
+&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6392;&#x9664;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF08;e.g. <span class="token string">&quot;ses&quot;</span>&#xFF09;
 
---dbms=DBMS Force back-end DBMS to this value &#x5F3A;&#x5236;&#x540E;&#x7AEF;&#x7684;DBMS&#x4E3A;&#x6B64;&#x503C;
+--dbms<span class="token operator">=</span>DBMS Force back-end DBMS to this value &#x5F3A;&#x5236;&#x540E;&#x7AEF;&#x7684;DBMS&#x4E3A;&#x6B64;&#x503C;
 
---dbms-cred=DBMS.. DBMS authentication credentials (user:password)DBMS&#x8BA4;&#x8BC1;&#x51ED;&#x8BC1;(user:password)
+--dbms-cred<span class="token operator">=</span>DBMS<span class="token punctuation">..</span> DBMS authentication credentials <span class="token punctuation">(</span>user:password<span class="token punctuation">)</span>DBMS&#x8BA4;&#x8BC1;&#x51ED;&#x8BC1;<span class="token punctuation">(</span>user:password<span class="token punctuation">)</span>
 
---os=OS Force back-end DBMS operating system to this value &#x5F3A;&#x5236;&#x540E;&#x7AEF;&#x7684;DBMS&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8FD9;&#x4E2A;&#x503C;
+--os<span class="token operator">=</span>OS Force back-end DBMS operating system to this value &#x5F3A;&#x5236;&#x540E;&#x7AEF;&#x7684;DBMS&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8FD9;&#x4E2A;&#x503C;
 
---invalid-bignum Use big numbers for invalidating values &#x4F7F;&#x7528;&#x5927;&#x6570;&#x5B57;&#x4F7F;&#x503C;&#x65E0;&#x6548;
+--invalid-bignum Use big numbers <span class="token keyword">for</span> invalidating values &#x4F7F;&#x7528;&#x5927;&#x6570;&#x5B57;&#x4F7F;&#x503C;&#x65E0;&#x6548;
 
---invalid-logical Use logical operations for invalidating values&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x4F7F;&#x503C;&#x65E0;&#x6548;
+--invalid-logical Use logical operations <span class="token keyword">for</span> invalidating values&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x4F7F;&#x503C;&#x65E0;&#x6548;
 
---invalid-string Use random strings for invalidating values&#x4F7F;&#x7528;&#x968F;&#x673A;&#x5B57;&#x7B26;&#x4E32;&#x4F7F;&#x503C;&#x65E0;&#x6548;
+--invalid-string Use random strings <span class="token keyword">for</span> invalidating values&#x4F7F;&#x7528;&#x968F;&#x673A;&#x5B57;&#x7B26;&#x4E32;&#x4F7F;&#x503C;&#x65E0;&#x6548;
 
 --no-cast Turn off payload casting mechanism &#x5173;&#x95ED;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x94F8;&#x9020;&#x673A;&#x5236;
 
 --no-escape Turn off string escaping mechanism &#x5173;&#x95ED;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x4E49;&#x673A;&#x5236;
 
---prefix=PREFIX Injection payload prefix string &#x6CE8;&#x5165;payload&#x5B57;&#x7B26;&#x4E32;&#x524D;&#x7F00;
+--prefix<span class="token operator">=</span>PREFIX Injection payload prefix string &#x6CE8;&#x5165;payload&#x5B57;&#x7B26;&#x4E32;&#x524D;&#x7F00;
 
---suffix=SUFFIX Injection payload suffix string &#x6CE8;&#x5165;payload&#x5B57;&#x7B26;&#x4E32;&#x540E;&#x7F00;
+--suffix<span class="token operator">=</span>SUFFIX Injection payload suffix string &#x6CE8;&#x5165;payload&#x5B57;&#x7B26;&#x4E32;&#x540E;&#x7F00;
 
---tamper=TAMPER Use given script(s) for tampering injection data&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;&#x811A;&#x672C;&#xFF08;S&#xFF09;&#x7BE1;&#x6539;&#x6CE8;&#x5165;&#x6570;&#x636E;
+--tamper<span class="token operator">=</span>TAMPER Use given script<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">for</span> tampering injection data&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;&#x811A;&#x672C;&#xFF08;S&#xFF09;&#x7BE1;&#x6539;&#x6CE8;&#x5165;&#x6570;&#x636E;
 
 Detection&#xFF08;&#x68C0;&#x6D4B;&#xFF09;:
 These options can be used to customize the detection phase &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5728;SQL&#x76F2;&#x6CE8;&#x65F6;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x548C;&#x6BD4;&#x8F83;HTTP&#x54CD;&#x5E94;&#x9875;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x3002;
 
---level=LEVEL Level of tests to perform (1-5, default 1) &#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x7B49;&#x7EA7;&#xFF08;1-5&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+--level<span class="token operator">=</span>LEVEL Level of tests to perform <span class="token punctuation">(</span>1-5, default 1<span class="token punctuation">)</span> &#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x7B49;&#x7EA7;&#xFF08;1-5&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
 
---risk=RISK Risk of tests to perform (1-3, default 1)&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x98CE;&#x9669;&#xFF08;0-3&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+--risk<span class="token operator">=</span>RISK Risk of tests to perform <span class="token punctuation">(</span>1-3, default 1<span class="token punctuation">)</span>&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x98CE;&#x9669;&#xFF08;0-3&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
 
---string=STRING String to match when query is evaluated to True &#x67E5;&#x8BE2;&#x65F6;&#x6709;&#x6548;&#x65F6;&#x5728;&#x9875;&#x9762;&#x5339;&#x914D;&#x5B57;&#x7B26;&#x4E32;
+--string<span class="token operator">=</span>STRING String to match when query is evaluated to True &#x67E5;&#x8BE2;&#x65F6;&#x6709;&#x6548;&#x65F6;&#x5728;&#x9875;&#x9762;&#x5339;&#x914D;&#x5B57;&#x7B26;&#x4E32;
 
---not-string=NOT.. String to match when query is evaluated to False &#x5F53;&#x67E5;&#x8BE2;&#x6C42;&#x503C;&#x4E3A;&#x65E0;&#x6548;&#x65F6;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;
+--not-string<span class="token operator">=</span>NOT<span class="token punctuation">..</span> String to match when query is evaluated to False &#x5F53;&#x67E5;&#x8BE2;&#x6C42;&#x503C;&#x4E3A;&#x65E0;&#x6548;&#x65F6;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;
 
---regexp=REGEXP Regexp to match when query is evaluated to True &#x67E5;&#x8BE2;&#x65F6;&#x6709;&#x6548;&#x65F6;&#x5728;&#x9875;&#x9762;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;
+--regexp<span class="token operator">=</span>REGEXP Regexp to match when query is evaluated to True &#x67E5;&#x8BE2;&#x65F6;&#x6709;&#x6548;&#x65F6;&#x5728;&#x9875;&#x9762;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;
 
---code=CODE HTTP code to match when query is evaluated to True &#x5F53;&#x67E5;&#x8BE2;&#x6C42;&#x503C;&#x4E3A;True&#x65F6;&#x5339;&#x914D;&#x7684;HTTP&#x4EE3;&#x7801;
+--code<span class="token operator">=</span>CODE HTTP code to match when query is evaluated to True &#x5F53;&#x67E5;&#x8BE2;&#x6C42;&#x503C;&#x4E3A;True&#x65F6;&#x5339;&#x914D;&#x7684;HTTP&#x4EE3;&#x7801;
 
 --text-only Compare pages based only on the textual content &#x4EC5;&#x57FA;&#x4E8E;&#x5728;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x6BD4;&#x8F83;&#x7F51;&#x9875;
 
@@ -2010,19 +2052,19 @@ These options can be used to customize the detection phase &#x8FD9;&#x4E9B;&#x90
 Techniques&#xFF08;&#x6280;&#x5DE7;&#xFF09;:
 These options can be used to tweak testing of specific SQL injection techniques &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x8C03;&#x6574;&#x5177;&#x4F53;&#x7684;SQL&#x6CE8;&#x5165;&#x6D4B;&#x8BD5;&#x3002;
 
---technique=TECH SQL injection techniques to use (default &quot;BEUSTQ&quot;) SQL &#x6CE8;&#x5165;&#x6280;&#x672F;&#x6D4B;&#x8BD5;&#xFF08;&#x9ED8;&#x8BA4;BEUST&#xFF09;
+--technique<span class="token operator">=</span>TECH SQL injection techniques to use <span class="token punctuation">(</span>default <span class="token string">&quot;BEUSTQ&quot;</span><span class="token punctuation">)</span> SQL &#x6CE8;&#x5165;&#x6280;&#x672F;&#x6D4B;&#x8BD5;&#xFF08;&#x9ED8;&#x8BA4;BEUST&#xFF09;
 
---time-sec=TIMESEC Seconds to delay the DBMS response (default 5) DBMS&#x54CD;&#x5E94;&#x7684;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;5&#x79D2;&#xFF09;
+--time-sec<span class="token operator">=</span>TIMESEC Seconds to delay the DBMS response <span class="token punctuation">(</span>default 5<span class="token punctuation">)</span> DBMS&#x54CD;&#x5E94;&#x7684;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;5&#x79D2;&#xFF09;
 
---union-cols=UCOLS Range of columns to test for UNION query SQL injection &#x5B9A;&#x5217;&#x8303;&#x56F4;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;UNION&#x67E5;&#x8BE2;&#x6CE8;&#x5165;
+--union-cols<span class="token operator">=</span>UCOLS Range of columns to <span class="token function">test</span> <span class="token keyword">for</span> UNION query SQL injection &#x5B9A;&#x5217;&#x8303;&#x56F4;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;UNION&#x67E5;&#x8BE2;&#x6CE8;&#x5165;
 
---union-char=UCHAR Character to use for bruteforcing number of columns &#x7528;&#x4E8E;&#x66B4;&#x529B;&#x731C;&#x89E3;&#x5217;&#x6570;&#x7684;&#x5B57;&#x7B26;
+--union-char<span class="token operator">=</span>UCHAR Character to use <span class="token keyword">for</span> bruteforcing number of columns &#x7528;&#x4E8E;&#x66B4;&#x529B;&#x731C;&#x89E3;&#x5217;&#x6570;&#x7684;&#x5B57;&#x7B26;
 
---union-from=UFROM Table to use in FROM part of UNION query SQL injection  &#x8981;&#x5728;UNION&#x67E5;&#x8BE2;SQL&#x6CE8;&#x5165;&#x7684;FROM&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x7684;&#x8868;
+--union-from<span class="token operator">=</span>UFROM Table to use <span class="token keyword">in</span> FROM part of UNION query SQL injection  &#x8981;&#x5728;UNION&#x67E5;&#x8BE2;SQL&#x6CE8;&#x5165;&#x7684;FROM&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x7684;&#x8868;
 
---dns-domain=DNS.. Domain name used for DNS exfiltration attack &#x57DF;&#x540D;&#x7528;&#x4E8E;DNS&#x6F0F;&#x51FA;&#x653B;&#x51FB;
+--dns-domain<span class="token operator">=</span>DNS<span class="token punctuation">..</span> Domain name used <span class="token keyword">for</span> DNS exfiltration attack &#x57DF;&#x540D;&#x7528;&#x4E8E;DNS&#x6F0F;&#x51FA;&#x653B;&#x51FB;
 
---second-order=S.. Resulting page URL searched for second-order response &#x751F;&#x6210;&#x9875;&#x9762;&#x7684;URL&#x641C;&#x7D22;&#x4E3A;second-order&#x54CD;&#x5E94;
+--second-order<span class="token operator">=</span>S<span class="token punctuation">..</span> Resulting page URL searched <span class="token keyword">for</span> second-order response &#x751F;&#x6210;&#x9875;&#x9762;&#x7684;URL&#x641C;&#x7D22;&#x4E3A;second-order&#x54CD;&#x5E94;
 
 Fingerprint&#xFF08;&#x6307;&#x7EB9;&#xFF09;:
 
@@ -2030,7 +2072,7 @@ Fingerprint&#xFF08;&#x6307;&#x7EB9;&#xFF09;:
 
 Enumeration&#xFF08;&#x679A;&#x4E3E;&#xFF09;:
 
-These options can be used to enumerate the back-end database management system information, structure and data contained in the tables. Moreover you can run your own SQL statements
+These options can be used to enumerate the back-end database management system information, structure and data contained <span class="token keyword">in</span> the tables. Moreover you can run your own SQL statements
 &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5217;&#x4E3E;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x4FE1;&#x606F;&#x3001;&#x8868;&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x6570;&#x636E;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x60A8;&#x81EA;&#x5DF1;&#x7684;SQL&#x8BED;&#x53E5;&#x3002;
 
 -a, --all Retrieve everything &#x68C0;&#x7D22;&#x4E00;&#x5207;
@@ -2041,17 +2083,17 @@ These options can be used to enumerate the back-end database management system i
 
 --current-db Retrieve DBMS current database &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;
 
--hostname Retrieve DBMS server hostname &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4E3B;&#x673A;&#x540D;
+-hostname Retrieve DBMS server <span class="token function">hostname</span> &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4E3B;&#x673A;&#x540D;
 
---is-dba Detect if the DBMS current user is DBA&#x68C0;&#x6D4B;DBMS&#x5F53;&#x524D;&#x7528;&#x6237;&#x662F;&#x5426;DBA
+--is-dba Detect <span class="token keyword">if</span> the DBMS current user is DBA&#x68C0;&#x6D4B;DBMS&#x5F53;&#x524D;&#x7528;&#x6237;&#x662F;&#x5426;DBA
 
---users Enumerate DBMS users &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;
+--users Enumerate DBMS <span class="token function">users</span> &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;
 
---passwords Enumerate DBMS users password hashes &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x5BC6;&#x7801;&#x54C8;&#x5E0C;
+--passwords Enumerate DBMS <span class="token function">users</span> password hashes &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x5BC6;&#x7801;&#x54C8;&#x5E0C;
 
---privileges Enumerate DBMS users privileges &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;
+--privileges Enumerate DBMS <span class="token function">users</span> privileges &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;
 
---roles Enumerate DBMS users roles &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x7684;&#x89D2;&#x8272;
+--roles Enumerate DBMS <span class="token function">users</span> roles &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x7684;&#x89D2;&#x8272;
 
 --dbs Enumerate DBMS databases &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x5E93;
 
@@ -2062,48 +2104,48 @@ These options can be used to enumerate the back-end database management system i
 
 --schema Enumerate DBMS schema &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x67B6;&#x6784;
 
---count Retrieve number of entries for table(s) &#x68C0;&#x7D22;&#x8868;&#x7684;&#x6761;&#x76EE;&#x6570;
+--count Retrieve number of entries <span class="token keyword">for</span> table<span class="token punctuation">(</span>s<span class="token punctuation">)</span> &#x68C0;&#x7D22;&#x8868;&#x7684;&#x6761;&#x76EE;&#x6570;
 
 --dump Dump DBMS database table entries &#x8F6C;&#x50A8;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x9879;
 
 --dump-all Dump all DBMS databases tables entries&#x8F6C;&#x50A8;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x9879;
 
---search Search column(s), table(s) and/or database name(s) &#x641C;&#x7D22;&#x5217;&#xFF08;S&#xFF09;&#xFF0C;&#x8868;&#xFF08;S&#xFF09;&#x548C;/&#x6216;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF08;S&#xFF09;
+--search Search column<span class="token punctuation">(</span>s<span class="token punctuation">)</span>, table<span class="token punctuation">(</span>s<span class="token punctuation">)</span> and/or database name<span class="token punctuation">(</span>s<span class="token punctuation">)</span> &#x641C;&#x7D22;&#x5217;&#xFF08;S&#xFF09;&#xFF0C;&#x8868;&#xFF08;S&#xFF09;&#x548C;/&#x6216;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF08;S&#xFF09;
 
---comments Retrieve DBMS comments &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x7684;comments(&#x6CE8;&#x91CA;&#x3001;&#x8BC4;&#x8BBA;)
+--comments Retrieve DBMS comments &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x7684;comments<span class="token punctuation">(</span>&#x6CE8;&#x91CA;&#x3001;&#x8BC4;&#x8BBA;<span class="token punctuation">)</span>
 
 -D DB DBMS database to enumerate &#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;
 
--T TBL DBMS database table(s) to enumerate &#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8868;
+-T TBL DBMS database table<span class="token punctuation">(</span>s<span class="token punctuation">)</span> to enumerate &#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8868;
 
--C COL DBMS database table column(s) to enumerate&#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5217;
+-C COL DBMS database table column<span class="token punctuation">(</span>s<span class="token punctuation">)</span> to enumerate&#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5217;
 
--X EXCLUDECOL DBMS database table column(s) to not enumerate&#x8981;&#x4E0D;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5217;
+-X EXCLUDECOL DBMS database table column<span class="token punctuation">(</span>s<span class="token punctuation">)</span> to not enumerate&#x8981;&#x4E0D;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5217;
 
 -U USER DBMS user to enumerate &#x7528;&#x6765;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;
 
 --exclude-sysdbs Exclude DBMS system databases when enumerating tables &#x679A;&#x4E3E;&#x8868;&#x65F6;&#x6392;&#x9664;&#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x5E93;
 
---pivot-column=P.. Pivot column name &#x4E3B;&#x5217;&#x540D;&#x79F0;
+--pivot-column<span class="token operator">=</span>P<span class="token punctuation">..</span> Pivot column name &#x4E3B;&#x5217;&#x540D;&#x79F0;
 
---where=DUMPWHERE Use WHERE condition while table dumping&#x4F7F;
+--where<span class="token operator">=</span>DUMPWHERE Use WHERE condition <span class="token keyword">while</span> table dumping&#x4F7F;
 &#x7528;WHERE&#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x8868;&#x8F6C;&#x50A8;
 
---start=LIMITSTART First query output entry to retrieve &#x7B2C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;&#x8FDB;&#x5165;&#x68C0;&#x7D22;
+--start<span class="token operator">=</span>LIMITSTART First query output entry to retrieve &#x7B2C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;&#x8FDB;&#x5165;&#x68C0;&#x7D22;
 
---stop=LIMITSTOP Last query output entry to retrieve&#x6700;&#x540E;&#x67E5;&#x8BE2;&#x7684;
+--stop<span class="token operator">=</span>LIMITSTOP Last query output entry to retrieve&#x6700;&#x540E;&#x67E5;&#x8BE2;&#x7684;
 &#x8F93;&#x51FA;&#x8FDB;&#x5165;&#x68C0;&#x7D22;
 
---first=FIRSTCHAR First query output word character to retrieve&#x7B2C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x68C0;&#x7D22;
+--first<span class="token operator">=</span>FIRSTCHAR First query output word character to retrieve&#x7B2C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x68C0;&#x7D22;
 
---last=LASTCHAR Last query output word character to retrieve&#x6700;&#x540E;&#x67E5;&#x8BE2;&#x7684;&#x8F93;&#x51FA;&#x5B57;&#x5B57;&#x7B26;&#x68C0;&#x7D22;
+--last<span class="token operator">=</span>LASTCHAR Last query output word character to retrieve&#x6700;&#x540E;&#x67E5;&#x8BE2;&#x7684;&#x8F93;&#x51FA;&#x5B57;&#x5B57;&#x7B26;&#x68C0;&#x7D22;
 
---sql-query=QUERY SQL statement to be executed&#x8981;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;
+--sql-query<span class="token operator">=</span>QUERY SQL statement to be executed&#x8981;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;
 
 --sql-shell
-Prompt for an interactive SQL shell&#x63D0;&#x793A;&#x4EA4;&#x4E92;&#x5F0F;SQL&#x7684;shell
+Prompt <span class="token keyword">for</span> an interactive SQL shell&#x63D0;&#x793A;&#x4EA4;&#x4E92;&#x5F0F;SQL&#x7684;shell
 
---sql-file=SQLFILE Execute SQL statements from given file(s)&#x4ECE;&#x7ED9;&#x5B9A;&#x6587;&#x4EF6;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;
+--sql-file<span class="token operator">=</span>SQLFILE Execute SQL statements from given file<span class="token punctuation">(</span>s<span class="token punctuation">)</span>&#x4ECE;&#x7ED9;&#x5B9A;&#x6587;&#x4EF6;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;
 
 Brute force&#xFF08;&#x86EE;&#x529B;&#xFF09;:
 
@@ -2113,43 +2155,43 @@ These options can be used to run brute force checks&#x8FD9;&#x4E9B;&#x9009;&#x98
 
 --common-columns Check existence of common columns &#x68C0;&#x67E5;&#x5B58;&#x5728;&#x5171;&#x540C;&#x5217;
 
-User-defined function injection&#xFF08;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#xFF09;:
+User-defined <span class="token keyword">function</span> injection&#xFF08;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#xFF09;:
 
 These options can be used to create custom user-defined functions &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x3002;
 
 --udf-inject Inject custom user-defined functions &#x6CE8;&#x5165;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;
 
---shared-lib=SHLIB Local path of the shared library &#x5171;&#x4EAB;&#x5E93;&#x7684;&#x672C;&#x5730;&#x8DEF;&#x5F84;
+--shared-lib<span class="token operator">=</span>SHLIB Local path of the shared library &#x5171;&#x4EAB;&#x5E93;&#x7684;&#x672C;&#x5730;&#x8DEF;&#x5F84;
 
 File system access&#xFF08;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF09;:
-These options can be used to access the back-end database management system underlying file system &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x8BBF;&#x95EE;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x5E95;&#x5C42;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;
+These options can be used to access the back-end database management system underlying <span class="token function">file</span> system &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x8BBF;&#x95EE;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x5E95;&#x5C42;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;
 
---file-read=RFILE Read a file from the back-end DBMS file system &#x4ECE;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;
+--file-read<span class="token operator">=</span>RFILE Read a <span class="token function">file</span> from the back-end DBMS <span class="token function">file</span> system &#x4ECE;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;
 
---file-write=WFILE Write a local file on the back-end DBMS file system&#x7F16;&#x8F91;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x672C;&#x5730;&#x6587;&#x4EF6;
+--file-write<span class="token operator">=</span>WFILE Write a local <span class="token function">file</span> on the back-end DBMS <span class="token function">file</span> system&#x7F16;&#x8F91;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x672C;&#x5730;&#x6587;&#x4EF6;
 
---file-dest=DFILE Back-end DBMS absolute filepath to write to &#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+--file-dest<span class="token operator">=</span>DFILE Back-end DBMS absolute filepath to <span class="token function">write</span> to &#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
 
 Operating system access&#xFF08;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8BBF;&#x95EE;&#xFF09;:
 
 These options can be used to access the back-end database management system underlying operating system &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x5E95;&#x5C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;
 
---os-cmd=OSCMD Execute an operating system command &#x6267;&#x884C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;
+--os-cmd<span class="token operator">=</span>OSCMD Execute an operating system <span class="token function">command</span> &#x6267;&#x884C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;
 
---os-shell Prompt for an interactive operating system shell &#x4EA4;&#x4E92;&#x5F0F;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;shell
+--os-shell Prompt <span class="token keyword">for</span> an interactive operating system shell &#x4EA4;&#x4E92;&#x5F0F;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;shell
 
 --os-pwn
-Prompt for an OOB shell, Meterpreter or VNC&#x83B7;&#x53D6;&#x4E00;&#x4E2A;OOB shell&#xFF0C;meterpreter&#x6216;VNC
+Prompt <span class="token keyword">for</span> an OOB shell, Meterpreter or VNC&#x83B7;&#x53D6;&#x4E00;&#x4E2A;OOB shell&#xFF0C;meterpreter&#x6216;VNC
 
---os-smbrelay One click prompt for an OOB shell, Meterpreter or VNC &#x4E00;&#x952E;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;OOB shell&#xFF0C;meterpreter&#x6216;VNC
+--os-smbrelay One click prompt <span class="token keyword">for</span> an OOB shell, Meterpreter or VNC &#x4E00;&#x952E;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;OOB shell&#xFF0C;meterpreter&#x6216;VNC
 
 --os-bof Stored procedure buffer overflow exploitation &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7F13;&#x51B2;&#x533A;&#x6EA2;&#x51FA;&#x5229;&#x7528;
 
 --priv-esc Database process user privilege escalation &#x6570;&#x636E;&#x5E93;&#x8FDB;&#x7A0B;&#x7528;&#x6237;&#x6743;&#x9650;&#x63D0;&#x5347;
 
---msf-path=MSFPATH Local path where Metasploit Framework is installed Metasploit Framework&#x672C;&#x5730;&#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;
+--msf-path<span class="token operator">=</span>MSFPATH Local path where Metasploit Framework is installed Metasploit Framework&#x672C;&#x5730;&#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;
 
---tmp-path=TMPPATH Remote absolute path of temporary files directory &#x8FDC;&#x7A0B;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+--tmp-path<span class="token operator">=</span>TMPPATH Remote absolute path of temporary files directory &#x8FDC;&#x7A0B;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
 
 Windows registry access&#xFF08;Windows&#x6CE8;&#x518C;&#x8868;&#x8BBF;&#x95EE;&#xFF09;:
 
@@ -2161,101 +2203,103 @@ These options can be used to access the back-end database management system Wind
 
 --reg-del Delete a Windows registry key value &#x5220;&#x9664;Windows&#x6CE8;&#x518C;&#x8868;&#x952E;&#x503C;
 
---reg-key=REGKEY Windows registry key Windows&#x6CE8;&#x518C;&#x8868;&#x952E;
+--reg-key<span class="token operator">=</span>REGKEY Windows registry key Windows&#x6CE8;&#x518C;&#x8868;&#x952E;
 
---reg-value=REGVAL Windows registry key value Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;
+--reg-value<span class="token operator">=</span>REGVAL Windows registry key value Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;
 
---reg-data=REGDATA Windows registry key value data Windows&#x6CE8;&#x518C;&#x8868;&#x952E;&#x503C;&#x6570;&#x636E;
+--reg-data<span class="token operator">=</span>REGDATA Windows registry key value data Windows&#x6CE8;&#x518C;&#x8868;&#x952E;&#x503C;&#x6570;&#x636E;
 
---reg-type=REGTYPE Windows registry key value type Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;&#x7C7B;&#x578B;
+--reg-type<span class="token operator">=</span>REGTYPE Windows registry key value <span class="token function">type</span> Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;&#x7C7B;&#x578B;
 
 General&#xFF08;&#x4E00;&#x822C;&#xFF09;:
 
-These options can be used to set some general working parameters &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x4E00;&#x822C;&#x7684;&#x5DE5;&#x4F5C;&#x53C2;&#x6570;&#x3002;
+These options can be used to <span class="token keyword">set</span> some general working parameters &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x4E00;&#x822C;&#x7684;&#x5DE5;&#x4F5C;&#x53C2;&#x6570;&#x3002;
 
--s SESSIONFILE Load session from a stored (.sqlite) file &#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;&#x68C0;&#x7D22;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;
+-s SESSIONFILE Load session from a stored <span class="token punctuation">(</span>.sqlite<span class="token punctuation">)</span> <span class="token function">file</span> &#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;&#x68C0;&#x7D22;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;
 
--t TRAFFICFILE Log all HTTP traffic into a textual file &#x8BB0;&#x5F55;&#x6240;&#x6709;HTTP&#x6D41;&#x91CF;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4E2D;
+-t TRAFFICFILE Log all HTTP traffic into a textual <span class="token function">file</span> &#x8BB0;&#x5F55;&#x6240;&#x6709;HTTP&#x6D41;&#x91CF;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4E2D;
 
---batch Never ask for user input, use the default behaviour &#x4ECE;&#x4E0D;&#x8BE2;&#x95EE;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x4F7F;&#x7528;&#x6240;&#x6709;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x3002;
+--batch Never ask <span class="token keyword">for</span> user input, use the default behaviour &#x4ECE;&#x4E0D;&#x8BE2;&#x95EE;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x4F7F;&#x7528;&#x6240;&#x6709;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x3002;
 
---binary-fields=.. Result fields having binary values (e.g. &quot;digest&quot;)&#x5177;&#x6709;&#x4E8C;&#x8FDB;&#x5236;&#x503C;&#x7684;&#x7ED3;&#x679C;&#x5B57;&#x6BB5;
+--binary-fields<span class="token operator">=</span><span class="token punctuation">..</span> Result fields having binary values <span class="token punctuation">(</span>e.g. <span class="token string">&quot;digest&quot;</span><span class="token punctuation">)</span>&#x5177;&#x6709;&#x4E8C;&#x8FDB;&#x5236;&#x503C;&#x7684;&#x7ED3;&#x679C;&#x5B57;&#x6BB5;
 
---charset=CHARSET Force character encoding used for data retrieval&#x5F3A;&#x5236;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x68C0;&#x7D22;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;
+--charset<span class="token operator">=</span>CHARSET Force character encoding used <span class="token keyword">for</span> data retrieval&#x5F3A;&#x5236;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x68C0;&#x7D22;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;
 
---crawl=CRAWLDEPTH Crawl the website starting from the target URL &#x4ECE;&#x76EE;&#x6807;&#x7F51;&#x5740;&#x5F00;&#x59CB;&#x6293;&#x53D6;&#x7F51;&#x7AD9;
+--crawl<span class="token operator">=</span>CRAWLDEPTH Crawl the website starting from the target URL &#x4ECE;&#x76EE;&#x6807;&#x7F51;&#x5740;&#x5F00;&#x59CB;&#x6293;&#x53D6;&#x7F51;&#x7AD9;
 
---crawl-exclude=.. Regexp to exclude pages from crawling (e.g. &quot;logout&quot;)&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6392;&#x9664;&#x7F51;&#x9875;&#x6293;&#x53D6;
+--crawl-exclude<span class="token operator">=</span><span class="token punctuation">..</span> Regexp to exclude pages from crawling <span class="token punctuation">(</span>e.g. <span class="token string">&quot;logout&quot;</span><span class="token punctuation">)</span>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6392;&#x9664;&#x7F51;&#x9875;&#x6293;&#x53D6;
 
---csv-del=CSVDEL Delimiting character used in CSV output (default &quot;,&quot;) &#x5206;&#x9694;CSV&#x8F93;&#x51FA;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;
+--csv-del<span class="token operator">=</span>CSVDEL Delimiting character used <span class="token keyword">in</span> CSV output <span class="token punctuation">(</span>default <span class="token string">&quot;,&quot;</span><span class="token punctuation">)</span> &#x5206;&#x9694;CSV&#x8F93;&#x51FA;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;
 
---dump-format=DU.. Format of dumped data (CSV (default), HTML or SQLITE)&#x8F6C;&#x50A8;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;
+--dump-format<span class="token operator">=</span>DU<span class="token punctuation">..</span> Format of dumped data <span class="token punctuation">(</span>CSV <span class="token punctuation">(</span>default<span class="token punctuation">)</span>, HTML or SQLITE<span class="token punctuation">)</span>&#x8F6C;&#x50A8;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;
 
---eta Display for each output the estimated time of arrival &#x663E;&#x793A;&#x6BCF;&#x4E2A;&#x8F93;&#x51FA;&#x7684;&#x9884;&#x8BA1;&#x5230;&#x8FBE;&#x65F6;&#x95F4;
+--eta Display <span class="token keyword">for</span> each output the estimated <span class="token function">time</span> of arrival &#x663E;&#x793A;&#x6BCF;&#x4E2A;&#x8F93;&#x51FA;&#x7684;&#x9884;&#x8BA1;&#x5230;&#x8FBE;&#x65F6;&#x95F4;
 
---flush-session Flush session files for current target&#x5237;&#x65B0;&#x5F53;&#x524D;&#x76EE;&#x6807;&#x7684;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;
+--flush-session Flush session files <span class="token keyword">for</span> current target&#x5237;&#x65B0;&#x5F53;&#x524D;&#x76EE;&#x6807;&#x7684;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;
 
---forms Parse and test forms on target URL &#x5728;&#x76EE;&#x6807;&#x7F51;&#x5740;&#x4E0A;&#x89E3;&#x6790;&#x548C;&#x6D4B;&#x8BD5;&#x8868;&#x5355;
+--forms Parse and <span class="token function">test</span> forms on target URL &#x5728;&#x76EE;&#x6807;&#x7F51;&#x5740;&#x4E0A;&#x89E3;&#x6790;&#x548C;&#x6D4B;&#x8BD5;&#x8868;&#x5355;
 
---fresh-queries Ignore query results stored in session file &#x5FFD;&#x7565;&#x5728;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;
+--fresh-queries Ignore query results stored <span class="token keyword">in</span> session <span class="token function">file</span> &#x5FFD;&#x7565;&#x5728;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;
 
---hex Use DBMS hex function(s) for data retrieval &#x4F7F;&#x7528;DBMS hex&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x68C0;&#x7D22;
+--hex Use DBMS hex function<span class="token punctuation">(</span>s<span class="token punctuation">)</span> <span class="token keyword">for</span> data retrieval &#x4F7F;&#x7528;DBMS hex&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x68C0;&#x7D22;
 
---output-dir=OUT.. Custom output directory path &#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;
+--output-dir<span class="token operator">=</span>OUT<span class="token punctuation">..</span> Custom output directory path &#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;
 
 --parse-errors Parse and display DBMS error messages from responses&#x89E3;&#x6790;&#x548C;&#x663E;&#x793A;&#x54CD;&#x5E94;&#x4E2D;&#x7684;DBMS&#x9519;&#x8BEF;&#x6D88;&#x606F;
 
---save=SAVECONFIG Save options to a configuration INI file&#x4FDD;&#x5B58;&#x9009;&#x9879;&#x5230;INI&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+--save<span class="token operator">=</span>SAVECONFIG Save options to a configuration INI file&#x4FDD;&#x5B58;&#x9009;&#x9879;&#x5230;INI&#x914D;&#x7F6E;&#x6587;&#x4EF6;
 
---scope=SCOPE Regexp to filter targets from provided proxy log &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4ECE;&#x63D0;&#x4F9B;&#x7684;&#x4EE3;&#x7406;&#x65E5;&#x5FD7;&#x4E2D;&#x8FC7;&#x6EE4;&#x76EE;&#x6807;
+--scope<span class="token operator">=</span>SCOPE Regexp to filter targets from provided proxy log &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4ECE;&#x63D0;&#x4F9B;&#x7684;&#x4EE3;&#x7406;&#x65E5;&#x5FD7;&#x4E2D;&#x8FC7;&#x6EE4;&#x76EE;&#x6807;
 
---test-filter=TE.. Select tests by payloads and/or titles (e.g. ROW)&#x6839;&#x636E;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x548C;/&#x6216;&#x6807;&#x9898;(e.g. ROW)&#x9009;&#x62E9;&#x6D4B;&#x8BD5;
+--test-filter<span class="token operator">=</span>TE<span class="token punctuation">..</span> Select tests by payloads and/or titles <span class="token punctuation">(</span>e.g. ROW<span class="token punctuation">)</span>&#x6839;&#x636E;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x548C;/&#x6216;&#x6807;&#x9898;<span class="token punctuation">(</span>e.g. ROW<span class="token punctuation">)</span>&#x9009;&#x62E9;&#x6D4B;&#x8BD5;
 
---test-skip=TEST.. Skip tests by payloads and/or titles (e.g. BENCHMARK)&#x6839;&#x636E;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x548C;/&#x6216;&#x6807;&#x9898;&#x8DF3;&#x8FC7;&#x6D4B;&#x8BD5;&#xFF08;e.g. BENCHMARK&#xFF09;
+--test-skip<span class="token operator">=</span>TEST<span class="token punctuation">..</span> Skip tests by payloads and/or titles <span class="token punctuation">(</span>e.g. BENCHMARK<span class="token punctuation">)</span>&#x6839;&#x636E;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x548C;/&#x6216;&#x6807;&#x9898;&#x8DF3;&#x8FC7;&#x6D4B;&#x8BD5;&#xFF08;e.g. BENCHMARK&#xFF09;
 
 --update Update sqlmap &#x66F4;&#x65B0;SqlMap
 
 Miscellaneous&#xFF08;&#x6742;&#x9879;&#xFF09;:
 
--z MNEMONICS Use short mnemonics (e.g. &quot;flu,bat,ban,tec=EU&quot;)
+-z MNEMONICS Use short mnemonics <span class="token punctuation">(</span>e.g. <span class="token string">&quot;flu,bat,ban,tec=EU&quot;</span><span class="token punctuation">)</span>
 &#x4F7F;&#x7528;&#x7B80;&#x77ED;&#x7684;&#x52A9;&#x8BB0;&#x7B26;
 
---alert=ALERT Run host OS command(s) when SQL injection is found &#x5728;&#x627E;&#x5230;SQL&#x6CE8;&#x5165;&#x65F6;&#x8FD0;&#x884C;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;
+--alert<span class="token operator">=</span>ALERT Run host OS command<span class="token punctuation">(</span>s<span class="token punctuation">)</span> when SQL injection is found &#x5728;&#x627E;&#x5230;SQL&#x6CE8;&#x5165;&#x65F6;&#x8FD0;&#x884C;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;
 
---answers=ANSWERS Set question answers (e.g. &quot;quit=N,follow=N&quot;) &#x8BBE;&#x7F6E;&#x95EE;&#x9898;&#x7B54;&#x6848;
+--answers<span class="token operator">=</span>ANSWERS Set question answers <span class="token punctuation">(</span>e.g. <span class="token string">&quot;quit=N,follow=N&quot;</span><span class="token punctuation">)</span> &#x8BBE;&#x7F6E;&#x95EE;&#x9898;&#x7B54;&#x6848;
 
 --beep Beep on question and/or when SQL injection is found &#x53D1;&#x73B0;SQL &#x6CE8;&#x5165;&#x65F6;&#x63D0;&#x9192;
 
 --cleanup Clean up the DBMS from sqlmap specific UDF and tables SqlMap&#x5177;&#x4F53;&#x7684;UDF&#x548C;&#x8868;&#x6E05;&#x7406;DBMS
 
---dependencies Check for missing (non-core) sqlmap dependencies &#x68C0;&#x67E5;&#x662F;&#x5426;&#x7F3A;&#x5C11;&#xFF08;&#x975E;&#x5185;&#x6838;&#xFF09;sqlmap&#x4F9D;&#x8D56;&#x5173;&#x7CFB;
+--dependencies Check <span class="token keyword">for</span> missing <span class="token punctuation">(</span>non-core<span class="token punctuation">)</span> sqlmap dependencies &#x68C0;&#x67E5;&#x662F;&#x5426;&#x7F3A;&#x5C11;&#xFF08;&#x975E;&#x5185;&#x6838;&#xFF09;sqlmap&#x4F9D;&#x8D56;&#x5173;&#x7CFB;
 
 --disable-coloring Disable console output coloring &#x7981;&#x7528;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x989C;&#x8272;
 
---gpage=GOOGLEPAGE Use Google dork results from specified page number &#x4F7F;&#x7528;Google dork&#x7ED3;&#x679C;&#x6307;&#x5B9A;&#x9875;&#x7801;
+--gpage<span class="token operator">=</span>GOOGLEPAGE Use Google dork results from specified page number &#x4F7F;&#x7528;Google dork&#x7ED3;&#x679C;&#x6307;&#x5B9A;&#x9875;&#x7801;
 
---identify-waf Make a thorough testing for a WAF/IPS/IDS protection &#x5BF9;WAF / IPS / IDS&#x4FDD;&#x62A4;&#x8FDB;&#x884C;&#x5168;&#x9762;&#x6D4B;&#x8BD5;
+--identify-waf Make a thorough testing <span class="token keyword">for</span> a WAF/IPS/IDS protection &#x5BF9;WAF / IPS / IDS&#x4FDD;&#x62A4;&#x8FDB;&#x884C;&#x5168;&#x9762;&#x6D4B;&#x8BD5;
 
 --skip-waf Skip heuristic detection of WAF/IPS/IDS protection &#x8DF3;&#x8FC7;&#x542F;&#x53D1;&#x5F0F;&#x68C0;&#x6D4B;WAF / IPS / IDS&#x4FDD;&#x62A4;
 
 --mobile Imitate smartphone through HTTP User-Agent header &#x901A;&#x8FC7;HTTP User-Agent&#x6807;&#x5934;&#x6A21;&#x4EFF;&#x667A;&#x80FD;&#x624B;&#x673A;
 
---offline Work in offline mode (only use session data) &#x5728;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x4E0B;&#x5DE5;&#x4F5C;&#xFF08;&#x4EC5;&#x4F7F;&#x7528;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#xFF09;
+--offline Work <span class="token keyword">in</span> offline mode <span class="token punctuation">(</span>only use session data<span class="token punctuation">)</span> &#x5728;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x4E0B;&#x5DE5;&#x4F5C;&#xFF08;&#x4EC5;&#x4F7F;&#x7528;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#xFF09;
 
---page-rank Display page rank (PR) for Google dork results Google dork&#x7ED3;&#x679C;&#x663E;&#x793A;&#x7F51;&#x9875;&#x6392;&#x540D;&#xFF08;PR&#xFF09;
+--page-rank Display page rank <span class="token punctuation">(</span>PR<span class="token punctuation">)</span> <span class="token keyword">for</span> Google dork results Google dork&#x7ED3;&#x679C;&#x663E;&#x793A;&#x7F51;&#x9875;&#x6392;&#x540D;&#xFF08;PR&#xFF09;
 
 --purge-output Safely remove all content from output directory &#x5B89;&#x5168;&#x5730;&#x4ECE;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x4E2D;&#x5220;&#x9664;&#x6240;&#x6709;&#x5185;&#x5BB9;
 
---smart Conduct thorough tests only if positive heuristic(s) &#x53EA;&#x6709;&#x5728;&#x6B63;&#x542F;&#x53D1;&#x5F0F;&#x65F6;&#x624D;&#x8FDB;&#x884C;&#x5F7B;&#x5E95;&#x6D4B;&#x8BD5;
+--smart Conduct thorough tests only <span class="token keyword">if</span> positive heuristic<span class="token punctuation">(</span>s<span class="token punctuation">)</span> &#x53EA;&#x6709;&#x5728;&#x6B63;&#x542F;&#x53D1;&#x5F0F;&#x65F6;&#x624D;&#x8FDB;&#x884C;&#x5F7B;&#x5E95;&#x6D4B;&#x8BD5;
 
---sqlmap-shell Prompt for an interactive sqlmap shell&#x63D0;&#x793A;&#x4EA4;&#x4E92;&#x5F0F; sqlmap shell
+--sqlmap-shell Prompt <span class="token keyword">for</span> an interactive sqlmap shell&#x63D0;&#x793A;&#x4EA4;&#x4E92;&#x5F0F; sqlmap shell
 
---wizard Simple wizard interface for beginner users &#x7ED9;&#x521D;&#x7EA7;&#x7528;&#x6237;&#x7684;&#x7B80;&#x5355;&#x5411;&#x5BFC;&#x754C;&#x9762;
-</span></code></pre>
+--wizard Simple wizard interface <span class="token keyword">for</span> beginner <span class="token function">users</span> &#x7ED9;&#x521D;&#x7EA7;&#x7528;&#x6237;&#x7684;&#x7B80;&#x5355;&#x5411;&#x5BFC;&#x754C;&#x9762;
+</code></pre>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 11:24
+</span></footer>
                                 
                                 </section>
                             
@@ -2298,7 +2342,7 @@ Miscellaneous&#xFF08;&#x6742;&#x9879;&#xFF09;:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第五课：工具介绍-Sqlmap","level":"1.4.5","depth":2,"next":{"title":"第六课：反攻的一次溯源--项目实战3","level":"1.4.6","depth":2,"path":"Chapter1/6_反攻的一次溯源--项目实战3.md","ref":"Chapter1/6_反攻的一次溯源--项目实战3.md","articles":[]},"previous":{"title":"第四课：Asp代码审计--项目实战2","level":"1.4.4","depth":2,"path":"Chapter1/4_Asp代码审计--项目实战2.md","ref":"Chapter1/4_Asp代码审计--项目实战2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/5_工具介绍-Sqlmap.md","mtime":"2019-02-23T03:24:42.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第五课：工具介绍-Sqlmap","level":"1.4.5","depth":2,"next":{"title":"第六课：反攻的一次溯源--项目实战3","level":"1.4.6","depth":2,"path":"Chapter1/6_反攻的一次溯源--项目实战3.md","ref":"Chapter1/6_反攻的一次溯源--项目实战3.md","articles":[]},"previous":{"title":"第四课：Asp代码审计--项目实战2","level":"1.4.4","depth":2,"path":"Chapter1/4_Asp代码审计--项目实战2.md","ref":"Chapter1/4_Asp代码审计--项目实战2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/5_工具介绍-Sqlmap.md","mtime":"2019-02-23T03:24:42.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2308,27 +2352,43 @@ Miscellaneous&#xFF08;&#x6742;&#x9879;&#xFF09;:
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

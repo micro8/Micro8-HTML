@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第二课：Linux提权-依赖exp篇 · GitBook</title>
+        <title>第二课：Linux提权-依赖exp篇 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="1_windows提权-快速查找exp.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,70 +1860,72 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
                                 <h3 id="exp&#x6CE8;&#xFF1A;">exp&#x6CE8;&#xFF1A;</h3>
-<pre><code class="lang-bash">CVE-2017-1000367 [Sudo] (Sudo 1.8.6p7 - 1.8.20)
-CVE-2017-1000112 [a memory corruption due to UFO to non-UFO path switch]
-CVE-2017-7494 [Samba Remote execution] (Samba 3.5.0-4.6.4/4.5.10/4.4.14)
-CVE-2017-7308 [a signedness issue <span class="hljs-keyword">in</span> AF_PACKET sockets] (Linux kernel through 4.10.6)
-CVE-2017-6074 [a double-free <span class="hljs-keyword">in</span> DCCP protocol] (Linux kernel through 4.9.11)
-CVE-2017-5123 [<span class="hljs-string">&apos;waitid()&apos;</span>] (Kernel 4.14.0-rc4+)
-CVE-2016-9793 [a signedness issue with SO_SNDBUFFORCE and SO_RCVBUFFORCE socket options]  (Linux kernel before 4.8.14)
-CVE-2016-5195 [Dirty cow] (Linux kernel&gt;2.6.22 (released <span class="hljs-keyword">in</span> 2007))
-CVE-2016-2384 [a double-free <span class="hljs-keyword">in</span> USB MIDI driver]  (Linux kernel before 4.5)
-CVE-2016-0728 [pp_key] (3.8.0, 3.8.1, 3.8.2, 3.8.3, 3.8.4, 3.8.5, 3.8.6, 3.8.7, 3.8.8, 3.8.9, 3.9, 3.10, 3.11, 3.12, 3.13,3.4.0, 3.5.0, 3.6.0, 3.7.0, 3.8.0, 3.8.5, 3.8.6, 3.8.9, 3.9.0, 3.9.6,3.10.0, 3.10.6, 3.11.0, 3.12.0, 3.13.0, 3.13.1)
-CVE-2015-7547 [glibc getaddrinfo] (before Glibc 2.9)
-CVE-2015-1328 [overlayfs] (3.13, 3.16.0, 3.19.0)
-CVE-2014-5284 [OSSEC] (2.8)
-CVE-2014-4699 [ptrace] (before 3.15.4)
-CVE-2014-4014  [Local Privilege Escalation] (before 3.14.8)
-CVE-2014-3153 [futex]  (3.3.5 ,3.3.4 ,3.3.2 ,3.2.13 ,3.2.9 ,3.2.1 ,3.1.8 ,3.0.5 ,3.0.4 ,3.0.2 ,3.0.1 ,2.6.39 ,2.6.38 ,2.6.37 ,2.6.35 ,2.6.34 ,2.6.33 ,2.6.32 ,2.6.9 ,2.6.8,2.6.7 ,2.6.6 ,2.6.5 ,2.6.4 ,3.2.2 ,3.0.18 ,3.0 ,2.6.8.1)
-CVE-2014-0196 [rawmodePTY] (2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36, 2.6.37, 2.6.38, 2.6.39, 3.14, 3.15)
-CVE-2014-0038 [timeoutpwn] (3.4, 3.5, 3.6, 3.7, 3.8, 3.8.9, 3.9, 3.10, 3.11, 3.12, 3.13, 3.4.0, 3.5.0, 3.6.0, 3.7.0, 3.8.0, 3.8.5, 3.8.6, 3.8.9, 3.9.0, 3.9.6, 3.10.0, 3.10.6, 3.11.0, 3.12.0, 3.13.0, 3.13.1)
-CVE-2013-2094 [perf_swevent] (3.0.0, 3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.1.0, 3.2, 3.3, 3.4.0, 3.4.1, 3.4.2, 3.4.3, 3.4.4,3.4.5, 3.4.6, 3.4.8, 3.4.9, 3.5, 3.6, 3.7, 3.8.0, 3.8.1, 3.8.2, 3.8.3,3.8.4, 3.8.5, 3.8.6, 3.8.7, 3.8.8, 3.8.9)
-CVE-2013-1858 [clown-newuser] (3.3-3.8)
-CVE-2013-1763 [__sock_diag_rcv_msg] (before 3.8.3)
-CVE-2013-0268 [msr]  (2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26,2.6.27, 2.6.27, 2.6.28,2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36, 2.6.37,2.6.38, 2.6.39, 3.0.0,3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.1.0, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7.0, 3.7.6)
-CVE-2012-3524 [libdbus] (libdbus 1.5.x and earlier)
-CVE-2012-0056 [memodipper] (2.6.39, 3.0.0, 3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.1.0)
-CVE-2010-4347 [american-sign-language] ( 2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9,2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21,2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36)
-CVE-2010-4258 [full-nelson] (2.6.31, 2.6.32, 2.6.35, 2.6.37)
-CVE-2010-4073 [half_nelson] (2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9,2.6.10, 2.6.11, 2.6.12,2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21,2.6.22, 2.6.23, 2.6.24,2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33,2.6.34, 2.6.35, 2.6.36)
-CVE-2010-3904 [rds] (2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36)
-CVE-2010-3437 [pktcdvd] (2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9,2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21,2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36)
-CVE-2010-3301 [ptrace_kmod2] (2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34)
-CVE-2010-3081 [video4linux] (2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12,2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33)
-CVE-2010-2959 [can_bcm] (2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36)
-CVE-2010-1146 [reiserfs] (2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34)
-CVE-2010-0415 [<span class="hljs-keyword">do</span>_pages_move] (2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31)
-CVE-2009-3547 [pipe.c_32bit] (2.4.4, 2.4.5, 2.4.6, 2.4.7, 2.4.8, 2.4.9, 2.4.10, 2.4.11, 2.4.12, 2.4.13,2.4.14, 2.4.15, 2.4.16, 2.4.17, 2.4.18, 2.4.19, 2.4.20, 2.4.21, 2.4.22, 2.4.23, 2.4.24, 2.4.25,2.4.26, 2.4.27, 2.4.28,
-2.4.29, 2.4.30, 2.4.31, 2.4.32, 2.4.33, 2.4.34, 2.4.35, 2.4.36, 2.4.37,2.6.15, 2.6.16, 2.6.17,2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26,2.6.27, 2.6.28, 2.6.29,2.6.30, 2.6.31)
-CVE-2009-2698 [udp_sendmsg_32bit] (2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12, 2.6.13,  2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19)
-CVE-2009-2692 [sock_sendpage] (2.4.4, 2.4.5, 2.4.6, 2.4.7, 2.4.8, 2.4.9, 2.4.10, 2.4.11, 2.4.12, 2.4.13,2.4.14, 2.4.15, 2.4.16,2.4.17, 2.4.18, 2.4.19, 2.4.20, 2.4.21, 2.4.22, 2.4.23, 2.4.24, 2.4.25, 2.4.26, 2.4.27, 2.4.28,2.4.29, 2.4.30, 2.4.31, 2.4.32, 2.4.33, 2.4.34, 2.4.35, 2.4.36, 2.4.37,2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12,2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30)
-CVE-2009-2692 [sock_sendpage2] (2.4.4, 2.4.5, 2.4.6, 2.4.7, 2.4.8, 2.4.9, 2.4.10, 2.4.11, 2.4.12, 2.4.13, 2.4.14, 2.4.15, 2.4.16, 2.4.17, 2.4.18, 2.4.19, 2.4.20, 2.4.21, 2.4.22, 2.4.23, 2.4.24, 2.4.25,2.4.26, 2.4.27, 2.4.28,2.4.29, 2.4.30, 2.4.31, 2.4.32, 2.4.33, 2.4.34, 2.4.35, 2.4.36, 2.4.37, 2.6.0, 2.6.1, 2.6.2,2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15,2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24,2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30)
-CVE-2009-1337 [<span class="hljs-built_in">exit</span>_notify] (2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29)
-CVE-2009-1185 [udev] (2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29)
-CVE-2008-4210 [ftrex] (2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19,2.6.20, 2.6.21, 2.6.22)
-CVE-2008-0600 [vmsplice2] (2.6.23, 2.6.24)
-CVE-2008-0600 [vmsplice1] (2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.24.1)
-CVE-2006-3626 [h00lyshit] (2.6.8, 2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16)
-CVE-2006-2451 [raptor_prctl] (2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17)
-CVE-2005-0736 [krad3] (2.6.5, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11)
-CVE-2005-1263 [binfmt_elf.c] (Linux kernel 2.x.x to 2.2.27-rc2, 2.4.x to 2.4.31-pre1, and 2.6.x to 2.6.12-rc4)
-CVE-2004-1235 [elflbl] (2.4.29)
-CVE-N/A [caps_to_root]  (2.6.34, 2.6.35, 2.6.36)
-CVE-2004-0077 [mremap_pte] (2.4.20, 2.2.24, 2.4.25, 2.4.26, 2.4.27)
+<pre class="language-"><code class="lang-bash">CVE-2017-1000367 <span class="token punctuation">[</span>Sudo<span class="token punctuation">]</span> <span class="token punctuation">(</span>Sudo 1.8.6p7 - 1.8.20<span class="token punctuation">)</span>
+CVE-2017-1000112 <span class="token punctuation">[</span>a memory corruption due to UFO to non-UFO path switch<span class="token punctuation">]</span>
+CVE-2017-7494 <span class="token punctuation">[</span>Samba Remote execution<span class="token punctuation">]</span> <span class="token punctuation">(</span>Samba 3.5.0-4.6.4/4.5.10/4.4.14<span class="token punctuation">)</span>
+CVE-2017-7308 <span class="token punctuation">[</span>a signedness issue <span class="token keyword">in</span> AF_PACKET sockets<span class="token punctuation">]</span> <span class="token punctuation">(</span>Linux kernel through 4.10.6<span class="token punctuation">)</span>
+CVE-2017-6074 <span class="token punctuation">[</span>a double-free <span class="token keyword">in</span> DCCP protocol<span class="token punctuation">]</span> <span class="token punctuation">(</span>Linux kernel through 4.9.11<span class="token punctuation">)</span>
+CVE-2017-5123 <span class="token punctuation">[</span><span class="token string">&apos;waitid()&apos;</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>Kernel 4.14.0-rc4+<span class="token punctuation">)</span>
+CVE-2016-9793 <span class="token punctuation">[</span>a signedness issue with SO_SNDBUFFORCE and SO_RCVBUFFORCE socket options<span class="token punctuation">]</span>  <span class="token punctuation">(</span>Linux kernel before 4.8.14<span class="token punctuation">)</span>
+CVE-2016-5195 <span class="token punctuation">[</span>Dirty cow<span class="token punctuation">]</span> <span class="token punctuation">(</span>Linux kernel<span class="token operator">&gt;</span>2.6.22 <span class="token punctuation">(</span>released <span class="token keyword">in</span> 2007<span class="token punctuation">))</span>
+CVE-2016-2384 <span class="token punctuation">[</span>a double-free <span class="token keyword">in</span> USB MIDI driver<span class="token punctuation">]</span>  <span class="token punctuation">(</span>Linux kernel before 4.5<span class="token punctuation">)</span>
+CVE-2016-0728 <span class="token punctuation">[</span>pp_key<span class="token punctuation">]</span> <span class="token punctuation">(</span>3.8.0, 3.8.1, 3.8.2, 3.8.3, 3.8.4, 3.8.5, 3.8.6, 3.8.7, 3.8.8, 3.8.9, 3.9, 3.10, 3.11, 3.12, 3.13,3.4.0, 3.5.0, 3.6.0, 3.7.0, 3.8.0, 3.8.5, 3.8.6, 3.8.9, 3.9.0, 3.9.6,3.10.0, 3.10.6, 3.11.0, 3.12.0, 3.13.0, 3.13.1<span class="token punctuation">)</span>
+CVE-2015-7547 <span class="token punctuation">[</span>glibc getaddrinfo<span class="token punctuation">]</span> <span class="token punctuation">(</span>before Glibc 2.9<span class="token punctuation">)</span>
+CVE-2015-1328 <span class="token punctuation">[</span>overlayfs<span class="token punctuation">]</span> <span class="token punctuation">(</span>3.13, 3.16.0, 3.19.0<span class="token punctuation">)</span>
+CVE-2014-5284 <span class="token punctuation">[</span>OSSEC<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.8<span class="token punctuation">)</span>
+CVE-2014-4699 <span class="token punctuation">[</span>ptrace<span class="token punctuation">]</span> <span class="token punctuation">(</span>before 3.15.4<span class="token punctuation">)</span>
+CVE-2014-4014  <span class="token punctuation">[</span>Local Privilege Escalation<span class="token punctuation">]</span> <span class="token punctuation">(</span>before 3.14.8<span class="token punctuation">)</span>
+CVE-2014-3153 <span class="token punctuation">[</span>futex<span class="token punctuation">]</span>  <span class="token punctuation">(</span>3.3.5 ,3.3.4 ,3.3.2 ,3.2.13 ,3.2.9 ,3.2.1 ,3.1.8 ,3.0.5 ,3.0.4 ,3.0.2 ,3.0.1 ,2.6.39 ,2.6.38 ,2.6.37 ,2.6.35 ,2.6.34 ,2.6.33 ,2.6.32 ,2.6.9 ,2.6.8,2.6.7 ,2.6.6 ,2.6.5 ,2.6.4 ,3.2.2 ,3.0.18 ,3.0 ,2.6.8.1<span class="token punctuation">)</span>
+CVE-2014-0196 <span class="token punctuation">[</span>rawmodePTY<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36, 2.6.37, 2.6.38, 2.6.39, 3.14, 3.15<span class="token punctuation">)</span>
+CVE-2014-0038 <span class="token punctuation">[</span>timeoutpwn<span class="token punctuation">]</span> <span class="token punctuation">(</span>3.4, 3.5, 3.6, 3.7, 3.8, 3.8.9, 3.9, 3.10, 3.11, 3.12, 3.13, 3.4.0, 3.5.0, 3.6.0, 3.7.0, 3.8.0, 3.8.5, 3.8.6, 3.8.9, 3.9.0, 3.9.6, 3.10.0, 3.10.6, 3.11.0, 3.12.0, 3.13.0, 3.13.1<span class="token punctuation">)</span>
+CVE-2013-2094 <span class="token punctuation">[</span>perf_swevent<span class="token punctuation">]</span> <span class="token punctuation">(</span>3.0.0, 3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.1.0, 3.2, 3.3, 3.4.0, 3.4.1, 3.4.2, 3.4.3, 3.4.4,3.4.5, 3.4.6, 3.4.8, 3.4.9, 3.5, 3.6, 3.7, 3.8.0, 3.8.1, 3.8.2, 3.8.3,3.8.4, 3.8.5, 3.8.6, 3.8.7, 3.8.8, 3.8.9<span class="token punctuation">)</span>
+CVE-2013-1858 <span class="token punctuation">[</span>clown-newuser<span class="token punctuation">]</span> <span class="token punctuation">(</span>3.3-3.8<span class="token punctuation">)</span>
+CVE-2013-1763 <span class="token punctuation">[</span>__sock_diag_rcv_msg<span class="token punctuation">]</span> <span class="token punctuation">(</span>before 3.8.3<span class="token punctuation">)</span>
+CVE-2013-0268 <span class="token punctuation">[</span>msr<span class="token punctuation">]</span>  <span class="token punctuation">(</span>2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26,2.6.27, 2.6.27, 2.6.28,2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36, 2.6.37,2.6.38, 2.6.39, 3.0.0,3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.1.0, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7.0, 3.7.6<span class="token punctuation">)</span>
+CVE-2012-3524 <span class="token punctuation">[</span>libdbus<span class="token punctuation">]</span> <span class="token punctuation">(</span>libdbus 1.5.x and earlier<span class="token punctuation">)</span>
+CVE-2012-0056 <span class="token punctuation">[</span>memodipper<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.39, 3.0.0, 3.0.1, 3.0.2, 3.0.3, 3.0.4, 3.0.5, 3.0.6, 3.1.0<span class="token punctuation">)</span>
+CVE-2010-4347 <span class="token punctuation">[</span>american-sign-language<span class="token punctuation">]</span> <span class="token punctuation">(</span> 2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9,2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21,2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36<span class="token punctuation">)</span>
+CVE-2010-4258 <span class="token punctuation">[</span>full-nelson<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.31, 2.6.32, 2.6.35, 2.6.37<span class="token punctuation">)</span>
+CVE-2010-4073 <span class="token punctuation">[</span>half_nelson<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9,2.6.10, 2.6.11, 2.6.12,2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21,2.6.22, 2.6.23, 2.6.24,2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33,2.6.34, 2.6.35, 2.6.36<span class="token punctuation">)</span>
+CVE-2010-3904 <span class="token punctuation">[</span>rds<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36<span class="token punctuation">)</span>
+CVE-2010-3437 <span class="token punctuation">[</span>pktcdvd<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9,2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21,2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36<span class="token punctuation">)</span>
+CVE-2010-3301 <span class="token punctuation">[</span>ptrace_kmod2<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34<span class="token punctuation">)</span>
+CVE-2010-3081 <span class="token punctuation">[</span>video4linux<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12,2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33<span class="token punctuation">)</span>
+CVE-2010-2959 <span class="token punctuation">[</span>can_bcm<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34, 2.6.35, 2.6.36<span class="token punctuation">)</span>
+CVE-2010-1146 <span class="token punctuation">[</span>reiserfs<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31, 2.6.32, 2.6.33, 2.6.34<span class="token punctuation">)</span>
+CVE-2010-0415 <span class="token punctuation">[</span>do_pages_move<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30, 2.6.31<span class="token punctuation">)</span>
+CVE-2009-3547 <span class="token punctuation">[</span>pipe.c_32bit<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.4.4, 2.4.5, 2.4.6, 2.4.7, 2.4.8, 2.4.9, 2.4.10, 2.4.11, 2.4.12, 2.4.13,2.4.14, 2.4.15, 2.4.16, 2.4.17, 2.4.18, 2.4.19, 2.4.20, 2.4.21, 2.4.22, 2.4.23, 2.4.24, 2.4.25,2.4.26, 2.4.27, 2.4.28,
+2.4.29, 2.4.30, 2.4.31, 2.4.32, 2.4.33, 2.4.34, 2.4.35, 2.4.36, 2.4.37,2.6.15, 2.6.16, 2.6.17,2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26,2.6.27, 2.6.28, 2.6.29,2.6.30, 2.6.31<span class="token punctuation">)</span>
+CVE-2009-2698 <span class="token punctuation">[</span>udp_sendmsg_32bit<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12, 2.6.13,  2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19<span class="token punctuation">)</span>
+CVE-2009-2692 <span class="token punctuation">[</span>sock_sendpage<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.4.4, 2.4.5, 2.4.6, 2.4.7, 2.4.8, 2.4.9, 2.4.10, 2.4.11, 2.4.12, 2.4.13,2.4.14, 2.4.15, 2.4.16,2.4.17, 2.4.18, 2.4.19, 2.4.20, 2.4.21, 2.4.22, 2.4.23, 2.4.24, 2.4.25, 2.4.26, 2.4.27, 2.4.28,2.4.29, 2.4.30, 2.4.31, 2.4.32, 2.4.33, 2.4.34, 2.4.35, 2.4.36, 2.4.37,2.6.0, 2.6.1, 2.6.2, 2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12,2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30<span class="token punctuation">)</span>
+CVE-2009-2692 <span class="token punctuation">[</span>sock_sendpage2<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.4.4, 2.4.5, 2.4.6, 2.4.7, 2.4.8, 2.4.9, 2.4.10, 2.4.11, 2.4.12, 2.4.13, 2.4.14, 2.4.15, 2.4.16, 2.4.17, 2.4.18, 2.4.19, 2.4.20, 2.4.21, 2.4.22, 2.4.23, 2.4.24, 2.4.25,2.4.26, 2.4.27, 2.4.28,2.4.29, 2.4.30, 2.4.31, 2.4.32, 2.4.33, 2.4.34, 2.4.35, 2.4.36, 2.4.37, 2.6.0, 2.6.1, 2.6.2,2.6.3, 2.6.4, 2.6.5, 2.6.6, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15,2.6.16, 2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24,2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29, 2.6.30<span class="token punctuation">)</span>
+CVE-2009-1337 <span class="token punctuation">[</span>exit_notify<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29<span class="token punctuation">)</span>
+CVE-2009-1185 <span class="token punctuation">[</span>udev<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.25, 2.6.26, 2.6.27, 2.6.28, 2.6.29<span class="token punctuation">)</span>
+CVE-2008-4210 <span class="token punctuation">[</span>ftrex<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17, 2.6.18, 2.6.19,2.6.20, 2.6.21, 2.6.22<span class="token punctuation">)</span>
+CVE-2008-0600 <span class="token punctuation">[</span>vmsplice2<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.23, 2.6.24<span class="token punctuation">)</span>
+CVE-2008-0600 <span class="token punctuation">[</span>vmsplice1<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.17, 2.6.18, 2.6.19, 2.6.20, 2.6.21, 2.6.22, 2.6.23, 2.6.24, 2.6.24.1<span class="token punctuation">)</span>
+CVE-2006-3626 <span class="token punctuation">[</span>h00lyshit<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.8, 2.6.10, 2.6.11, 2.6.12, 2.6.13, 2.6.14, 2.6.15, 2.6.16<span class="token punctuation">)</span>
+CVE-2006-2451 <span class="token punctuation">[</span>raptor_prctl<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.13, 2.6.14, 2.6.15, 2.6.16, 2.6.17<span class="token punctuation">)</span>
+CVE-2005-0736 <span class="token punctuation">[</span>krad3<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.6.5, 2.6.7, 2.6.8, 2.6.9, 2.6.10, 2.6.11<span class="token punctuation">)</span>
+CVE-2005-1263 <span class="token punctuation">[</span>binfmt_elf.c<span class="token punctuation">]</span> <span class="token punctuation">(</span>Linux kernel 2.x.x to 2.2.27-rc2, 2.4.x to 2.4.31-pre1, and 2.6.x to 2.6.12-rc4<span class="token punctuation">)</span>
+CVE-2004-1235 <span class="token punctuation">[</span>elflbl<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.4.29<span class="token punctuation">)</span>
+CVE-N/A <span class="token punctuation">[</span>caps_to_root<span class="token punctuation">]</span>  <span class="token punctuation">(</span>2.6.34, 2.6.35, 2.6.36<span class="token punctuation">)</span>
+CVE-2004-0077 <span class="token punctuation">[</span>mremap_pte<span class="token punctuation">]</span> <span class="token punctuation">(</span>2.4.20, 2.2.24, 2.4.25, 2.4.26, 2.4.27<span class="token punctuation">)</span>
 </code></pre>
 <h3 id="&#x5DF2;&#x5BF9;&#x5916;&#x516C;&#x5F00;-exp-&#x6CE8;&#xFF1A;">&#x5DF2;&#x5BF9;&#x5916;&#x516C;&#x5F00; exp &#x6CE8;&#xFF1A;</h3>
 <p><a href="https://github.com/SecWiki/linux-kernel-exploits" target="_blank">https://github.com/SecWiki/linux-kernel-exploits</a><br><a href="https://github.com/Kabot/Unix-Privilege-Escalation-Exploits-Pack/" target="_blank">https://github.com/Kabot/Unix-Privilege-Escalation-Exploits-Pack/</a><br><a href="https://github.com/xairy/kernel-exploits" target="_blank">https://github.com/xairy/kernel-exploits</a></p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 10:53
+</span></footer>
                                 
                                 </section>
                             
@@ -1924,7 +1968,7 @@ CVE-2004-0077 [mremap_pte] (2.4.20, 2.2.24, 2.4.25, 2.4.26, 2.4.27)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二课：Linux提权-依赖exp篇","level":"1.4.2","depth":2,"next":{"title":"第三课：Delphi代码审计--项目实战1","level":"1.4.3","depth":2,"path":"Chapter1/3_Delphi代码审计--项目实战1.md","ref":"Chapter1/3_Delphi代码审计--项目实战1.md","articles":[]},"previous":{"title":"第一课：windows提权-快速查找exp","level":"1.4.1","depth":2,"path":"Chapter1/1_windows提权-快速查找exp.md","ref":"Chapter1/1_windows提权-快速查找exp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/2_Linux提权-依赖exp篇.md","mtime":"2019-02-23T02:53:44.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二课：Linux提权-依赖exp篇","level":"1.4.2","depth":2,"next":{"title":"第三课：Delphi代码审计--项目实战1","level":"1.4.3","depth":2,"path":"Chapter1/3_Delphi代码审计--项目实战1.md","ref":"Chapter1/3_Delphi代码审计--项目实战1.md","articles":[]},"previous":{"title":"第一课：windows提权-快速查找exp","level":"1.4.1","depth":2,"path":"Chapter1/1_windows提权-快速查找exp.md","ref":"Chapter1/1_windows提权-快速查找exp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/2_Linux提权-依赖exp篇.md","mtime":"2019-02-23T02:53:44.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1934,27 +1978,43 @@ CVE-2004-0077 [mremap_pte] (2.4.20, 2.2.24, 2.4.25, 2.4.26, 2.4.27)
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

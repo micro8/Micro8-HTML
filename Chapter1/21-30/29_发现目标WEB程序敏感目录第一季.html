@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第二十九课：发现目标WEB程序敏感目录第一季 · GitBook</title>
+        <title>第二十九课：发现目标WEB程序敏感目录第一季 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="28_基于MSF发现内网存活主机第六季.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1834,7 +1876,7 @@
 <p><strong>&#x653B;&#x51FB;&#x673A;&#xFF1A;</strong><br>192.168.1.104 Debian<br><strong>&#x9776;&#x673A;&#xFF1A;</strong><br>192.168.1.102 Windows 2003 IIS</p>
 <p><img src="media/c3fcc5b823e0595a4cfc3182450ede90.jpg" alt=""></p>
 <h3 id="&#x666E;&#x901A;&#x7206;&#x7834;&#xFF1A;">&#x666E;&#x901A;&#x7206;&#x7834;&#xFF1A;</h3>
-<pre><code class="lang-bash">root@John:~/wordlist/small<span class="hljs-comment"># dirb http://192.168.1.102 ./ASPX.txt </span>
+<pre class="language-"><code class="lang-bash">root@John:~/wordlist/small<span class="token comment"># dirb http://192.168.1.102 ./ASPX.txt </span>
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 DIRB v2.22
@@ -1850,8 +1892,8 @@ WORDLIST_FILES: ./ASPX.txt
 GENERATED WORDS: 822 
 
 &#x2010;&#x2010;&#x2010;&#x2010; Scanning URL: http://192.168.1.102/ &#x2010;&#x2010;&#x2010;&#x2010;
-+ http://192.168.1.102//Index.aspx (CODE:200|SIZE:2749)
-+ http://192.168.1.102//Manage/Default.aspx (CODE:302|SIZE:203) 
++ http://192.168.1.102//Index.aspx <span class="token punctuation">(</span>CODE:200<span class="token operator">|</span>SIZE:2749<span class="token punctuation">)</span>
++ http://192.168.1.102//Manage/Default.aspx <span class="token punctuation">(</span>CODE:302<span class="token operator">|</span>SIZE:203<span class="token punctuation">)</span> 
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 END_TIME: Sun Feb 17 23:26:56 2019
@@ -1859,7 +1901,7 @@ DOWNLOADED: 822 &#x2010; FOUND: 2
 </code></pre>
 <p><img src="media/db482720c37469309590eccaa2eebb95.jpg" alt=""></p>
 <h3 id="&#x591A;&#x5B57;&#x5178;&#x6302;&#x8F7D;&#xFF1A;">&#x591A;&#x5B57;&#x5178;&#x6302;&#x8F7D;&#xFF1A;</h3>
-<pre><code class="lang-bash">root@John:~/wordlist/small<span class="hljs-comment"># dirb http://192.168.1.102 ./ASPX.txt,./DIR.txt</span>
+<pre class="language-"><code class="lang-bash">root@John:~/wordlist/small<span class="token comment"># dirb http://192.168.1.102 ./ASPX.txt,./DIR.txt</span>
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 DIRB v2.22
@@ -1875,19 +1917,19 @@ WORDLIST_FILES: ./ASPX.txt,./DIR.txt
 GENERATED WORDS: 1975 
 
 &#x2010;&#x2010;&#x2010;&#x2010; Scanning URL: http://192.168.1.102/ &#x2010;&#x2010;&#x2010;&#x2010;
-+ http://192.168.1.102//Index.aspx (CODE:200|SIZE:2749)
-+ http://192.168.1.102//Manage/Default.aspx (CODE:302|SIZE:203)
-+ http://192.168.1.102//bbs (CODE:301|SIZE:148)
-+ http://192.168.1.102//manage (CODE:301|SIZE:151)
-+ http://192.168.1.102//manage/ (CODE:302|SIZE:203)
-+ http://192.168.1.102//kindeditor/ (CODE:403|SIZE:218)
-+ http://192.168.1.102//robots.txt (CODE:200|SIZE:214)
-+ http://192.168.1.102//Web.config (CODE:302|SIZE:130)
-+ http://192.168.1.102//files (CODE:301|SIZE:150)
-+ http://192.168.1.102//install (CODE:301|SIZE:152) 
++ http://192.168.1.102//Index.aspx <span class="token punctuation">(</span>CODE:200<span class="token operator">|</span>SIZE:2749<span class="token punctuation">)</span>
++ http://192.168.1.102//Manage/Default.aspx <span class="token punctuation">(</span>CODE:302<span class="token operator">|</span>SIZE:203<span class="token punctuation">)</span>
++ http://192.168.1.102//bbs <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:148<span class="token punctuation">)</span>
++ http://192.168.1.102//manage <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:151<span class="token punctuation">)</span>
++ http://192.168.1.102//manage/ <span class="token punctuation">(</span>CODE:302<span class="token operator">|</span>SIZE:203<span class="token punctuation">)</span>
++ http://192.168.1.102//kindeditor/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102//robots.txt <span class="token punctuation">(</span>CODE:200<span class="token operator">|</span>SIZE:214<span class="token punctuation">)</span>
++ http://192.168.1.102//Web.config <span class="token punctuation">(</span>CODE:302<span class="token operator">|</span>SIZE:130<span class="token punctuation">)</span>
++ http://192.168.1.102//files <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:150<span class="token punctuation">)</span>
++ http://192.168.1.102//install <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:152<span class="token punctuation">)</span> 
 
-(!) FATAL: Too many errors connecting to host
-(Possible cause: EMPTY REPLY FROM SERVER) 
+<span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">)</span> FATAL: Too many errors connecting to host
+<span class="token punctuation">(</span>Possible cause: EMPTY REPLY FROM SERVER<span class="token punctuation">)</span> 
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 END_TIME: Sun Feb 17 23:31:06 2019
@@ -1895,8 +1937,8 @@ DOWNLOADED: 1495 &#x2010; FOUND: 10
 </code></pre>
 <p><img src="media/544ad274590fbcca704dd16b8186fb39.jpg" alt=""></p>
 <h3 id="&#x81EA;&#x5B9A;&#x4E49;ua&#xFF1A;">&#x81EA;&#x5B9A;&#x4E49;UA&#xFF1A;</h3>
-<pre><code class="lang-bash">root@John:~/wordlist/small<span class="hljs-comment"># dirb http://192.168.1.102 ./ASPX.txt &#x2010;a &quot;M</span>
-ozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)<span class="hljs-string">&quot;
+<pre class="language-"><code class="lang-bash">root@John:~/wordlist/small<span class="token comment"># dirb http://192.168.1.102 ./ASPX.txt &#x2010;a &quot;M</span>
+ozilla/5.0 <span class="token punctuation">(</span>compatible<span class="token punctuation">;</span> Googlebot/2.1<span class="token punctuation">;</span> +http://www.google.com/bot.html<span class="token punctuation">)</span>&quot;
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 DIRB v2.22
@@ -1906,25 +1948,25 @@ By The Dark Raver
 START_TIME: Sun Feb 17 23:34:51 2019
 URL_BASE: http://192.168.1.102/
 WORDLIST_FILES: ./ASPX.txt
-USER_AGENT: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+USER_AGENT: Mozilla/5.0 <span class="token punctuation">(</span>compatible<span class="token punctuation">;</span> Googlebot/2.1<span class="token punctuation">;</span> +http://www.google.com/bot.html<span class="token punctuation">)</span>
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; 
 
 GENERATED WORDS: 822
 
 &#x2010;&#x2010;&#x2010;&#x2010; Scanning URL: http://192.168.1.102/ &#x2010;&#x2010;&#x2010;&#x2010;
-+ http://192.168.1.102//Index.aspx (CODE:200|SIZE:2735)
-+ http://192.168.1.102//Manage/Default.aspx (CODE:302|SIZE:203) 
++ http://192.168.1.102//Index.aspx <span class="token punctuation">(</span>CODE:200<span class="token operator">|</span>SIZE:2735<span class="token punctuation">)</span>
++ http://192.168.1.102//Manage/Default.aspx <span class="token punctuation">(</span>CODE:302<span class="token operator">|</span>SIZE:203<span class="token punctuation">)</span> 
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 END_TIME: Sun Feb 17 23:34:54 2019
 DOWNLOADED: 822 &#x2010; FOUND: 2
-</span></code></pre>
+</code></pre>
 <p><img src="media/3d67b8846183b7172757f29b6420349f.jpg" alt=""></p>
 <h3 id="&#x81EA;&#x5B9A;&#x4E49;cookie&#xFF1A;">&#x81EA;&#x5B9A;&#x4E49;cookie&#xFF1A;</h3>
-<pre><code class="lang-bash">root@John:~/wordlist/small<span class="hljs-comment"># dirb http://192.168.1.102/Manage ./DIR.txt</span>
-&#x2010;a <span class="hljs-string">&quot;Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.ht
-ml)&quot;</span> &#x2010;c <span class="hljs-string">&quot;ASP.NET_SessionId=jennqviqmc2vws55o4ggwu45&quot;</span>
+<pre class="language-"><code class="lang-bash">root@John:~/wordlist/small<span class="token comment"># dirb http://192.168.1.102/Manage ./DIR.txt</span>
+&#x2010;a <span class="token string">&quot;Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.ht
+ml)&quot;</span> &#x2010;c <span class="token string">&quot;ASP.NET_SessionId=jennqviqmc2vws55o4ggwu45&quot;</span>
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 DIRB v2.22
@@ -1934,33 +1976,33 @@ By The Dark Raver
 START_TIME: Sun Feb 17 23:53:08 2019
 URL_BASE: http://192.168.1.102/Manage/
 WORDLIST_FILES: ./DIR.txt
-USER_AGENT: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.googl
-e.com/bot.html)
-COOKIE: ASP.NET_SessionId=jennqviqmc2vws55o4ggwu45 
+USER_AGENT: Mozilla/5.0 <span class="token punctuation">(</span>compatible<span class="token punctuation">;</span> Googlebot/2.1<span class="token punctuation">;</span> +http://www.googl
+e.com/bot.html<span class="token punctuation">)</span>
+COOKIE: ASP.NET_SessionId<span class="token operator">=</span>jennqviqmc2vws55o4ggwu45 
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; 
 
 GENERATED WORDS: 1153 
 
 &#x2010;&#x2010;&#x2010;&#x2010; Scanning URL: http://192.168.1.102/Manage/ &#x2010;&#x2010;&#x2010;&#x2010;
-+ http://192.168.1.102/Manage//include/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//news/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//include (CODE:301|SIZE:159)
-+ http://192.168.1.102/Manage//images/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//sys/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//images (CODE:301|SIZE:158) 
++ http://192.168.1.102/Manage//include/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//news/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//include <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:159<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//images/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//sys/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//images <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:158<span class="token punctuation">)</span> 
 
-(!) FATAL: Too many errors connecting to host
-(Possible cause: EMPTY REPLY FROM SERVER) 
+<span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">)</span> FATAL: Too many errors connecting to host
+<span class="token punctuation">(</span>Possible cause: EMPTY REPLY FROM SERVER<span class="token punctuation">)</span> 
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 END_TIME: Sun Feb 17 23:53:10 2019
 DOWNLOADED: 673 &#x2010; FOUND: 6
 </code></pre>
 <h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x6BEB;&#x79D2;&#x5EF6;&#x8FDF;&#xFF1A;">&#x81EA;&#x5B9A;&#x4E49;&#x6BEB;&#x79D2;&#x5EF6;&#x8FDF;&#xFF1A;</h3>
-<pre><code class="lang-bash">root@John:~/wordlist/small<span class="hljs-comment"># dirb http://192.168.1.102/Manage ./DIR.txt</span>
-&#x2010;a <span class="hljs-string">&quot;Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.ht
-ml)&quot;</span> &#x2010;c <span class="hljs-string">&quot;ASP.NET_SessionId=jennqviqmc2vws55o4ggwu45&quot;</span> &#x2010;z 100
+<pre class="language-"><code class="lang-bash">root@John:~/wordlist/small<span class="token comment"># dirb http://192.168.1.102/Manage ./DIR.txt</span>
+&#x2010;a <span class="token string">&quot;Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.ht
+ml)&quot;</span> &#x2010;c <span class="token string">&quot;ASP.NET_SessionId=jennqviqmc2vws55o4ggwu45&quot;</span> &#x2010;z 100
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 DIRB v2.22
@@ -1970,9 +2012,9 @@ By The Dark Raver
 START_TIME: Sun Feb 17 23:54:29 2019
 URL_BASE: http://192.168.1.102/Manage/
 WORDLIST_FILES: ./DIR.txt
-USER_AGENT: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.googl
-e.com/bot.html)
-COOKIE: ASP.NET_SessionId=jennqviqmc2vws55o4ggwu45
+USER_AGENT: Mozilla/5.0 <span class="token punctuation">(</span>compatible<span class="token punctuation">;</span> Googlebot/2.1<span class="token punctuation">;</span> +http://www.googl
+e.com/bot.html<span class="token punctuation">)</span>
+COOKIE: ASP.NET_SessionId<span class="token operator">=</span>jennqviqmc2vws55o4ggwu45
 SPEED_DELAY: 100 milliseconds 
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
@@ -1980,15 +2022,15 @@ SPEED_DELAY: 100 milliseconds
 GENERATED WORDS: 1153 
 
 &#x2010;&#x2010;&#x2010;&#x2010; Scanning URL: http://192.168.1.102/Manage/ &#x2010;&#x2010;&#x2010;&#x2010;
-+ http://192.168.1.102/Manage//include/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//news/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//include (CODE:301|SIZE:159)
-+ http://192.168.1.102/Manage//images/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//sys/ (CODE:403|SIZE:218)
-+ http://192.168.1.102/Manage//images (CODE:301|SIZE:158) 
++ http://192.168.1.102/Manage//include/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//news/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//include <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:159<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//images/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//sys/ <span class="token punctuation">(</span>CODE:403<span class="token operator">|</span>SIZE:218<span class="token punctuation">)</span>
++ http://192.168.1.102/Manage//images <span class="token punctuation">(</span>CODE:301<span class="token operator">|</span>SIZE:158<span class="token punctuation">)</span> 
 
-(!) FATAL: Too many errors connecting to host
-(Possible cause: EMPTY REPLY FROM SERVER) 
+<span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">)</span> FATAL: Too many errors connecting to host
+<span class="token punctuation">(</span>Possible cause: EMPTY REPLY FROM SERVER<span class="token punctuation">)</span> 
 
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 END_TIME: Sun Feb 17 23:55:50 2019
@@ -1996,55 +2038,57 @@ DOWNLOADED: 673 &#x2010; FOUND: 6
 </code></pre>
 <p><img src="media/5c184a09832f6e4b1d2df8b80c2b7c1f.jpg" alt=""></p>
 <h3 id="&#x5176;&#x4ED6;&#x66F4;&#x591A;&#x6709;&#x8DA3;&#x7684;&#x529F;&#x80FD;&#xFF1A;">&#x5176;&#x4ED6;&#x66F4;&#x591A;&#x6709;&#x8DA3;&#x7684;&#x529F;&#x80FD;&#xFF1A;</h3>
-<pre><code class="lang-bash">DIRB v2.22
+<pre class="language-"><code class="lang-bash">DIRB v2.22
 By The Dark Raver
 &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; 
 
-dirb &lt;url_base&gt; [&lt;wordlist_file(s)&gt;] [options] 
+dirb <span class="token operator">&lt;</span>url_base<span class="token operator">&gt;</span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>wordlist_file<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> 
 
-========================= NOTES =========================
-&lt;url_base&gt; : Base URL to scan. (Use &#x2010;resume <span class="hljs-keyword">for</span> session resuming)
-&lt;wordlist_file(s)&gt; : List of wordfiles. (wordfile1,wordfile2,wordfile3...)
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span> NOTES <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+<span class="token operator">&lt;</span>url_base<span class="token operator">&gt;</span> <span class="token keyword">:</span> Base URL to scan. <span class="token punctuation">(</span>Use &#x2010;resume <span class="token keyword">for</span> session resuming<span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>wordlist_file<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token operator">&gt;</span> <span class="token keyword">:</span> List of wordfiles. <span class="token punctuation">(</span>wordfile1,wordfile2,wordfile3<span class="token punctuation">..</span>.<span class="token punctuation">)</span>
 
-======================== HOTKEYS ========================
-<span class="hljs-string">&apos;n&apos;</span> &#x2010;&gt; Go to next directory.
-<span class="hljs-string">&apos;q&apos;</span> &#x2010;&gt; Stop scan. (Saving state <span class="hljs-keyword">for</span> resume)
-<span class="hljs-string">&apos;r&apos;</span> &#x2010;&gt; Remaining scan stats.
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span> HOTKEYS <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+<span class="token string">&apos;n&apos;</span> &#x2010;<span class="token operator">&gt;</span> Go to next directory.
+<span class="token string">&apos;q&apos;</span> &#x2010;<span class="token operator">&gt;</span> Stop scan. <span class="token punctuation">(</span>Saving state <span class="token keyword">for</span> resume<span class="token punctuation">)</span>
+<span class="token string">&apos;r&apos;</span> &#x2010;<span class="token operator">&gt;</span> Remaining scan stats.
 
-======================== OPTIONS ========================
-&#x2010;a &lt;agent_string&gt; : Specify your custom USER_AGENT.
-&#x2010;b : Use path as is.
-&#x2010;c &lt;cookie_string&gt; : Set a cookie <span class="hljs-keyword">for</span> the HTTP request.
-&#x2010;E &lt;certificate&gt; : path to the client certificate.
-&#x2010;f : Fine tunning of NOT_FOUND (404) detection.
-&#x2010;H &lt;header_string&gt; : Add a custom header to the HTTP request.
-&#x2010;i : Use <span class="hljs-keyword">case</span>&#x2010;insensitive search.
-&#x2010;l : Print <span class="hljs-string">&quot;Location&quot;</span> header when found.
-&#x2010;N &lt;nf_code&gt;: Ignore responses with this HTTP code.
-&#x2010;o &lt;output_file&gt; : Save output to disk.
-&#x2010;p &lt;proxy[:port]&gt; : Use this proxy. (Default port is 1080)
-&#x2010;P &lt;proxy_username:proxy_password&gt; : Proxy Authentication.
-&#x2010;r : Don<span class="hljs-string">&apos;t search recursively.
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span> OPTIONS <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+&#x2010;a <span class="token operator">&lt;</span>agent_string<span class="token operator">&gt;</span> <span class="token keyword">:</span> Specify your custom USER_AGENT.
+&#x2010;b <span class="token keyword">:</span> Use path as is.
+&#x2010;c <span class="token operator">&lt;</span>cookie_string<span class="token operator">&gt;</span> <span class="token keyword">:</span> Set a cookie <span class="token keyword">for</span> the HTTP request.
+&#x2010;E <span class="token operator">&lt;</span>certificate<span class="token operator">&gt;</span> <span class="token keyword">:</span> path to the client certificate.
+&#x2010;f <span class="token keyword">:</span> Fine tunning of NOT_FOUND <span class="token punctuation">(</span>404<span class="token punctuation">)</span> detection.
+&#x2010;H <span class="token operator">&lt;</span>header_string<span class="token operator">&gt;</span> <span class="token keyword">:</span> Add a custom header to the HTTP request.
+&#x2010;i <span class="token keyword">:</span> Use case&#x2010;insensitive search.
+&#x2010;l <span class="token keyword">:</span> Print <span class="token string">&quot;Location&quot;</span> header when found.
+&#x2010;N <span class="token operator">&lt;</span>nf_code<span class="token operator">&gt;</span>: Ignore responses with this HTTP code.
+&#x2010;o <span class="token operator">&lt;</span>output_file<span class="token operator">&gt;</span> <span class="token keyword">:</span> Save output to disk.
+&#x2010;p <span class="token operator">&lt;</span>proxy<span class="token punctuation">[</span>:port<span class="token punctuation">]</span><span class="token operator">&gt;</span> <span class="token keyword">:</span> Use this proxy. <span class="token punctuation">(</span>Default port is 1080<span class="token punctuation">)</span>
+&#x2010;P <span class="token operator">&lt;</span>proxy_username:proxy_password<span class="token operator">&gt;</span> <span class="token keyword">:</span> Proxy Authentication.
+&#x2010;r <span class="token keyword">:</span> Don<span class="token string">&apos;t search recursively.
 &#x2010;R : Interactive recursion. (Asks for each directory)
-&#x2010;S : Silent Mode. Don&apos;</span>t show tested words. (For dumb terminals)
-&#x2010;t : Don<span class="hljs-string">&apos;t force an ending &apos;</span>/<span class="hljs-string">&apos; on URLs.
+&#x2010;S : Silent Mode. Don&apos;</span>t show tested words. <span class="token punctuation">(</span>For dumb terminals<span class="token punctuation">)</span>
+&#x2010;t <span class="token keyword">:</span> Don<span class="token string">&apos;t force an ending &apos;</span>/<span class="token string">&apos; on URLs.
 &#x2010;u &lt;username:password&gt; : HTTP Authentication.
 &#x2010;v : Show also NOT_FOUND pages.
 &#x2010;w : Don&apos;</span>t stop on WARNING messages.
-&#x2010;X &lt;extensions&gt; / &#x2010;x &lt;exts_file&gt; : Append each word with this extensions.
-&#x2010;z &lt;millisecs&gt; : Add a milliseconds delay to not cause excessive Flood.
+&#x2010;X <span class="token operator">&lt;</span>extensions<span class="token operator">&gt;</span> / &#x2010;x <span class="token operator">&lt;</span>exts_file<span class="token operator">&gt;</span> <span class="token keyword">:</span> Append each word with this extensions.
+&#x2010;z <span class="token operator">&lt;</span>millisecs<span class="token operator">&gt;</span> <span class="token keyword">:</span> Add a milliseconds delay to not cause excessive Flood.
 
-======================== EXAMPLES =======================
-dirb http://url/directory/ (Simple Test)
-dirb http://url/ &#x2010;X .html (Test files with <span class="hljs-string">&apos;.html&apos;</span> extension)
-dirb http://url/ /usr/share/dirb/wordlists/vulns/apache.txt (Test wit hapache.txt wordlist)
-dirb https://secure_url/ (Simple Test with SSL)
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span> EXAMPLES <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span>
+dirb http://url/directory/ <span class="token punctuation">(</span>Simple Test<span class="token punctuation">)</span>
+dirb http://url/ &#x2010;X .html <span class="token punctuation">(</span>Test files with <span class="token string">&apos;.html&apos;</span> extension<span class="token punctuation">)</span>
+dirb http://url/ /usr/share/dirb/wordlists/vulns/apache.txt <span class="token punctuation">(</span>Test wit hapache.txt wordlist<span class="token punctuation">)</span>
+dirb https://secure_url/ <span class="token punctuation">(</span>Simple Test with SSL<span class="token punctuation">)</span>
 </code></pre>
 <p><img src="media/41381c9747125487e30cbbdc3acd039f.jpg" alt=""></p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 16:46
+</span></footer>
                                 
                                 </section>
                             
@@ -2087,7 +2131,7 @@ dirb https://secure_url/ (Simple Test with SSL)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二十九课：发现目标WEB程序敏感目录第一季","level":"1.4.29","depth":2,"next":{"title":"第三十课：解决msfvenom命令自动补全","level":"1.4.30","depth":2,"path":"Chapter1/21-30/30_解决msfvenom命令自动补全.md","ref":"Chapter1/21-30/30_解决msfvenom命令自动补全.md","articles":[]},"previous":{"title":"第二十八课：基于MSF发现内网存活主机第六季","level":"1.4.28","depth":2,"path":"Chapter1/21-30/28_基于MSF发现内网存活主机第六季.md","ref":"Chapter1/21-30/28_基于MSF发现内网存活主机第六季.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/21-30/29_发现目标WEB程序敏感目录第一季.md","mtime":"2019-02-23T08:46:05.428Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二十九课：发现目标WEB程序敏感目录第一季","level":"1.4.29","depth":2,"next":{"title":"第三十课：解决msfvenom命令自动补全","level":"1.4.30","depth":2,"path":"Chapter1/21-30/30_解决msfvenom命令自动补全.md","ref":"Chapter1/21-30/30_解决msfvenom命令自动补全.md","articles":[]},"previous":{"title":"第二十八课：基于MSF发现内网存活主机第六季","level":"1.4.28","depth":2,"path":"Chapter1/21-30/28_基于MSF发现内网存活主机第六季.md","ref":"Chapter1/21-30/28_基于MSF发现内网存活主机第六季.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/21-30/29_发现目标WEB程序敏感目录第一季.md","mtime":"2019-02-23T08:46:05.428Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2097,27 +2141,43 @@ dirb https://secure_url/ (Simple Test with SSL)
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 

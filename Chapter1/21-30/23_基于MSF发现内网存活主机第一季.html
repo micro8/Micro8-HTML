@@ -1,14 +1,14 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>第二十三课：基于MSF发现内网存活主机第一季 · GitBook</title>
+        <title>第二十三课：基于MSF发现内网存活主机第一季 · Micro8 系列教程</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="Micro8 系列作者">
         
         
     
@@ -17,17 +17,33 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
         
 
     
@@ -47,6 +63,7 @@
     
 
         
+    
     
     
     <meta name="HandheldFriendly" content="true"/>
@@ -63,6 +80,17 @@
     <link rel="prev" href="22_基于SMB发现内网存活主机.html" />
     
 
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"};
+    </script>
+
     </head>
     <body>
         
@@ -71,7 +99,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -82,7 +110,21 @@
 <ul class="summary">
     
     
+    
+        
+        <li>
+            <a href="https://micropoor.blogspot.com" target="_blank" class="custom-link">Micropoor</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/micro8" target="_blank" class="custom-link">Github Micro8</a>
+        </li>
+    
+    
 
+    
+    <li class="divider"></li>
     
 
     
@@ -1785,7 +1827,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -1818,7 +1860,7 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
+<div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
                                 <section class="normal markdown-section">
@@ -1830,10 +1872,10 @@
 <p><strong>&#x9776;&#x673A;&#xFF1A;</strong> 
 192.168.1.2 Windows 7<br>192.168.1.119 Windows 2003</p>
 <h3 id="msf&#x7684;search&#x652F;&#x6301;type&#x641C;&#x7D22;&#xFF1A;">MSF&#x7684;search&#x652F;&#x6301;type&#x641C;&#x7D22;&#xFF1A;</h3>
-<pre><code class="lang-bash">msf &gt; search scanner <span class="hljs-built_in">type</span>:auxiliary 
+<pre class="language-"><code class="lang-bash">msf <span class="token operator">&gt;</span> search scanner type:auxiliary 
 
 Matching Modules
-================ 
+<span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span> 
 
 Name Disclosure Date Rank Check Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
@@ -1844,11 +1886,11 @@ auxiliary/admin/teradata/teradata_odbc_sql 2018&#x2010;03&#x2010;29 normal Yes T
 auxiliary/bnat/bnat_scan normal Yes BNAT Scanner
 auxiliary/gather/citrix_published_applications normal No Citrix MetaFrame ICA Published Applications Scanner
 auxiliary/gather/enum_dns normal No DNS Record Scanner and Enumerator
-....
-auxiliary/scanner/winrm/winrm_cmd normal Yes W<span class="hljs-keyword">in</span>RM Command Runner
-auxiliary/scanner/winrm/winrm_login normal Yes W<span class="hljs-keyword">in</span>RM Login Utility
-auxiliary/scanner/winrm/winrm_wql normal Yes W<span class="hljs-keyword">in</span>RM WQL Query Runner
-auxiliary/scanner/wproxy/att_open_proxy 2017&#x2010;08&#x2010;31 normal Yes Open WAN&#x2010;to&#x2010;LAN proxy on AT&amp;T routers
+<span class="token punctuation">..</span><span class="token punctuation">..</span>
+auxiliary/scanner/winrm/winrm_cmd normal Yes WinRM Command Runner
+auxiliary/scanner/winrm/winrm_login normal Yes WinRM Login Utility
+auxiliary/scanner/winrm/winrm_wql normal Yes WinRM WQL Query Runner
+auxiliary/scanner/wproxy/att_open_proxy 2017&#x2010;08&#x2010;31 normal Yes Open WAN&#x2010;to&#x2010;LAN proxy on AT<span class="token operator">&amp;</span>T routers
 auxiliary/scanner/wsdd/wsdd_query normal Yes WS&#x2010;Discovery Information Discovery
 auxiliary/scanner/x11/open_x11 normal Yes X11 No&#x2010;Auth Scanner
 </code></pre>
@@ -1862,146 +1904,148 @@ auxiliary/scanner/x11/open_x11 normal Yes X11 No&#x2010;Auth Scanner
 <li>auxiliary/scanner/smb/smb_version</li>
 </ul>
 <h3 id="&#x4E00;&#xFF1A;&#x57FA;&#x4E8E;scannerhttphttpversion&#x53D1;&#x73B0;http&#x670D;&#x52A1;">&#x4E00;&#xFF1A;&#x57FA;&#x4E8E;scanner/http/http_version&#x53D1;&#x73B0;HTTP&#x670D;&#x52A1;</h3>
-<pre><code class="lang-bash">msf auxiliary(scanner/http/http_version) &gt; show options 
+<pre class="language-"><code class="lang-bash">msf auxiliary<span class="token punctuation">(</span>scanner/http/http_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options 
 
-Module options (auxiliary/scanner/http/http_version): 
+Module options <span class="token punctuation">(</span>auxiliary/scanner/http/http_version<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
-Proxies no A proxy chain of format <span class="hljs-built_in">type</span>:host:port[,<span class="hljs-built_in">type</span>:host:port] [...]
-RHOSTS 192.168.1.0/24 yes The target address range or CIDR identifier
-RPORT 80 yes The target port (TCP)
-SSL <span class="hljs-literal">false</span> no Negotiate SSL/TLS <span class="hljs-keyword">for</span> outgoing connections
-THREADS 20 yes The number of concurrent threads
+Proxies no A proxy chain of <span class="token function">format</span> type:host:port<span class="token punctuation">[</span>,type:host:port<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+RHOSTS 192.168.1.0/24 <span class="token function">yes</span> The target address range or CIDR identifier
+RPORT 80 <span class="token function">yes</span> The target port <span class="token punctuation">(</span>TCP<span class="token punctuation">)</span>
+SSL <span class="token boolean">false</span> no Negotiate SSL/TLS <span class="token keyword">for</span> outgoing connections
+THREADS 20 <span class="token function">yes</span> The number of concurrent threads
 VHOST no HTTP server virtual host 
 
-msf auxiliary(scanner/http/http_version) &gt; exploit 
+msf auxiliary<span class="token punctuation">(</span>scanner/http/http_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
 
-[+] 192.168.1.1:80
-[*] Scanned 27 of 256 hosts (10% complete)
-[*] Scanned 63 of 256 hosts (24% complete)
-[*] Scanned 82 of 256 hosts (32% complete)
-[*] Scanned 103 of 256 hosts (40% complete)
-[+] 192.168.1.119:80 Microsoft&#x2010;IIS/6.0 ( Powered by ASP.NET )
-[*] Scanned 129 of 256 hosts (50% complete)
-[*] Scanned 154 of 256 hosts (60% complete)
-[*] Scanned 182 of 256 hosts (71% complete)
-[*] Scanned 205 of 256 hosts (80% complete)
-[*] Scanned 231 of 256 hosts (90% complete)
-[*] Scanned 256 of 256 hosts (100% complete)
-[*] Auxiliary module execution completed
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.1:80
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 27 of 256 hosts <span class="token punctuation">(</span>10% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 63 of 256 hosts <span class="token punctuation">(</span>24% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 82 of 256 hosts <span class="token punctuation">(</span>32% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 103 of 256 hosts <span class="token punctuation">(</span>40% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.119:80 Microsoft&#x2010;IIS/6.0 <span class="token punctuation">(</span> Powered by ASP.NET <span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 129 of 256 hosts <span class="token punctuation">(</span>50% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 154 of 256 hosts <span class="token punctuation">(</span>60% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 182 of 256 hosts <span class="token punctuation">(</span>71% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 205 of 256 hosts <span class="token punctuation">(</span>80% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 231 of 256 hosts <span class="token punctuation">(</span>90% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 256 of 256 hosts <span class="token punctuation">(</span>100% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Auxiliary module execution completed
 </code></pre>
 <p><img src="media/15b17e700bde4540e5b51959a3e15de5.jpg" alt=""></p>
 <h3 id="&#x4E8C;&#xFF1A;&#x57FA;&#x4E8E;scannersmbsmbversion&#x53D1;&#x73B0;smb&#x670D;&#x52A1;">&#x4E8C;&#xFF1A;&#x57FA;&#x4E8E;scanner/smb/smb_version&#x53D1;&#x73B0;SMB&#x670D;&#x52A1;</h3>
-<pre><code class="lang-bash">msf auxiliary(scanner/smb/smb_version) &gt; show options 
+<pre class="language-"><code class="lang-bash">msf auxiliary<span class="token punctuation">(</span>scanner/smb/smb_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options 
 
-Module options (auxiliary/scanner/smb/smb_version): 
+Module options <span class="token punctuation">(</span>auxiliary/scanner/smb/smb_version<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
-RHOSTS 192.168.1.0/24 yes The target address range or CIDR identifier
-SMBDomain . no The Windows domain to use <span class="hljs-keyword">for</span> authentication
-SMBPass no The password <span class="hljs-keyword">for</span> the specified username
+RHOSTS 192.168.1.0/24 <span class="token function">yes</span> The target address range or CIDR identifier
+SMBDomain <span class="token keyword">.</span> no The Windows domain to use <span class="token keyword">for</span> authentication
+SMBPass no The password <span class="token keyword">for</span> the specified username
 SMBUser no The username to authenticate as
-THREADS 20 yes The number of concurrent threads 
+THREADS 20 <span class="token function">yes</span> The number of concurrent threads 
 
-msf auxiliary(scanner/smb/smb_version) &gt; exploit 
+msf auxiliary<span class="token punctuation">(</span>scanner/smb/smb_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
 
-[+] 192.168.1.2:445 &#x2010; Host is running Windows 7 Ultimate SP1 (build:7601) (name:JOHN&#x2010;PC) (workgroup:WORKGROUP )
-[*] Scanned 40 of 256 hosts (15% complete)
-[*] Scanned 60 of 256 hosts (23% complete)
-[*] Scanned 79 of 256 hosts (30% complete)
-[+] 192.168.1.119:445 &#x2010; Host is running Windows 2003 R2 SP2 (build:3790) (name:WIN03X64)
-[*] Scanned 103 of 256 hosts (40% complete)
-[*] Scanned 128 of 256 hosts (50% complete)
-[*] Scanned 154 of 256 hosts (60% complete)
-[*] Scanned 181 of 256 hosts (70% complete)
-[*] Scanned 206 of 256 hosts (80% complete)
-[*] Scanned 231 of 256 hosts (90% complete)
-[*] Scanned 256 of 256 hosts (100% complete)
-[*] Auxiliary module execution completed
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.2:445 &#x2010; Host is running Windows 7 Ultimate SP1 <span class="token punctuation">(</span>build:7601<span class="token punctuation">)</span> <span class="token punctuation">(</span>name:JOHN&#x2010;PC<span class="token punctuation">)</span> <span class="token punctuation">(</span>workgroup:WORKGROUP <span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 40 of 256 hosts <span class="token punctuation">(</span>15% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 60 of 256 hosts <span class="token punctuation">(</span>23% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 79 of 256 hosts <span class="token punctuation">(</span>30% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.119:445 &#x2010; Host is running Windows 2003 R2 SP2 <span class="token punctuation">(</span>build:3790<span class="token punctuation">)</span> <span class="token punctuation">(</span>name:WIN03X64<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 103 of 256 hosts <span class="token punctuation">(</span>40% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 128 of 256 hosts <span class="token punctuation">(</span>50% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 154 of 256 hosts <span class="token punctuation">(</span>60% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 181 of 256 hosts <span class="token punctuation">(</span>70% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 206 of 256 hosts <span class="token punctuation">(</span>80% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 231 of 256 hosts <span class="token punctuation">(</span>90% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 256 of 256 hosts <span class="token punctuation">(</span>100% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Auxiliary module execution completed
 </code></pre>
 <p><img src="media/db717c6c50914ce513a94fe211bf620b.jpg" alt=""></p>
 <h3 id="&#x4E09;&#xFF1A;&#x57FA;&#x4E8E;scannerftpftpversion&#x53D1;&#x73B0;ftp&#x670D;&#x52A1;">&#x4E09;&#xFF1A;&#x57FA;&#x4E8E;scanner/ftp/ftp_version&#x53D1;&#x73B0;FTP&#x670D;&#x52A1;</h3>
-<pre><code class="lang-bash">msf auxiliary(scanner/ftp/ftp_version) &gt; show options 
+<pre class="language-"><code class="lang-bash">msf auxiliary<span class="token punctuation">(</span>scanner/ftp/ftp_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options 
 
-Module options (auxiliary/scanner/ftp/ftp_version): 
+Module options <span class="token punctuation">(</span>auxiliary/scanner/ftp/ftp_version<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
-FTPPASS mozilla@example.com no The password <span class="hljs-keyword">for</span> the specified username
+FTPPASS mozilla@example.com no The password <span class="token keyword">for</span> the specified username
 FTPUSER anonymous no The username to authenticate as
-RHOSTS 192.168.1.0/24 yes The target address range or CIDR identifier
-RPORT 21 yes The target port (TCP)
-THREADS 50 yes The number of concurrent threads 
+RHOSTS 192.168.1.0/24 <span class="token function">yes</span> The target address range or CIDR identifier
+RPORT 21 <span class="token function">yes</span> The target port <span class="token punctuation">(</span>TCP<span class="token punctuation">)</span>
+THREADS 50 <span class="token function">yes</span> The number of concurrent threads 
 
-msf auxiliary(scanner/ftp/ftp_version) &gt; exploit 
+msf auxiliary<span class="token punctuation">(</span>scanner/ftp/ftp_version<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
 
-[*] Scanned 51 of 256 hosts (19% complete)
-[*] Scanned 52 of 256 hosts (20% complete)
-[*] Scanned 100 of 256 hosts (39% complete)
-[+] 192.168.1.119:21 &#x2010; FTP Banner: <span class="hljs-string">&apos;220 Microsoft FTP Service\x0d\x0a&apos;</span>
-[*] Scanned 103 of 256 hosts (40% complete)
-[*] Scanned 133 of 256 hosts (51% complete)
-[*] Scanned 183 of 256 hosts (71% complete)
-[*] Scanned 197 of 256 hosts (76% complete)
-[*] Scanned 229 of 256 hosts (89% complete)
-[*] Scanned 231 of 256 hosts (90% complete)
-[*] Scanned 256 of 256 hosts (100% complete)
-[*] Auxiliary module execution completed
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 51 of 256 hosts <span class="token punctuation">(</span>19% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 52 of 256 hosts <span class="token punctuation">(</span>20% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 100 of 256 hosts <span class="token punctuation">(</span>39% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.119:21 &#x2010; FTP Banner: <span class="token string">&apos;220 Microsoft FTP Service\x0d\x0a&apos;</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 103 of 256 hosts <span class="token punctuation">(</span>40% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 133 of 256 hosts <span class="token punctuation">(</span>51% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 183 of 256 hosts <span class="token punctuation">(</span>71% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 197 of 256 hosts <span class="token punctuation">(</span>76% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 229 of 256 hosts <span class="token punctuation">(</span>89% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 231 of 256 hosts <span class="token punctuation">(</span>90% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 256 of 256 hosts <span class="token punctuation">(</span>100% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Auxiliary module execution completed
 </code></pre>
 <p><img src="media/f6190ef2a7165ce148af70d8fde88ddc.jpg" alt=""></p>
 <h3 id="&#x56DB;&#xFF1A;&#x57FA;&#x4E8E;scannerdiscoveryarpsweep&#x53D1;&#x73B0;&#x5185;&#x7F51;&#x5B58;&#x6D3B;&#x4E3B;&#x673A;">&#x56DB;&#xFF1A;&#x57FA;&#x4E8E;scanner/discovery/arp_sweep&#x53D1;&#x73B0;&#x5185;&#x7F51;&#x5B58;&#x6D3B;&#x4E3B;&#x673A;</h3>
-<pre><code class="lang-bash">msf auxiliary(scanner/discovery/arp_sweep) &gt; show options 
+<pre class="language-"><code class="lang-bash">msf auxiliary<span class="token punctuation">(</span>scanner/discovery/arp_sweep<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options 
 
-Module options (auxiliary/scanner/discovery/arp_sweep): 
+Module options <span class="token punctuation">(</span>auxiliary/scanner/discovery/arp_sweep<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 INTERFACE no The name of the interface
-RHOSTS 192.168.1.0/24 yes The target address range or CIDR identifier
+RHOSTS 192.168.1.0/24 <span class="token function">yes</span> The target address range or CIDR identifier
 SHOST no Source IP Address
 SMAC no Source MAC Address
-THREADS 50 yes The number of concurrent threads
-TIMEOUT 5 yes The number of seconds to <span class="hljs-built_in">wait</span> <span class="hljs-keyword">for</span> new data 
+THREADS 50 <span class="token function">yes</span> The number of concurrent threads
+TIMEOUT 5 <span class="token function">yes</span> The number of seconds to <span class="token function">wait</span> <span class="token keyword">for</span> new data 
 
-msf auxiliary(scanner/discovery/arp_sweep) &gt; exploit 
+msf auxiliary<span class="token punctuation">(</span>scanner/discovery/arp_sweep<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
 
-[+] 192.168.1.1 appears to be up (UNKNOWN).
-[+] 192.168.1.2 appears to be up (UNKNOWN).
-[+] 192.168.1.119 appears to be up (VMware, Inc.).
-[*] Scanned 256 of 256 hosts (100% complete)
-[*] Auxiliary module execution completed
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.1 appears to be up <span class="token punctuation">(</span>UNKNOWN<span class="token punctuation">)</span>.
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.2 appears to be up <span class="token punctuation">(</span>UNKNOWN<span class="token punctuation">)</span>.
+<span class="token punctuation">[</span>+<span class="token punctuation">]</span> 192.168.1.119 appears to be up <span class="token punctuation">(</span>VMware, Inc.<span class="token punctuation">)</span>.
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 256 of 256 hosts <span class="token punctuation">(</span>100% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Auxiliary module execution completed
 </code></pre>
 <p><img src="media/ffadf4bf3cace0a835ea5e7ce94ea68e.jpg" alt=""></p>
 <h3 id="&#x4E94;&#xFF1A;&#x57FA;&#x4E8E;scannerdiscoveryudpsweep&#x53D1;&#x73B0;&#x5185;&#x7F51;&#x5B58;&#x6D3B;&#x4E3B;&#x673A;">&#x4E94;&#xFF1A;&#x57FA;&#x4E8E;scanner/discovery/udp_sweep&#x53D1;&#x73B0;&#x5185;&#x7F51;&#x5B58;&#x6D3B;&#x4E3B;&#x673A;</h3>
-<pre><code class="lang-bash">msf auxiliary(scanner/discovery/udp_sweep) &gt; show options 
+<pre class="language-"><code class="lang-bash">msf auxiliary<span class="token punctuation">(</span>scanner/discovery/udp_sweep<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options 
 
-Module options (auxiliary/scanner/discovery/udp_sweep): 
+Module options <span class="token punctuation">(</span>auxiliary/scanner/discovery/udp_sweep<span class="token punctuation">)</span>: 
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
-BATCHSIZE 256 yes The number of hosts to probe <span class="hljs-keyword">in</span> each <span class="hljs-built_in">set</span>
-RHOSTS 192.168.1.0/24 yes The target address range or CIDR identifier
-THREADS 50 yes The number of concurrent threads 
+BATCHSIZE 256 <span class="token function">yes</span> The number of hosts to probe <span class="token keyword">in</span> each <span class="token keyword">set</span>
+RHOSTS 192.168.1.0/24 <span class="token function">yes</span> The target address range or CIDR identifier
+THREADS 50 <span class="token function">yes</span> The number of concurrent threads 
 
-msf auxiliary(scanner/discovery/udp_sweep) &gt; exploit 
+msf auxiliary<span class="token punctuation">(</span>scanner/discovery/udp_sweep<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
 
-[*] Sending 13 probes to 192.168.1.0&#x2010;&gt;192.168.1.255 (256 hosts)
-[*] Discovered DNS on 192.168.1.1:53 (ce2a8500000100010000000007564552  53494f4e0442494e440000100003c00c0010000300000001001a19737572656c7920796f7
-5206d757374206265206a6f6b696e67)
-[*] Discovered NetBIOS on 192.168.1.2:137 (JOHN&#x2010;PC:&lt;00&gt;:U :WORKGROUP:&lt;00&gt;:G :JOHN&#x2010;PC:&lt;20&gt;:U :WORKGROUP:&lt;1e&gt;:G :WORKGROUP:&lt;1d&gt;:U
-:__MSBROWSE__ &lt;01&gt;:G :4c:cc:6a:e3:51:27)
-[*] Discovered NetBIOS on 192.168.1.119:137 (WIN03X64:&lt;00&gt;:U :WIN03X64:&lt;20&gt;:U :WORKGROUP:&lt;00&gt;:G :WORKGROUP:&lt;1e&gt;:G :WIN03X64:&lt;03&gt;:U
-:ADMINISTRA TOR:&lt;03&gt;:U :WIN03X64:&lt;01&gt;:U :00:0c:29:85:d6:7d)
-[*] Scanned 256 of 256 hosts (100% complete)
-[*] Auxiliary module execution completed
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Sending 13 probes to 192.168.1.0&#x2010;<span class="token operator">&gt;</span>192.168.1.255 <span class="token punctuation">(</span>256 hosts<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Discovered DNS on 192.168.1.1:53 <span class="token punctuation">(</span>ce2a8500000100010000000007564552  53494f4e0442494e440000100003c00c0010000300000001001a19737572656c7920796f7
+5206d757374206265206a6f6b696e67<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Discovered NetBIOS on 192.168.1.2:137 <span class="token punctuation">(</span>JOHN&#x2010;PC:<span class="token operator">&lt;</span>00<span class="token operator">&gt;</span>:U :WORKGROUP:<span class="token operator">&lt;</span>00<span class="token operator">&gt;</span>:G :JOHN&#x2010;PC:<span class="token operator">&lt;</span>20<span class="token operator">&gt;</span>:U :WORKGROUP:<span class="token operator">&lt;</span>1e<span class="token operator">&gt;</span>:G :WORKGROUP:<span class="token operator">&lt;</span>1d<span class="token operator">&gt;</span>:U
+:__MSBROWSE__ <span class="token operator">&lt;</span>01<span class="token operator">&gt;</span>:G :4c:cc:6a:e3:51:27<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Discovered NetBIOS on 192.168.1.119:137 <span class="token punctuation">(</span>WIN03X64:<span class="token operator">&lt;</span>00<span class="token operator">&gt;</span>:U :WIN03X64:<span class="token operator">&lt;</span>20<span class="token operator">&gt;</span>:U :WORKGROUP:<span class="token operator">&lt;</span>00<span class="token operator">&gt;</span>:G :WORKGROUP:<span class="token operator">&lt;</span>1e<span class="token operator">&gt;</span>:G :WIN03X64:<span class="token operator">&lt;</span>03<span class="token operator">&gt;</span>:U
+:ADMINISTRA TOR:<span class="token operator">&lt;</span>03<span class="token operator">&gt;</span>:U :WIN03X64:<span class="token operator">&lt;</span>01<span class="token operator">&gt;</span>:U :00:0c:29:85:d6:7d<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Scanned 256 of 256 hosts <span class="token punctuation">(</span>100% complete<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>*<span class="token punctuation">]</span> Auxiliary module execution completed
 </code></pre>
 <p><img src="media/30316c44faf3c6dacacfb382a5ffdc94.jpg" alt=""></p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Micro8 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-02-23 16:35
+</span></footer>
                                 
                                 </section>
                             
@@ -2044,7 +2088,7 @@ msf auxiliary(scanner/discovery/udp_sweep) &gt; exploit
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第二十三课：基于MSF发现内网存活主机第一季","level":"1.4.23","depth":2,"next":{"title":"第二十四课：基于MSF发现内网存活主机第二季","level":"1.4.24","depth":2,"path":"Chapter1/21-30/24_基于MSF发现内网存活主机第二季.md","ref":"Chapter1/21-30/24_基于MSF发现内网存活主机第二季.md","articles":[]},"previous":{"title":"第二十二课：基于SMB发现内网存活主机","level":"1.4.22","depth":2,"path":"Chapter1/21-30/22_基于SMB发现内网存活主机.md","ref":"Chapter1/21-30/22_基于SMB发现内网存活主机.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/21-30/23_基于MSF发现内网存活主机第一季.md","mtime":"2019-02-23T08:35:05.879Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第二十三课：基于MSF发现内网存活主机第一季","level":"1.4.23","depth":2,"next":{"title":"第二十四课：基于MSF发现内网存活主机第二季","level":"1.4.24","depth":2,"path":"Chapter1/21-30/24_基于MSF发现内网存活主机第二季.md","ref":"Chapter1/21-30/24_基于MSF发现内网存活主机第二季.md","articles":[]},"previous":{"title":"第二十二课：基于SMB发现内网存活主机","level":"1.4.22","depth":2,"path":"Chapter1/21-30/22_基于SMB发现内网存活主机.md","ref":"Chapter1/21-30/22_基于SMB发现内网存活主机.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","theme-comscore","splitter","-sharing","sharing-plus","-expandable-chapters-small","simple-page-toc","github","github-buttons","tbfed-pagefooter","donate","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Micro8 2018","modify_label":"修订时间：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"github":{"url":"https://github.com/micro8"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"repo":"https://github.com/Micropoor/Micro8","types":["star","watch","fork"],"size":"small"},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/21-30/23_基于MSF发现内网存活主机第一季.md","mtime":"2019-02-23T08:35:05.879Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T13:55:17.972Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2054,27 +2098,43 @@ msf auxiliary(scanner/discovery/udp_sweep) &gt; exploit
     <script src="../../gitbook/theme.js"></script>
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
         
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
 
