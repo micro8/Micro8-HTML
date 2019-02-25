@@ -1,0 +1,2337 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第五课：工具介绍-Sqlmap · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="6_反攻的一次溯源--项目实战3.html" />
+    
+    
+    <link rel="prev" href="4_Asp代码审计--项目实战2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../README_EN.html">
+            
+                <a href="../README_EN.html">
+            
+                    
+                    Perface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Contents.html">
+            
+                <a href="../Contents.html">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第一章：生
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="1_windows提权-快速查找exp.html">
+            
+                <a href="1_windows提权-快速查找exp.html">
+            
+                    
+                    第一课：windows提权-快速查找exp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="2_Linux提权-依赖exp篇.html">
+            
+                <a href="2_Linux提权-依赖exp篇.html">
+            
+                    
+                    第二课：Linux提权-依赖exp篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="3_Delphi代码审计--项目实战1.html">
+            
+                <a href="3_Delphi代码审计--项目实战1.html">
+            
+                    
+                    第三课：Delphi代码审计--项目实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="4_Asp代码审计--项目实战2.html">
+            
+                <a href="4_Asp代码审计--项目实战2.html">
+            
+                    
+                    第四课：Asp代码审计--项目实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="5_工具介绍-Sqlmap.html">
+            
+                <a href="5_工具介绍-Sqlmap.html">
+            
+                    
+                    第五课：工具介绍-Sqlmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="6_反攻的一次溯源--项目实战3.html">
+            
+                <a href="6_反攻的一次溯源--项目实战3.html">
+            
+                    
+                    第六课：反攻的一次溯源--项目实战3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="7_sqlServer常用操作远程桌面语句.html">
+            
+                <a href="7_sqlServer常用操作远程桌面语句.html">
+            
+                    
+                    第七课：sql server 常用操作远程桌面语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="8_模拟诉求任务攻击.html">
+            
+                <a href="8_模拟诉求任务攻击.html">
+            
+                    
+                    第八课：模拟诉求任务攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="9_工具介绍-the-backdoor-factory.html">
+            
+                <a href="9_工具介绍-the-backdoor-factory.html">
+            
+                    
+                    第九课：工具介绍-the-backdoor-factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="10_msfvenom常用生成payload命令.html">
+            
+                <a href="10_msfvenom常用生成payload命令.html">
+            
+                    
+                    第十课：msfvenom常用生成payload命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="11_工具介绍Veil-Evasion.html">
+            
+                <a href="11_工具介绍Veil-Evasion.html">
+            
+                    
+                    第十一课：工具介绍Veil-Evasion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="12_基于UDP发现内网存活主机.html">
+            
+                <a href="12_基于UDP发现内网存活主机.html">
+            
+                    
+                    第十二课：基于UDP发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="13_基于ARP发现内网存活主机.html">
+            
+                <a href="13_基于ARP发现内网存活主机.html">
+            
+                    
+                    第十三课：基于ARP发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="14_基于第十课补充payload1.html">
+            
+                <a href="14_基于第十课补充payload1.html">
+            
+                    
+                    第十四课：基于第十课补充payload1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="15_基于第十课补充payload2.html">
+            
+                <a href="15_基于第十课补充payload2.html">
+            
+                    
+                    第十五课：基于第十课补充payload2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="16_红蓝对抗渗透测试1.html">
+            
+                <a href="16_红蓝对抗渗透测试1.html">
+            
+                    
+                    第十六课：红蓝对抗渗透测试1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="17_红蓝对抗渗透测试2.html">
+            
+                <a href="17_红蓝对抗渗透测试2.html">
+            
+                    
+                    第十七课：红蓝对抗渗透测试2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="18_红蓝对抗渗透测试3.html">
+            
+                <a href="18_红蓝对抗渗透测试3.html">
+            
+                    
+                    第十八课：红蓝对抗渗透测试3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="19_基于netbios发现内网存活主机.html">
+            
+                <a href="19_基于netbios发现内网存活主机.html">
+            
+                    
+                    第十九课：基于netbios发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="20_基于snmp发现内网存活主机.html">
+            
+                <a href="20_基于snmp发现内网存活主机.html">
+            
+                    
+                    第二十课：基于snmp发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="21-30/21_基于ICMP发现内网存活主机.html">
+            
+                <a href="21-30/21_基于ICMP发现内网存活主机.html">
+            
+                    
+                    第二十一课：基于ICMP发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="21-30/22_基于SMB发现内网存活主机.html">
+            
+                <a href="21-30/22_基于SMB发现内网存活主机.html">
+            
+                    
+                    第二十二课：基于SMB发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="21-30/23_基于MSF发现内网存活主机第一季.html">
+            
+                <a href="21-30/23_基于MSF发现内网存活主机第一季.html">
+            
+                    
+                    第二十三课：基于MSF发现内网存活主机第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="21-30/24_基于MSF发现内网存活主机第二季.html">
+            
+                <a href="21-30/24_基于MSF发现内网存活主机第二季.html">
+            
+                    
+                    第二十四课：基于MSF发现内网存活主机第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="21-30/25_基于MSF发现内网存活主机第三季.html">
+            
+                <a href="21-30/25_基于MSF发现内网存活主机第三季.html">
+            
+                    
+                    第二十五课：基于MSF发现内网存活主机第三季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.26" data-path="21-30/26_基于MSF发现内网存活主机第四季.html">
+            
+                <a href="21-30/26_基于MSF发现内网存活主机第四季.html">
+            
+                    
+                    第二十六课：基于MSF发现内网存活主机第四季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="21-30/27_基于MSF发现内网存活主机第五季.html">
+            
+                <a href="21-30/27_基于MSF发现内网存活主机第五季.html">
+            
+                    
+                    第二十七课：基于MSF发现内网存活主机第五季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="21-30/28_基于MSF发现内网存活主机第六季.html">
+            
+                <a href="21-30/28_基于MSF发现内网存活主机第六季.html">
+            
+                    
+                    第二十八课：基于MSF发现内网存活主机第六季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="21-30/29_发现目标WEB程序敏感目录第一季.html">
+            
+                <a href="21-30/29_发现目标WEB程序敏感目录第一季.html">
+            
+                    
+                    第二十九课：发现目标WEB程序敏感目录第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="21-30/30_解决msfvenom命令自动补全.html">
+            
+                <a href="21-30/30_解决msfvenom命令自动补全.html">
+            
+                    
+                    第三十课：解决msfvenom命令自动补全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.31" data-path="31_msf的前生今世.html">
+            
+                <a href="31_msf的前生今世.html">
+            
+                    
+                    第三十一课：msf的前生今世
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.32" data-path="32_配置vps上的msf.html">
+            
+                <a href="32_配置vps上的msf.html">
+            
+                    
+                    第三十二课：配置vps上的msf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.33" data-path="33_攻击Mysql服务.html">
+            
+                <a href="33_攻击Mysql服务.html">
+            
+                    
+                    第三十三课：攻击Mysql服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.34" data-path="34_攻击SqlServer服务.html">
+            
+                <a href="34_攻击SqlServer服务.html">
+            
+                    
+                    第三十四课：攻击Sql server 服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.35" data-path="35_与Sqlmap结合攻击.html">
+            
+                <a href="35_与Sqlmap结合攻击.html">
+            
+                    
+                    第三十五课：与Sqlmap结合攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.36" data-path="36_解决vps上ssh掉线.html">
+            
+                <a href="36_解决vps上ssh掉线.html">
+            
+                    
+                    第三十六课：解决vps上ssh掉线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.37" data-path="37_vbs一句话下载payload.html">
+            
+                <a href="37_vbs一句话下载payload.html">
+            
+                    
+                    第三十七课：vbs一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.38" data-path="38_certutil一句话下载payload.html">
+            
+                <a href="38_certutil一句话下载payload.html">
+            
+                    
+                    第三十八课：certutil一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.39" data-path="39_vbs一句话下载payload补充.html">
+            
+                <a href="39_vbs一句话下载payload补充.html">
+            
+                    
+                    第三十九课：vbs一句话下载payload补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.40" data-path="40_ftp一句话下载payload.html">
+            
+                <a href="40_ftp一句话下载payload.html">
+            
+                    
+                    第四十课：ftp一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.41" data-path="41_bitsadmin一句话下载payload.html">
+            
+                <a href="41_bitsadmin一句话下载payload.html">
+            
+                    
+                    第四十一课：bitsadmin一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.42" data-path="42_攻击FTP服务.html">
+            
+                <a href="42_攻击FTP服务.html">
+            
+                    
+                    第四十二课：攻击FTP服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.43" data-path="43_js一句话下载payload.html">
+            
+                <a href="43_js一句话下载payload.html">
+            
+                    
+                    第四十三课：js一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.44" data-path="44_ertutil一句话下载payload补充.html">
+            
+                <a href="44_ertutil一句话下载payload补充.html">
+            
+                    
+                    第四十四课：ertutil一句话下载payload补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.45" data-path="45_解决bat一句话下载payload黑窗.html">
+            
+                <a href="45_解决bat一句话下载payload黑窗.html">
+            
+                    
+                    第四十五课：解决bat一句话下载payload黑窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.46" data-path="46_powershell一句话下载payload.html">
+            
+                <a href="46_powershell一句话下载payload.html">
+            
+                    
+                    第四十六课：powershell一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.47" data-path="47_payload分离免杀思路.html">
+            
+                <a href="47_payload分离免杀思路.html">
+            
+                    
+                    第四十七课：payload分离免杀思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.48" data-path="48_payload分离免杀思路第二季.html">
+            
+                <a href="48_payload分离免杀思路第二季.html">
+            
+                    
+                    第四十八课：payload分离免杀思路第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.49" data-path="49_关于Powershell对抗安全软件.html">
+            
+                <a href="49_关于Powershell对抗安全软件.html">
+            
+                    
+                    第四十九课：关于Powershell对抗安全软件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.50" data-path="50_基于SqlDataSourceEnumerator发现内网存活主机.html">
+            
+                <a href="50_基于SqlDataSourceEnumerator发现内网存活主机.html">
+            
+                    
+                    第五十课：基于SqlDataSourceEnumerator发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.51" data-path="51_项目回忆：体系的本质是知识点串联.html">
+            
+                <a href="51_项目回忆：体系的本质是知识点串联.html">
+            
+                    
+                    第五十一课：项目回忆：体系的本质是知识点串联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.52" data-path="52_渗透的本质是信息搜集.html">
+            
+                <a href="52_渗透的本质是信息搜集.html">
+            
+                    
+                    第五十二课：渗透的本质是信息搜集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.53" data-path="53_内网渗透中的文件传输.html">
+            
+                <a href="53_内网渗透中的文件传输.html">
+            
+                    
+                    第五十三课：内网渗透中的文件传输
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.54" data-path="54_基于Powershell做Socks4-5代理.html">
+            
+                <a href="54_基于Powershell做Socks4-5代理.html">
+            
+                    
+                    第五十四课：基于Powershell做Socks 4-5代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.55" data-path="55_与Smbmap结合攻击.html">
+            
+                <a href="55_与Smbmap结合攻击.html">
+            
+                    
+                    第五十五课：与Smbmap结合攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.56" data-path="56_离线提取目标机hash.html">
+            
+                <a href="56_离线提取目标机hash.html">
+            
+                    
+                    第五十六课：离线提取目标机hash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.57" data-path="57_高级持续渗透-第一季关于后门.html">
+            
+                <a href="57_高级持续渗透-第一季关于后门.html">
+            
+                    
+                    第五十七课：高级持续渗透-第一季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.58" data-path="58_高级持续渗透-第二季关于后门补充一.html">
+            
+                <a href="58_高级持续渗透-第二季关于后门补充一.html">
+            
+                    
+                    第五十八课：高级持续渗透-第二季关于后门补充一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.59" data-path="59_高级持续渗透-第三季关于后门补充二.html">
+            
+                <a href="59_高级持续渗透-第三季关于后门补充二.html">
+            
+                    
+                    第五十九课：高级持续渗透-第三季关于后门补充二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.60" data-path="60_高级持续渗透-第四季关于后门.html">
+            
+                <a href="60_高级持续渗透-第四季关于后门.html">
+            
+                    
+                    第六十课：高级持续渗透-第四季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.61" data-path="61-70/61_高级持续渗透-第五季关于后门.html">
+            
+                <a href="61-70/61_高级持续渗透-第五季关于后门.html">
+            
+                    
+                    第六十一课：高级持续渗透-第五季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.62" data-path="61-70/62_高级持续渗透-第六季关于后门.html">
+            
+                <a href="61-70/62_高级持续渗透-第六季关于后门.html">
+            
+                    
+                    第六十二课：高级持续渗透-第六季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.63" data-path="61-70/63_高级持续渗透-第七季demo的成长.html">
+            
+                <a href="61-70/63_高级持续渗透-第七季demo的成长.html">
+            
+                    
+                    第六十三课：高级持续渗透-第七季demo的成长
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.64" data-path="61-70/64_高级持续渗透-第八季demo便是远控.html">
+            
+                <a href="61-70/64_高级持续渗透-第八季demo便是远控.html">
+            
+                    
+                    第六十四课：高级持续渗透-第八季demo便是远控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.65" data-path="61-70/65_离线提取目标机hash补充.html">
+            
+                <a href="61-70/65_离线提取目标机hash补充.html">
+            
+                    
+                    第六十五课：离线提取目标机hash补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.66" data-path="61-70/66_借助aspx对payload进行分离免杀.html">
+            
+                <a href="61-70/66_借助aspx对payload进行分离免杀.html">
+            
+                    
+                    第六十六课：借助aspx对payload进行分离免杀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.67" data-path="61-70/67_meterpreter下的irb操作第一季.html">
+            
+                <a href="61-70/67_meterpreter下的irb操作第一季.html">
+            
+                    
+                    第六十七课：meterpreter下的irb操作第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.68" data-path="61-70/68_基于Ruby内存加载shellcode第一季.html">
+            
+                <a href="61-70/68_基于Ruby内存加载shellcode第一季.html">
+            
+                    
+                    第六十八课：基于Ruby内存加载shellcode第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.69" data-path="61-70/69_渗透-持续渗透-后渗透的本质.html">
+            
+                <a href="61-70/69_渗透-持续渗透-后渗透的本质.html">
+            
+                    
+                    第六十九课：渗透，持续渗透，后渗透的本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.70" data-path="61-70/70_ftp一句话下载payload补充.html">
+            
+                <a href="61-70/70_ftp一句话下载payload补充.html">
+            
+                    
+                    第七十课：ftp一句话下载payload补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.71" data-path="71-80/71_基于白名单Msbuild.exe执行payload第一季.html">
+            
+                <a href="71-80/71_基于白名单Msbuild.exe执行payload第一季.html">
+            
+                    
+                    第七十一课：基于白名单Msbuild.exe执行payload第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.72" data-path="71-80/72_基于白名单Installutil.exe执行payload第二季.html">
+            
+                <a href="71-80/72_基于白名单Installutil.exe执行payload第二季.html">
+            
+                    
+                    第七十二课：基于白名单Installutil.exe执行payload第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.73" data-path="71-80/73_基于白名单Regasm.exe执行payload第三季.html">
+            
+                <a href="71-80/73_基于白名单Regasm.exe执行payload第三季.html">
+            
+                    
+                    第七十三课：基于白名单Regasm.exe执行payload第三季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.74" data-path="71-80/74_基于白名单regsvcs.exe执行payload第四季.html">
+            
+                <a href="71-80/74_基于白名单regsvcs.exe执行payload第四季.html">
+            
+                    
+                    第七十四课：基于白名单Regsvcs.exe执行payload第四季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.75" data-path="71-80/75_基于白名单Mshta.exe执行payload第五季.html">
+            
+                <a href="71-80/75_基于白名单Mshta.exe执行payload第五季.html">
+            
+                    
+                    第七十五课：基于白名单Mshta.exe执行payload第五季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.76" data-path="71-80/76_基于白名单Compiler.exe执行payload第六季.html">
+            
+                <a href="71-80/76_基于白名单Compiler.exe执行payload第六季.html">
+            
+                    
+                    第七十六课：基于白名单Compiler.exe执行payload第六季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.77" data-path="71-80/77_基于白名单Csc.exe执行payload第七季.html">
+            
+                <a href="71-80/77_基于白名单Csc.exe执行payload第七季.html">
+            
+                    
+                    第七十七课：基于白名单Csc.exe执行payload第七季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.78" data-path="71-80/78_基于白名单Msiexec执行payload第八季.html">
+            
+                <a href="71-80/78_基于白名单Msiexec执行payload第八季.html">
+            
+                    
+                    第七十八课：基于白名单Msiexec执行payload第八季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.79" data-path="71-80/79_基于白名单Regsvr32执行payload第九季.html">
+            
+                <a href="71-80/79_基于白名单Regsvr32执行payload第九季.html">
+            
+                    
+                    第七十九课：基于白名单Regsvr32执行payload第九季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.80" data-path="71-80/80_基于白名单Wmic执行payload第十季.html">
+            
+                <a href="71-80/80_基于白名单Wmic执行payload第十季.html">
+            
+                    
+                    第八十课：基于白名单Wmic执行payload第十季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.81" data-path="81-90/81_基于白名单Rundll32.exe执行payload第十一季.html">
+            
+                <a href="81-90/81_基于白名单Rundll32.exe执行payload第十一季.html">
+            
+                    
+                    第八十一课：基于白名单Rundll32.exe执行payload第十一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.82" data-path="81-90/82_基于白名单Odbcconf执行payload第十二季.html">
+            
+                <a href="81-90/82_基于白名单Odbcconf执行payload第十二季.html">
+            
+                    
+                    第八十二课：基于白名单Odbcconf执行payload第十二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.83" data-path="81-90/83_基于白名单PsExec执行payload第十三季.html">
+            
+                <a href="81-90/83_基于白名单PsExec执行payload第十三季.html">
+            
+                    
+                    第八十三课：基于白名单PsExec执行payload第十三季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.84" data-path="81-90/84_基于白名单Forfiles执行payload第十四季.html">
+            
+                <a href="81-90/84_基于白名单Forfiles执行payload第十四季.html">
+            
+                    
+                    第八十四课：基于白名单Forfiles执行payload第十四季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.85" data-path="81-90/85_基于白名单Pcalua执行payload第十五季.html">
+            
+                <a href="81-90/85_基于白名单Pcalua执行payload第十五季.html">
+            
+                    
+                    第八十五课：基于白名单Pcalua执行payload第十五季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.86" data-path="81-90/86_基于白名单Msiexec执行payload第八季补充.html">
+            
+                <a href="81-90/86_基于白名单Msiexec执行payload第八季补充.html">
+            
+                    
+                    第八十六课：基于白名单Msiexec执行payload第八季补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.87" data-path="81-90/87_基于白名单Cmstp.exe执行payload第十六季.html">
+            
+                <a href="81-90/87_基于白名单Cmstp.exe执行payload第十六季.html">
+            
+                    
+                    第八十七课：基于白名单Cmstp.exe执行payload第十六季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.88" data-path="81-90/88_基于白名单Ftp.exe执行payload第十九季.html">
+            
+                <a href="81-90/88_基于白名单Ftp.exe执行payload第十九季.html">
+            
+                    
+                    第八十八课：基于白名单Ftp.exe执行payload第十九季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.89" data-path="81-90/89_基于白名单Url.dll执行payload第十七季.html">
+            
+                <a href="81-90/89_基于白名单Url.dll执行payload第十七季.html">
+            
+                    
+                    第八十九课：基于白名单Url.dll执行payload第十七季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.90" data-path="81-90/90_基于白名单zipfldr.dll执行payload第十八季.html">
+            
+                <a href="81-90/90_基于白名单zipfldr.dll执行payload第十八季.html">
+            
+                    
+                    第九十课：基于白名单zipfldr.dll执行payload第十八季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.91" data-path="91-100/91_从目标文件中做信息搜集第一季.html">
+            
+                <a href="91-100/91_从目标文件中做信息搜集第一季.html">
+            
+                    
+                    第九十一课：从目标文件中做信息搜集第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.92" data-path="91-100/92_实战中的Payload应用.html">
+            
+                <a href="91-100/92_实战中的Payload应用.html">
+            
+                    
+                    第九十二课：实战中的Payload应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.93" data-path="91-100/93_与CrackMapExec结合攻击.html">
+            
+                <a href="91-100/93_与CrackMapExec结合攻击.html">
+            
+                    
+                    第九十三课：与CrackMapExec结合攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.94" data-path="91-100/94_基于实战中的small-payload.html">
+            
+                <a href="91-100/94_基于实战中的small-payload.html">
+            
+                    
+                    第九十四课：基于实战中的small payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.95" data-path="91-100/95_基于Portfwd端口转发.html">
+            
+                <a href="91-100/95_基于Portfwd端口转发.html">
+            
+                    
+                    第九十五课：基于Portfwd端口转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.96" data-path="91-100/96_HTTP隧道ABPTTS第一季.html">
+            
+                <a href="91-100/96_HTTP隧道ABPTTS第一季.html">
+            
+                    
+                    第九十六课：HTTP隧道ABPTTS第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.97" data-path="91-100/97_MSF配置自定义Payload控制目标主机权限.html">
+            
+                <a href="91-100/97_MSF配置自定义Payload控制目标主机权限.html">
+            
+                    
+                    第九十七课：MSF配置自定义Payload控制目标主机权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.98" data-path="91-100/98_HTTP隧道reGeorg第二季.html">
+            
+                <a href="91-100/98_HTTP隧道reGeorg第二季.html">
+            
+                    
+                    第九十八课：HTTP隧道reGeorg第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.99" data-path="91-100/99_HTTP隧道Tunna第三季.html">
+            
+                <a href="91-100/99_HTTP隧道Tunna第三季.html">
+            
+                    
+                    第九十九课：HTTP隧道Tunna第三季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.100" data-path="91-100/100_HTTP隧道reDuh第四季.html">
+            
+                <a href="91-100/100_HTTP隧道reDuh第四季.html">
+            
+                    
+                    第一百课：HTTP隧道reDuh第四季
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第二章：老（待更新...）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    第一百零一课：基于SCF做目标内网信息搜集第二季
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    第一百零二课：对抗权限长期把控-伪造无效签名第一季
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    第一百零三课：Http加密隧道下的横向渗透尝试---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    第一百零四课：Windows Smb 欺骗重放攻击利用---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    第一百零五课：windows 单机免杀抓明文或hash [通过dump lsass进程数据]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" >
+            
+                <span>
+            
+                    
+                    第一百零六课：windows 单机免杀抓明文或hash [通过简单混淆编码绕过常规静态检测]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" >
+            
+                <span>
+            
+                    
+                    第一百零七课：跨平台横向移动 [ windows计划任务利用 ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" >
+            
+                <span>
+            
+                    
+                    第一百零八课：跨平台横向移动 [wmi利用]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" >
+            
+                <span>
+            
+                    
+                    第一百零九课：依托 metasploit 尽可能多的发现目标内网下的各类高价值存活主机---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" >
+            
+                <span>
+            
+                    
+                    第一百一十课：窃取,伪造模拟各种windows访问令牌[token利用]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" >
+            
+                <span>
+            
+                    
+                    第一百一十一课：内网mssql完整利用流程 [ 基础篇 ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" >
+            
+                <span>
+            
+                    
+                    第一百一十二课：利用Dropbox中转C2流量---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" >
+            
+                <span>
+            
+                    
+                    第一百一十三课：COM Hijacking---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" >
+            
+                <span>
+            
+                    
+                    第一百一十四课：渗透沉思录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" >
+            
+                <span>
+            
+                    
+                    第一百一十五课：使用CrackMapExec 进行 NTLM Hash传递攻击---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" >
+            
+                <span>
+            
+                    
+                    第一百一十六课：Windows域渗透 - 用户密码枚举---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" >
+            
+                <span>
+            
+                    
+                    第一百一十七课：Windows 本地特权提升技巧---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" >
+            
+                <span>
+            
+                    
+                    第一百一十八课：CVE-2017-11882钓鱼攻击---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" >
+            
+                <span>
+            
+                    
+                    第一百一十九课：全平台高性能加密隧道 ssf---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" >
+            
+                <span>
+            
+                    
+                    第一百二十课：win自带的高级网络配置管理工具深度应用 [ netsh ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" >
+            
+                <span>
+            
+                    
+                    第一百二十一课：http加密代理深度应用 [ abptts ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" >
+            
+                <span>
+            
+                    
+                    第一百二十二课：利用 ssh隧道实现内网断网机meterpreter反向上线---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" >
+            
+                <span>
+            
+                    
+                    第一百二十三课：利用ssh隧道将公网meterpreter弹至本地的msf中---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第三章：病（待更新...）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >第五课：工具介绍-Sqlmap</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x7531;&#x4E8E;Sqlmap &#x662F;&#x5E38;&#x7528;&#x5DE5;&#x5177;&#x4E4B;&#x4E00;&#xFF0C;&#x6240;&#x4EE5;&#x672C;&#x7BC7;&#x7684;&#x7BC7;&#x5E45;&#x8F83;&#x957F;&#xFF0C;&#x8BE6;&#x89E3;&#x4E00;&#x6B21;&#x6240;&#x6709;&#x53C2;&#x6570;&#x3002;</p>
+<h3 id="sqlmap&#x53C2;&#x6570;&#x8BE6;&#x89E3;&#xFF1A;">sqlmap&#x53C2;&#x6570;&#x8BE6;&#x89E3;&#xFF1A;</h3>
+<pre><code class="lang-bash">Usage: python sqlmap.py [options]
+
+Options&#xFF08;&#x9009;&#x9879;&#xFF09;:
+
+-h, --help Show basic <span class="hljs-built_in">help</span> message and <span class="hljs-built_in">exit</span> &#x5C55;&#x793A;&#x5E2E;&#x52A9;&#x6587;&#x6863; &#x53C2;&#x6570;
+
+-hh Show advanced <span class="hljs-built_in">help</span> message and <span class="hljs-built_in">exit</span> &#x5C55;&#x793A;&#x8BE6;&#x7EC6;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x53C2;&#x6570;
+
+--version Show program<span class="hljs-string">&apos;s version number and exit &#x663E;&#x793A;&#x7A0B;&#x5E8F;&#x7684;&#x7248;&#x672C;&#x53F7;
+
+-v VERBOSE Verbosity level: 0-6 (default 1) &#x8BE6;&#x7EC6;&#x7EA7;&#x522B;&#xFF1A;0-6&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+
+Target&#xFF08;&#x76EE;&#x6807;&#xFF09;:
+
+At least one of these options has to be provided to define the target(s)
+
+-d DIRECT Connection string for direct database connection &#x6307;&#x5B9A;&#x5177;&#x4F53;&#x6570;&#x636E;&#x5E93;
+
+-u URL, --url=URL Target URL (e.g. &quot;http://www.site.com/vuln.php?id=1&quot;)&#x76EE;&#x6807;URL
+
+-l LOGFILE Parse target(s) from Burp or WebScarab proxy log file &#x89E3;&#x6790;&#x76EE;&#x6807;(s)&#x4ECE;Burp&#x6216;WebScarab&#x4EE3;&#x7406;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;
+
+-x SITEMAPURL Parse target(s) from remote sitemap(.xml) file &#x89E3;&#x6790;&#x76EE;&#x6807;(s)&#x4ECE;&#x8FDC;&#x7A0B;&#x7AD9;&#x70B9;&#x5730;&#x56FE;&#x6587;&#x4EF6;(.xml)
+
+-m BULKFILE Scan multiple targets given in a textual file &#x626B;&#x63CF;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x7ED9;&#x51FA;&#x7684;&#x591A;&#x4E2A;&#x76EE;&#x6807;
+
+-r REQUESTFILE Load HTTP request from a file &#x4ECE;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;HTTP&#x8BF7;&#x6C42; &#xFF0C;&#x591A;&#x7528;&#x4E8E;post&#x6CE8;&#x5165;&#x3002;
+
+-g GOOGLEDORK Process Google dork results as target URLs &#x5904;&#x7406;Google&#x7684;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x76EE;&#x6807;URL&#x3002;
+
+-c CONFIGFILE Load options from a configuration INI file &#x4ECE;INI&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x9009;&#x9879;&#x3002;
+
+Request&#xFF08;&#x8BF7;&#x6C42;&#xFF09;:
+
+These options can be used to specify how to connect to the target URL &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x8FDE;&#x63A5;&#x5230;&#x76EE;&#x6807;URL&#x3002;
+
+--method=METHOD Force usage of given HTTP method (e.g. PUT) &#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;HTTP&#x65B9;&#x6CD5;&#xFF08;e.g. PUT&#xFF09;
+
+--data=DATA Data string to be sent through POST &#x901A;&#x8FC7;POST&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5B57;&#x7B26;&#x4E32;
+
+--param-del=PARA.. Character used for splitting parameter values &#x7528;&#x4E8E;&#x62C6;&#x5206;&#x53C2;&#x6570;&#x503C;&#x7684;&#x5B57;&#x7B26;
+
+--cookie=COOKIE HTTP Cookie header value HTTP Cookie&#x5934;&#x7684;&#x503C;
+
+--cookie-del=COO.. Character used for splitting cookie values &#x7528;&#x4E8E;&#x5206;&#x5272;Cookie&#x503C;&#x7684;&#x5B57;&#x7B26;
+
+--load-cookies=L.. File containing cookies in Netscape/wget format&#x5305;&#x542B;Netscape / wget&#x683C;&#x5F0F;&#x7684;cookie&#x7684;&#x6587;&#x4EF6;
+
+--drop-set-cookie Ignore Set-Cookie header from response&#x4ECE;&#x54CD;&#x5E94;&#x4E2D;&#x5FFD;&#x7565;Set-Cookie&#x5934;
+
+--user-agent=AGENT HTTP User-Agent header value&#x6307;&#x5B9A; HTTP User - Agent&#x5934;
+
+--random-agent Use randomly selected HTTP User-Agent header value &#x4F7F;&#x7528;&#x968F;&#x673A;&#x9009;&#x5B9A;&#x7684;HTTP User - Agent&#x5934;
+
+--host=HOST HTTP Host header value HTTP&#x4E3B;&#x673A;&#x5934;&#x503C;
+
+--referer=REFERER HTTP Referer header value &#x6307;&#x5B9A; HTTP Referer&#x5934;
+
+-H HEADER, --hea.. Extra header (e.g. &quot;X-Forwarded-For: 127.0.0.1&quot;)&#x989D;&#x5916;header
+
+--headers=HEADERS Extra headers (e.g. &quot;Accept-Language: fr\\nETag: 123&quot;)&#x989D;&#x5916;header
+
+--auth-type=AUTH.. HTTP authentication type (Basic, Digest, NTLM or PKI)HTTP &#x8BA4;&#x8BC1;&#x7C7B;&#x578B;(Basic, Digest, NTLM or PKI)
+
+--auth-cred=AUTH.. HTTP authentication credentials (name:password) HTTP&#x8BA4;&#x8BC1;&#x51ED;&#x8BC1;(name:password)
+
+--auth-file=AUTH.. HTTP authentication PEM cert/private key file HTTP&#x8BA4;&#x8BC1; PEM&#x8BA4;&#x8BC1;/&#x79C1;&#x94A5;&#x6587;&#x4EF6;
+
+--ignore-401 Ignore HTTP Error 401 (Unauthorized)&#x5FFD;&#x7565;HTTP&#x9519;&#x8BEF;401
+
+--proxy=PROXY Use a proxy to connect to the target URL &#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x8FDE;&#x63A5;&#x5230;&#x76EE;&#x6807;&#x7F51;&#x5740;
+
+--proxy-cred=PRO.. Proxy authentication credentials (name:password)&#x4EE3;&#x7406;&#x8BA4;&#x8BC1;&#x8BC1;&#x4E66;(name:password)
+
+--proxy-file=PRO.. Load proxy list from a file &#x4ECE;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x8F7D;&#x4EE3;&#x7406;&#x5217;&#x8868;
+
+--ignore-proxy Ignore system default proxy settings &#x5FFD;&#x7565;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x4EE3;&#x7406;&#x8BBE;&#x7F6E;
+
+--tor Use Tor anonymity network &#x4F7F;&#x7528;Tor&#x533F;&#x540D;&#x7F51;&#x7EDC;
+
+--tor-port=TORPORT Set Tor proxy port other than default &#x8BBE;&#x7F6E;Tor&#x4EE3;&#x7406;&#x7AEF;&#x53E3;&#x800C;&#x4E0D;&#x662F;&#x9ED8;&#x8BA4;&#x503C;
+
+--tor-type=TORTYPE Set Tor proxy type (HTTP (default), SOCKS4 or SOCKS5)&#x8BBE;&#x7F6E;Tor&#x4EE3;&#x7406;&#x7C7B;&#x578B;
+
+--check-tor Check to see if Tor is used properly &#x68C0;&#x67E5;Tor&#x662F;&#x5426;&#x6B63;&#x786E;&#x4F7F;&#x7528;
+
+--delay=DELAY Delay in seconds between each HTTP request&#x6BCF;&#x4E2A;HTTP&#x8BF7;&#x6C42;&#x4E4B;&#x95F4;&#x7684;&#x5EF6;&#x8FDF;&#xFF08;&#x79D2;&#xFF09;
+
+--timeout=TIMEOUT Seconds to wait before timeout connection (default 30) &#x79D2;&#x8D85;&#x65F6;&#x8FDE;&#x63A5;&#x524D;&#x7B49;&#x5F85;&#xFF08;&#x9ED8;&#x8BA4;30&#xFF09;
+
+--retries=RETRIES Retries when the connection timeouts (default 3) &#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x65F6;&#x91CD;&#x8BD5;&#xFF08;&#x9ED8;&#x8BA4;&#x503C;3&#xFF09;
+
+--randomize=RPARAM Randomly change value for given parameter(s)&#x968F;&#x673A;&#x66F4;&#x6539;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x503C;(s)
+
+--safe-url=SAFEURL URL address to visit frequently during testing&#x5728;&#x6D4B;&#x8BD5;&#x671F;&#x95F4;&#x9891;&#x7E41;&#x8BBF;&#x95EE;&#x7684;URL&#x5730;&#x5740;
+
+--safe-post=SAFE.. POST data to send to a safe URLPOST&#x6570;&#x636E;&#x53D1;&#x9001;&#x5230;&#x5B89;&#x5168;URL
+
+--safe-req=SAFER.. Load safe HTTP request from a file&#x4ECE;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x5B89;&#x5168;HTTP&#x8BF7;&#x6C42;
+
+--safe-freq=SAFE.. Test requests between two visits to a given safe URL&#x5728;&#x4E24;&#x6B21;&#x8BBF;&#x95EE;&#x7ED9;&#x5B9A;&#x5B89;&#x5168;&#x7F51;&#x5740;&#x4E4B;&#x95F4;&#x6D4B;&#x8BD5;&#x8BF7;&#x6C42;
+
+--skip-urlencode Skip URL encoding of payload data &#x8DF3;&#x8FC7;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x6570;&#x636E;&#x7684;URL&#x7F16;&#x7801;
+
+--csrf-token=CSR.. Parameter used to hold anti-CSRF token&#x53C2;&#x6570;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;anti-CSRF&#x4EE4;&#x724C;
+
+--csrf-url=CSRFURL URL address to visit to extract anti-CSRF token&#x63D0;&#x53D6;anti-CSRF URL&#x5730;&#x5740;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;
+
+--force-ssl Force usage of SSL/HTTPS &#x5F3A;&#x5236;&#x4F7F;&#x7528;SSL /HTTPS
+
+--hpp Use HTTP parameter pollution method&#x4F7F;&#x7528;HTTP&#x53C2;&#x6570;pollution&#x7684;&#x65B9;&#x6CD5;
+
+--eval=EVALCODE Evaluate provided Python code before the request (e.g. &#x8BC4;&#x4F30;&#x8BF7;&#x6C42;&#x4E4B;&#x524D;&#x63D0;&#x4F9B;Python&#x4EE3;&#x7801;&quot;import hashlib;id2=hashlib.md5(id).hexdigest()&quot;)
+
+Optimization&#xFF08;&#x4F18;&#x5316;&#xFF09;:
+
+These options can be used to optimize the performance of sqlmap &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x4F18;&#x5316;sqlmap&#x7684;&#x6027;&#x80FD;
+
+-o Turn on all optimization switches &#x5F00;&#x542F;&#x6240;&#x6709;&#x4F18;&#x5316;&#x5F00;&#x5173;
+
+--predict-output Predict common queries output &#x9884;&#x6D4B;&#x5E38;&#x89C1;&#x7684;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;
+
+--keep-alive Use persistent HTTP(s) connections&#x4F7F;&#x7528;&#x6301;&#x4E45;&#x7684;HTTP&#xFF08;S&#xFF09;&#x8FDE;&#x63A5;
+
+--null-connection Retrieve page length without actual HTTP response body &#x4ECE;&#x6CA1;&#x6709;&#x5B9E;&#x9645;&#x7684;HTTP&#x54CD;&#x5E94;&#x4F53;&#x4E2D;&#x68C0;&#x7D22;&#x9875;&#x9762;&#x957F;&#x5EA6;
+
+--threads=THREADS Max number of concurrent HTTP(s) requests (default 1)&#x6700;&#x5927;&#x7684;HTTP&#xFF08;S&#xFF09;&#x8BF7;&#x6C42;&#x5E76;&#x53D1;&#x91CF;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+
+Injection&#xFF08;&#x6CE8;&#x5165;&#xFF09;:
+
+These options can be used to specify which parameters to test for, provide custom injection payloads and optional tampering scripts &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x6D4B;&#x8BD5;&#x54EA;&#x4E9B;&#x53C2;&#x6570;&#xFF0C; &#x63D0;&#x4F9B;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6CE8;&#x5165;payloads&#x548C;&#x53EF;&#x9009;&#x7BE1;&#x6539;&#x811A;&#x672C;&#x3002;
+
+-p TESTPARAMETER Testable parameter(s) &#x53EF;&#x6D4B;&#x8BD5;&#x7684;&#x53C2;&#x6570;&#xFF08;S&#xFF09;
+
+--skip=SKIP Skip testing for given parameter(s)&#x8DF3;&#x8FC7;&#x5BF9;&#x7ED9;&#x5B9A;&#x53C2;&#x6570;&#x7684;&#x6D4B;&#x8BD5;
+
+--skip-static Skip testing parameters that not appear to be dynamic &#x8DF3;&#x8FC7;&#x6D4B;&#x8BD5;&#x4E0D;&#x663E;&#x793A;&#x4E3A;&#x52A8;&#x6001;&#x7684;&#x53C2;&#x6570;
+
+--param-exclude=.. Regexp to exclude parameters from testing (e.g. &quot;ses&quot;)
+&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6392;&#x9664;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF08;e.g. &quot;ses&quot;&#xFF09;
+
+--dbms=DBMS Force back-end DBMS to this value &#x5F3A;&#x5236;&#x540E;&#x7AEF;&#x7684;DBMS&#x4E3A;&#x6B64;&#x503C;
+
+--dbms-cred=DBMS.. DBMS authentication credentials (user:password)DBMS&#x8BA4;&#x8BC1;&#x51ED;&#x8BC1;(user:password)
+
+--os=OS Force back-end DBMS operating system to this value &#x5F3A;&#x5236;&#x540E;&#x7AEF;&#x7684;DBMS&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E3A;&#x8FD9;&#x4E2A;&#x503C;
+
+--invalid-bignum Use big numbers for invalidating values &#x4F7F;&#x7528;&#x5927;&#x6570;&#x5B57;&#x4F7F;&#x503C;&#x65E0;&#x6548;
+
+--invalid-logical Use logical operations for invalidating values&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x4F7F;&#x503C;&#x65E0;&#x6548;
+
+--invalid-string Use random strings for invalidating values&#x4F7F;&#x7528;&#x968F;&#x673A;&#x5B57;&#x7B26;&#x4E32;&#x4F7F;&#x503C;&#x65E0;&#x6548;
+
+--no-cast Turn off payload casting mechanism &#x5173;&#x95ED;&#x6709;&#x6548;&#x8F7D;&#x8377;&#x94F8;&#x9020;&#x673A;&#x5236;
+
+--no-escape Turn off string escaping mechanism &#x5173;&#x95ED;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x4E49;&#x673A;&#x5236;
+
+--prefix=PREFIX Injection payload prefix string &#x6CE8;&#x5165;payload&#x5B57;&#x7B26;&#x4E32;&#x524D;&#x7F00;
+
+--suffix=SUFFIX Injection payload suffix string &#x6CE8;&#x5165;payload&#x5B57;&#x7B26;&#x4E32;&#x540E;&#x7F00;
+
+--tamper=TAMPER Use given script(s) for tampering injection data&#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;&#x811A;&#x672C;&#xFF08;S&#xFF09;&#x7BE1;&#x6539;&#x6CE8;&#x5165;&#x6570;&#x636E;
+
+Detection&#xFF08;&#x68C0;&#x6D4B;&#xFF09;:
+These options can be used to customize the detection phase &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6307;&#x5B9A;&#x5728;SQL&#x76F2;&#x6CE8;&#x65F6;&#x5982;&#x4F55;&#x89E3;&#x6790;&#x548C;&#x6BD4;&#x8F83;HTTP&#x54CD;&#x5E94;&#x9875;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x3002;
+
+--level=LEVEL Level of tests to perform (1-5, default 1) &#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x7B49;&#x7EA7;&#xFF08;1-5&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+
+--risk=RISK Risk of tests to perform (1-3, default 1)&#x6267;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x98CE;&#x9669;&#xFF08;0-3&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;1&#xFF09;
+
+--string=STRING String to match when query is evaluated to True &#x67E5;&#x8BE2;&#x65F6;&#x6709;&#x6548;&#x65F6;&#x5728;&#x9875;&#x9762;&#x5339;&#x914D;&#x5B57;&#x7B26;&#x4E32;
+
+--not-string=NOT.. String to match when query is evaluated to False &#x5F53;&#x67E5;&#x8BE2;&#x6C42;&#x503C;&#x4E3A;&#x65E0;&#x6548;&#x65F6;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;
+
+--regexp=REGEXP Regexp to match when query is evaluated to True &#x67E5;&#x8BE2;&#x65F6;&#x6709;&#x6548;&#x65F6;&#x5728;&#x9875;&#x9762;&#x5339;&#x914D;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;
+
+--code=CODE HTTP code to match when query is evaluated to True &#x5F53;&#x67E5;&#x8BE2;&#x6C42;&#x503C;&#x4E3A;True&#x65F6;&#x5339;&#x914D;&#x7684;HTTP&#x4EE3;&#x7801;
+
+--text-only Compare pages based only on the textual content &#x4EC5;&#x57FA;&#x4E8E;&#x5728;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x6BD4;&#x8F83;&#x7F51;&#x9875;
+
+--titles Compare pages based only on their titles &#x4EC5;&#x6839;&#x636E;&#x4ED6;&#x4EEC;&#x7684;&#x6807;&#x9898;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;
+
+Techniques&#xFF08;&#x6280;&#x5DE7;&#xFF09;:
+These options can be used to tweak testing of specific SQL injection techniques &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x8C03;&#x6574;&#x5177;&#x4F53;&#x7684;SQL&#x6CE8;&#x5165;&#x6D4B;&#x8BD5;&#x3002;
+
+--technique=TECH SQL injection techniques to use (default &quot;BEUSTQ&quot;) SQL &#x6CE8;&#x5165;&#x6280;&#x672F;&#x6D4B;&#x8BD5;&#xFF08;&#x9ED8;&#x8BA4;BEUST&#xFF09;
+
+--time-sec=TIMESEC Seconds to delay the DBMS response (default 5) DBMS&#x54CD;&#x5E94;&#x7684;&#x5EF6;&#x8FDF;&#x65F6;&#x95F4;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;5&#x79D2;&#xFF09;
+
+--union-cols=UCOLS Range of columns to test for UNION query SQL injection &#x5B9A;&#x5217;&#x8303;&#x56F4;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;UNION&#x67E5;&#x8BE2;&#x6CE8;&#x5165;
+
+--union-char=UCHAR Character to use for bruteforcing number of columns &#x7528;&#x4E8E;&#x66B4;&#x529B;&#x731C;&#x89E3;&#x5217;&#x6570;&#x7684;&#x5B57;&#x7B26;
+
+--union-from=UFROM Table to use in FROM part of UNION query SQL injection  &#x8981;&#x5728;UNION&#x67E5;&#x8BE2;SQL&#x6CE8;&#x5165;&#x7684;FROM&#x90E8;&#x5206;&#x4F7F;&#x7528;&#x7684;&#x8868;
+
+--dns-domain=DNS.. Domain name used for DNS exfiltration attack &#x57DF;&#x540D;&#x7528;&#x4E8E;DNS&#x6F0F;&#x51FA;&#x653B;&#x51FB;
+
+--second-order=S.. Resulting page URL searched for second-order response &#x751F;&#x6210;&#x9875;&#x9762;&#x7684;URL&#x641C;&#x7D22;&#x4E3A;second-order&#x54CD;&#x5E94;
+
+Fingerprint&#xFF08;&#x6307;&#x7EB9;&#xFF09;:
+
+-f, --fingerprint Perform an extensive DBMS version fingerprint &#x6267;&#x884C;&#x68C0;&#x67E5;&#x5E7F;&#x6CDB;&#x7684;DBMS&#x7248;&#x672C;&#x6307;&#x7EB9;
+
+Enumeration&#xFF08;&#x679A;&#x4E3E;&#xFF09;:
+
+These options can be used to enumerate the back-end database management system information, structure and data contained in the tables. Moreover you can run your own SQL statements
+&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5217;&#x4E3E;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x4FE1;&#x606F;&#x3001;&#x8868;&#x4E2D;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x6570;&#x636E;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x60A8;&#x8FD8;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x60A8;&#x81EA;&#x5DF1;&#x7684;SQL&#x8BED;&#x53E5;&#x3002;
+
+-a, --all Retrieve everything &#x68C0;&#x7D22;&#x4E00;&#x5207;
+
+-b, --banner Retrieve DBMS banner &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x8BC6;
+
+--current-user Retrieve DBMS current user &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684; &#x6807;&#x8BC6;
+
+--current-db Retrieve DBMS current database &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;
+
+-hostname Retrieve DBMS server hostname &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5668;&#x7684;&#x4E3B;&#x673A;&#x540D;
+
+--is-dba Detect if the DBMS current user is DBA&#x68C0;&#x6D4B;DBMS&#x5F53;&#x524D;&#x7528;&#x6237;&#x662F;&#x5426;DBA
+
+--users Enumerate DBMS users &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;
+
+--passwords Enumerate DBMS users password hashes &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x5BC6;&#x7801;&#x54C8;&#x5E0C;
+
+--privileges Enumerate DBMS users privileges &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x7684;&#x6743;&#x9650;
+
+--roles Enumerate DBMS users roles &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7528;&#x6237;&#x7684;&#x89D2;&#x8272;
+
+--dbs Enumerate DBMS databases &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x5E93;
+
+--tables Enumerate DBMS database tables &#x679A;&#x4E3E;&#x7684;DBMS&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;
+
+--columns Enumerate DBMS database table columns&#x679A;&#x4E3E;DBMS&#x6570;&#x636E;
+&#x5E93;&#x8868;&#x5217;
+
+--schema Enumerate DBMS schema &#x679A;&#x4E3E;&#x6570;&#x636E;&#x5E93;&#x67B6;&#x6784;
+
+--count Retrieve number of entries for table(s) &#x68C0;&#x7D22;&#x8868;&#x7684;&#x6761;&#x76EE;&#x6570;
+
+--dump Dump DBMS database table entries &#x8F6C;&#x50A8;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x9879;
+
+--dump-all Dump all DBMS databases tables entries&#x8F6C;&#x50A8;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x9879;
+
+--search Search column(s), table(s) and/or database name(s) &#x641C;&#x7D22;&#x5217;&#xFF08;S&#xFF09;&#xFF0C;&#x8868;&#xFF08;S&#xFF09;&#x548C;/&#x6216;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF08;S&#xFF09;
+
+--comments Retrieve DBMS comments &#x68C0;&#x7D22;&#x6570;&#x636E;&#x5E93;&#x7684;comments(&#x6CE8;&#x91CA;&#x3001;&#x8BC4;&#x8BBA;)
+
+-D DB DBMS database to enumerate &#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;
+
+-T TBL DBMS database table(s) to enumerate &#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8868;
+
+-C COL DBMS database table column(s) to enumerate&#x8981;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5217;
+
+-X EXCLUDECOL DBMS database table column(s) to not enumerate&#x8981;&#x4E0D;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5217;
+
+-U USER DBMS user to enumerate &#x7528;&#x6765;&#x8FDB;&#x884C;&#x679A;&#x4E3E;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7528;&#x6237;
+
+--exclude-sysdbs Exclude DBMS system databases when enumerating tables &#x679A;&#x4E3E;&#x8868;&#x65F6;&#x6392;&#x9664;&#x7CFB;&#x7EDF;&#x6570;&#x636E;&#x5E93;
+
+--pivot-column=P.. Pivot column name &#x4E3B;&#x5217;&#x540D;&#x79F0;
+
+--where=DUMPWHERE Use WHERE condition while table dumping&#x4F7F;
+&#x7528;WHERE&#x6761;&#x4EF6;&#x8FDB;&#x884C;&#x8868;&#x8F6C;&#x50A8;
+
+--start=LIMITSTART First query output entry to retrieve &#x7B2C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;&#x8FDB;&#x5165;&#x68C0;&#x7D22;
+
+--stop=LIMITSTOP Last query output entry to retrieve&#x6700;&#x540E;&#x67E5;&#x8BE2;&#x7684;
+&#x8F93;&#x51FA;&#x8FDB;&#x5165;&#x68C0;&#x7D22;
+
+--first=FIRSTCHAR First query output word character to retrieve&#x7B2C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8F93;&#x51FA;&#x5B57;&#x7684;&#x5B57;&#x7B26;&#x68C0;&#x7D22;
+
+--last=LASTCHAR Last query output word character to retrieve&#x6700;&#x540E;&#x67E5;&#x8BE2;&#x7684;&#x8F93;&#x51FA;&#x5B57;&#x5B57;&#x7B26;&#x68C0;&#x7D22;
+
+--sql-query=QUERY SQL statement to be executed&#x8981;&#x6267;&#x884C;&#x7684;SQL&#x8BED;&#x53E5;
+
+--sql-shell
+Prompt for an interactive SQL shell&#x63D0;&#x793A;&#x4EA4;&#x4E92;&#x5F0F;SQL&#x7684;shell
+
+--sql-file=SQLFILE Execute SQL statements from given file(s)&#x4ECE;&#x7ED9;&#x5B9A;&#x6587;&#x4EF6;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;
+
+Brute force&#xFF08;&#x86EE;&#x529B;&#xFF09;:
+
+These options can be used to run brute force checks&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x8FD0;&#x884C;&#x86EE;&#x529B;&#x68C0;&#x67E5;&#x3002;
+
+--common-tables Check existence of common tables&#x68C0;&#x67E5;&#x5B58;&#x5728;&#x5171;&#x540C;&#x8868;
+
+--common-columns Check existence of common columns &#x68C0;&#x67E5;&#x5B58;&#x5728;&#x5171;&#x540C;&#x5217;
+
+User-defined function injection&#xFF08;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x6CE8;&#x5165;&#xFF09;:
+
+These options can be used to create custom user-defined functions &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x3002;
+
+--udf-inject Inject custom user-defined functions &#x6CE8;&#x5165;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;
+
+--shared-lib=SHLIB Local path of the shared library &#x5171;&#x4EAB;&#x5E93;&#x7684;&#x672C;&#x5730;&#x8DEF;&#x5F84;
+
+File system access&#xFF08;&#x8BBF;&#x95EE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF09;:
+These options can be used to access the back-end database management system underlying file system &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x8BBF;&#x95EE;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x5E95;&#x5C42;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x3002;
+
+--file-read=RFILE Read a file from the back-end DBMS file system &#x4ECE;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;
+
+--file-write=WFILE Write a local file on the back-end DBMS file system&#x7F16;&#x8F91;&#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x672C;&#x5730;&#x6587;&#x4EF6;
+
+--file-dest=DFILE Back-end DBMS absolute filepath to write to &#x540E;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x5199;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+
+Operating system access&#xFF08;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8BBF;&#x95EE;&#xFF09;:
+
+These options can be used to access the back-end database management system underlying operating system &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x7684;&#x5E95;&#x5C42;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x3002;
+
+--os-cmd=OSCMD Execute an operating system command &#x6267;&#x884C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;
+
+--os-shell Prompt for an interactive operating system shell &#x4EA4;&#x4E92;&#x5F0F;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;shell
+
+--os-pwn
+Prompt for an OOB shell, Meterpreter or VNC&#x83B7;&#x53D6;&#x4E00;&#x4E2A;OOB shell&#xFF0C;meterpreter&#x6216;VNC
+
+--os-smbrelay One click prompt for an OOB shell, Meterpreter or VNC &#x4E00;&#x952E;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;OOB shell&#xFF0C;meterpreter&#x6216;VNC
+
+--os-bof Stored procedure buffer overflow exploitation &#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7F13;&#x51B2;&#x533A;&#x6EA2;&#x51FA;&#x5229;&#x7528;
+
+--priv-esc Database process user privilege escalation &#x6570;&#x636E;&#x5E93;&#x8FDB;&#x7A0B;&#x7528;&#x6237;&#x6743;&#x9650;&#x63D0;&#x5347;
+
+--msf-path=MSFPATH Local path where Metasploit Framework is installed Metasploit Framework&#x672C;&#x5730;&#x7684;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;
+
+--tmp-path=TMPPATH Remote absolute path of temporary files directory &#x8FDC;&#x7A0B;&#x4E34;&#x65F6;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;
+
+Windows registry access&#xFF08;Windows&#x6CE8;&#x518C;&#x8868;&#x8BBF;&#x95EE;&#xFF09;:
+
+These options can be used to access the back-end database management system Windows registry &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x88AB;&#x7528;&#x6765;&#x8BBF;&#x95EE;&#x540E;&#x7AEF;&#x6570;&#x636E;&#x5E93;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;Windows&#x6CE8;&#x518C;&#x8868;&#x3002;
+
+--reg-read Read a Windows registry key value &#x8BFB;&#x4E00;&#x4E2A;Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;
+
+--reg-add Write a Windows registry key value data &#x5199;&#x4E00;&#x4E2A;Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;&#x6570;&#x636E;
+
+--reg-del Delete a Windows registry key value &#x5220;&#x9664;Windows&#x6CE8;&#x518C;&#x8868;&#x952E;&#x503C;
+
+--reg-key=REGKEY Windows registry key Windows&#x6CE8;&#x518C;&#x8868;&#x952E;
+
+--reg-value=REGVAL Windows registry key value Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;
+
+--reg-data=REGDATA Windows registry key value data Windows&#x6CE8;&#x518C;&#x8868;&#x952E;&#x503C;&#x6570;&#x636E;
+
+--reg-type=REGTYPE Windows registry key value type Windows&#x6CE8;&#x518C;&#x8868;&#x9879;&#x503C;&#x7C7B;&#x578B;
+
+General&#xFF08;&#x4E00;&#x822C;&#xFF09;:
+
+These options can be used to set some general working parameters &#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x4E00;&#x822C;&#x7684;&#x5DE5;&#x4F5C;&#x53C2;&#x6570;&#x3002;
+
+-s SESSIONFILE Load session from a stored (.sqlite) file &#x4FDD;&#x5B58;&#x548C;&#x6062;&#x590D;&#x68C0;&#x7D22;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;
+
+-t TRAFFICFILE Log all HTTP traffic into a textual file &#x8BB0;&#x5F55;&#x6240;&#x6709;HTTP&#x6D41;&#x91CF;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x4E2D;
+
+--batch Never ask for user input, use the default behaviour &#x4ECE;&#x4E0D;&#x8BE2;&#x95EE;&#x7528;&#x6237;&#x8F93;&#x5165;&#xFF0C;&#x4F7F;&#x7528;&#x6240;&#x6709;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x3002;
+
+--binary-fields=.. Result fields having binary values (e.g. &quot;digest&quot;)&#x5177;&#x6709;&#x4E8C;&#x8FDB;&#x5236;&#x503C;&#x7684;&#x7ED3;&#x679C;&#x5B57;&#x6BB5;
+
+--charset=CHARSET Force character encoding used for data retrieval&#x5F3A;&#x5236;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x68C0;&#x7D22;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;
+
+--crawl=CRAWLDEPTH Crawl the website starting from the target URL &#x4ECE;&#x76EE;&#x6807;&#x7F51;&#x5740;&#x5F00;&#x59CB;&#x6293;&#x53D6;&#x7F51;&#x7AD9;
+
+--crawl-exclude=.. Regexp to exclude pages from crawling (e.g. &quot;logout&quot;)&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x6392;&#x9664;&#x7F51;&#x9875;&#x6293;&#x53D6;
+
+--csv-del=CSVDEL Delimiting character used in CSV output (default &quot;,&quot;) &#x5206;&#x9694;CSV&#x8F93;&#x51FA;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x7B26;
+
+--dump-format=DU.. Format of dumped data (CSV (default), HTML or SQLITE)&#x8F6C;&#x50A8;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;
+
+--eta Display for each output the estimated time of arrival &#x663E;&#x793A;&#x6BCF;&#x4E2A;&#x8F93;&#x51FA;&#x7684;&#x9884;&#x8BA1;&#x5230;&#x8FBE;&#x65F6;&#x95F4;
+
+--flush-session Flush session files for current target&#x5237;&#x65B0;&#x5F53;&#x524D;&#x76EE;&#x6807;&#x7684;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;
+
+--forms Parse and test forms on target URL &#x5728;&#x76EE;&#x6807;&#x7F51;&#x5740;&#x4E0A;&#x89E3;&#x6790;&#x548C;&#x6D4B;&#x8BD5;&#x8868;&#x5355;
+
+--fresh-queries Ignore query results stored in session file &#x5FFD;&#x7565;&#x5728;&#x4F1A;&#x8BDD;&#x6587;&#x4EF6;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;
+
+--hex Use DBMS hex function(s) for data retrieval &#x4F7F;&#x7528;DBMS hex&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x68C0;&#x7D22;
+
+--output-dir=OUT.. Custom output directory path &#x81EA;&#x5B9A;&#x4E49;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x8DEF;&#x5F84;
+
+--parse-errors Parse and display DBMS error messages from responses&#x89E3;&#x6790;&#x548C;&#x663E;&#x793A;&#x54CD;&#x5E94;&#x4E2D;&#x7684;DBMS&#x9519;&#x8BEF;&#x6D88;&#x606F;
+
+--save=SAVECONFIG Save options to a configuration INI file&#x4FDD;&#x5B58;&#x9009;&#x9879;&#x5230;INI&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+
+--scope=SCOPE Regexp to filter targets from provided proxy log &#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4ECE;&#x63D0;&#x4F9B;&#x7684;&#x4EE3;&#x7406;&#x65E5;&#x5FD7;&#x4E2D;&#x8FC7;&#x6EE4;&#x76EE;&#x6807;
+
+--test-filter=TE.. Select tests by payloads and/or titles (e.g. ROW)&#x6839;&#x636E;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x548C;/&#x6216;&#x6807;&#x9898;(e.g. ROW)&#x9009;&#x62E9;&#x6D4B;&#x8BD5;
+
+--test-skip=TEST.. Skip tests by payloads and/or titles (e.g. BENCHMARK)&#x6839;&#x636E;&#x6709;&#x6548;&#x8D1F;&#x8F7D;&#x548C;/&#x6216;&#x6807;&#x9898;&#x8DF3;&#x8FC7;&#x6D4B;&#x8BD5;&#xFF08;e.g. BENCHMARK&#xFF09;
+
+--update Update sqlmap &#x66F4;&#x65B0;SqlMap
+
+Miscellaneous&#xFF08;&#x6742;&#x9879;&#xFF09;:
+
+-z MNEMONICS Use short mnemonics (e.g. &quot;flu,bat,ban,tec=EU&quot;)
+&#x4F7F;&#x7528;&#x7B80;&#x77ED;&#x7684;&#x52A9;&#x8BB0;&#x7B26;
+
+--alert=ALERT Run host OS command(s) when SQL injection is found &#x5728;&#x627E;&#x5230;SQL&#x6CE8;&#x5165;&#x65F6;&#x8FD0;&#x884C;&#x4E3B;&#x673A;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x547D;&#x4EE4;
+
+--answers=ANSWERS Set question answers (e.g. &quot;quit=N,follow=N&quot;) &#x8BBE;&#x7F6E;&#x95EE;&#x9898;&#x7B54;&#x6848;
+
+--beep Beep on question and/or when SQL injection is found &#x53D1;&#x73B0;SQL &#x6CE8;&#x5165;&#x65F6;&#x63D0;&#x9192;
+
+--cleanup Clean up the DBMS from sqlmap specific UDF and tables SqlMap&#x5177;&#x4F53;&#x7684;UDF&#x548C;&#x8868;&#x6E05;&#x7406;DBMS
+
+--dependencies Check for missing (non-core) sqlmap dependencies &#x68C0;&#x67E5;&#x662F;&#x5426;&#x7F3A;&#x5C11;&#xFF08;&#x975E;&#x5185;&#x6838;&#xFF09;sqlmap&#x4F9D;&#x8D56;&#x5173;&#x7CFB;
+
+--disable-coloring Disable console output coloring &#x7981;&#x7528;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x989C;&#x8272;
+
+--gpage=GOOGLEPAGE Use Google dork results from specified page number &#x4F7F;&#x7528;Google dork&#x7ED3;&#x679C;&#x6307;&#x5B9A;&#x9875;&#x7801;
+
+--identify-waf Make a thorough testing for a WAF/IPS/IDS protection &#x5BF9;WAF / IPS / IDS&#x4FDD;&#x62A4;&#x8FDB;&#x884C;&#x5168;&#x9762;&#x6D4B;&#x8BD5;
+
+--skip-waf Skip heuristic detection of WAF/IPS/IDS protection &#x8DF3;&#x8FC7;&#x542F;&#x53D1;&#x5F0F;&#x68C0;&#x6D4B;WAF / IPS / IDS&#x4FDD;&#x62A4;
+
+--mobile Imitate smartphone through HTTP User-Agent header &#x901A;&#x8FC7;HTTP User-Agent&#x6807;&#x5934;&#x6A21;&#x4EFF;&#x667A;&#x80FD;&#x624B;&#x673A;
+
+--offline Work in offline mode (only use session data) &#x5728;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x4E0B;&#x5DE5;&#x4F5C;&#xFF08;&#x4EC5;&#x4F7F;&#x7528;&#x4F1A;&#x8BDD;&#x6570;&#x636E;&#xFF09;
+
+--page-rank Display page rank (PR) for Google dork results Google dork&#x7ED3;&#x679C;&#x663E;&#x793A;&#x7F51;&#x9875;&#x6392;&#x540D;&#xFF08;PR&#xFF09;
+
+--purge-output Safely remove all content from output directory &#x5B89;&#x5168;&#x5730;&#x4ECE;&#x8F93;&#x51FA;&#x76EE;&#x5F55;&#x4E2D;&#x5220;&#x9664;&#x6240;&#x6709;&#x5185;&#x5BB9;
+
+--smart Conduct thorough tests only if positive heuristic(s) &#x53EA;&#x6709;&#x5728;&#x6B63;&#x542F;&#x53D1;&#x5F0F;&#x65F6;&#x624D;&#x8FDB;&#x884C;&#x5F7B;&#x5E95;&#x6D4B;&#x8BD5;
+
+--sqlmap-shell Prompt for an interactive sqlmap shell&#x63D0;&#x793A;&#x4EA4;&#x4E92;&#x5F0F; sqlmap shell
+
+--wizard Simple wizard interface for beginner users &#x7ED9;&#x521D;&#x7EA7;&#x7528;&#x6237;&#x7684;&#x7B80;&#x5355;&#x5411;&#x5BFC;&#x754C;&#x9762;
+</span></code></pre>
+<blockquote>
+<p>  Micropoor</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="4_Asp代码审计--项目实战2.html" class="navigation navigation-prev " aria-label="Previous page: 第四课：Asp代码审计--项目实战2">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="6_反攻的一次溯源--项目实战3.html" class="navigation navigation-next " aria-label="Next page: 第六课：反攻的一次溯源--项目实战3">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第五课：工具介绍-Sqlmap","level":"1.4.5","depth":2,"next":{"title":"第六课：反攻的一次溯源--项目实战3","level":"1.4.6","depth":2,"path":"Chapter1/6_反攻的一次溯源--项目实战3.md","ref":"Chapter1/6_反攻的一次溯源--项目实战3.md","articles":[]},"previous":{"title":"第四课：Asp代码审计--项目实战2","level":"1.4.4","depth":2,"path":"Chapter1/4_Asp代码审计--项目实战2.md","ref":"Chapter1/4_Asp代码审计--项目实战2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/5_工具介绍-Sqlmap.md","mtime":"2019-02-23T03:24:42.337Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

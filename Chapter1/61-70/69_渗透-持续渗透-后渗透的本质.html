@@ -1,0 +1,2003 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>第六十九课：渗透，持续渗透，后渗透的本质 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="70_ftp一句话下载payload补充.html" />
+    
+    
+    <link rel="prev" href="68_基于Ruby内存加载shellcode第一季.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../README_EN.html">
+            
+                <a href="../../README_EN.html">
+            
+                    
+                    Perface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Contents.html">
+            
+                <a href="../../Contents.html">
+            
+                    
+                    目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第一章：生
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../1_windows提权-快速查找exp.html">
+            
+                <a href="../1_windows提权-快速查找exp.html">
+            
+                    
+                    第一课：windows提权-快速查找exp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../2_Linux提权-依赖exp篇.html">
+            
+                <a href="../2_Linux提权-依赖exp篇.html">
+            
+                    
+                    第二课：Linux提权-依赖exp篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../3_Delphi代码审计--项目实战1.html">
+            
+                <a href="../3_Delphi代码审计--项目实战1.html">
+            
+                    
+                    第三课：Delphi代码审计--项目实战1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../4_Asp代码审计--项目实战2.html">
+            
+                <a href="../4_Asp代码审计--项目实战2.html">
+            
+                    
+                    第四课：Asp代码审计--项目实战2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../5_工具介绍-Sqlmap.html">
+            
+                <a href="../5_工具介绍-Sqlmap.html">
+            
+                    
+                    第五课：工具介绍-Sqlmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../6_反攻的一次溯源--项目实战3.html">
+            
+                <a href="../6_反攻的一次溯源--项目实战3.html">
+            
+                    
+                    第六课：反攻的一次溯源--项目实战3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../7_sqlServer常用操作远程桌面语句.html">
+            
+                <a href="../7_sqlServer常用操作远程桌面语句.html">
+            
+                    
+                    第七课：sql server 常用操作远程桌面语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../8_模拟诉求任务攻击.html">
+            
+                <a href="../8_模拟诉求任务攻击.html">
+            
+                    
+                    第八课：模拟诉求任务攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../9_工具介绍-the-backdoor-factory.html">
+            
+                <a href="../9_工具介绍-the-backdoor-factory.html">
+            
+                    
+                    第九课：工具介绍-the-backdoor-factory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../10_msfvenom常用生成payload命令.html">
+            
+                <a href="../10_msfvenom常用生成payload命令.html">
+            
+                    
+                    第十课：msfvenom常用生成payload命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../11_工具介绍Veil-Evasion.html">
+            
+                <a href="../11_工具介绍Veil-Evasion.html">
+            
+                    
+                    第十一课：工具介绍Veil-Evasion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../12_基于UDP发现内网存活主机.html">
+            
+                <a href="../12_基于UDP发现内网存活主机.html">
+            
+                    
+                    第十二课：基于UDP发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../13_基于ARP发现内网存活主机.html">
+            
+                <a href="../13_基于ARP发现内网存活主机.html">
+            
+                    
+                    第十三课：基于ARP发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../14_基于第十课补充payload1.html">
+            
+                <a href="../14_基于第十课补充payload1.html">
+            
+                    
+                    第十四课：基于第十课补充payload1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../15_基于第十课补充payload2.html">
+            
+                <a href="../15_基于第十课补充payload2.html">
+            
+                    
+                    第十五课：基于第十课补充payload2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../16_红蓝对抗渗透测试1.html">
+            
+                <a href="../16_红蓝对抗渗透测试1.html">
+            
+                    
+                    第十六课：红蓝对抗渗透测试1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../17_红蓝对抗渗透测试2.html">
+            
+                <a href="../17_红蓝对抗渗透测试2.html">
+            
+                    
+                    第十七课：红蓝对抗渗透测试2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../18_红蓝对抗渗透测试3.html">
+            
+                <a href="../18_红蓝对抗渗透测试3.html">
+            
+                    
+                    第十八课：红蓝对抗渗透测试3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../19_基于netbios发现内网存活主机.html">
+            
+                <a href="../19_基于netbios发现内网存活主机.html">
+            
+                    
+                    第十九课：基于netbios发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../20_基于snmp发现内网存活主机.html">
+            
+                <a href="../20_基于snmp发现内网存活主机.html">
+            
+                    
+                    第二十课：基于snmp发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../21-30/21_基于ICMP发现内网存活主机.html">
+            
+                <a href="../21-30/21_基于ICMP发现内网存活主机.html">
+            
+                    
+                    第二十一课：基于ICMP发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../21-30/22_基于SMB发现内网存活主机.html">
+            
+                <a href="../21-30/22_基于SMB发现内网存活主机.html">
+            
+                    
+                    第二十二课：基于SMB发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" data-path="../21-30/23_基于MSF发现内网存活主机第一季.html">
+            
+                <a href="../21-30/23_基于MSF发现内网存活主机第一季.html">
+            
+                    
+                    第二十三课：基于MSF发现内网存活主机第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" data-path="../21-30/24_基于MSF发现内网存活主机第二季.html">
+            
+                <a href="../21-30/24_基于MSF发现内网存活主机第二季.html">
+            
+                    
+                    第二十四课：基于MSF发现内网存活主机第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.25" data-path="../21-30/25_基于MSF发现内网存活主机第三季.html">
+            
+                <a href="../21-30/25_基于MSF发现内网存活主机第三季.html">
+            
+                    
+                    第二十五课：基于MSF发现内网存活主机第三季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.26" data-path="../21-30/26_基于MSF发现内网存活主机第四季.html">
+            
+                <a href="../21-30/26_基于MSF发现内网存活主机第四季.html">
+            
+                    
+                    第二十六课：基于MSF发现内网存活主机第四季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.27" data-path="../21-30/27_基于MSF发现内网存活主机第五季.html">
+            
+                <a href="../21-30/27_基于MSF发现内网存活主机第五季.html">
+            
+                    
+                    第二十七课：基于MSF发现内网存活主机第五季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.28" data-path="../21-30/28_基于MSF发现内网存活主机第六季.html">
+            
+                <a href="../21-30/28_基于MSF发现内网存活主机第六季.html">
+            
+                    
+                    第二十八课：基于MSF发现内网存活主机第六季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.29" data-path="../21-30/29_发现目标WEB程序敏感目录第一季.html">
+            
+                <a href="../21-30/29_发现目标WEB程序敏感目录第一季.html">
+            
+                    
+                    第二十九课：发现目标WEB程序敏感目录第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.30" data-path="../21-30/30_解决msfvenom命令自动补全.html">
+            
+                <a href="../21-30/30_解决msfvenom命令自动补全.html">
+            
+                    
+                    第三十课：解决msfvenom命令自动补全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.31" data-path="../31_msf的前生今世.html">
+            
+                <a href="../31_msf的前生今世.html">
+            
+                    
+                    第三十一课：msf的前生今世
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.32" data-path="../32_配置vps上的msf.html">
+            
+                <a href="../32_配置vps上的msf.html">
+            
+                    
+                    第三十二课：配置vps上的msf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.33" data-path="../33_攻击Mysql服务.html">
+            
+                <a href="../33_攻击Mysql服务.html">
+            
+                    
+                    第三十三课：攻击Mysql服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.34" data-path="../34_攻击SqlServer服务.html">
+            
+                <a href="../34_攻击SqlServer服务.html">
+            
+                    
+                    第三十四课：攻击Sql server 服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.35" data-path="../35_与Sqlmap结合攻击.html">
+            
+                <a href="../35_与Sqlmap结合攻击.html">
+            
+                    
+                    第三十五课：与Sqlmap结合攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.36" data-path="../36_解决vps上ssh掉线.html">
+            
+                <a href="../36_解决vps上ssh掉线.html">
+            
+                    
+                    第三十六课：解决vps上ssh掉线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.37" data-path="../37_vbs一句话下载payload.html">
+            
+                <a href="../37_vbs一句话下载payload.html">
+            
+                    
+                    第三十七课：vbs一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.38" data-path="../38_certutil一句话下载payload.html">
+            
+                <a href="../38_certutil一句话下载payload.html">
+            
+                    
+                    第三十八课：certutil一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.39" data-path="../39_vbs一句话下载payload补充.html">
+            
+                <a href="../39_vbs一句话下载payload补充.html">
+            
+                    
+                    第三十九课：vbs一句话下载payload补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.40" data-path="../40_ftp一句话下载payload.html">
+            
+                <a href="../40_ftp一句话下载payload.html">
+            
+                    
+                    第四十课：ftp一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.41" data-path="../41_bitsadmin一句话下载payload.html">
+            
+                <a href="../41_bitsadmin一句话下载payload.html">
+            
+                    
+                    第四十一课：bitsadmin一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.42" data-path="../42_攻击FTP服务.html">
+            
+                <a href="../42_攻击FTP服务.html">
+            
+                    
+                    第四十二课：攻击FTP服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.43" data-path="../43_js一句话下载payload.html">
+            
+                <a href="../43_js一句话下载payload.html">
+            
+                    
+                    第四十三课：js一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.44" data-path="../44_ertutil一句话下载payload补充.html">
+            
+                <a href="../44_ertutil一句话下载payload补充.html">
+            
+                    
+                    第四十四课：ertutil一句话下载payload补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.45" data-path="../45_解决bat一句话下载payload黑窗.html">
+            
+                <a href="../45_解决bat一句话下载payload黑窗.html">
+            
+                    
+                    第四十五课：解决bat一句话下载payload黑窗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.46" data-path="../46_powershell一句话下载payload.html">
+            
+                <a href="../46_powershell一句话下载payload.html">
+            
+                    
+                    第四十六课：powershell一句话下载payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.47" data-path="../47_payload分离免杀思路.html">
+            
+                <a href="../47_payload分离免杀思路.html">
+            
+                    
+                    第四十七课：payload分离免杀思路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.48" data-path="../48_payload分离免杀思路第二季.html">
+            
+                <a href="../48_payload分离免杀思路第二季.html">
+            
+                    
+                    第四十八课：payload分离免杀思路第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.49" data-path="../49_关于Powershell对抗安全软件.html">
+            
+                <a href="../49_关于Powershell对抗安全软件.html">
+            
+                    
+                    第四十九课：关于Powershell对抗安全软件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.50" data-path="../50_基于SqlDataSourceEnumerator发现内网存活主机.html">
+            
+                <a href="../50_基于SqlDataSourceEnumerator发现内网存活主机.html">
+            
+                    
+                    第五十课：基于SqlDataSourceEnumerator发现内网存活主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.51" data-path="../51_项目回忆：体系的本质是知识点串联.html">
+            
+                <a href="../51_项目回忆：体系的本质是知识点串联.html">
+            
+                    
+                    第五十一课：项目回忆：体系的本质是知识点串联
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.52" data-path="../52_渗透的本质是信息搜集.html">
+            
+                <a href="../52_渗透的本质是信息搜集.html">
+            
+                    
+                    第五十二课：渗透的本质是信息搜集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.53" data-path="../53_内网渗透中的文件传输.html">
+            
+                <a href="../53_内网渗透中的文件传输.html">
+            
+                    
+                    第五十三课：内网渗透中的文件传输
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.54" data-path="../54_基于Powershell做Socks4-5代理.html">
+            
+                <a href="../54_基于Powershell做Socks4-5代理.html">
+            
+                    
+                    第五十四课：基于Powershell做Socks 4-5代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.55" data-path="../55_与Smbmap结合攻击.html">
+            
+                <a href="../55_与Smbmap结合攻击.html">
+            
+                    
+                    第五十五课：与Smbmap结合攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.56" data-path="../56_离线提取目标机hash.html">
+            
+                <a href="../56_离线提取目标机hash.html">
+            
+                    
+                    第五十六课：离线提取目标机hash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.57" data-path="../57_高级持续渗透-第一季关于后门.html">
+            
+                <a href="../57_高级持续渗透-第一季关于后门.html">
+            
+                    
+                    第五十七课：高级持续渗透-第一季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.58" data-path="../58_高级持续渗透-第二季关于后门补充一.html">
+            
+                <a href="../58_高级持续渗透-第二季关于后门补充一.html">
+            
+                    
+                    第五十八课：高级持续渗透-第二季关于后门补充一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.59" data-path="../59_高级持续渗透-第三季关于后门补充二.html">
+            
+                <a href="../59_高级持续渗透-第三季关于后门补充二.html">
+            
+                    
+                    第五十九课：高级持续渗透-第三季关于后门补充二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.60" data-path="../60_高级持续渗透-第四季关于后门.html">
+            
+                <a href="../60_高级持续渗透-第四季关于后门.html">
+            
+                    
+                    第六十课：高级持续渗透-第四季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.61" data-path="61_高级持续渗透-第五季关于后门.html">
+            
+                <a href="61_高级持续渗透-第五季关于后门.html">
+            
+                    
+                    第六十一课：高级持续渗透-第五季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.62" data-path="62_高级持续渗透-第六季关于后门.html">
+            
+                <a href="62_高级持续渗透-第六季关于后门.html">
+            
+                    
+                    第六十二课：高级持续渗透-第六季关于后门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.63" data-path="63_高级持续渗透-第七季demo的成长.html">
+            
+                <a href="63_高级持续渗透-第七季demo的成长.html">
+            
+                    
+                    第六十三课：高级持续渗透-第七季demo的成长
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.64" data-path="64_高级持续渗透-第八季demo便是远控.html">
+            
+                <a href="64_高级持续渗透-第八季demo便是远控.html">
+            
+                    
+                    第六十四课：高级持续渗透-第八季demo便是远控
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.65" data-path="65_离线提取目标机hash补充.html">
+            
+                <a href="65_离线提取目标机hash补充.html">
+            
+                    
+                    第六十五课：离线提取目标机hash补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.66" data-path="66_借助aspx对payload进行分离免杀.html">
+            
+                <a href="66_借助aspx对payload进行分离免杀.html">
+            
+                    
+                    第六十六课：借助aspx对payload进行分离免杀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.67" data-path="67_meterpreter下的irb操作第一季.html">
+            
+                <a href="67_meterpreter下的irb操作第一季.html">
+            
+                    
+                    第六十七课：meterpreter下的irb操作第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.68" data-path="68_基于Ruby内存加载shellcode第一季.html">
+            
+                <a href="68_基于Ruby内存加载shellcode第一季.html">
+            
+                    
+                    第六十八课：基于Ruby内存加载shellcode第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.69" data-path="69_渗透-持续渗透-后渗透的本质.html">
+            
+                <a href="69_渗透-持续渗透-后渗透的本质.html">
+            
+                    
+                    第六十九课：渗透，持续渗透，后渗透的本质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.70" data-path="70_ftp一句话下载payload补充.html">
+            
+                <a href="70_ftp一句话下载payload补充.html">
+            
+                    
+                    第七十课：ftp一句话下载payload补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.71" data-path="../71-80/71_基于白名单Msbuild.exe执行payload第一季.html">
+            
+                <a href="../71-80/71_基于白名单Msbuild.exe执行payload第一季.html">
+            
+                    
+                    第七十一课：基于白名单Msbuild.exe执行payload第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.72" data-path="../71-80/72_基于白名单Installutil.exe执行payload第二季.html">
+            
+                <a href="../71-80/72_基于白名单Installutil.exe执行payload第二季.html">
+            
+                    
+                    第七十二课：基于白名单Installutil.exe执行payload第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.73" data-path="../71-80/73_基于白名单Regasm.exe执行payload第三季.html">
+            
+                <a href="../71-80/73_基于白名单Regasm.exe执行payload第三季.html">
+            
+                    
+                    第七十三课：基于白名单Regasm.exe执行payload第三季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.74" data-path="../71-80/74_基于白名单regsvcs.exe执行payload第四季.html">
+            
+                <a href="../71-80/74_基于白名单regsvcs.exe执行payload第四季.html">
+            
+                    
+                    第七十四课：基于白名单Regsvcs.exe执行payload第四季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.75" data-path="../71-80/75_基于白名单Mshta.exe执行payload第五季.html">
+            
+                <a href="../71-80/75_基于白名单Mshta.exe执行payload第五季.html">
+            
+                    
+                    第七十五课：基于白名单Mshta.exe执行payload第五季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.76" data-path="../71-80/76_基于白名单Compiler.exe执行payload第六季.html">
+            
+                <a href="../71-80/76_基于白名单Compiler.exe执行payload第六季.html">
+            
+                    
+                    第七十六课：基于白名单Compiler.exe执行payload第六季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.77" data-path="../71-80/77_基于白名单Csc.exe执行payload第七季.html">
+            
+                <a href="../71-80/77_基于白名单Csc.exe执行payload第七季.html">
+            
+                    
+                    第七十七课：基于白名单Csc.exe执行payload第七季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.78" data-path="../71-80/78_基于白名单Msiexec执行payload第八季.html">
+            
+                <a href="../71-80/78_基于白名单Msiexec执行payload第八季.html">
+            
+                    
+                    第七十八课：基于白名单Msiexec执行payload第八季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.79" data-path="../71-80/79_基于白名单Regsvr32执行payload第九季.html">
+            
+                <a href="../71-80/79_基于白名单Regsvr32执行payload第九季.html">
+            
+                    
+                    第七十九课：基于白名单Regsvr32执行payload第九季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.80" data-path="../71-80/80_基于白名单Wmic执行payload第十季.html">
+            
+                <a href="../71-80/80_基于白名单Wmic执行payload第十季.html">
+            
+                    
+                    第八十课：基于白名单Wmic执行payload第十季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.81" data-path="../81-90/81_基于白名单Rundll32.exe执行payload第十一季.html">
+            
+                <a href="../81-90/81_基于白名单Rundll32.exe执行payload第十一季.html">
+            
+                    
+                    第八十一课：基于白名单Rundll32.exe执行payload第十一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.82" data-path="../81-90/82_基于白名单Odbcconf执行payload第十二季.html">
+            
+                <a href="../81-90/82_基于白名单Odbcconf执行payload第十二季.html">
+            
+                    
+                    第八十二课：基于白名单Odbcconf执行payload第十二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.83" data-path="../81-90/83_基于白名单PsExec执行payload第十三季.html">
+            
+                <a href="../81-90/83_基于白名单PsExec执行payload第十三季.html">
+            
+                    
+                    第八十三课：基于白名单PsExec执行payload第十三季 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.84" data-path="../81-90/84_基于白名单Forfiles执行payload第十四季.html">
+            
+                <a href="../81-90/84_基于白名单Forfiles执行payload第十四季.html">
+            
+                    
+                    第八十四课：基于白名单Forfiles执行payload第十四季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.85" data-path="../81-90/85_基于白名单Pcalua执行payload第十五季.html">
+            
+                <a href="../81-90/85_基于白名单Pcalua执行payload第十五季.html">
+            
+                    
+                    第八十五课：基于白名单Pcalua执行payload第十五季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.86" data-path="../81-90/86_基于白名单Msiexec执行payload第八季补充.html">
+            
+                <a href="../81-90/86_基于白名单Msiexec执行payload第八季补充.html">
+            
+                    
+                    第八十六课：基于白名单Msiexec执行payload第八季补充
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.87" data-path="../81-90/87_基于白名单Cmstp.exe执行payload第十六季.html">
+            
+                <a href="../81-90/87_基于白名单Cmstp.exe执行payload第十六季.html">
+            
+                    
+                    第八十七课：基于白名单Cmstp.exe执行payload第十六季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.88" data-path="../81-90/88_基于白名单Ftp.exe执行payload第十九季.html">
+            
+                <a href="../81-90/88_基于白名单Ftp.exe执行payload第十九季.html">
+            
+                    
+                    第八十八课：基于白名单Ftp.exe执行payload第十九季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.89" data-path="../81-90/89_基于白名单Url.dll执行payload第十七季.html">
+            
+                <a href="../81-90/89_基于白名单Url.dll执行payload第十七季.html">
+            
+                    
+                    第八十九课：基于白名单Url.dll执行payload第十七季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.90" data-path="../81-90/90_基于白名单zipfldr.dll执行payload第十八季.html">
+            
+                <a href="../81-90/90_基于白名单zipfldr.dll执行payload第十八季.html">
+            
+                    
+                    第九十课：基于白名单zipfldr.dll执行payload第十八季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.91" data-path="../91-100/91_从目标文件中做信息搜集第一季.html">
+            
+                <a href="../91-100/91_从目标文件中做信息搜集第一季.html">
+            
+                    
+                    第九十一课：从目标文件中做信息搜集第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.92" data-path="../91-100/92_实战中的Payload应用.html">
+            
+                <a href="../91-100/92_实战中的Payload应用.html">
+            
+                    
+                    第九十二课：实战中的Payload应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.93" data-path="../91-100/93_与CrackMapExec结合攻击.html">
+            
+                <a href="../91-100/93_与CrackMapExec结合攻击.html">
+            
+                    
+                    第九十三课：与CrackMapExec结合攻击
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.94" data-path="../91-100/94_基于实战中的small-payload.html">
+            
+                <a href="../91-100/94_基于实战中的small-payload.html">
+            
+                    
+                    第九十四课：基于实战中的small payload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.95" data-path="../91-100/95_基于Portfwd端口转发.html">
+            
+                <a href="../91-100/95_基于Portfwd端口转发.html">
+            
+                    
+                    第九十五课：基于Portfwd端口转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.96" data-path="../91-100/96_HTTP隧道ABPTTS第一季.html">
+            
+                <a href="../91-100/96_HTTP隧道ABPTTS第一季.html">
+            
+                    
+                    第九十六课：HTTP隧道ABPTTS第一季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.97" data-path="../91-100/97_MSF配置自定义Payload控制目标主机权限.html">
+            
+                <a href="../91-100/97_MSF配置自定义Payload控制目标主机权限.html">
+            
+                    
+                    第九十七课：MSF配置自定义Payload控制目标主机权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.98" data-path="../91-100/98_HTTP隧道reGeorg第二季.html">
+            
+                <a href="../91-100/98_HTTP隧道reGeorg第二季.html">
+            
+                    
+                    第九十八课：HTTP隧道reGeorg第二季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.99" data-path="../91-100/99_HTTP隧道Tunna第三季.html">
+            
+                <a href="../91-100/99_HTTP隧道Tunna第三季.html">
+            
+                    
+                    第九十九课：HTTP隧道Tunna第三季
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.100" data-path="../91-100/100_HTTP隧道reDuh第四季.html">
+            
+                <a href="../91-100/100_HTTP隧道reDuh第四季.html">
+            
+                    
+                    第一百课：HTTP隧道reDuh第四季
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第二章：老（待更新...）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    第一百零一课：基于SCF做目标内网信息搜集第二季
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    第一百零二课：对抗权限长期把控-伪造无效签名第一季
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    第一百零三课：Http加密隧道下的横向渗透尝试---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    第一百零四课：Windows Smb 欺骗重放攻击利用---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    第一百零五课：windows 单机免杀抓明文或hash [通过dump lsass进程数据]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" >
+            
+                <span>
+            
+                    
+                    第一百零六课：windows 单机免杀抓明文或hash [通过简单混淆编码绕过常规静态检测]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" >
+            
+                <span>
+            
+                    
+                    第一百零七课：跨平台横向移动 [ windows计划任务利用 ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" >
+            
+                <span>
+            
+                    
+                    第一百零八课：跨平台横向移动 [wmi利用]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" >
+            
+                <span>
+            
+                    
+                    第一百零九课：依托 metasploit 尽可能多的发现目标内网下的各类高价值存活主机---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" >
+            
+                <span>
+            
+                    
+                    第一百一十课：窃取,伪造模拟各种windows访问令牌[token利用]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" >
+            
+                <span>
+            
+                    
+                    第一百一十一课：内网mssql完整利用流程 [ 基础篇 ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" >
+            
+                <span>
+            
+                    
+                    第一百一十二课：利用Dropbox中转C2流量---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" >
+            
+                <span>
+            
+                    
+                    第一百一十三课：COM Hijacking---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" >
+            
+                <span>
+            
+                    
+                    第一百一十四课：渗透沉思录
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" >
+            
+                <span>
+            
+                    
+                    第一百一十五课：使用CrackMapExec 进行 NTLM Hash传递攻击---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" >
+            
+                <span>
+            
+                    
+                    第一百一十六课：Windows域渗透 - 用户密码枚举---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" >
+            
+                <span>
+            
+                    
+                    第一百一十七课：Windows 本地特权提升技巧---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" >
+            
+                <span>
+            
+                    
+                    第一百一十八课：CVE-2017-11882钓鱼攻击---倾旋
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" >
+            
+                <span>
+            
+                    
+                    第一百一十九课：全平台高性能加密隧道 ssf---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" >
+            
+                <span>
+            
+                    
+                    第一百二十课：win自带的高级网络配置管理工具深度应用 [ netsh ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.21" >
+            
+                <span>
+            
+                    
+                    第一百二十一课：http加密代理深度应用 [ abptts ]---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.22" >
+            
+                <span>
+            
+                    
+                    第一百二十二课：利用 ssh隧道实现内网断网机meterpreter反向上线---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.23" >
+            
+                <span>
+            
+                    
+                    第一百二十三课：利用ssh隧道将公网meterpreter弹至本地的msf中---klion
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    第三章：病（待更新...）
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >第六十九课：渗透，持续渗透，后渗透的本质</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x5F15;&#x8A00;&#xFF08;1&#xFF09;&#xFF1A;">&#x5F15;&#x8A00;&#xFF08;1&#xFF09;&#xFF1A;</h3>
+<p><strong>&#x76EE;&#x6807;&#x8D44;&#x4EA7;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#x7684;&#x5E7F;&#x5EA6;&#xFF0C;&#x51B3;&#x5B9A;&#x6E17;&#x900F;&#x8FC7;&#x7A0B;&#x7684;&#x590D;&#x6742;&#x7A0B;&#x5EA6;&#x3002;
+&#x76EE;&#x6807;&#x4E3B;&#x673A;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#x7684;&#x6DF1;&#x5EA6;&#xFF0C;&#x51B3;&#x5B9A;&#x540E;&#x6E17;&#x900F;&#x6743;&#x9650;&#x6301;&#x7EED;&#x628A;&#x63A7;&#x3002;
+&#x6E17;&#x900F;&#x7684;&#x672C;&#x8D28;&#x662F;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF0C;&#x800C;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#x6574;&#x7406;&#x4E3A;&#x540E;&#x7EED;&#x7684;&#x60C5;&#x62A5;&#x8DDF;&#x8FDB;&#x63D0;&#x4F9B;&#x4E86;&#x5F3A;&#x5927;&#x7684;&#x4FDD;&#x8BC1;&#x3002;
+&#x6301;&#x7EED;&#x6E17;&#x900F;&#x7684;&#x672C;&#x8D28;&#x662F;&#x7EBF;&#x7D22;&#x5173;&#x8054;&#xFF0C;&#x800C;&#x7EBF;&#x7D22;&#x5173;&#x8054;&#x4E3A;&#x540E;&#x7EED;&#x7684;&#x653B;&#x51FB;&#x94FE;&#x65B9;&#x63D0;&#x4F9B;&#x4E86;&#x5F3A;&#x5927;&#x7684;&#x65B9;&#x5411;&#x3002;
+&#x540E;&#x6E17;&#x900F;&#x7684;&#x672C;&#x8D28;&#x662F;&#x6743;&#x9650;&#x628A;&#x63A7;&#xFF0C;&#x800C;&#x6743;&#x9650;&#x628A;&#x63A7;&#x4E3A;&#x540E;&#x6E17;&#x900F;&#x63D0;&#x4F9B;&#x4E86;&#x4EE5;&#x727A;&#x7272;&#x65F6;&#x95F4;&#x6362;&#x53D6;&#x7A7A;&#x95F4;&#x5F3A;&#x5927;&#x57FA;&#x7840;&#x3002;</strong></p>
+<p><strong>&#x9776;&#x673A;&#x80CC;&#x666F;&#x4ECB;&#x7ECD;&#xFF1A;</strong><br><img src="media/eb0714612b4e03133ba10e14ef174b4c.jpg" alt=""></p>
+<ul>
+<li>&#x4E3B;&#x673A;A1&#xFF1A;CentOs x64 &#x5168;&#x8865;&#x4E01;&#xFF0C;&#x65E0;&#x63D0;&#x6743;&#x6F0F;&#x6D1E;&#xFF0C;&#x53EF;&#x4E92;&#x8054;&#x7F51;  </li>
+<li>&#x4E3B;&#x673A;A2&#xFF1A;Windows 2008 x64 &#x5168;&#x8865;&#x4E01; &#x65E0;&#x63D0;&#x6743;&#x6F0F;&#x6D1E;&#xFF0C;&#x8131;&#x7F51;&#x673A;  </li>
+<li>&#x4E3B;&#x673A;B&#xFF1A; Windows 2008 x64 &#x5168;&#x8865;&#x4E01; &#x65E0;&#x63D0;&#x6743;&#x6F0F;&#x6D1E;&#xFF0C;&#x57DF;&#x5185;&#x4E3B;&#x673A;&#xFF0C;&#x8131;&#x7F51;&#x673A;  </li>
+<li>&#x4E3B;&#x673A;C&#xFF1A; Windows 2008 x64 &#x57DF;&#x63A7;&#xFF0C;&#x5B58;&#x5728;ms14-068&#x6F0F;&#x6D1E;&#xFF0C;&#x8131;&#x7F51;&#x673A;  </li>
+<li>&#x4E14;A1&#xFF0C;A2&#xFF0C;B,C&#x7CFB;&#x7EDF;&#x4E3B;&#x673A;&#x5BC6;&#x7801;&#x5747;&#x4E3A;&#x5F3A;&#x53E3;&#x4EE4;</li>
+</ul>
+<blockquote>
+<p>  A1&#xFF0C;A2&#xFF0C;B,C&#x4E3A;&#x6807;&#x51C6;ABC&#x7C7B;&#x7F51;&#xFF0C;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x6D41;&#x7A0B;&#xFF0C;A1----&gt;A2----&gt;B----&gt;C&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x8DE8;&#x4E3B;&#x673A;&#x8BBF;&#x95EE;&#x3002;
+  &#xFF08;&#x8BF7;&#x6CE8;&#x610F;&#x6BCF;&#x4E2A;&#x4E3B;&#x673A;&#x7684;&#x5BF9;&#x5E94;IP&#x6BB5;&#xFF09;</p>
+</blockquote>
+<p><strong>&#x6574;&#x4F53;&#x653B;&#x51FB;&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;</strong><br><img src="media/0e9ff50f2d0823e678528868b243ccce.jpg" alt=""></p>
+<p><strong>&#x6A21;&#x62DF;&#x5F00;&#x59CB;&#x653B;&#x51FB;&#xFF1A;</strong>  </p>
+<ul>
+<li><p>&#x626B;&#x63CF;&#x4E3B;&#x673A;A1&#x5BF9;&#x653B;&#x51FB;&#x673A;&#x5F00;&#x653E;&#x7AEF;&#x53E3;&#xFF1A;80,22<br><img src="media/fad85d3505b5e71286df9d301f167de2.jpg" alt=""></p>
+</li>
+<li><p>&#x626B;&#x63CF;&#x4E3B;&#x673A;A1-Web&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF1A;<br><img src="media/813af1b732caf9c0adce3dade376694f.jpg" alt=""></p>
+</li>
+<li><p>&#x4E3B;&#x673A;A1-Web&#x641C;&#x7D22;&#x5904;&#x5B58;&#x5728;sql&#x6CE8;&#x5165;&#xFF1A;<br><img src="media/9a59cdceb1ea09a49a82f81eb778003b.jpg" alt=""></p>
+</li>
+<li><p>&#x767B;&#x5F55;&#x540E;&#x53F0;&#x5F97;&#x5230;shell&#xFF1A;<br><img src="media/ad06e8c45d69e5e450aa3c379ef04eee.jpg" alt=""></p>
+</li>
+<li><p>&#x751F;&#x6210;tcp payload &#x4EE5;php&#x4E00;&#x53E5;&#x8BDD;&#x6267;&#x884C;&#xFF1A;<br><img src="media/89c0851c3482a55632b708c5bce2ad18.jpg" alt="">  </p>
+</li>
+</ul>
+<p><img src="media/a5b217214c10db82110bcb34a166a53f.jpg" alt=""></p>
+<ul>
+<li><p>A1&#x5BF9;&#x5185;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#x53D1;&#x73B0;A2&#xFF0C;&#x5E76;&#x4E14;&#x9488;&#x5BF9;A1&#xFF0C;&#x6CA1;&#x6709;&#x53EF;&#x7528;&#x63D0;&#x6743;&#x6F0F;&#x6D1E;&#xFF08;Web&#x975E;root&#x6743;&#x9650;&#xFF09;&#xFF0C;&#x653E;&#x5F03;&#x63D0;&#x6743;&#xFF1A;<br><img src="media/7f18b933fee393c1150a36f603ca5aac.jpg" alt=""></p>
+</li>
+<li><p>&#x4EE5;A1&#x4F5C;&#x4E3A;&#x8DF3;&#x677F;&#x6DFB;&#x52A0;&#x865A;&#x62DF;&#x8DEF;&#x7531;&#xFF0C;&#x5E76;&#x4E14;&#x5F00;&#x59CB;&#x505A;&#x9488;&#x5BF9;A2&#x7684;&#x5BF9;&#x5185;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF1A;<br><img src="media/3d57cf1f1005ba4254aa57971286df86.jpg" alt=""></p>
+</li>
+</ul>
+<p><img src="media/9977d347d014885a6b6f051ecf337acd.jpg" alt=""></p>
+<ul>
+<li>&#x4EE5;A1&#x8DF3;&#x677F;&#x53D1;&#x73B0;A2&#x90E8;&#x7F72;weblogic&#xFF0C;&#x5E76;&#x4E14;&#x5B58;&#x5728;&#x6F0F;&#x6D1E;&#x3002;&#x8F6C;&#x53D1;&#x76EE;&#x6807;&#x673A;7001&#x81F3;&#x672C;&#x5730;&#xFF0C;&#x5229;&#x7528;&#x6F0F;&#x6D1E;&#x3002;<br><img src="media/278d82913ceca2d619234f4a602c908d.jpg" alt=""></li>
+</ul>
+<p><img src="media/e3ee48eafcd1322980a2a2b4dbc81161.jpg" alt=""></p>
+<p><img src="media/ec698d2c28ce34078f6fb28955826036.jpg" alt=""></p>
+<ul>
+<li><p>&#x53D1;&#x73B0;A2&#x5168;&#x8865;&#x4E01;&#xFF0C;&#x653E;&#x5F03;&#x63D0;&#x6743;&#xFF0C;&#xFF08;weblogic&#x4E3A;user&#x6743;&#x9650;&#xFF09;&#x5BF9;&#x5185;&#x4FE1;&#x606F;&#x523A;&#x63A2;A2&#xFF0C;&#x5F97;&#x5230; weblogic&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x89E3;&#x5BC6;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x5BC6;&#x7801;&#x3002;<br><img src="media/48ce8cfde97da6cc01a6310c13c93eba.jpg" alt=""></p>
+</li>
+<li><p>&#x5C1D;&#x8BD5;&#x505A;&#x4E8C;&#x7EA7;&#x8DF3;&#x677F;&#xFF0C;&#x4EE5;weblogic&#x76F8;&#x5173;&#x914D;&#x7F6E;&#xFF0C;&#x5C1D;&#x8BD5;&#x5BF9;B&#xFF08;&#x57DF;&#x5185;&#x6210;&#x5458;&#xFF09;&#x7684;&#x6E17;&#x900F;&#xFF08;SMB&#xFF09;<br><img src="media/b033dbb98df945e1629016daa8f715fa.jpg" alt=""></p>
+</li>
+<li><p>&#x83B7;&#x53D6;B&#x6743;&#x9650;&#xFF08;system&#xFF09;&#xFF0C;&#x5C1D;&#x8BD5;&#x5BF9;&#x5185;B&#x7684;&#x672C;&#x8EAB;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF0C;&#x53D1;&#x73B0;&#x57DF;&#x8D26;&#x53F7;&#xFF08;&#x666E;&#x901A;&#x6210;&#x5458;&#xFF09;user1.<br><img src="media/e6619fad61ae8258bbf571a061816eab.jpg" alt=""></p>
+</li>
+</ul>
+<h3 id="&#x5F15;&#x8A00;&#xFF08;2&#xFF09;&#xFF1A;">&#x5F15;&#x8A00;&#xFF08;2&#xFF09;&#xFF1A;</h3>
+<p><strong>&#x6E17;&#x900F;&#x6D4B;&#x8BD5;&#x8FC7;&#x7A0B;&#xFF0C;&#x63D0;&#x6743;&#x662F;&#x975E;&#x6838;&#x5FC3;&#x4EFB;&#x52A1;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x4E0D;&#x5EFA;&#x8BAE;&#x5C1D;&#x8BD5;&#x63D0;&#x6743;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x5B9E;&#x6218;&#x8FC7;&#x7A0B;&#x4E2D;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x201C;&#x70B9;&#x201D;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x8FC7;&#x7A0B;&#x662F;&#x53CA;&#x5176;&#x6F2B;&#x957F;&#x4EE5;&#x53CA;&#x56F0;&#x96BE;&#x7684;&#xFF0C;&#x4E0D;&#x8981;&#x56E0;&#x4E3A;&#x67D0;&#x4E2A;&#x5927;&#x80C6;&#x7684;&#x5C1D;&#x8BD5;&#xFF0C;&#x800C;&#x5F71;&#x54CD;&#x4E86;&#x6574;&#x4E2A;&#x6E17;&#x900F;&#x6D4B;&#x8BD5;&#x6D41;&#x7A0B;&#x3002;</strong>  </p>
+<ul>
+<li>&#x5C1D;&#x8BD5;&#x4E09;&#x7EA7;&#x8DF3;&#x677F;&#xFF0C;&#x5C1D;&#x8BD5;&#x83B7;&#x53D6;sid&#xFF0C;&#x4EE5;&#x53CA;&#x57DF;&#x63A7;&#x5BF9;&#x5185;&#x76F8;&#x5173;IP&#xFF0C;&#x5C1D;&#x8BD5;&#x8D8A;&#x6743;&#xFF0C;&#x83B7;&#x53D6;&#x57DF;&#x63A7;&#x6743;&#x9650;&#x3002;<br><img src="media/75a390348d0d82d12b741b71cc1077d4.jpg" alt="">  </li>
+</ul>
+<p><img src="media/95e9d4bd457a3854dc2a181854aff847.jpg" alt=""></p>
+<p><img src="media/1731a21414be63725aad1c9bc5f6e2ab.jpg" alt=""></p>
+<p><img src="media/3fc9121169f8810f044902ea33ee6746.jpg" alt=""></p>
+<p><strong>&#x5E76;&#x6CA1;&#x6709;&#x7ED3;&#x675F;&#xFF1A;</strong>  </p>
+<blockquote>
+<p>  &#x5728;&#x5F97;&#x5230;&#x57DF;&#x63A7;&#x540E;&#xFF0C;&#x5BF9;&#x4E3B;&#x673A;C&#x5BF9;&#x5185;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF0C;&#x5F97;&#x5230;&#x57DF;&#x63A7;administrator&#x5BC6;&#x7801;&#xFF0C;&#x5C1D;&#x8BD5;&#x7528;&#x8BE5;&#x5BC6;&#x7801; ssh---&gt;A1&#xFF0C;&#x6210;&#x529F;&#xFF0C;root&#x6743;&#x9650;&#x3002;</p>
+</blockquote>
+<p>&#x5E7F;&#x544A;&#xFF08;&#x4F60;&#x9700;&#x8981;&#x80CC;&#x4E0B;&#x6765;&#x7684;&#x5E7F;&#x544A;&#x8BCD;&#xFF09;&#xFF1A;<strong>&#x53EA;&#x8981;&#x662F;&#x201C;&#x4E00;&#x4E2A;&#x4EBA;&#x201D;&#x8BBE;&#x7F6E;&#x7684;&#x5BC6;&#x7801;&#x201C;&#x7FA4;&#x201D;&#xFF0C;&#x4E00;&#x5B9A;&#x6709;&#x5927;&#x7684;&#x89C4;&#x5F8B;&#xFF0C;&#x53EA;&#x8981;&#x662F;&#x201C;&#x4E00;&#x4E2A;&#x884C;&#x4E1A;&#x201D;&#x8BBE;&#x7F6E;&#x7684;&#x5BC6;&#x7801;&#x201C;&#x7FA4;&#x201D;&#x4E00;&#x5B9A;&#x6709;&#x89C4;&#x5F8B;&#x53EF;&#x5BFB;&#x3002;</strong></p>
+<h3 id="&#x5F15;&#x8A00;&#xFF08;4&#xFF09;&#xFF1A;">&#x5F15;&#x8A00;&#xFF08;4&#xFF09;&#xFF1A;</h3>
+<p><strong>&#x6E17;&#x900F;&#x7684;&#x672C;&#x8D28;&#x662F;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF0C;&#x800C;&#x8981;&#x628A;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#x53D1;&#x6325;&#x6700;&#x5927;&#x6548;&#x679C;&#xFF0C;&#x4E00;&#x5B9A;&#x662F;&#x79BB;&#x4E0D;&#x5F00;&#x201C;&#x7EBF;&#x7D22;&#x5173;&#x8054;&#x201D;&#xFF0C;&#x800C;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x5BF9;&#x5185;&#xFF0C;&#x5BF9;&#x5916;&#xFF0C;&#x66F4;&#x6216;&#x8005;&#x662F;&#x4E3B;&#x52A8;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF0C;&#x88AB;&#x52A8;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#x3002;&#x5982;&#x4F55;&#x628A;&#x76EE;&#x6807;A&#x4E0E;B&#x7684;&#x4FE1;&#x606F;&#x641C;&#x96C6;&#xFF0C;&#x6574;&#x7406;&#x540E;&#x505A;&#x201C;&#x7EBF;&#x7D22;&#x5173;&#x8054;&#x201D;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x6709;&#x8DA3;&#x7684;&#x5DE5;&#x4F5C;&#x3002;</strong></p>
+<h3 id="&#x540E;&#x8005;&#x7684;&#x8BDD;&#xFF1A;">&#x540E;&#x8005;&#x7684;&#x8BDD;&#xFF1A;</h3>
+<p>APT&#x653B;&#x51FB;&#x4E09;&#x5927;&#x8981;&#x7D20;&#xFF0C;&#x65E2;&#xFF1A;  </p>
+<ul>
+<li>&#x653B;&#x51FB;&#x624B;&#x6BB5;&#x590D;&#x6742;&#xFF0C;&#x6301;&#x7EED;&#x65F6;&#x95F4;&#x957F;&#xFF0C;&#x9AD8;&#x5371;&#x5BB3;&#x6027;</li>
+</ul>
+<p>APT&#x653B;&#x51FB;&#x4E3B;&#x8981;&#x5206;&#x7C7B;&#x4E3A;&#x4E24;&#x5927;&#x7C7B;&#xFF0C;&#x65E2;&#xFF1A;  </p>
+<ul>
+<li>&#x9AD8;&#x7EA7;&#x6301;&#x7EED;&#x6E17;&#x900F; &#xFF0C; &#x5373;&#x65F6;&#x6E17;&#x900F;</li>
+</ul>
+<p><img src="media/8114a948743a1acaf2b03562c850e7e6.jpg" alt=""></p>
+<p><img src="media/8017d7d0aec4b49eb5a2bb73f23ab555.jpg" alt=""></p>
+<p><img src="media/f8933631951866360ec8f45717feb0ce.jpg" alt=""></p>
+<p><img src="media/9233e8ff54bca67e6d94c588116c541a.jpg" alt=""></p>
+<h3 id="apt&#x4E24;&#x5927;&#x7C7B;&#x653B;&#x51FB;&#x6838;&#x5FC3;&#x8BC9;&#x6C42;&#x533A;&#x522B;&#xFF1A;">APT&#x4E24;&#x5927;&#x7C7B;&#x653B;&#x51FB;&#x6838;&#x5FC3;&#x8BC9;&#x6C42;&#x533A;&#x522B;&#xFF1A;</h3>
+<p><img src="media/9334e9c3f86f584e6846e907ed5e1102.jpg" alt=""></p>
+<p>&#x5728;&#x505A;&#x8C03;&#x7814;&#x4E4B;&#x524D;&#xFF0C;&#x4F5C;&#x8005;&#x4E00;&#x76F4;&#x4EE5;&#x4E3A;&#x8D8A;&#x53D1;&#x8FBE;&#x7684;&#x57CE;&#x5E02;&#xFF0C;&#x6216;&#x8005;&#x8D8A;&#x653F;&#x6CBB;&#x4E2D;&#x5FC3;&#x7684;&#x57CE;&#x5E02;&#x662F;&#x53D1;&#x751F;&#x653B;&#x51FB;&#x7684;&#x9AD8;&#x53D1;&#x5730;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x8C03;&#x7814;&#x540E;&#xFF0C;&#x6253;&#x7834;&#x4E86;&#x6211;&#x4E4B;&#x524D;&#x7684;&#x60F3;&#x6CD5;&#xFF0C;&#x4E8E;&#x662F;&#x4F5C;&#x8005;&#x6DF1;&#x5165;&#x8C03;&#x7814;&#x539F;&#x56E0;&#x7A76;&#x7ADF;&#xFF0C;&#x4EE5;&#x4FBF;&#x66F4;&#x597D;&#x7684;&#x4E86;&#x89E3;&#x4F01;&#x4E1A;&#x5B89;&#x5168;&#x5EFA;&#x8BBE;&#x7684;&#x89C4;&#x5212;&#x3002;<br><img src="media/cf5a7e83b5ce618b69373b15233eaf41.jpg" alt=""></p>
+<p><img src="media/7e8216bd52b30af1c5d036552138ab49.jpg" alt=""></p>
+<p><img src="media/86c77171801811fd8339cb4ed6e7e8fe.jpg" alt=""></p>
+<p>&#x5728;&#x9488;&#x5BF9;&#x653F;&#x5E9C;&#x673A;&#x6784;&#x7684;&#x653B;&#x51FB;&#x4E2D;&#xFF0C;APT&#x7EC4;&#x7EC7;&#x9664;&#x4E86;&#x4F1A;&#x653B;&#x51FB;&#x4E00;&#x822C;&#x7684;&#x653F;&#x5E9C;&#x673A;&#x6784;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E13;&#x95E8;&#x9488;&#x5BF9;&#x516C;&#x68C0;&#x6CD5;&#x7684;&#x653B;&#x51FB;&#x3002;</p>
+<p>&#x5728;&#x9488;&#x5BF9;&#x80FD;&#x6E90;&#x884C;&#x4E1A;&#x7684;&#x653B;&#x51FB;&#x4E2D;&#xFF0C;APT&#x7EC4;&#x7EC7;&#x91CD;&#x70B9;&#x5173;&#x6CE8;&#x7684;&#x9886;&#x57DF;&#x4F9D;&#x6B21;&#x662F;&#xFF1A;&#x77F3;&#x6CB9;&#x3001;&#x5929;&#x7136;&#x6C14;&#x548C;&#x6838;&#x80FD;&#x3002;&#x9488;&#x5BF9;&#x80FD;&#x6E90;&#x884C;&#x4E1A;&#x7684;&#x653B;&#x51FB;&#xFF0C;&#x5BF9;&#x56FD;&#x5BB6;&#x5B89;&#x5168;&#x5177;&#x6709;&#x5F88;&#x5927;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
+<p>&#x5728;&#x9488;&#x5BF9;&#x91D1;&#x878D;&#x884C;&#x4E1A;&#x7684;&#x653B;&#x51FB;&#x4E2D;&#xFF0C;APT&#x7EC4;&#x7EC7;&#x6700;&#x4E3A;&#x5173;&#x6CE8;&#x7684;&#x662F;&#x94F6;&#x884C;&#xFF0C;&#x5176;&#x6B21;&#x662F;&#x8BC1;&#x5238;&#x3001;&#x4E92;&#x8054;&#x7F51;&#x91D1;&#x878D;&#x7B49;&#x3002;&#x8FD8;&#x6709;&#x90E8;&#x5206;APT&#x7EC4;&#x7EC7;&#x4F1A;&#x5173;&#x6CE8;&#x5230;&#x4E0E;&#x865A;&#x62DF;&#x6570;&#x5B57;&#x8D27;&#x5E01;&#xFF08;&#x5982;&#x6BD4;&#x7279;&#x5E01;&#x3001;&#x95E8;&#x7F57;&#x5E01;&#x7B49;&#xFF09;&#x76F8;&#x5173;&#x7684;&#x673A;&#x6784;&#x6216;&#x516C;&#x53F8;&#x3002;&#x9488;&#x5BF9;&#x91D1;&#x878D;&#x673A;&#x6784;&#x7684;&#x653B;&#x51FB;&#x5927;&#x591A;&#x4F1A;&#x5229;&#x7528;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#x3002;&#x9488;&#x5BF9;ATM&#x81EA;&#x52A8;&#x53D6;&#x6B3E;&#x673A;&#x7684;&#x653B;&#x51FB;&#x4E5F;&#x4E00;&#x76F4;&#x5EF6;&#x7EED;&#x4E86;2016&#x5E74;&#x7684;&#x6D3B;&#x8DC3;&#x72B6;&#x6001;&#x3002;</p>
+<p>&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#xFF1A;APT&#x7EC4;&#x7EC7;&#x7684;&#x653B;&#x51FB;&#x867D;&#x7136;&#x5177;&#x6709;&#x5F88;&#x5F3A;&#x7684;&#x9488;&#x5BF9;&#x6027;&#xFF0C;&#x4F46;&#x5176;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x4E5F;&#x5E76;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x5355;&#x4E00;&#x7684;&#x3002;&#x6709;&#x7684;APT&#x7EC4;&#x7EC7;&#x53EA;&#x653B;&#x51FB;&#x7279;&#x5B9A;&#x56FD;&#x5BB6;&#x7279;&#x5B9A;&#x9886;&#x57DF;&#x7684;&#x76EE;&#x6807;&#xFF08;&#x4EC5;&#x4ECE;&#x76EE;&#x524D;&#x5DF2;&#x7ECF;&#x62AB;&#x9732;&#x7684;&#x60C5;&#x51B5;&#x770B;&#xFF09;&#xFF0C;&#x4F46;&#x4E5F;&#x6709;&#x5F88;&#x591A;APT&#x7EC4;&#x7EC7;&#x4F1A;&#x5BF9;&#x591A;&#x4E2A;&#x56FD;&#x5BB6;&#x7684;&#x4E0D;&#x540C;&#x9886;&#x57DF;&#x76EE;&#x6807;&#x5C55;&#x5F00;&#x653B;&#x51FB;&#x3002;&#x4E0A;&#x56FE;&#x7ED9;&#x51FA;&#x4E86;2017&#x5E74;&#x5168;&#x7403;&#x5404;&#x56FD;&#x7814;&#x7A76;&#x673A;&#x6784;&#x53D1;&#x5E03;&#x7684;APT&#x7814;&#x7A76;&#x62A5;&#x544A;&#x4E2D;&#xFF0C;&#x62AB;&#x9732;APT&#x7EC4;&#x7EC7;&#x653B;&#x51FB;&#x76EE;&#x6807;&#x7684;&#x6240;&#x5C5E;&#x56FD;&#x5BB6;&#x3001;&#x9886;&#x57DF;&#x6570;&#x91CF;&#x5206;&#x6790;&#x3002;</p>
+<h3 id="&#x5F15;&#x8A00;&#xFF08;5&#xFF09;&#xFF1A;">&#x5F15;&#x8A00;&#xFF08;5&#xFF09;&#xFF1A;</h3>
+<p><strong>&#x76EE;&#x524D;&#x5E02;&#x573A;&#x4E0A;&#x7684;&#x4F01;&#x4E1A;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x89C4;&#x5212;&#x4E0E;&#x5EFA;&#x8BBE;&#x5927;&#x90E8;&#x5206;&#x5B58;&#x5728;&#x7EDF;&#x4E00;&#x5B9E;&#x65BD;&#x65B9;&#x6848;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x6A21;&#x677F;&#x65B9;&#x6848;&#x3002;&#x800C;&#x975E;&#x9488;&#x5BF9;&#x7279;&#x5B9A;&#x884C;&#x4E1A;&#xFF0C;&#x7279;&#x5B9A;&#x5BA2;&#x6237;&#x7FA4;&#x4F53;&#x6765;&#x5236;&#x5B9A;&#x9488;&#x5BF9;&#x65B9;&#x6848;&#x3002;&#x800C;&#x4E0D;&#x540C;&#x884C;&#x4E1A;&#xFF0C;&#x4E0D;&#x540C;&#x80CC;&#x666F;&#x7684;&#x4F01;&#x4E1A;&#x5B89;&#x5168;&#x89C4;&#x5212;&#x65B9;&#x6848;&#x4E5F;&#x4E00;&#x5B9A;&#x662F;&#x4E0D;&#x76F8;&#x540C;&#x7684;&#x3002;&#x5982;&#x4F20;&#x7EDF;&#x884C;&#x4E1A;&#xFF08;&#x533B;&#x836F;&#xFF0C;&#x98DF;&#x54C1;&#xFF0C;&#x6C7D;&#x8F66;&#xFF09;&#x5BF9;&#x5F85;&#x4F01;&#x4E1A;&#x5B89;&#x5168;&#x7684;&#x5EFA;&#x8BBE;&#x662F;&#x8D77;&#x8DD1;&#x9636;&#x6BB5;&#x3002;&#x5982;&#x91D1;&#x878D;&#x884C;&#x4E1A;&#xFF08;&#x8BC1;&#x5238;&#xFF0C;&#x94F6;&#x884C;&#xFF0C;&#x4FDD;&#x9669;&#xFF09;&#x5BF9;&#x5F85;&#x4F01;&#x4E1A;&#x5B89;&#x5168;&#x7684;&#x5EFA;&#x8BBE;&#x662F;&#x89C4;&#x5212;&#x4E0E;&#x5B9E;&#x65BD;&#x9636;&#x6BB5;&#x3002;&#x5982;&#x4E92;&#x8054;&#x7F51;&#x884C;&#x4E1A;&#xFF08;&#x67D0;&#x5EA6;&#xFF0C;&#x67D0;&#x5DF4;&#xFF0C;&#x67D0;&#x9E45;&#xFF09;&#x5BF9;&#x5F85;&#x4F01;&#x4E1A;&#x5B89;&#x5168;&#x5EFA;&#x8BBE;&#x662F;&#x81EA;&#x7814;&#x6216;&#x5546;&#x4E1A;&#x5316;&#x9636;&#x6BB5;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x4E0A;&#x5236;&#x56FE;&#xFF0C;&#x66F4;&#x80FD;&#x6E05;&#x695A;&#x7684;&#x770B;&#x5230;&#xFF0C;&#x672A;&#x6765;&#x4F01;&#x4E1A;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x5BF9;&#x5F85;&#x4F01;&#x4E1A;&#x53D1;&#x5C55;&#x7684;&#x91CD;&#x8981;&#x6027;&#xFF0C;&#x4EE5;&#x53CA;&#x7279;&#x5B9A;&#x884C;&#x4E1A;&#x7279;&#x5B9A;&#x89C4;&#x5212;&#x65B9;&#x6848;&#xFF0C;&#x7279;&#x5B9A;&#x884C;&#x4E1A;&#x7279;&#x5B9A;&#x9632;&#x5FA1;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x67D0;X&#x4F01;&#x4E1A;&#x5B89;&#x5168;&#x9884;&#x7B97;&#x4E3A;100&#x4E07;&#xFF0C;&#x662F;&#x5426;&#x5E94;&#x8BE5;&#x9488;&#x5BF9;&#x8BE5;&#x4F01;&#x4E1A;&#xFF0C;&#x884C;&#x4E1A;&#xFF0C;&#x5730;&#x7406;&#x4F4D;&#x7F6E;&#xFF0C;&#x505A;&#x9632;&#x5FA1;&#x9884;&#x7B97;&#x503E;&#x659C;&#xFF0C;&#x5E76;&#x4E14;&#x7559;&#x6709;10%-15%&#x7684;&#x8D44;&#x91D1;&#x91CF;&#x505A;2&#x6708;&#xFF0C;3&#x6708;&#xFF0C;11&#x6708;&#x653B;&#x51FB;&#x9AD8;&#x53D1;&#x671F;&#x7684;&#x9884;&#x6848;&#x8D44;&#x91D1;&#x7B49;&#x3002;</strong></p>
+<h3 id="&#x603B;&#x7ED3;&#xFF1A;">&#x603B;&#x7ED3;&#xFF1A;</h3>
+<p><strong>&#x7531;&#x4E8E;&#x4FE1;&#x606F;&#x5316;&#xFF0C;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x529E;&#x516C;&#xFF0C;&#x4F01;&#x4E1A;&#x6210;&#x672C;&#x7684;&#x8003;&#x8651;&#xFF0C;&#x4F20;&#x7EDF;&#x7684;&#x201C;&#x4EE5;&#x70B9;&#x6253;&#x9762;&#x201D;&#x7684;&#x70B9;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x5206;&#x6563;&#x4E0E;&#x96BE;&#x4EE5;&#x96C6;&#x4E2D;&#x7BA1;&#x7406;&#xFF0C;&#x5982;&#x8DE8;&#x56FD;&#x529E;&#x516C;&#xFF0C;&#x79FB;&#x52A8;&#x529E;&#x516C;&#x7B49;&#x3002;&#x90A3;&#x4E48;&#x53EF;&#x9884;&#x77E5;&#x7684;&#x653B;&#x51FB;&#x65B9;&#x5F0F;&#x5C06;&#x4F1A;&#x4EE5;&#x4EBA;&#x4E3A;&#x7A81;&#x7834;&#x53E3;&#x7684;&#x4E8B;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x3002;&#x5B89;&#x5168;&#x7684;&#x672C;&#x8D28;&#x53C8;&#x4E0D;&#x80FD;&#x4EC5;&#x4EC5;&#x9760;&#x9884;&#x7B97;&#x4E0E;&#x8BBE;&#x5907;&#x7684;&#x6295;&#x5165;&#x800C;&#x675C;&#x7EDD;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5728;&#x672A;&#x6765;&#x7684;&#x5927;&#x578B;&#x7532;&#x65B9;&#x516C;&#x53F8;&#xFF0C;&#x90FD;&#x4F1A;&#x6709;&#x7740;&#x81EA;&#x5DF1;&#x7684;&#x5B89;&#x5168;&#x56E2;&#x961F;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x628A;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#x53D1;&#x5C55;&#x6210;&#x672A;&#x6765;&#x7532;&#x65B9;&#x516C;&#x53F8;&#x7684;&#x4F01;&#x4E1A;&#x6587;&#x5316;&#xFF0C;&#x5C06;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;&#x6F2B;&#x957F;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x800C;&#x8FD1;&#x4E9B;&#x5E74;&#x65E0;&#x8BBA;&#x662F;&#x56FD;&#x5185;&#x8FD8;&#x662F;&#x56FD;&#x5916;&#x7684;&#x5B98;&#x65B9;&#x90E8;&#x95E8;&#x5F00;&#x59CB;&#x91CD;&#x89C6;&#x7F51;&#x7EDC;&#x5B89;&#x5168;&#xFF0C;&#x4F46;&#x662F;&#x6548;&#x679C;&#x4E0D;&#x660E;&#x663E;&#xFF0C;&#x8FD9;&#x91CC;&#x505A;&#x4E00;&#x4E2A;&#x603B;&#x7ED3;&#xFF0C;&#x540C;&#x6837;&#x90E8;&#x5206;&#x4E5F;&#x9002;&#x7528;&#x4E8E;&#x4F01;&#x4E1A;&#xFF1A;</strong></p>
+<p><img src="media/497fa9474fd0ae6063d5386ab214d69e.jpg" alt=""></p>
+<blockquote>
+<p>  Micropoor</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="68_基于Ruby内存加载shellcode第一季.html" class="navigation navigation-prev " aria-label="Previous page: 第六十八课：基于Ruby内存加载shellcode第一季">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="70_ftp一句话下载payload补充.html" class="navigation navigation-next " aria-label="Next page: 第七十课：ftp一句话下载payload补充">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"第六十九课：渗透，持续渗透，后渗透的本质","level":"1.4.69","depth":2,"next":{"title":"第七十课：ftp一句话下载payload补充","level":"1.4.70","depth":2,"path":"Chapter1/61-70/70_ftp一句话下载payload补充.md","ref":"Chapter1/61-70/70_ftp一句话下载payload补充.md","articles":[]},"previous":{"title":"第六十八课：基于Ruby内存加载shellcode第一季","level":"1.4.68","depth":2,"path":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","ref":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/61-70/69_渗透-持续渗透-后渗透的本质.md","mtime":"2019-02-23T11:46:05.587Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-25T04:00:06.266Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
