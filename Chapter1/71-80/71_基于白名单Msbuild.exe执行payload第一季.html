@@ -25,11 +25,23 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -174,14 +186,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="../../Contents.html">
             
-                <span>
+                <a href="../../Contents.html">
             
                     
                     第一章：生
             
-                </span>
+                </a>
             
 
             
@@ -1869,7 +1881,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="msbuild&#x7B80;&#x4ECB;&#xFF1A;">MSBuild&#x7B80;&#x4ECB;&#xFF1A;</h3>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#msbuild&#x7B80;&#x4ECB;&#xFF1A;"><b></b>MSBuild&#x7B80;&#x4ECB;&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;"><b></b>&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;"><b></b>&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x9644;&#x5F55;&#xFF1A;micropoorxml"><b></b>&#x9644;&#x5F55;&#xFF1A;Micropoor.xml</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="msbuild&#x7B80;&#x4ECB;&#xFF1A;"><a name="msbuild&#x7B80;&#x4ECB;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#msbuild&#x7B80;&#x4ECB;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="msbuild&#x7B80;&#x4ECB;&#xFF1A;" class="plugin-anchor" href="#msbuild&#x7B80;&#x4ECB;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>MSBuild&#x7B80;&#x4ECB;&#xFF1A;</h3>
 <p>MSBuild &#x662F; Microsoft Build Engine &#x7684;&#x7F29;&#x5199;&#xFF0C;&#x4EE3;&#x8868; Microsoft &#x548C; Visual Studio&#x7684;&#x65B0;&#x7684;&#x751F;&#x6210;&#x5E73;&#x53F0;&#x3002;MSBuild&#x5728;&#x5982;&#x4F55;&#x5904;&#x7406;&#x548C;&#x751F;&#x6210;&#x8F6F;&#x4EF6;&#x65B9;&#x9762;&#x662F;&#x5B8C;&#x5168;&#x900F;&#x660E;&#x7684;&#xFF0C;&#x4F7F;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x80FD;&#x591F;&#x5728;&#x672A;&#x5B89;&#x88C5;Visual Studio&#x7684;&#x751F;&#x6210;&#x5B9E;&#x9A8C;&#x5BA4;&#x73AF;&#x5883;&#x4E2D;&#x7EC4;&#x7EC7;&#x548C;&#x751F;&#x6210;&#x4EA7;&#x54C1;&#x3002;</p>
 <p>MSBuild &#x5F15;&#x5165;&#x4E86;&#x4E00;&#x79CD;&#x65B0;&#x7684;&#x57FA;&#x4E8E; XML&#x7684;&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x3001;&#x6613;&#x4E8E;&#x6269;&#x5C55;&#x5E76;&#x4E14;&#x5B8C;&#x5168;&#x53D7; Microsoft &#x652F;&#x6301;&#x3002;MSBuild&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x7684;&#x683C;&#x5F0F;&#x4F7F;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x80FD;&#x591F;&#x5145;&#x5206;&#x63CF;&#x8FF0;&#x54EA;&#x4E9B;&#x9879;&#x9700;&#x8981;&#x751F;&#x6210;&#xFF0C;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x5229;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x548C;&#x914D;&#x7F6E;&#x751F;&#x6210;&#x8FD9;&#x4E9B;&#x9879;&#x3002;</p>
 <p><strong>&#x8BF4;&#x660E;&#xFF1A;</strong>Msbuild.exe&#x6240;&#x5728;&#x8DEF;&#x5F84;&#x6CA1;&#x6709;&#x88AB;&#x7CFB;&#x7EDF;&#x6DFB;&#x52A0;PATH&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;Msbuild&#x547D;&#x4EE4;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;&#x3002;</p>
@@ -1878,13 +1890,13 @@
 <pre class="language-"><code class="lang-bash">C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
 </code></pre>
 <p><strong>&#x653B;&#x51FB;&#x673A;&#xFF1A;</strong>192.168.1.4 Debian<br><strong>&#x9776;&#x673A;&#xFF1A;</strong> 192.168.1.3 Windows 7</p>
-<h3 id="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;">&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;</h3>
+<h3 id="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;"><a name="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;" class="plugin-anchor" href="#&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;</h3>
 <pre class="language-"><code class="lang-bash">C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe Micropoor.xml
 </code></pre>
 <p><img src="media/0dec9e476e8a77edc2e1fa1a43329f76.jpg" alt=""></p>
-<h3 id="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;">&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;</h3>
+<h3 id="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;"><a name="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;</h3>
 <p><img src="media/57d9f8497cc0fcd01e0d51b5b6dc0e2a.jpg" alt=""></p>
-<h3 id="&#x9644;&#x5F55;&#xFF1A;micropoorxml">&#x9644;&#x5F55;&#xFF1A;Micropoor.xml</h3>
+<h3 id="&#x9644;&#x5F55;&#xFF1A;micropoorxml"><a name="&#x9644;&#x5F55;&#xFF1A;micropoorxml" class="anchor-navigation-ex-anchor" href="#&#x9644;&#x5F55;&#xFF1A;micropoorxml"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9644;&#x5F55;&#xFF1A;micropoorxml" class="plugin-anchor" href="#&#x9644;&#x5F55;&#xFF1A;micropoorxml"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9644;&#x5F55;&#xFF1A;Micropoor.xml</h3>
 <p><strong>&#x6CE8;&#xFF1A;x86 payload</strong></p>
 <pre class="language-"><code class="lang-csharp"><span class="token operator">&lt;</span><span class="token class-name">Project</span> ToolsVersion<span class="token operator">=</span><span class="token string">&quot;4.0&quot;</span> xmlns<span class="token operator">=</span><span class="token string">&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;</span><span class="token operator">&gt;</span>
 
@@ -2034,7 +2046,7 @@ WCUZoviZi <span class="token operator">=</span> <span class="token function">Cre
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第七十一课：基于白名单Msbuild.exe执行payload第一季","level":"1.4.71","depth":2,"next":{"title":"第七十二课：基于白名单Installutil.exe执行payload第二季","level":"1.4.72","depth":2,"path":"Chapter1/71-80/72_基于白名单Installutil.exe执行payload第二季.md","ref":"Chapter1/71-80/72_基于白名单Installutil.exe执行payload第二季.md","articles":[]},"previous":{"title":"第七十课：ftp一句话下载payload补充","level":"1.4.70","depth":2,"path":"Chapter1/61-70/70_ftp一句话下载payload补充.md","ref":"Chapter1/61-70/70_ftp一句话下载payload补充.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","-expandable-chapters-small","theme-comscore","splitter","simple-page-toc","-copy-code-button","github-buttons","page-footer-ex","donate","ad","baidu-tongji","ga","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"livereload":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/71-80/71_基于白名单Msbuild.exe执行payload第一季.md","mtime":"2019-02-25T12:46:27.844Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-27T08:37:19.413Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第七十一课：基于白名单Msbuild.exe执行payload第一季","level":"1.4.71","depth":2,"next":{"title":"第七十二课：基于白名单Installutil.exe执行payload第二季","level":"1.4.72","depth":2,"path":"Chapter1/71-80/72_基于白名单Installutil.exe执行payload第二季.md","ref":"Chapter1/71-80/72_基于白名单Installutil.exe执行payload第二季.md","articles":[]},"previous":{"title":"第七十课：ftp一句话下载payload补充","level":"1.4.70","depth":2,"path":"Chapter1/61-70/70_ftp一句话下载payload补充.md","ref":"Chapter1/61-70/70_ftp一句话下载payload补充.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/71-80/71_基于白名单Msbuild.exe执行payload第一季.md","mtime":"2019-02-25T12:46:27.844Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2053,6 +2065,10 @@ WCUZoviZi <span class="token operator">=</span> <span class="token function">Cre
     
         
         <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
         
     
         
@@ -2077,10 +2093,6 @@ WCUZoviZi <span class="token operator">=</span> <span class="token function">Cre
     
         
         <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

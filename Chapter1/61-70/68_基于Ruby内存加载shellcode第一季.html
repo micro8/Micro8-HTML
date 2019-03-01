@@ -25,11 +25,23 @@
                 
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -174,14 +186,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="../../Contents.html">
             
-                <span>
+                <a href="../../Contents.html">
             
                     
                     第一章：生
             
-                </span>
+                </a>
             
 
             
@@ -1869,13 +1881,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x672C;&#x5B63;&#x662F;&#x4E3A;&#x914D;&#x5408;msf&#x5728;&#x6E17;&#x900F;&#x8FC7;&#x7A0B;&#x4E2D;&#x65E0;&#x6587;&#x4EF6;&#x6E17;&#x900F;&#xFF0C;&#x63D0;&#x524D;&#x505A;&#x57FA;&#x7840;&#x8FC7;&#x5EA6;&#x3002;&#x4E5F;&#x4E3A;msf&#x63D2;&#x4EF6;&#x7F16;&#x5199;&#x505A;&#x57FA;&#x7840;&#x8FC7;&#x5EA6;&#x3002;</p>
-<h3 id="ruby-shellcode-&#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;">ruby shellcode &#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;</h3>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#ruby-shellcode-&#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;"><b></b>ruby shellcode &#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x9644;&#x6E90;&#x7801;&#xFF1A;"><b></b>&#x9644;&#x6E90;&#x7801;&#xFF1A;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x672C;&#x5B63;&#x662F;&#x4E3A;&#x914D;&#x5408;msf&#x5728;&#x6E17;&#x900F;&#x8FC7;&#x7A0B;&#x4E2D;&#x65E0;&#x6587;&#x4EF6;&#x6E17;&#x900F;&#xFF0C;&#x63D0;&#x524D;&#x505A;&#x57FA;&#x7840;&#x8FC7;&#x5EA6;&#x3002;&#x4E5F;&#x4E3A;msf&#x63D2;&#x4EF6;&#x7F16;&#x5199;&#x505A;&#x57FA;&#x7840;&#x8FC7;&#x5EA6;&#x3002;</p>
+<h3 id="ruby-shellcode-&#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;"><a name="ruby-shellcode-&#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#ruby-shellcode-&#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="ruby-shellcode-&#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;" class="plugin-anchor" href="#ruby-shellcode-&#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>ruby shellcode &#x751F;&#x6210;&#x5982;&#x4E0B;&#xFF1A;</h3>
 <pre class="language-"><code class="lang-ruby">msfvenom &#x2010;p windows<span class="token operator">/</span>messagebox <span class="token constant">TEXT</span><span class="token operator">=</span><span class="token constant">Micropoor</span> <span class="token constant">TITLE</span><span class="token operator">=</span><span class="token constant">Micropoor</span> &#x2010;f ruby &#x2010;&#x2010;smallest
 </code></pre>
 <p><img src="media/56aa6d4fb31384a6c8f8e972e66f9a2b.jpg" alt=""></p>
 <p><img src="media/708fd97e6cb1c45afd361b8b53e6ffc5.jpg" alt=""></p>
-<h3 id="&#x9644;&#x6E90;&#x7801;&#xFF1A;">&#x9644;&#x6E90;&#x7801;&#xFF1A;</h3>
+<h3 id="&#x9644;&#x6E90;&#x7801;&#xFF1A;"><a name="&#x9644;&#x6E90;&#x7801;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9644;&#x6E90;&#x7801;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9644;&#x6E90;&#x7801;&#xFF1A;" class="plugin-anchor" href="#&#x9644;&#x6E90;&#x7801;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9644;&#x6E90;&#x7801;&#xFF1A;</h3>
 <pre class="language-"><code class="lang-ruby"><span class="token keyword">require</span> <span class="token string">&apos;fiddle&apos;</span>
 <span class="token keyword">require</span> <span class="token string">&apos;fiddle/import&apos;</span>
 <span class="token keyword">require</span> <span class="token string">&apos;fiddle/types&apos;</span> 
@@ -1965,7 +1977,7 @@ thread <span class="token operator">=</span> <span class="token constant">Functi
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第六十八课：基于Ruby内存加载shellcode第一季","level":"1.4.68","depth":2,"next":{"title":"第六十九课：渗透，持续渗透，后渗透的本质","level":"1.4.69","depth":2,"path":"Chapter1/61-70/69_渗透-持续渗透-后渗透的本质.md","ref":"Chapter1/61-70/69_渗透-持续渗透-后渗透的本质.md","articles":[]},"previous":{"title":"第六十七课：meterpreter下的irb操作第一季","level":"1.4.67","depth":2,"path":"Chapter1/61-70/67_meterpreter下的irb操作第一季.md","ref":"Chapter1/61-70/67_meterpreter下的irb操作第一季.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","-expandable-chapters-small","theme-comscore","splitter","simple-page-toc","-copy-code-button","github-buttons","page-footer-ex","donate","ad","baidu-tongji","ga","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"livereload":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","mtime":"2019-02-23T11:43:07.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-27T08:37:19.413Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第六十八课：基于Ruby内存加载shellcode第一季","level":"1.4.68","depth":2,"next":{"title":"第六十九课：渗透，持续渗透，后渗透的本质","level":"1.4.69","depth":2,"path":"Chapter1/61-70/69_渗透-持续渗透-后渗透的本质.md","ref":"Chapter1/61-70/69_渗透-持续渗透-后渗透的本质.md","articles":[]},"previous":{"title":"第六十七课：meterpreter下的irb操作第一季","level":"1.4.67","depth":2,"path":"Chapter1/61-70/67_meterpreter下的irb操作第一季.md","ref":"Chapter1/61-70/67_meterpreter下的irb操作第一季.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/61-70/68_基于Ruby内存加载shellcode第一季.md","mtime":"2019-02-23T11:43:07.806Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1984,6 +1996,10 @@ thread <span class="token operator">=</span> <span class="token constant">Functi
     
         
         <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
         
     
         
@@ -2008,10 +2024,6 @@ thread <span class="token operator">=</span> <span class="token constant">Functi
     
         
         <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

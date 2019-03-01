@@ -25,11 +25,23 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -174,14 +186,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="../Contents.html">
             
-                <span>
+                <a href="../Contents.html">
             
                     
                     第一章：生
             
-                </span>
+                </a>
             
 
             
@@ -1869,10 +1881,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x5728;&#x5199;&#x7B2C;&#x4E94;&#x5B63;&#x7684;&#x65F6;&#x5019;&#xFF0C;vps &#x6389;&#x7EBF;&#x4E86;&#xFF0C;ssh &#x91CD;&#x65B0;&#x767B;&#x5F55;&#x540E;&#xFF0C;&#x65E0;&#x6CD5;&#x5207;&#x5230; MSF session &#x4E0B;&#xFF0C;&#x60F3;&#x5230;&#x90E8;&#x5206;&#x540C;&#x5B66;&#x5982;&#x679C;&#x5728; vps &#x4E0A;&#x64CD;&#x4F5C;&#x4E5F;&#x4F1A;&#x9047;&#x5230;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6545;&#x672C;&#x5B63;&#x89E3;&#x51B3;&#x8BE5;&#x95EE;&#x9898;&#x3002;</p>
-<h3 id="tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;">tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h3>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;"><b></b>tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;"><b></b>Tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#tmux-&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;"><b></b>tmux &#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x5728;&#x5199;&#x7B2C;&#x4E94;&#x5B63;&#x7684;&#x65F6;&#x5019;&#xFF0C;vps &#x6389;&#x7EBF;&#x4E86;&#xFF0C;ssh &#x91CD;&#x65B0;&#x767B;&#x5F55;&#x540E;&#xFF0C;&#x65E0;&#x6CD5;&#x5207;&#x5230; MSF session &#x4E0B;&#xFF0C;&#x60F3;&#x5230;&#x90E8;&#x5206;&#x540C;&#x5B66;&#x5982;&#x679C;&#x5728; vps &#x4E0A;&#x64CD;&#x4F5C;&#x4E5F;&#x4F1A;&#x9047;&#x5230;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x6545;&#x672C;&#x5B63;&#x89E3;&#x51B3;&#x8BE5;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;"><a name="tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;" class="plugin-anchor" href="#tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>tmux&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</h3>
 <p>Tmux&#x662F;&#x4E00;&#x4E2A;&#x4F18;&#x79C0;&#x7684;&#x7EC8;&#x7AEF;&#x590D;&#x7528;&#x8F6F;&#x4EF6;&#xFF0C;&#x7C7B;&#x4F3C;GNU Screen&#xFF0C;&#x4F46;&#x6765;&#x81EA;&#x4E8E;OpenBSD&#xFF0C;&#x91C7;&#x7528;BSD&#x6388;&#x6743;&#x3002;&#x4F7F;&#x7528;&#x5B83;&#x6700;&#x76F4;&#x89C2;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#x767B;&#x5F55;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x5E76;&#x8FD0;&#x884C;tmux&#x540E;&#xFF0C;&#x5728;&#x5176;&#x4E2D;&#x53EF;&#x4EE5;&#x5F00;&#x542F;&#x591A;&#x4E2A;&#x63A7;&#x5236;&#x53F0;&#x800C;&#x65E0;&#x9700;&#x518D;&#x201C;&#x6D6A;&#x8D39;&#x201D;&#x591A;&#x4F59;&#x7684;&#x7EC8;&#x7AEF;&#x6765;&#x8FDE;&#x63A5;&#x8FD9;&#x53F0;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x3002;&#x662F;BSD&#x5B9E;&#x73B0;&#x7684;Screen&#x66FF;&#x4EE3;&#x54C1;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;Screen&#xFF0C;&#x5B83;&#x66F4;&#x52A0;&#x5148;&#x8FDB;&#xFF1A;&#x652F;&#x6301;&#x5C4F;&#x5E55;&#x5207;&#x5206;&#xFF0C;&#x800C;&#x4E14;&#x5177;&#x5907;&#x4E30;&#x5BCC;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x5176;&#x53EF;&#x4EE5;&#x7075;&#x6D3B;&#x3001;&#x52A8;&#x6001;&#x7684;&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x5E03;&#x5C40;&#x548C;&#x64CD;&#x4F5C;&#x3002;</p>
-<h3 id="tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;">Tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;</h3>
+<h3 id="tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;"><a name="tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;" class="anchor-navigation-ex-anchor" href="#tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;" class="plugin-anchor" href="#tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a>Tmux&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;</h3>
 <ol>
 <li>&#x53EF;&#x4EE5;&#x67D0;&#x4E2A;&#x7A0B;&#x5E8F;&#x5728;&#x6267;&#x884C;&#x65F6;&#x4E00;&#x76F4;&#x662F;&#x8F93;&#x51FA;&#x72B6;&#x6001;&#xFF0C;&#x9700;&#x8981;&#x7ED3;&#x5408;nohup&#x3001;&amp;&#x6765;&#x653E;&#x5728;&#x540E;&#x53F0;&#x6267;&#x884C;&#xFF0C;&#x5E76;&#x4E14;ctrl+c&#x7ED3;&#x675F;&#x3002;&#x8FD9;&#x65F6;&#x53EF;&#x4EE5;&#x6253;&#x5F00;&#x4E00;&#x4E2A;Tmux&#x7A97;&#x53E3;&#xFF0C;&#x5728;&#x8BE5;&#x7A97;&#x53E3;&#x91CC;&#x6267;&#x884C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x7528;&#x6765;&#x4FDD;&#x8BC1;&#x8BE5;&#x7A0B;&#x5E8F;&#x4E00;&#x76F4;&#x5728;&#x6267;&#x884C;&#x4E2D;&#xFF0C;&#x53EA;&#x8981;Tmux&#x8FD9;&#x4E2A;&#x7A97;&#x53E3;&#x4E0D;&#x5173;&#x95ED;  </li>
 <li>&#x516C;&#x53F8;&#x9700;&#x8981;&#x5907;&#x4EFD;&#x6570;&#x636E;&#x5E93;&#x65F6;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x5DE8;&#x5927;&#xFF0C;&#x5907;&#x4EFD;&#x4E24;&#x4E09;&#x5929;&#x5F04;&#x4E0D;&#x5B8C;&#xFF0C;&#x8FD9;&#x65F6;&#x4E0D;&#x5C0F;&#x5FC3;&#x5173;&#x95ED;&#x4E86;&#x7EC8;&#x7AEF;&#x7A97;&#x53E3;&#x6216;&#x8BEF;&#x64CD;&#x4F5C;&#x5C31;&#x524D;&#x529F;&#x5C3D;&#x5F03;&#x4E86;&#xFF0C;&#x4F7F;&#x7528;Tmux&#x4F1A;&#x8BDD;&#x8FD0;&#x884C;&#x547D;&#x4EE4;&#x6216;&#x4EFB;&#x52A1;&#xFF0C;&#x5C31;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x3002;  </li>
@@ -1883,7 +1895,7 @@
 <p><img src="media/d47fa61934f99368662fb6fb6dd39d84.jpg" alt=""></p>
 <p><img src="media/1b621f6005d83138d3a71662a08ac9d0.jpg" alt=""></p>
 <p><img src="media/49159b718def6a0fe947df35f156c680.jpg" alt=""></p>
-<h3 id="tmux-&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;">tmux &#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;</h3>
+<h3 id="tmux-&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;"><a name="tmux-&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#tmux-&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="tmux-&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;" class="plugin-anchor" href="#tmux-&#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>tmux &#x5E38;&#x7528;&#x64CD;&#x4F5C;&#x547D;&#x4EE4;&#xFF1A;</h3>
 <ul>
 <li>tmux new -s session1 &#x65B0;&#x5EFA;&#x4F1A;&#x8BDD;  </li>
 <li>ctrl+b d &#x9000;&#x51FA;&#x4F1A;&#x8BDD;&#xFF0C;&#x56DE;&#x5230;shell&#x7684;&#x7EC8;&#x7AEF;&#x73AF;&#x5883; //tmux detach-client   </li>
@@ -1941,7 +1953,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三十六课：解决vps上ssh掉线","level":"1.4.36","depth":2,"next":{"title":"第三十七课：vbs一句话下载payload","level":"1.4.37","depth":2,"path":"Chapter1/37_vbs一句话下载payload.md","ref":"Chapter1/37_vbs一句话下载payload.md","articles":[]},"previous":{"title":"第三十五课：与Sqlmap结合攻击","level":"1.4.35","depth":2,"path":"Chapter1/35_与Sqlmap结合攻击.md","ref":"Chapter1/35_与Sqlmap结合攻击.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","-expandable-chapters-small","theme-comscore","splitter","simple-page-toc","-copy-code-button","github-buttons","page-footer-ex","donate","ad","baidu-tongji","ga","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"livereload":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/36_解决vps上ssh掉线.md","mtime":"2019-02-23T09:21:33.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-27T08:37:19.413Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三十六课：解决vps上ssh掉线","level":"1.4.36","depth":2,"next":{"title":"第三十七课：vbs一句话下载payload","level":"1.4.37","depth":2,"path":"Chapter1/37_vbs一句话下载payload.md","ref":"Chapter1/37_vbs一句话下载payload.md","articles":[]},"previous":{"title":"第三十五课：与Sqlmap结合攻击","level":"1.4.35","depth":2,"path":"Chapter1/35_与Sqlmap结合攻击.md","ref":"Chapter1/35_与Sqlmap结合攻击.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/36_解决vps上ssh掉线.md","mtime":"2019-02-23T09:21:33.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1960,6 +1972,10 @@
     
         
         <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
         
     
         
@@ -1984,10 +2000,6 @@
     
         
         <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

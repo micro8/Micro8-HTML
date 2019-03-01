@@ -25,11 +25,23 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -174,14 +186,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="../Contents.html">
             
-                <span>
+                <a href="../Contents.html">
             
                     
                     第一章：生
             
-                </span>
+                </a>
             
 
             
@@ -1869,18 +1881,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="netbios&#x7B80;&#x4ECB;&#xFF1A;">netbios&#x7B80;&#x4ECB;&#xFF1A;</h3>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#netbios&#x7B80;&#x4ECB;&#xFF1A;"><b></b>netbios&#x7B80;&#x4ECB;&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#nmap&#x626B;&#x63CF;&#xFF1A;"><b></b>nmap&#x626B;&#x63CF;&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#msf&#x626B;&#x63CF;&#xFF1A;"><b></b>msf&#x626B;&#x63CF;&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#nbtscan&#x626B;&#x63CF;&#xFF1A;"><b></b>nbtscan&#x626B;&#x63CF;&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;"><b></b>Linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#netbscanner&#xFF1A;"><b></b>NetBScanner&#xFF1A;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x9644;&#x5F55;&#xFF1A;"><b></b>&#x9644;&#x5F55;&#xFF1A;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="netbios&#x7B80;&#x4ECB;&#xFF1A;"><a name="netbios&#x7B80;&#x4ECB;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#netbios&#x7B80;&#x4ECB;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="netbios&#x7B80;&#x4ECB;&#xFF1A;" class="plugin-anchor" href="#netbios&#x7B80;&#x4ECB;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>netbios&#x7B80;&#x4ECB;&#xFF1A;</h3>
 <p>IBM&#x516C;&#x53F8;&#x5F00;&#x53D1;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x6570;&#x5341;&#x53F0;&#x8BA1;&#x7B97;&#x673A;&#x7684;&#x5C0F;&#x578B;&#x5C40;&#x57DF;&#x7F51;&#x3002;&#x8BE5;&#x534F;&#x8BAE;&#x662F;&#x4E00;&#x79CD;&#x5728;&#x5C40;&#x57DF;&#x7F51;&#x4E0A;&#x7684;&#x7A0B;&#x5E8F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#xFF08;API&#xFF09;&#xFF0C;&#x4E3A;&#x7A0B;&#x5E8F;&#x63D0;&#x4F9B;&#x4E86;&#x8BF7;&#x6C42;&#x4F4E;&#x7EA7;&#x670D;&#x52A1;&#x7684;&#x540C;&#x4E00;&#x7684;&#x547D;&#x4EE4;&#x96C6;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x4E3A;&#x4E86;&#x7ED9;&#x5C40;&#x57DF;&#x7F51;&#x63D0;&#x4F9B;&#x7F51;&#x7EDC;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x7279;&#x6B8A;&#x529F;&#x80FD;&#x3002;  </p>
 <p>&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x5229;&#x7528;WINS&#x670D;&#x52A1;&#x3001;&#x5E7F;&#x64AD;&#x53CA;Lmhost&#x6587;&#x4EF6;&#x7B49;&#x591A;&#x79CD;&#x6A21;&#x5F0F;&#x5C06;NetBIOS&#x540D;-&#x2014;&#x2014;&#x7279;&#x6307;&#x57FA;&#x4E8E;NETBIOS&#x534F;&#x8BAE;&#x83B7;&#x5F97;&#x8BA1;&#x7B97;&#x673A;&#x540D;&#x79F0;&#x2014;&#x2014;&#x89E3;&#x6790;&#x4E3A;&#x76F8;&#x5E94;IP&#x5730;&#x5740;&#xFF0C;&#x5B9E;&#x73B0;&#x4FE1;&#x606F;&#x901A;&#x8BAF;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x5C40;&#x57DF;&#x7F51;&#x5185;&#x90E8;&#x4F7F;&#x7528;NetBIOS&#x534F;&#x8BAE;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x5B9E;&#x73B0;&#x6D88;&#x606F;&#x901A;&#x4FE1;&#x53CA;&#x8D44;&#x6E90;&#x7684;&#x5171;&#x4EAB;&#x3002;</p>
-<h3 id="nmap&#x626B;&#x63CF;&#xFF1A;">nmap&#x626B;&#x63CF;&#xFF1A;</h3>
+<h3 id="nmap&#x626B;&#x63CF;&#xFF1A;"><a name="nmap&#x626B;&#x63CF;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#nmap&#x626B;&#x63CF;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="nmap&#x626B;&#x63CF;&#xFF1A;" class="plugin-anchor" href="#nmap&#x626B;&#x63CF;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>nmap&#x626B;&#x63CF;&#xFF1A;</h3>
 <pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># nmap -sU --script nbstat.nse -p137 192.168.1.0/24 -T4</span>
 </code></pre>
 <p><img src="media/609f6182915a5be20f36fcd208a88055.jpg" alt=""></p>
-<h3 id="msf&#x626B;&#x63CF;&#xFF1A;">msf&#x626B;&#x63CF;&#xFF1A;</h3>
+<h3 id="msf&#x626B;&#x63CF;&#xFF1A;"><a name="msf&#x626B;&#x63CF;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#msf&#x626B;&#x63CF;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="msf&#x626B;&#x63CF;&#xFF1A;" class="plugin-anchor" href="#msf&#x626B;&#x63CF;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>msf&#x626B;&#x63CF;&#xFF1A;</h3>
 <pre class="language-"><code class="lang-bash">msf <span class="token operator">&gt;</span> use auxiliary/scanner/netbios/nbname
 </code></pre>
 <p><img src="media/01dfd2e205f58aac0391c60353786434.jpg" alt=""></p>
-<h3 id="nbtscan&#x626B;&#x63CF;&#xFF1A;">nbtscan&#x626B;&#x63CF;&#xFF1A;</h3>
+<h3 id="nbtscan&#x626B;&#x63CF;&#xFF1A;"><a name="nbtscan&#x626B;&#x63CF;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#nbtscan&#x626B;&#x63CF;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="nbtscan&#x626B;&#x63CF;&#xFF1A;" class="plugin-anchor" href="#nbtscan&#x626B;&#x63CF;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>nbtscan&#x626B;&#x63CF;&#xFF1A;</h3>
 <p>&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;<br><a href="http://www.unixwiz.net/tools/nbtscan.html" target="_blank">http://www.unixwiz.net/tools/nbtscan.html</a><br><strong>Windows:</strong></p>
 <pre class="language-"><code class="lang-bash">D:\<span class="token operator">&gt;</span>nbtscan-1.0.35.exe -m 192.168.1.0/24
 </code></pre>
@@ -1889,7 +1901,7 @@
 </code></pre>
 <p><img src="media/e64a202423dea3a28dc8261bfc1c7221.jpg" alt="">  </p>
 <p><img src="media/fa098960ea9e6ec5369e4b0e953d5b39.jpg" alt=""></p>
-<h3 id="linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;">Linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;</h3>
+<h3 id="linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;"><a name="linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;" class="anchor-navigation-ex-anchor" href="#linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;" class="plugin-anchor" href="#linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>Linux&#xFF1A;&#xFF08;&#x63A8;&#x8350;&#xFF09;</h3>
 <pre class="language-"><code class="lang-bash">root@John:~/Desktop/nbtscan<span class="token comment"># tar -zxvf ./nbtscan-source-1.0.35.tgz&#xFF08;1.5.1&#x7248;&#x672C;&#x5728;&#x9644;&#x5F55;&#xFF09;</span>
 root@John:~/Desktop/nbtscan<span class="token comment"># make </span>
 root@John:~/Desktop/nbtscan<span class="token comment"># nbtscan -r 192.168.1.0/24</span>
@@ -1898,9 +1910,9 @@ root@John:~/Desktop/nbtscan<span class="token comment"># nbtscan -r 192.168.1.0/
 <pre class="language-"><code class="lang-bash">root@John:~/Desktop/nbtscan<span class="token comment"># nbtscan -v -s: 192.168.1.0/24</span>
 </code></pre>
 <p><img src="media/6f8c76d5ce97b73134b0d0d5c190ed85.jpg" alt=""></p>
-<h3 id="netbscanner&#xFF1A;">NetBScanner&#xFF1A;</h3>
+<h3 id="netbscanner&#xFF1A;"><a name="netbscanner&#xFF1A;" class="anchor-navigation-ex-anchor" href="#netbscanner&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="netbscanner&#xFF1A;" class="plugin-anchor" href="#netbscanner&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>NetBScanner&#xFF1A;</h3>
 <p>&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;<br><a href="https://www.nirsoft.net/utils/netbios_scanner.html" target="_blank">https://www.nirsoft.net/utils/netbios_scanner.html</a><br><img src="media/4d1a86423d89ed67c9fb7b95c6076846.jpg" alt=""></p>
-<h3 id="&#x9644;&#x5F55;&#xFF1A;">&#x9644;&#x5F55;&#xFF1A;</h3>
+<h3 id="&#x9644;&#x5F55;&#xFF1A;"><a name="&#x9644;&#x5F55;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9644;&#x5F55;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9644;&#x5F55;&#xFF1A;" class="plugin-anchor" href="#&#x9644;&#x5F55;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9644;&#x5F55;&#xFF1A;</h3>
 <p>nbtscan&#xFF1A;<br>&#x94FE;&#x63A5;&#xFF1A;<a href="https://pan.baidu.com/s/1hs8ckmg" target="_blank">https://pan.baidu.com/s/1hs8ckmg</a><br>&#x5BC6;&#x7801;&#xFF1A;av40  </p>
 <pre class="language-"><code class="lang-bash">NBTscan version 1.5.1. Copyright <span class="token punctuation">(</span>C<span class="token punctuation">)</span> 1999-2003 Alla Bezroutchko. This is a <span class="token function">free</span> software and it comes with absolutely no warranty. You can use,distribute and modify it under terms of GNU GPL.
 
@@ -1988,7 +2000,7 @@ Examples:
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十九课：基于netbios发现内网存活主机","level":"1.4.19","depth":2,"next":{"title":"第二十课：基于snmp发现内网存活主机","level":"1.4.20","depth":2,"path":"Chapter1/20_基于snmp发现内网存活主机.md","ref":"Chapter1/20_基于snmp发现内网存活主机.md","articles":[]},"previous":{"title":"第十八课：红蓝对抗渗透测试3","level":"1.4.18","depth":2,"path":"Chapter1/18_红蓝对抗渗透测试3.md","ref":"Chapter1/18_红蓝对抗渗透测试3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","-expandable-chapters-small","theme-comscore","splitter","simple-page-toc","-copy-code-button","github-buttons","page-footer-ex","donate","ad","baidu-tongji","ga","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"livereload":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/19_基于netbios发现内网存活主机.md","mtime":"2019-02-23T08:15:52.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-27T08:37:19.413Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十九课：基于netbios发现内网存活主机","level":"1.4.19","depth":2,"next":{"title":"第二十课：基于snmp发现内网存活主机","level":"1.4.20","depth":2,"path":"Chapter1/20_基于snmp发现内网存活主机.md","ref":"Chapter1/20_基于snmp发现内网存活主机.md","articles":[]},"previous":{"title":"第十八课：红蓝对抗渗透测试3","level":"1.4.18","depth":2,"path":"Chapter1/18_红蓝对抗渗透测试3.md","ref":"Chapter1/18_红蓝对抗渗透测试3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/19_基于netbios发现内网存活主机.md","mtime":"2019-02-23T08:15:52.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2007,6 +2019,10 @@ Examples:
     
         
         <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
         
     
         
@@ -2031,10 +2047,6 @@ Examples:
     
         
         <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         

