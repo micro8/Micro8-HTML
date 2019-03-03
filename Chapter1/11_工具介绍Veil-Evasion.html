@@ -21,7 +21,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-darcula.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
                 
             
                 
@@ -46,6 +46,10 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminal/plugin.css">
                 
             
                 
@@ -1881,9 +1885,11 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;<br><a href="https://github.com/Veil-Framework/Veil-Evasion" target="_blank">https://github.com/Veil-Framework/Veil-Evasion</a></p>
-<p>Veil-Evasion &#x662F;&#x4E0E; Metasploit &#x751F;&#x6210;&#x76F8;&#x517C;&#x5BB9;&#x7684;Payload&#x7684;&#x4E00;&#x6B3E;&#x8F85;&#x52A9;&#x6846;&#x67B6;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x7ED5;&#x8FC7;&#x5927;&#x591A;&#x6570;&#x7684;&#x6740;&#x8F6F;&#x3002;</p>
-<p>Veil-Evasion&#x5E76;&#x6CA1;&#x6709;&#x96C6;&#x6210;&#x5728;kali&#xFF0C;&#x914D;&#x7F6E;sources.list&#xFF0C;&#x53EF;&#x76F4;&#x63A5;apt-get&#x3002;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5DE5;&#x5177;&#x4ECB;&#x7ECD;-veil-evasion"><b></b>&#x5DE5;&#x5177;&#x4ECB;&#x7ECD; Veil-Evasion</a></li><ul><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#1&#x3001;veil-evasion"><b></b>1&#x3001;Veil-Evasion</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#2&#x3001;&#x5B89;&#x88C5;"><b></b>2&#x3001;&#x5B89;&#x88C5;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#3&#x3001;&#x6D4B;&#x8BD5;"><b></b>3&#x3001;&#x6D4B;&#x8BD5;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#4&#x3001;&#x9644;&#x5F55;&#xFF1A;"><b></b>4&#x3001;&#x9644;&#x5F55;&#xFF1A;</a></li></ul></ul></ul></div><a href="#&#x5DE5;&#x5177;&#x4ECB;&#x7ECD;-veil-evasion" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5DE5;&#x5177;&#x4ECB;&#x7ECD;-veil-evasion"><a name="&#x5DE5;&#x5177;&#x4ECB;&#x7ECD;-veil-evasion" class="anchor-navigation-ex-anchor" href="#&#x5DE5;&#x5177;&#x4ECB;&#x7ECD;-veil-evasion"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5DE5;&#x5177;&#x4ECB;&#x7ECD;-veil-evasion" class="plugin-anchor" href="#&#x5DE5;&#x5177;&#x4ECB;&#x7ECD;-veil-evasion"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x5177;&#x4ECB;&#x7ECD; Veil-Evasion</h1>
+<p>&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;<br><a href="https://github.com/Veil-Framework/Veil-Evasion" target="_blank">https://github.com/Veil-Framework/Veil-Evasion</a></p>
+<h3 id="1&#x3001;veil-evasion"><a name="1&#x3001;veil-evasion" class="anchor-navigation-ex-anchor" href="#1&#x3001;veil-evasion"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1&#x3001;veil-evasion" class="plugin-anchor" href="#1&#x3001;veil-evasion"><i class="fa fa-link" aria-hidden="true"></i></a>1&#x3001;Veil-Evasion</h3>
+<p>Veil-Evasion &#x662F;&#x4E0E; Metasploit &#x751F;&#x6210;&#x76F8;&#x517C;&#x5BB9;&#x7684; Payload &#x7684;&#x4E00;&#x6B3E;&#x8F85;&#x52A9;&#x6846;&#x67B6;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x7ED5;&#x8FC7;&#x5927;&#x591A;&#x6570;&#x7684;&#x6740;&#x8F6F;&#x3002;</p>
+<p>Veil-Evasion &#x5E76;&#x6CA1;&#x6709;&#x96C6;&#x6210;&#x5728;kali&#xFF0C;&#x914D;&#x7F6E; sources.list&#xFF0C;&#x53EF;&#x76F4;&#x63A5; apt-get&#x3002;</p>
 <pre class="language-"><code class="lang-bash">root@John:~/Deskto<span class="token comment">#cat /etc/apt/sources.list</span>
 
 <span class="token comment">#&#x4E2D;&#x79D1;&#x5927;</span>
@@ -1893,40 +1899,41 @@ deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 <span class="token comment">#deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span>
 <span class="token comment">#deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span>
 <span class="token comment">#&#x6E05;&#x534E;&#x5927;&#x5B66;</span>
-<span class="token comment">#deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free </span>
-<span class="token comment">#deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free </span>
+<span class="token comment">#deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span>
+<span class="token comment">#deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span>
 <span class="token comment">#&#x6D59;&#x5927;</span>
 <span class="token comment">#deb http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span>
 <span class="token comment">#deb-src http://mirrors.zju.edu.cn/kali kali-rolling main contrib non-free</span>
 <span class="token comment">#&#x4E1C;&#x8F6F;&#x5927;&#x5B66;</span>
 <span class="token comment">#deb http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib</span>
-<span class="token comment">#deb-src http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib </span>
+<span class="token comment">#deb-src http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib</span>
 <span class="token comment">#&#x5B98;&#x65B9;&#x6E90;</span>
-deb http://http.kali.org/kali kali-rolling main non-free contrib 
-deb-src http://http.kali.org/kali kali-rolling main non-free contrib 
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+deb-src http://http.kali.org/kali kali-rolling main non-free contrib
 <span class="token comment">#&#x91CD;&#x5E86;&#x5927;&#x5B66;</span>
-<span class="token comment">#deb http://http.kali.org/kali kali-rolling main non-free contrib </span>
+<span class="token comment">#deb http://http.kali.org/kali kali-rolling main non-free contrib</span>
 <span class="token comment">#deb-src http://http.kali.org/kali kali-rolling main non-free contrib</span>
 </code></pre>
-<p><img src="media/0bf8f9c39799eabc1ad3525e6635d060.jpg" alt="">  </p>
+<h3 id="2&#x3001;&#x5B89;&#x88C5;"><a name="2&#x3001;&#x5B89;&#x88C5;" class="anchor-navigation-ex-anchor" href="#2&#x3001;&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2&#x3001;&#x5B89;&#x88C5;" class="plugin-anchor" href="#2&#x3001;&#x5B89;&#x88C5;"><i class="fa fa-link" aria-hidden="true"></i></a>2&#x3001;&#x5B89;&#x88C5;</h3>
 <pre class="language-"><code class="lang-bash">root@John:~/Desktop<span class="token comment"># apt-get install veil-evasion</span>
 </code></pre>
-<p>&#x7531;&#x4E8E;&#x5728;&#x5B9E;&#x9A8C;&#x4E2D;&#x672C;&#x673A;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x4F7F;&#x7528;git&#x65B9;&#x5F0F;&#x6765;&#x4E0B;&#x8F7D;&#x548C;&#x5B89;&#x88C5;&#x3002;&#xFF08;&#x4EE5;&#x4FBF;&#x622A;&#x56FE;&#xFF09;<br>ps:&#x672C;&#x6B21;kali&#x4E0B;&#x622A;&#x56FE;&#x4F7F;&#x7528; scrot  </p>
+<p>&#x7531;&#x4E8E;&#x5728;&#x5B9E;&#x9A8C;&#x4E2D;&#x672C;&#x673A;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x4F7F;&#x7528; git &#x65B9;&#x5F0F;&#x6765;&#x4E0B;&#x8F7D;&#x548C;&#x5B89;&#x88C5;&#x3002;&#xFF08;&#x4EE5;&#x4FBF;&#x622A;&#x56FE;&#xFF09;<br>ps:&#x672C;&#x6B21; kali &#x4E0B;&#x622A;&#x56FE;&#x4F7F;&#x7528; scrot  </p>
 <pre class="language-"><code class="lang-bash">root@John:~/Deskto<span class="token comment"># apt-get install scrot</span>
 root@John:~/Deskto<span class="token comment"># scrot -s //&#x5373;&#x53EF;</span>
 root@John:~/Deskto<span class="token comment"># git clone https://github.com/Veil-Framework/Veil-Evasion.git</span>
 </code></pre>
 <p><img src="media/9665385060c79f6175e74032ad2e5f5f.jpg" alt=""></p>
-<pre class="language-"><code class="lang-bash">root@John:~/Veil-Evasion<span class="token comment"># ./setup.sh </span>
+<pre class="language-"><code class="lang-bash">root@John:~/Veil-Evasion<span class="token comment"># ./setup.sh</span>
 //&#x5B89;&#x88C5;&#x6F2B;&#x957F;
 </code></pre>
 <p><img src="media/b1a88b6e639e83ba04dcb815f1be3035.jpg" alt="">  </p>
 <p><img src="media/65807c037d2e0d7f6330de1be8bf7801.jpg" alt="">  </p>
 <p><img src="media/a6dd85c8811146b386d748891dc40ee8.jpg" alt="">  </p>
+<h3 id="3&#x3001;&#x6D4B;&#x8BD5;"><a name="3&#x3001;&#x6D4B;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#3&#x3001;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3&#x3001;&#x6D4B;&#x8BD5;" class="plugin-anchor" href="#3&#x3001;&#x6D4B;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>3&#x3001;&#x6D4B;&#x8BD5;</h3>
 <p>&#x4EE5; <code>c/meterpreter/rev_tcp</code> &#x4E3A;&#x4F8B;&#xFF1A;<br><img src="media/6d0b6469b0b5b2cfcee03a1d9544441a.jpg" alt="">  </p>
 <p><img src="media/10b9071c854c0a2eeea642cc6fd4023c.jpg" alt="">  </p>
 <p>ps:Veil-Evasion &#x4E0D;&#x518D;&#x66F4;&#x65B0;&#xFF0C;&#x65B0;&#x7248;&#x672C;&#x9879;&#x76EE;&#x5730;&#x5740;&#xFF1A;<br><a href="https://github.com/Veil-Framework/Veil" target="_blank">https://github.com/Veil-Framework/Veil</a></p>
-<p><strong>&#x9644;&#x5F55;&#xFF1A;</strong></p>
+<h3 id="4&#x3001;&#x9644;&#x5F55;&#xFF1A;"><a name="4&#x3001;&#x9644;&#x5F55;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#4&#x3001;&#x9644;&#x5F55;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4&#x3001;&#x9644;&#x5F55;&#xFF1A;" class="plugin-anchor" href="#4&#x3001;&#x9644;&#x5F55;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>4&#x3001;&#x9644;&#x5F55;&#xFF1A;</h3>
 <pre class="language-"><code class="lang-bash"><span class="token punctuation">[</span>*<span class="token punctuation">]</span> &#x53EF;&#x652F;&#x6301;&#x751F;&#x6210;payloads:  
 1<span class="token punctuation">)</span> auxiliary/coldwar_wrapper  
 2<span class="token punctuation">)</span> auxiliary/macro_converter  
@@ -1980,10 +1987,10 @@ root@John:~/Deskto<span class="token comment"># git clone https://github.com/Vei
 50<span class="token punctuation">)</span> ruby/shellcode_inject/base64  
 51<span class="token punctuation">)</span> ruby/shellcode_inject/flat
 </code></pre>
-<blockquote>
-<p>  Micropoor</p>
-</blockquote>
-<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019 Micro8. All Rights Reserved. &#x9075;&#x5FAA; <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x534F;&#x8BAE;&#x53D1;&#x5E03;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-02-23 </span> </footer>
+<p align="right">--By  Micropoor </p>
+
+
+<footer class="page-footer-ex"> <span class="page-footer-ex-copyright"> Copyright &#xA9; 2019 Micro8. All Rights Reserved. &#x9075;&#x5FAA; <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank">&#x77E5;&#x8BC6;&#x5171;&#x4EAB; &#x7F72;&#x540D;-&#x975E;&#x5546;&#x4E1A;&#x6027;&#x4F7F;&#x7528; 4.0 &#x534F;&#x8BAE;&#x53D1;&#x5E03;</a> </span> &#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; <span class="page-footer-ex-footer-update"> &#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A; 2019-03-03 </span> </footer>
                                 
                                 </section>
                             
@@ -2026,7 +2033,7 @@ root@John:~/Deskto<span class="token comment"># git clone https://github.com/Vei
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"第十一课：工具介绍Veil-Evasion","level":"1.4.11","depth":2,"next":{"title":"第十二课：基于UDP发现内网存活主机","level":"1.4.12","depth":2,"path":"Chapter1/12_基于UDP发现内网存活主机.md","ref":"Chapter1/12_基于UDP发现内网存活主机.md","articles":[]},"previous":{"title":"第十课：msfvenom常用生成payload命令","level":"1.4.10","depth":2,"path":"Chapter1/10_msfvenom常用生成payload命令.md","ref":"Chapter1/10_msfvenom常用生成payload命令.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","-sharing","sharing-plus","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-darcula.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"qq":false,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/11_工具介绍Veil-Evasion.md","mtime":"2019-02-23T07:27:00.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-01T13:38:56.930Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"第十一课：工具介绍Veil-Evasion","level":"1.4.11","depth":2,"next":{"title":"第十二课：基于UDP发现内网存活主机","level":"1.4.12","depth":2,"path":"Chapter1/12_基于UDP发现内网存活主机.md","ref":"Chapter1/12_基于UDP发现内网存活主机.md","articles":[]},"previous":{"title":"第十课：msfvenom常用生成payload命令","level":"1.4.10","depth":2,"path":"Chapter1/10_msfvenom常用生成payload命令.md","ref":"Chapter1/10_msfvenom常用生成payload命令.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-plus","-highlight","prism","sharing","expandable-chapters-small","theme-comscore","splitter","github-buttons","page-footer-ex","anchors","anchor-navigation-ex","donate","terminal","ad","baidu-tongji","ga"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"ad":{"contentBottom":"","contentTop":"<font size=\"6\"> 专注 APT 攻击与防御 </font>"},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":"b03e1a3682665e9218213dc9e1b5a428"},"page-footer-ex":{"copyright":"Copyright © 2019 Micro8. All Rights Reserved. 遵循 [知识共享 署名-非商业性使用 4.0 协议发布](https://creativecommons.org/licenses/by-nc/4.0/deed.zh)","markdown":true,"update_format":"YYYY-MM-DD","update_label":"修订时间："},"splitter":{},"donate":{"alipay":"","alipayText":"支付宝打赏","button":"赞赏码","title":"有读者问赞赏码，如下，自愿：","wechat":"./dashang.png","wechatText":""},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-anchor","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro8","repo":"Micro8-HTML","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"ga":{"configuration":"auto","token":"UA-135003278-1"},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Micro8 系列作者","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Micro8 系列教程","language":"zh-hans","links":{"sidebar":{"Micropoor":"https://micropoor.blogspot.com","Github Micro8":"https://github.com/micro8"}},"gitbook":"*","description":"Micro8"},"file":{"path":"Chapter1/11_工具介绍Veil-Evasion.md","mtime":"2019-03-03T10:53:14.978Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T11:03:03.040Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -2044,7 +2051,7 @@ root@John:~/Deskto<span class="token comment"># git clone https://github.com/Vei
         
     
         
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
@@ -2061,6 +2068,10 @@ root@John:~/Deskto<span class="token comment"># git clone https://github.com/Vei
     
         
         <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-terminal/plugin.js"></script>
         
     
         
